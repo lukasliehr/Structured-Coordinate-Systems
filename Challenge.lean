@@ -1,6 +1,10 @@
 module
 
-public import Mathlib
+public import Mathlib.Analysis.CStarAlgebra.Classes
+public import Mathlib.Analysis.Calculus.FDeriv.Defs
+public import Mathlib.Analysis.Normed.Module.Bases
+public import Mathlib.MeasureTheory.Function.LpSpace.Basic
+public import Mathlib.MeasureTheory.Measure.Haar.OfBasis
 
 /-! Main results of "Structured coordinate systems in Lᵖ(ℝ)" by Freeman, Liehr and Taylor. -/
 

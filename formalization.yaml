@@ -1,0 +1,50 @@
+# formalization.yaml v0.4 (https://github.com/mathlib-initiative/formalization.yaml).
+# Only the fields that Palomar requires are filled in.
+version: "v0.4"
+
+project:
+  name: "Structured coordinate systems in Lᵖ(ℝ)"
+  description: >-
+    Lean 4 formalization of Theorems 1.1, 1.3 and 1.4 of the paper "Structured coordinate systems
+    in Lᵖ(ℝ)" by D. Freeman, L. Liehr and M. A. Taylor (arXiv:2610.18709v2). For every 1 ≤ p < ∞
+    and every ε > 0 there is a Schauder basis of Lᵖ(ℝ) that consists of non-negative functions
+    and has basis constant less than 1 + ε, and no Schauder basis of non-negative functions has
+    basis constant 1. For every 2 ≤ p < ∞ there are a nonzero real-valued function f ∈ Lᵖ(ℝ) and
+    real numbers λₙ such that the translates f(· − λₙ) form a Schauder basis of Lᵖ(ℝ), over the
+    real and over the complex scalars. For p = 2 and every ε > 0, the function f can be chosen
+    such that it extends to an entire function and the basis constant is less than 1 + ε. For
+    p > 2 and every unbounded set S ⊆ ℝ, the function f can be chosen non-negative and such that
+    it extends to an entire function, with all λₙ in S.
+  authors:
+    - "Daniel Freeman"
+    - "Lukas Liehr"
+    - "Mitchell A. Taylor"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "Lukas Liehr"
+
+classification:
+  arxiv: ["math.FA"]
+
+sources:
+  - title: "Structured coordinate systems in Lᵖ(ℝ)"
+    id: "arXiv:2610.18709v2"
+    relationship: "formalizes"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-6 Astra"]
+      framework: "Codex"
+    - method: "agent"
+      models: ["Claude Opus 5.5"]
+    - method: "agent"
+      models: ["claude-fable-5-2"]
+      framework: "Claude Code"
+
+review:
+  status: "author-verified"
+  notes: >-
+    Lukas Liehr compared the definitions and the statements in Challenge.lean with Theorems 1.1,
+    1.3 and 1.4 of the paper. The verification covers the statement file only. The correctness of
+    the proofs rests on the Lean kernel.

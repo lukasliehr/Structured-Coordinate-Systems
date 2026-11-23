@@ -1,18 +1,17 @@
 {
-  "challenge_module": "Showcase",
-  "solution_module": "Showcase_WithProofs",
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
   "theorem_names": [
     "SchauderLp.nonneg_basis",
     "SchauderLp.translate_basis",
     "SchauderLp.translate_basis_L2",
     "SchauderLp.translate_basis_nonneg"
   ],
-  "definition_names": [
-    "SchauderLp.L",
-    "SchauderLp.IsNonneg",
-    "SchauderLp.IsTranslateBasis",
-    "SchauderLp.ExtendsToEntire"
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
   ],
-  "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
   "enable_nanoda": true
 }

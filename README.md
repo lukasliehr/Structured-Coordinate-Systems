@@ -16,14 +16,14 @@ Here, $T_\lambda f=f(\cdot-\lambda)$ is the translation of $f$ by $\lambda$. A b
 
 ## Lean entry points
 
-- [Showcase.lean](Showcase.lean): the statements of the theorems above in Lean, together with the definitions needed to read them. It imports only Mathlib and uses `sorry` in place of the proofs.
-- [Showcase_WithProofs.lean](Showcase_WithProofs.lean): the same definitions and statements, with every `sorry` replaced by a proof.
+- [Challenge.lean](Challenge.lean): the statements of the theorems above in Lean, together with the definitions needed to read them. It imports only Mathlib and uses `sorry` in place of the proofs.
+- [Solution.lean](Solution.lean): the same definitions and statements, with every `sorry` replaced by a proof.
 - [Lean_Code/](Lean_Code): the Lean library that contains the proofs.
-- [comparator.json](comparator.json): Comparator configuration pairing the two Showcase files.
+- [comparator.json](comparator.json): Comparator configuration pairing the two files.
 
-The declarations in `Showcase.lean` correspond to the paper as follows.
+The declarations in `Challenge.lean` correspond to the paper as follows.
 
-| Paper | `Showcase.lean` |
+| Paper | `Challenge.lean` |
 | --- | --- |
 | Theorem 1.1 | `nonneg_basis` |
 | Theorem 1.3 | `translate_basis` |
@@ -31,6 +31,18 @@ The declarations in `Showcase.lean` correspond to the paper as follows.
 | Theorem 1.4 (ii) | `translate_basis_nonneg` |
 
 The statements use the structure `SchauderBasis` of Mathlib. This notion agrees with the definition by unique norm-convergent expansions, which is proved in [Lean_Code/Basis/UniqueExpansion.lean](Lean_Code/Basis/UniqueExpansion.lean). The proofs depend only on the axioms `propext`, `Classical.choice` and `Quot.sound`.
+
+## Palomar
+
+This branch follows the submission layout of the [Palomar registry](https://palomar-registry.org). The files `Challenge.lean` and `Solution.lean` are the files `Showcase.lean` and `Showcase_WithProofs.lean` of the branch `main`. All Lean files use the Lean module system, and the project is built with Lean `v4.35.0` and the matching Mathlib release. The file [formalization.yaml](formalization.yaml) records the source and the production of the formalization, and [palomar-preflight.yml](.github/workflows/palomar-preflight.yml) runs the mechanical verification of Palomar on every push to this branch.
+
+The Lean statements use the following conventions.
+
+- A Schauder basis is an element of Mathlib's `SchauderBasis 𝕜 X`, which consists of the basis vectors, continuous coordinate functionals that are biorthogonal to them, and the norm convergence of the partial sums of every expansion. The basis vectors are indexed from $n=0$.
+- The basis constant `K b` is Mathlib's `SchauderBasis.nnnormProjBound b`, the supremum of the norms of the partial sum projections.
+- Theorem 1.1 is stated for every scalar field `𝕜` with `RCLike 𝕜`, that is, for $\mathbb{R}$ and $\mathbb{C}$. The statements on translates contain one basis over $\mathbb{R}$ and one over $\mathbb{C}$ for the same $f$ and $(\lambda_n)$.
+- The generator is a function `f : ℝ → ℝ` with `MemLp f p`, and `IsTranslateBasis b f lam` says that the $n$-th basis vector agrees almost everywhere with $f(\cdot-\lambda_n)$. Here, $f$ is nonzero if it does not vanish almost everywhere.
+- `ExtendsToEntire f` says that there is a differentiable function $F:\mathbb{C}\to\mathbb{C}$ with $F(x)=f(x)$ for all $x\in\mathbb{R}$.
 
 ## Repository layout
 
@@ -43,11 +55,15 @@ The statements use the structure `SchauderBasis` of Mathlib. This notion agrees 
 
 ## Build
 
-The project uses Lean `v4.33.0` and the version of Mathlib pinned in `lake-manifest.json`. To compile it, run the following commands in the root of the repository.
+The project uses Lean `v4.35.0` and the version of Mathlib pinned in `lake-manifest.json`. To compile it, run the following commands in the root of the repository.
 
 ```bash
 lake exe cache get
 lake build
 ```
 
-The first command downloads the compiled Mathlib library. The second command builds `Lean_Code` and both Showcase files. For `Showcase.lean` it reports four uses of `sorry`, which stand for the omitted proofs.
+The first command downloads the compiled Mathlib library. The second command builds `Lean_Code`, `Challenge.lean` and `Solution.lean`. For `Challenge.lean` it reports four uses of `sorry`, which stand for the omitted proofs.
+
+## License
+
+The repository is released under the Apache License 2.0 (see [LICENSE](LICENSE)).

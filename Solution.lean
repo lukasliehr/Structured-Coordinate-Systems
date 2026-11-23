@@ -2,7 +2,7 @@ module
 
 public import Lean_Code
 
-/-! The definitions and statements of `Showcase.lean`, with proofs from the library `Lean_Code`. -/
+/-! The definitions and statements of `Challenge.lean`, with proofs from the library `Lean_Code`. -/
 
 @[expose] public section
 
