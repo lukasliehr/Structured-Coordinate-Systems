@@ -53,7 +53,7 @@ def piKernel (K : Fin m → FiberKernel S Y ν) :
     (K c).measurable.comp (measurable_fst.prodMk ((measurable_pi_apply c).comp measurable_snd)))
   nonneg p := Finset.prod_nonneg (fun c _ => (K c).nonneg _)
   bound := ∏ c, max (K c).bound 0
-  upper p := Finset.prod_le_prod (fun c _ => (K c).nonneg _)
+  upper p := Finset.prod_le_prod₀ (fun c _ => (K c).nonneg _)
     (fun c _ => ((K c).upper _).trans (le_max_left _ _))
   mass s := by
     have h := integral_fintype_prod_eq_prod (𝕜 := ℝ)

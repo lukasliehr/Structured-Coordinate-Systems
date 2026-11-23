@@ -26,7 +26,8 @@ variable {𝕜 : Type*} [RCLike 𝕜] {p q : ℝ≥0∞}
 /-- The essential supremum of the indicator of the unit interval `(0, 1]` is one. -/
 theorem stepSup_gridUnit_zero : stepSup ((gridUnit 0).indicator : L 𝕜 q) = 1 := by
   have h : eLpNorm ((gridUnit 0).indicator : L 𝕜 q) ∞ volume = 1 := by
-    rw [eLpNorm_congr_ae ((gridUnit 0).coe_indicator (𝕜 := 𝕜) (p := q)), eLpNorm_exponent_top,
+    rw [eLpNorm_congr_ae ((gridUnit 0).coe_indicator (𝕜 := 𝕜) (p := q)),
+      eLpNorm_exponent_top (aestronglyMeasurable_const.indicator (gridUnit 0).measurable),
       eLpNormEssSup_indicator_const_eq _ _ (gridUnit 0).volume_pos.ne']
     simp
   simp [stepSup, h]

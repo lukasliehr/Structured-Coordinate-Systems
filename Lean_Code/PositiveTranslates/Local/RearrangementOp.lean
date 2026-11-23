@@ -30,8 +30,8 @@ namespace Rearrangement
 variable {ι : Type*} [Countable ι] (R : Rearrangement ι) {p : ℝ≥0∞} [Fact (1 ≤ p)]
 
 theorem memLp_fn (hpfin : p ≠ ∞) (F : LebesgueLp p) : MemLp (R.fn p F) p volume :=
-  ⟨(R.fn_measurable (Lp.stronglyMeasurable F).measurable).aestronglyMeasurable,
-    (R.eLpNorm_fn_le exponent_ne_zero hpfin F).trans_lt (Lp.memLp F).2⟩
+  (R.eLpNorm_fn_le exponent_ne_zero hpfin (Lp.stronglyMeasurable F).measurable).trans_lt
+    (Lp.memLp F).eLpNorm_lt_top
 
 /-- The operator of a rearrangement: the `Lᵖ` class of `x ↦ ρᵢ^{1/p} F (αᵢ x)` on the `i`-th
 target interval, zero elsewhere. -/
@@ -66,7 +66,8 @@ theorem op_eq_of_ae {F G : LebesgueLp p} {f₀ : ℝ → ℂ} (hF : F =ᵐ[volum
 
 theorem norm_op_le (F : LebesgueLp p) : ‖R.op hpfin F‖ ≤ ‖F‖ := by
   rw [Lp.norm_def, Lp.norm_def, eLpNorm_congr_ae (R.op_ae hpfin F)]
-  exact ENNReal.toReal_mono (Lp.memLp F).2.ne (R.eLpNorm_fn_le exponent_ne_zero hpfin F)
+  exact ENNReal.toReal_mono (Lp.memLp F).eLpNorm_ne_top
+    (R.eLpNorm_fn_le exponent_ne_zero hpfin (Lp.stronglyMeasurable F).measurable)
 
 /-- The operator of a rearrangement as a continuous linear map. -/
 def opL : LebesgueLp p →L[ℂ] LebesgueLp p :=

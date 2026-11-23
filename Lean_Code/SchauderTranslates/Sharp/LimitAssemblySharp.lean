@@ -81,7 +81,7 @@ theorem limitW_le_gauss :
 theorem tprod_factor_le_one (t : ℝ) : ∏' n, factor P n t ≤ 1 := by
   by_cases hm : Multipliable (fun n => factor P n t)
   · exact le_of_tendsto' hm.hasProd.tendsto_prod_nat (fun N =>
-      Finset.prod_le_one (fun n _ => (factor_pos P n t).le) (fun n _ => factor_le_one P n t))
+      Finset.prod_le_one₀ (fun n _ => (factor_pos P n t).le) (fun n _ => factor_le_one P n t))
   · rw [tprod_eq_one_of_not_multipliable hm]
 
 /-- The Gaussian majorant even holds at every point. -/

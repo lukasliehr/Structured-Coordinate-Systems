@@ -32,8 +32,8 @@ theorem positive_operator_norm_le (T : H →L[ℂ] H) {r : ℝ} (hr : 0 ≤ r)
       rw [inner_self_eq_norm_sq]
       exact sub_nonneg.mpr (hu x)
   apply (CStarAlgebra.norm_le_iff_le_algebraMap T hr
-    ((ContinuousLinearMap.nonneg_iff_isPositive _).mpr hT)).mpr
-  have hp := (ContinuousLinearMap.nonneg_iff_isPositive _).mpr hU
+    (ContinuousLinearMap.nonneg_iff_isPositive.mpr hT)).mpr
+  have hp := ContinuousLinearMap.nonneg_iff_isPositive.mpr hU
   change 0 ≤ algebraMap ℝ (H →L[ℂ] H) r - T at hp
   exact sub_nonneg.mp hp
 

@@ -27,7 +27,7 @@ theorem prod_range_bounds (a : ℕ → ℝ)
     (hpos : ∀ n, 0 ≤ a n) (ha : ∀ n, a n ≤ 1) (N : ℕ) :
     0 ≤ ∏ n ∈ Finset.range N, a n ∧ (∏ n ∈ Finset.range N, a n) ≤ 1 :=
   ⟨Finset.prod_nonneg (fun n _ => hpos n),
-    Finset.prod_le_one (fun n _ => hpos n) (fun n _ => ha n)⟩
+    Finset.prod_le_one₀ (fun n _ => hpos n) (fun n _ => ha n)⟩
 
 theorem one_sub_prod_le_sum_deficit (a : ℕ → ℝ)
     (hpos : ∀ n, 0 ≤ a n) (ha : ∀ n, a n ≤ 1) (N : ℕ) :
@@ -45,8 +45,8 @@ theorem ae_summable_norm_of_integral_norm {α : Type*} [MeasurableSpace α]
     (hi : ∀ n, Integrable (f n) μ)
     (hs : Summable (fun n => ∫ x, ‖f n x‖ ∂μ)) :
     ∀ᵐ x ∂μ, Summable (fun n => ‖f n x‖) := by
-  apply summable_norm_of_tsum_eLpNorm_ne_top (p := 1) le_rfl (fun n => (hi n).1)
-  simp_rw [eLpNorm_one_eq_lintegral_enorm,
+  apply summable_norm_of_tsum_eLpNorm_ne_top (p := 1) le_rfl
+  simp_rw [eLpNorm_one_eq_lintegral_enorm (hi _).1,
     ← ofReal_integral_norm_eq_lintegral_enorm (hi _)]
   rw [← ENNReal.ofReal_tsum_of_nonneg (fun n => integral_nonneg (fun x => norm_nonneg _)) hs]
   exact ENNReal.ofReal_ne_top

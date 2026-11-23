@@ -6,8 +6,6 @@ noncomputable section
 open MeasureTheory ContinuousLinearMap
 open scoped InnerProductSpace InnerProduct
 attribute [local instance] Classical.propDecidable
-set_option backward.isDefEq.respectTransparency false
-set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]

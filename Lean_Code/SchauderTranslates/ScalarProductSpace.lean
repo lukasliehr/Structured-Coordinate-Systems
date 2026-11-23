@@ -64,7 +64,7 @@ def product (w : TorusWeight d) (L : ℕ) : TorusWeight (L * d) where
   density x := ∏ i : Fin L, w.density (torusCopiesEquiv L d x i)
   measurable := Finset.measurable_prod _ (fun i _ => w.measurable.comp (by fun_prop))
   positive x := Finset.prod_pos (fun i _ => w.positive _)
-  le_one x := Finset.prod_le_one (fun i _ => (w.positive _).le) (fun i _ => w.le_one _)
+  le_one x := Finset.prod_le_one₀ (fun i _ => (w.positive _).le) (fun i _ => w.le_one _)
 
 theorem product_mass (w : TorusWeight d) (L : ℕ) : (w.product L).mass = w.mass ^ L := by
   change (∫ x, ∏ i : Fin L, w.density (torusCopiesEquiv L d x i)
@@ -87,7 +87,7 @@ theorem product_floor (w : TorusWeight d) {b : ℝ} (hb : 0 ≤ b)
     b ^ L ≤ (w.product L).density x := by
   calc
     b ^ L = ∏ _ : Fin L, b := by simp
-    _ ≤ _ := Finset.prod_le_prod (fun _ _ => hb) (fun _ _ => h _)
+    _ ≤ _ := Finset.prod_le_prod₀ (fun _ _ => hb) (fun _ _ => h _)
 
 end TorusWeight
 end SchauderTranslates

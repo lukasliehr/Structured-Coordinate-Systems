@@ -13,7 +13,7 @@ namespace PositiveBiorthogonal
 variable {𝕜 : Type*} [RCLike 𝕜] {p : ℝ≥0∞}
 
 def cut (s : Set ℝ) (hs : MeasurableSet s) (f : L 𝕜 p) : L 𝕜 p :=
-  (MemLp.indicator hs (Lp.memLp f)).toLp (s.indicator f)
+  (MemLp.indicator hs.nullMeasurableSet (Lp.memLp f)).toLp (s.indicator f)
 
 theorem coeFn_cut (s : Set ℝ) (hs : MeasurableSet s) (f : L 𝕜 p) :
     (cut s hs f : ℝ → 𝕜) =ᵐ[volume] s.indicator f :=

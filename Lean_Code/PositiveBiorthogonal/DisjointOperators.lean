@@ -24,9 +24,11 @@ theorem norm_rpow_add_of_ae_disjoint (hpfin : p ≠ ∞) (f g : L 𝕜 p)
   rcases hx with hz | hz <;> simp [Pi.add_apply, hz, Real.zero_rpow hr]
 
 theorem norm_top_ae_le (f : L 𝕜 ∞) : ∀ᵐ x : ℝ, ‖f x‖ ≤ ‖f‖ := by
+  have htop : eLpNorm (f : ℝ → 𝕜) ∞ volume = eLpNormEssSup (f : ℝ → 𝕜) volume :=
+    eLpNorm_exponent_top (Lp.aestronglyMeasurable f)
   filter_upwards [ae_le_eLpNormEssSup (f := (f : ℝ → 𝕜)) (μ := volume)] with x hx
-  have he := ENNReal.toReal_mono (Lp.eLpNorm_ne_top f) hx
-  simpa only [Lp.norm_def, eLpNorm_exponent_top, toReal_enorm] using he
+  have he := ENNReal.toReal_mono (Lp.eLpNorm_ne_top f) (hx.trans_eq htop.symm)
+  simpa only [Lp.norm_def, toReal_enorm] using he
 
 theorem norm_top_add_le_max_of_ae_disjoint (f g : L 𝕜 ∞)
     (hfg : ∀ᵐ x : ℝ, f x = 0 ∨ g x = 0) : ‖f + g‖ ≤ max ‖f‖ ‖g‖ := by

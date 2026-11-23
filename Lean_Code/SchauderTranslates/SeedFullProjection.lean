@@ -54,7 +54,7 @@ theorem seedPlaneInclusion_first (i₀ : ι) (L : ℕ) :
       EuclideanSpace.single (Sum.inl i₀) 1 := by
   ext i
   cases i with
-  | inl i => simp [Matrix.toEuclideanLin_apply, seedPlaneInclusion, EuclideanSpace.single]
-  | inr j => simp [Matrix.toEuclideanLin_apply, seedPlaneInclusion, EuclideanSpace.single]
+  | inl i => simp [Matrix.toLpLin_apply, seedPlaneInclusion, EuclideanSpace.single]
+  | inr j => simp [Matrix.toLpLin_apply, seedPlaneInclusion, EuclideanSpace.single]
 
 end SchauderTranslates

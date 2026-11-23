@@ -50,7 +50,7 @@ theorem norming_test_L1 (f : L 𝕜 1) :
   refine ⟨hg.toLp _, ?_, ?_⟩
   · rw [Lp.norm_toLp]
     have he : eLpNorm (fun x => normingPhase (f x)) ∞ volume ≤ 1 := by
-      simpa only [eLpNorm_exponent_top, ENNReal.ofReal_one] using
+      simpa only [eLpNorm_exponent_top hmeas, ENNReal.ofReal_one] using
         eLpNormEssSup_le_of_ae_bound hbound
     simpa only [ENNReal.toReal_one] using ENNReal.toReal_mono ENNReal.one_ne_top he
   · unfold pairing
@@ -72,7 +72,8 @@ theorem norm_top_le_of_ae_bound (f : L 𝕜 ∞) (C : ℝ) (hC : 0 ≤ C)
     (hf : ∀ᵐ x : ℝ, ‖f x‖ ≤ C) : ‖f‖ ≤ C := by
   rw [Lp.norm_def]
   have he : eLpNorm f ∞ volume ≤ ENNReal.ofReal C := by
-    simpa only [eLpNorm_exponent_top] using eLpNormEssSup_le_of_ae_bound hf
+    simpa only [eLpNorm_exponent_top (Lp.aestronglyMeasurable f)] using
+      eLpNormEssSup_le_of_ae_bound hf
   exact (ENNReal.toReal_mono ENNReal.ofReal_ne_top he).trans_eq (ENNReal.toReal_ofReal hC)
 
 theorem norming_bound_top (f : L 𝕜 ∞) (C : ℝ) (hC : 0 ≤ C)
@@ -94,7 +95,7 @@ theorem norming_bound_top (f : L 𝕜 ∞) (C : ℝ) (hC : 0 ≤ C)
   obtain ⟨F, hF, hFE, hFpos, hFfin⟩ := volume.exists_subset_measure_lt_top hE hEpos
   let raw := F.indicator (fun x => normingPhase (f x))
   have hraw : MemLp raw 1 volume := by
-    apply (memLp_indicator_const 1 hF (1 : 𝕜) (Or.inr hFfin.ne)).of_le
+    apply (memLp_indicator_const 1 hF.nullMeasurableSet (1 : 𝕜) (Or.inr hFfin.ne)).of_le
       ((stronglyMeasurable_normingPhase f (Lp.stronglyMeasurable f)).indicator hF).aestronglyMeasurable
     apply Eventually.of_forall
     intro x
@@ -140,7 +141,7 @@ theorem norming_bound_top (f : L 𝕜 ∞) (C : ℝ) (hC : 0 ≤ C)
   have hupper := hbound g
   rw [hpair, RCLike.norm_ofReal, abs_of_nonneg hnonneg] at hupper
   have hconst : Integrable (F.indicator (fun _ => a)) volume :=
-    memLp_one_iff_integrable.mp (memLp_indicator_const 1 hF a (Or.inr hFfin.ne))
+    memLp_one_iff_integrable.mp (memLp_indicator_const 1 hF.nullMeasurableSet a (Or.inr hFfin.ne))
   have hlower := integral_mono hconst hreal (show F.indicator (fun _ => a) ≤
       F.indicator (fun y => ‖f y‖) from fun x => by
     by_cases hx : x ∈ F
@@ -196,17 +197,18 @@ theorem norming_bound_interior [ENNReal.HolderConjugate p q]
   have he_norm : eLpNorm raw q volume = eLpNorm f p volume ^ t := by
     calc
       eLpNorm raw q volume = eLpNorm (fun x => ‖f x‖ ^ t) q volume := by
-        apply eLpNorm_congr_norm_ae
-        apply Eventually.of_forall
-        intro x
+        refine eLpNorm_congr_norm_ae
+          (stronglyMeasurable_powerNormingPhase f (Lp.stronglyMeasurable f) t).aestronglyMeasurable
+          ((Lp.stronglyMeasurable f).norm.measurable.pow_const t).aestronglyMeasurable
+          (Eventually.of_forall fun x => ?_)
         rw [norm_powerNormingPhase (f x) t ht,
           Real.norm_eq_abs, abs_of_nonneg (Real.rpow_nonneg (norm_nonneg _) _)]
-      _ = eLpNorm f (q * ENNReal.ofReal t) volume ^ t := eLpNorm_norm_rpow f ht
+      _ = eLpNorm f (q * ENNReal.ofReal t) volume ^ t :=
+        eLpNorm_norm_rpow f (Lp.aestronglyMeasurable f) ht
       _ = eLpNorm f p volume ^ t := by rw [he_exp]
   have hraw : MemLp raw q volume := by
-    refine ⟨(stronglyMeasurable_powerNormingPhase f (Lp.stronglyMeasurable f) t).aestronglyMeasurable, ?_⟩
-    rw [he_norm]
-    exact ENNReal.rpow_lt_top_of_nonneg ht.le (Lp.memLp f).2.ne
+    rw [memLp_iff, he_norm]
+    exact ENNReal.rpow_lt_top_of_nonneg ht.le (Lp.memLp f).eLpNorm_ne_top
   let g : L 𝕜 q := hraw.toLp raw
   have hg_norm : ‖g‖ = ‖f‖ ^ t := by
     rw [Lp.norm_toLp, he_norm, ← ENNReal.toReal_rpow, Lp.norm_def]

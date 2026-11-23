@@ -25,7 +25,8 @@ theorem haarAffine_map_volume (a l : ℝ) (hl : 0 < l) :
   rw [he, ← Measure.map_map (g := fun x : ℝ => a + x) (f := fun x : ℝ => l * x)
     (measurable_const.add measurable_id)
     (measurable_const.mul measurable_id), Real.map_volume_mul_left hl.ne',
-    Measure.map_smul, (measurePreserving_add_left volume a).map_eq, abs_of_pos (inv_pos.mpr hl)]
+    Measure.map_smul (f := fun x : ℝ => a + x) _ (by fun_prop),
+    (measurePreserving_add_left volume a).map_eq, abs_of_pos (inv_pos.mpr hl)]
 
 theorem haarAffine_preimage_interval (a l : ℝ) (hl : 0 < l) :
     (haarAffine a l hl) ⁻¹' Set.Ico a (a + l) = Set.Ico (0 : ℝ) 1 := by

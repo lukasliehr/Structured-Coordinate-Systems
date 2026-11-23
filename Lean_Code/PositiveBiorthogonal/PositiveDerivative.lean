@@ -85,13 +85,13 @@ theorem memLp_positive_conjugate_power (hp1 : 1 < p) (hpfin : p ≠ ∞)
       ← ENNReal.ofReal_toReal hpfin]
     congr 1
     simpa only [mul_comm, ENNReal.toReal_ofReal ENNReal.toReal_nonneg] using hreal.sub_one_mul_conj
-  refine ⟨(hb.1.aemeasurable.pow_const _).aestronglyMeasurable, ?_⟩
+  rw [memLp_iff]
   have he : (fun x => b x ^ (p.toReal - 1)) =ᵐ[volume]
       (fun x => ‖b x‖ ^ (p.toReal - 1)) := by
     filter_upwards [hbpos] with x hx
     rw [Real.norm_eq_abs, abs_of_nonneg hx]
-  rw [eLpNorm_congr_ae he, eLpNorm_norm_rpow b ht, he_exp]
-  exact ENNReal.rpow_lt_top_of_nonneg ht.le hb.2.ne
+  rw [eLpNorm_congr_ae he, eLpNorm_norm_rpow b hb.aestronglyMeasurable ht, he_exp]
+  exact ENNReal.rpow_lt_top_of_nonneg ht.le hb.eLpNorm_ne_top
 
 include q
 
@@ -124,7 +124,8 @@ theorem integrated_positive_derivative (hp1 : 1 < p) (hpfin : p ≠ ∞)
   let D := fun x : ℝ => p.toReal * (b x + h x) ^ (p.toReal - 1) * h x
   have hFmeas (t : ℝ) : AEStronglyMeasurable (F t) volume := by
     simpa only [F, Real.norm_eq_abs, Pi.sub_apply] using
-      ((hb.1.sub (hh.1.const_mul t)).norm.aemeasurable.pow_const p.toReal).aestronglyMeasurable
+      ((hb.aestronglyMeasurable.sub (hh.aestronglyMeasurable.const_mul t)).norm.aemeasurable.pow_const
+        p.toReal).aestronglyMeasurable
   have hFint : Integrable (F 0) volume := by
     simpa only [F, zero_mul, sub_zero, Real.norm_eq_abs] using hb.integrable_norm_rpow hp0 hpfin
   have hF'eq : F' 0 =ᵐ[volume] (fun x => -p.toReal * (b x ^ (p.toReal - 1) * h x)) := by

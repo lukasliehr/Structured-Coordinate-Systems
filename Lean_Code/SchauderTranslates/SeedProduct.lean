@@ -19,7 +19,7 @@ theorem seedProduct_bounds (L : ℕ) {a : ℂ} (ha : ‖a‖ ≤ 1 / 4) (z : Uni
     0 < seedProduct L a z ∧ seedProduct L a z ≤ 1 := by
   constructor
   · exact Finset.prod_pos (fun i _ => lt_of_lt_of_le (by norm_num) (seedFactor_bounds ha (z i)).1)
-  · exact Finset.prod_le_one (fun i _ => (lt_of_lt_of_le (by norm_num) (seedFactor_bounds ha (z i)).1).le)
+  · exact Finset.prod_le_one₀ (fun i _ => (lt_of_lt_of_le (by norm_num) (seedFactor_bounds ha (z i)).1).le)
       (fun i _ => (seedFactor_bounds ha (z i)).2.trans (by norm_num))
 
 @[simp] theorem seedProduct_integral (L : ℕ) (a : ℂ) :

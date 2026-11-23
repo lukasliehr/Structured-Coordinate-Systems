@@ -11,11 +11,11 @@ variable {𝕜 α E : Type*} [RCLike 𝕜] [MeasurableSpace α] {μ : Measure α
   [NormedAddCommGroup E] [InnerProductSpace 𝕜 E]
 
 def lpIndicator (s : Set α) (hs : MeasurableSet s) (f : Lp E 2 μ) : Lp E 2 μ :=
-  (MemLp.indicator hs (Lp.memLp f)).toLp (s.indicator f)
+  (MemLp.indicator hs.nullMeasurableSet (Lp.memLp f)).toLp (s.indicator f)
 
 theorem lpIndicator_ae (s : Set α) (hs : MeasurableSet s) (f : Lp E 2 μ) :
     (lpIndicator s hs f : α → E) =ᵐ[μ] s.indicator f :=
-  (MemLp.indicator hs (Lp.memLp f)).coeFn_toLp
+  (MemLp.indicator hs.nullMeasurableSet (Lp.memLp f)).coeFn_toLp
 
 theorem lpIndicator_norm_le (s : Set α) (hs : MeasurableSet s) (f : Lp E 2 μ) :
     ‖lpIndicator s hs f‖ ≤ ‖f‖ := by

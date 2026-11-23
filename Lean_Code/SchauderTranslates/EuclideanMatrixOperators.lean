@@ -3,8 +3,6 @@ import Lean_Code.SchauderTranslates.HilbertSynthesis
 noncomputable section
 open Matrix ContinuousLinearMap
 open scoped InnerProduct
-set_option backward.isDefEq.respectTransparency false
-set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 variable {ι κ ν : Type*} [Fintype ι] [Fintype κ] [Fintype ν]

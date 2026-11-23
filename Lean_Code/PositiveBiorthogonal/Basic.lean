@@ -54,6 +54,7 @@ theorem positivity_means_real_nonnegative {𝕜 : Type*} [RCLike 𝕜]
 theorem normalization_is_essential_supremum {𝕜 : Type*} [RCLike 𝕜]
     {q : ℝ≥0∞} (g : L 𝕜 q) :
     eLpNorm g ∞ volume = essSup (fun x : ℝ => ‖g x‖ₑ) volume := by
+  rw [eLpNorm_exponent_top (Lp.aestronglyMeasurable g)]
   rfl
 
 theorem pairing_is_integrable {𝕜 : Type*} [RCLike 𝕜]

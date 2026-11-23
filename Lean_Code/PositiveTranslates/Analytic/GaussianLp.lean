@@ -224,10 +224,9 @@ theorem exists_gaussSmooth_atom (hp : p ≠ ∞) {σ : ℝ} (hσ : 0 < σ) (ab :
     calc
       eLpNorm dfun p volume
           ≤ eLpNorm (fun x => gaussBump σ ab.1 x + gaussBump σ ab.2 x) p volume :=
-        eLpNorm_mono_ae_real hbound
+        eLpNorm_mono_ae_real hmeas hbound
       _ ≤ eLpNorm (gaussBump σ ab.1) p volume + eLpNorm (gaussBump σ ab.2) p volume :=
-        eLpNorm_add_le (continuous_gaussBump σ ab.1).aestronglyMeasurable
-          (continuous_gaussBump σ ab.2).aestronglyMeasurable Fact.out
+        eLpNorm_add_le Fact.out
       _ = ENNReal.ofReal (2 * (σ * √(π / p.toReal)) ^ p.toReal⁻¹) := by
         rw [eLpNorm_gaussBump hp hσ, eLpNorm_gaussBump hp hσ, ← ENNReal.ofReal_add hB0 hB0,
           two_mul]

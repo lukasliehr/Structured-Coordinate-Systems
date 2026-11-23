@@ -38,7 +38,7 @@ theorem lpRestrictToSet_ae (f : Lp ℂ p μ) : lpRestrictToSet p μ s f =ᵐ[μ.
 
 theorem lpRestrictToSet_norm_le (f : Lp ℂ p μ) : ‖lpRestrictToSet p μ s f‖ ≤ ‖f‖ := by
   rw [Lp.norm_def, eLpNorm_congr_ae (lpRestrictToSet_ae p μ s f), Lp.norm_def]
-  exact ENNReal.toReal_mono (Lp.memLp f).2.ne (eLpNorm_restrict_le _ _ _ _)
+  exact ENNReal.toReal_mono (Lp.memLp f).eLpNorm_ne_top (eLpNorm_restrict_le _ _ _ _)
 
 def lpRestriction : Lp ℂ p μ →L[ℂ] Lp ℂ p (μ.restrict s) :=
   (lpRestrictToSet p μ s).mkContinuous 1 (fun f => by simpa using lpRestrictToSet_norm_le p μ s f)

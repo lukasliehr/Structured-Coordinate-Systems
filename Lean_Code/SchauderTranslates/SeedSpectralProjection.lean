@@ -62,7 +62,7 @@ theorem seedSpectralMass_projection_norm {a s : ℝ} (ha0 : 0 < a) (ha1 : a < 1)
   have hb := seedEigenvalues_bounds ha0 ha1 hs
   have hd : seedUpperEigenvalue a s - seedLowerEigenvalue a s ≠ 0 := (sub_pos.mpr hb.2.2.2).ne'
   have hgap := seedEigenvalue_gap_product (a := a) hs
-  rw [Matrix.toEuclideanLin_apply, EuclideanSpace.norm_sq_eq]
+  rw [Matrix.toLpLin_apply, EuclideanSpace.norm_sq_eq]
   simp [seedLowerProjection, seedSpectralMass, Matrix.mulVec, dotProduct, Fin.sum_univ_two,
     EuclideanSpace.single, Matrix.smul_apply, Real.norm_eq_abs, sq_abs]
   field_simp

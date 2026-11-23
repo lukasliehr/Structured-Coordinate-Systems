@@ -28,14 +28,16 @@ theorem stepSup_pos {f : L 𝕜 p} (hf : CompactlySupportedStep f) (hne : f ≠ 
     intro h
     apply hne
     apply Lp.eq_zero_iff_ae_eq_zero.mpr
-    exact (eLpNorm_eq_zero_iff (Lp.aestronglyMeasurable f) (by simp : (∞ : ℝ≥0∞) ≠ 0)).mp h
-  exact ENNReal.toReal_pos hnorm hf.memLp_top.2.ne
+    exact (eLpNorm_eq_zero_iff (by simp : (∞ : ℝ≥0∞) ≠ 0)).mp h
+  exact ENNReal.toReal_pos hnorm hf.memLp_top.eLpNorm_ne_top
 
 theorem stepSup_bound {f : L 𝕜 p} (hf : CompactlySupportedStep f) :
     ∀ᵐ x : ℝ, ‖f x‖ ≤ stepSup f := by
+  have htop : eLpNorm (f : ℝ → 𝕜) ∞ volume = eLpNormEssSup (f : ℝ → 𝕜) volume :=
+    eLpNorm_exponent_top (Lp.aestronglyMeasurable f)
   filter_upwards [ae_le_eLpNormEssSup (f := (f : ℝ → 𝕜)) (μ := volume)] with x hx
-  have h := ENNReal.toReal_mono hf.memLp_top.2.ne hx
-  simpa only [stepSup, eLpNorm_exponent_top, toReal_enorm] using h
+  have h := ENNReal.toReal_mono hf.memLp_top.eLpNorm_ne_top (hx.trans_eq htop.symm)
+  simpa only [stepSup, toReal_enorm] using h
 
 def normalizeStep (f : L 𝕜 p) : L 𝕜 p := ((stepSup f : 𝕜)⁻¹) • f
 
@@ -65,7 +67,8 @@ theorem normalizeStep_bounds {f : L 𝕜 p} (hf : CompactlySupportedStep f)
 theorem normalizeStep_sup {f : L 𝕜 p} (hf : CompactlySupportedStep f) (hne : f ≠ 0) :
     eLpNorm (normalizeStep f) ∞ volume = 1 := by
   have hc := stepSup_pos hf hne
-  have he : ENNReal.ofReal (stepSup f) = eLpNorm f ∞ volume := ENNReal.ofReal_toReal hf.memLp_top.2.ne
+  have he : ENNReal.ofReal (stepSup f) = eLpNorm f ∞ volume :=
+    ENNReal.ofReal_toReal hf.memLp_top.eLpNorm_ne_top
   rw [normalizeStep, eLpNorm_congr_ae (Lp.coeFn_smul ((stepSup f : 𝕜)⁻¹) f),
     eLpNorm_const_smul, ← ofReal_norm, norm_inv, RCLike.norm_ofReal, abs_of_pos hc,
     ← he, ← ENNReal.ofReal_mul (inv_nonneg.mpr hc.le), inv_mul_cancel₀ hc.ne', ENNReal.ofReal_one]

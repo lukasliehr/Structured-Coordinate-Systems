@@ -45,7 +45,7 @@ theorem seedComplexLowerProjection_mass {a s : ℝ} (ha0 : 0 < a) (ha1 : a < 1) 
     ‖(seedComplexLowerProjection a s).toEuclideanLin (EuclideanSpace.single 0 (1 : ℂ))‖ ^ 2 =
       seedSpectralMass a s := by
   have h := seedSpectralMass_projection_norm ha0 ha1 hs
-  rw [Matrix.toEuclideanLin_apply, EuclideanSpace.norm_sq_eq] at h ⊢
+  rw [Matrix.toLpLin_apply, EuclideanSpace.norm_sq_eq] at h ⊢
   simpa [seedComplexLowerProjection, Matrix.mulVec, dotProduct, Fin.sum_univ_two,
     EuclideanSpace.single, Matrix.map_apply, Complex.norm_real, Real.norm_eq_abs] using h
 

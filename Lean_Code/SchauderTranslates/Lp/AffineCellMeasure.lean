@@ -45,7 +45,8 @@ theorem affineCell_measurePreserving (a b c r : ℝ) (hr : 0 < r) :
       (volume.restrict (Set.Ico c (c + r * (b - a)))) := by
   constructor
   · exact (affineCell a c r hr).measurable
-  · rw [Measure.map_smul, affineCell_map_interval, smul_smul,
+  · rw [Measure.map_smul _ (affineCell a c r hr).measurable.aemeasurable,
+      affineCell_map_interval, smul_smul,
       ← ENNReal.ofReal_mul hr.le, mul_inv_cancel₀ hr.ne', ENNReal.ofReal_one, one_smul]
 
 end SchauderTranslates.LpConstruction

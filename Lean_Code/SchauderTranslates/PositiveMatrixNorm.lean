@@ -10,7 +10,7 @@ variable {ι : Type*} [Fintype ι] [DecidableEq ι]
 
 theorem matrixHilbert_nonneg {B : Matrix ι ι ℂ} (hB : B.PosSemidef) :
     0 ≤ (Matrix.toEuclideanCLM (𝕜 := ℂ) (n := ι)) B := by
-  apply (ContinuousLinearMap.nonneg_iff_isPositive _).mpr
+  apply ContinuousLinearMap.nonneg_iff_isPositive.mpr
   exact Matrix.isPositive_toEuclideanLin_iff.mpr hB
 
 /-- A positive-matrix order bound controls the Euclidean operator norm. -/

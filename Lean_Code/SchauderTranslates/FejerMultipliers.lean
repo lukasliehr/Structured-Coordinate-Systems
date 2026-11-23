@@ -46,7 +46,7 @@ theorem torusFejerMultiplier_nonneg {d : ℕ} (N : ℕ) (k : Fin d → ℤ) :
 
 theorem torusFejerMultiplier_le_one {d : ℕ} (N : ℕ) (k : Fin d → ℤ) :
     torusFejerMultiplier N k ≤ 1 :=
-  Finset.prod_le_one (fun i _ => fejerMultiplier_nonneg N (k i)) (fun i _ => fejerMultiplier_le_one N (k i))
+  Finset.prod_le_one₀ (fun i _ => fejerMultiplier_nonneg N (k i)) (fun i _ => fejerMultiplier_le_one N (k i))
 
 @[simp] theorem torusFejerMultiplier_zero (d N : ℕ) : torusFejerMultiplier N (0 : Fin d → ℤ) = 1 := by
   simp [torusFejerMultiplier]

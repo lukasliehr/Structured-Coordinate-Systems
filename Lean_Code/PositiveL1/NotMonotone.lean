@@ -245,7 +245,7 @@ theorem measure_pos_inter_eq_zero_or_diff_eq_zero (b : SchauderBasis 𝕜 (Lp �
     (hS : MeasurableSet S) :
     μ ({a | 0 < b 0 a} ∩ S) = 0 ∨ μ ({a | 0 < b 0 a} \ S) = 0 := by
   -- the function `x = 1_S • b 0`
-  have hmem : MemLp (S.indicator (b 0 : α → 𝕜)) 1 μ := (Lp.memLp (b 0)).indicator hS
+  have hmem : MemLp (S.indicator (b 0 : α → 𝕜)) 1 μ := (Lp.memLp (b 0)).indicator hS.nullMeasurableSet
   set x : Lp 𝕜 1 μ := hmem.toLp _
   have hxae : ∀ᵐ a ∂μ, x a = S.indicator (b 0 : α → 𝕜) a := hmem.coeFn_toLp
   have hx0 : ∀ᵐ a ∂μ, 0 ≤ x a := by

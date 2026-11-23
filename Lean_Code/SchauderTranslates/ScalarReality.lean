@@ -73,7 +73,7 @@ theorem rawGram_le_one (s : ScalarData d n) : s.rawGram ≤ 1 := by
   have h : Φ s.rawGram ≤ 1 := by
     simpa using (CStarAlgebra.norm_le_iff_le_algebraMap (Φ s.rawGram) zero_le_one
       (matrixHilbert_nonneg s.rawGram_posDef.posSemidef)).mp s.rawGram_norm_le_one
-  have hp := (ContinuousLinearMap.nonneg_iff_isPositive _).mp (sub_nonneg.mpr h)
+  have hp := ContinuousLinearMap.nonneg_iff_isPositive.mp (sub_nonneg.mpr h)
   rw [Matrix.le_iff]
   apply Matrix.isPositive_toEuclideanLin_iff.mp
   change (Φ (1 - s.rawGram)).IsPositive

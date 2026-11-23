@@ -176,8 +176,9 @@ theorem exists_nonneg_step_near_continuous (hp : p ≠ ∞) {u : ℝ → ℝ} (h
       filter_upwards [sampleLp_ae (p := p) u (-(R : ℝ)) δ m] with x hx
       rw [hx, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs]
       exact hpt x
-    refine (eLpNorm_mono_ae_real hae).trans ?_
-    rw [eLpNorm_indicator_const measurableSet_Ico hp0 hp, Real.volume_Ico,
+    refine (eLpNorm_mono_ae_real ((Lp.aestronglyMeasurable _).sub
+      (Complex.continuous_ofReal.comp hu).aestronglyMeasurable) hae).trans ?_
+    rw [eLpNorm_indicator_const measurableSet_Ico.nullMeasurableSet hp0 hp, Real.volume_Ico,
       Real.enorm_eq_ofReal hη0.le, ENNReal.ofReal_rpow_of_nonneg (by linarith) (by positivity),
       ← ENNReal.ofReal_mul hη0.le]
     apply ENNReal.ofReal_le_ofReal
@@ -207,7 +208,8 @@ theorem exists_nonneg_compactStep_near (hp : p ≠ ∞) (g : LebesgueLp p) (hg :
   rw [Lp.norm_def]
   apply ENNReal.toReal_le_of_le_ofReal hε.le
   have h2 : eLpNorm (fun x => (u x : ℂ) - g x) p volume ≤ ENNReal.ofReal (ε / 2) := by
-    refine le_trans (eLpNorm_mono_ae ?_) hwε
+    refine le_trans (eLpNorm_mono_ae ((Complex.continuous_ofReal.comp hucont).aestronglyMeasurable.sub
+      (Lp.aestronglyMeasurable g)) ?_) hwε
     filter_upwards [hgf] with x hx
     rw [hx.1, ← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs, Pi.sub_apply,
       Real.norm_eq_abs]
@@ -225,11 +227,7 @@ theorem exists_nonneg_compactStep_near (hp : p ≠ ∞) (g : LebesgueLp p) (hg :
       simp
     _ ≤ eLpNorm (fun x => v x - (u x : ℂ)) p volume +
           eLpNorm (fun x => (u x : ℂ) - g x) p volume :=
-      eLpNorm_add_le
-        ((Lp.aestronglyMeasurable v).sub
-          (Complex.continuous_ofReal.comp hucont).aestronglyMeasurable)
-        ((Complex.continuous_ofReal.comp hucont).aestronglyMeasurable.sub
-          (Lp.aestronglyMeasurable g)) Fact.out
+      eLpNorm_add_le Fact.out
     _ ≤ ENNReal.ofReal (ε / 2) + ENNReal.ofReal (ε / 2) := add_le_add hv3 h2
     _ = ENNReal.ofReal ε := by
       rw [← ENNReal.ofReal_add (half_pos hε).le (half_pos hε).le, add_halves]

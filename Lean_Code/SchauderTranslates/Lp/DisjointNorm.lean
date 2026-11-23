@@ -15,7 +15,7 @@ variable {α E : Type*} [MeasurableSpace α] [NormedAddCommGroup E]
 theorem integral_norm_rpow (f : Lp E p μ) (hp0 : p ≠ 0) (hpfin : p ≠ ∞) :
     (∫ x, ‖f x‖ ^ p.toReal ∂μ) = ‖f‖ ^ p.toReal := by
   have hnorm : ‖f‖ = (∫ x, ‖f x‖ ^ p.toReal ∂μ) ^ p.toReal⁻¹ := by
-    rw [Lp.norm_def, toReal_eLpNorm (Lp.aestronglyMeasurable f)]
+    rw [Lp.norm_def, toReal_eLpNorm]
     exact lpNorm_eq_integral_norm_rpow_toReal hp0 hpfin (Lp.aestronglyMeasurable f)
   have hnonneg : 0 ≤ ∫ x, ‖f x‖ ^ p.toReal ∂μ :=
     integral_nonneg (fun _ => Real.rpow_nonneg (norm_nonneg _) _)

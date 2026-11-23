@@ -162,7 +162,7 @@ theorem aff_measurePreserving (i : ι) :
   exact h
 
 theorem aff_quasiMeasurePreserving (i : ι) :
-    Measure.QuasiMeasurePreserving (R.aff i) volume volume := by
+    QuasiMeasurePreserving (R.aff i) volume volume := by
   refine ⟨(R.aff i).measurable, ?_⟩
   rw [aff, affineCell, haarAffine_map_volume]
   exact Measure.smul_absolutelyContinuous
@@ -304,14 +304,15 @@ theorem lintegral_fn [Countable ι] (hp0 : p ≠ 0) (hpfin : p ≠ ∞) (f : ℝ
   change ‖R.fn p f x‖ₑ ^ p.toReal = ENNReal.ofReal (R.slope i) * ‖f (R.aff i x)‖ₑ ^ p.toReal
   rw [R.fn_of_mem hx, enorm_mul, ENNReal.mul_rpow_of_nonneg _ _ hpR.le, hw]
 
-theorem eLpNorm_fn [Countable ι] (hp0 : p ≠ 0) (hpfin : p ≠ ∞) (f : ℝ → ℂ) :
+theorem eLpNorm_fn [Countable ι] (hp0 : p ≠ 0) (hpfin : p ≠ ∞) {f : ℝ → ℂ} (hf : Measurable f) :
     eLpNorm (R.fn p f) p volume = eLpNorm f p (volume.restrict R.srcUnion) := by
-  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal hp0 hpfin,
-    eLpNorm_eq_lintegral_rpow_enorm_toReal hp0 hpfin, R.lintegral_fn hp0 hpfin]
+  rw [eLpNorm_eq_lintegral_rpow_enorm_toReal hp0 hpfin (R.fn_measurable hf).aestronglyMeasurable,
+    eLpNorm_eq_lintegral_rpow_enorm_toReal hp0 hpfin hf.aestronglyMeasurable,
+    R.lintegral_fn hp0 hpfin]
 
-theorem eLpNorm_fn_le [Countable ι] (hp0 : p ≠ 0) (hpfin : p ≠ ∞) (f : ℝ → ℂ) :
+theorem eLpNorm_fn_le [Countable ι] (hp0 : p ≠ 0) (hpfin : p ≠ ∞) {f : ℝ → ℂ} (hf : Measurable f) :
     eLpNorm (R.fn p f) p volume ≤ eLpNorm f p volume := by
-  rw [R.eLpNorm_fn hp0 hpfin]
+  rw [R.eLpNorm_fn hp0 hpfin hf]
   exact eLpNorm_mono_measure f Measure.restrict_le_self
 
 end Rearrangement

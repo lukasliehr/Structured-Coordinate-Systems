@@ -53,7 +53,9 @@ theorem complexifyLp_ae (h : Lp ℝ p μ) :
 theorem norm_complexifyLp (h : Lp ℝ p μ) : ‖complexifyLp p μ h‖ = ‖h‖ := by
   rw [Lp.norm_def, Lp.norm_def, eLpNorm_congr_ae (complexifyLp_ae h)]
   congr 1
-  exact eLpNorm_congr_norm_ae (Eventually.of_forall fun x => by simp)
+  exact eLpNorm_congr_norm_ae
+    (Complex.continuous_ofReal.comp_aestronglyMeasurable (Lp.aestronglyMeasurable h))
+    (Lp.aestronglyMeasurable h) (Eventually.of_forall fun x => by simp)
 
 /-- Complexification as a linear isometry. -/
 def complexifyLpₗᵢ (p : ℝ≥0∞) (μ : Measure α) [Fact (1 ≤ p)] : Lp ℝ p μ →ₗᵢ[ℝ] Lp ℂ p μ where

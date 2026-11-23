@@ -7,7 +7,7 @@ namespace SchauderTranslates
 /-- A uniform floor, also when the slow parameter varies. -/
 theorem seedProduct_floor (L : ℕ) {a : ℂ} (ha : ‖a‖ ≤ 1 / 4)
     (z : UnitAddTorus (Fin L)) : (1 / 4 : ℝ) ^ L ≤ seedProduct L a z := by
-  have h := Finset.prod_le_prod (s := Finset.univ)
+  have h := Finset.prod_le_prod₀ (s := Finset.univ)
     (f := fun _ : Fin L => (1 / 4 : ℝ)) (g := fun i => seedFactor a (z i))
     (fun _ _ => by norm_num) (fun i _ => (seedFactor_bounds ha (z i)).1)
   simpa only [seedProduct, Finset.prod_const, Finset.card_univ, Fintype.card_fin] using h

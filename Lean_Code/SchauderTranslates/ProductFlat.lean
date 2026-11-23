@@ -50,7 +50,7 @@ theorem M_le_one : E.M ≤ 1 := by
   have h0 := T.st.toTorusWeight.mass_pos
   have hp : T.st.mass ^ T.Mt ≤ 1 := pow_le_one₀ h0.le h1
   have hq : ∏ c, (E.a c).mass ≤ 1 :=
-    Finset.prod_le_one (fun c _ => (E.a c).mass_positive.le) (fun c _ => (E.a c).mass_le_one)
+    Finset.prod_le_one₀ (fun c _ => (E.a c).mass_positive.le) (fun c _ => (E.a c).mass_le_one)
   unfold M
   have := pow_nonneg h0.le T.Mt
   nlinarith [Finset.prod_nonneg (fun c (_ : c ∈ Finset.univ) => (E.a c).mass_positive.le)]
@@ -64,9 +64,9 @@ theorem Wraw_pos (t : ℝ) (y : E.Fast) : 0 < E.Wraw t y := by
 theorem Wraw_le_one (t : ℝ) (y : E.Fast) : E.Wraw t y ≤ 1 := by
   unfold Wraw
   have h1 : ∏ b, T.st.density (y.1 b) ≤ 1 :=
-    Finset.prod_le_one (fun b _ => (T.st.positive _).le) (fun b _ => T.st.le_one _)
+    Finset.prod_le_one₀ (fun b _ => (T.st.positive _).le) (fun b _ => T.st.le_one _)
   have h2 : ∏ c, (E.a c).raw ((t, y.1), y.2 c) ≤ 1 :=
-    Finset.prod_le_one (fun c _ => ((E.a c).raw_bounds _).1.le) (fun c _ => ((E.a c).raw_bounds _).2)
+    Finset.prod_le_one₀ (fun c _ => ((E.a c).raw_bounds _).1.le) (fun c _ => ((E.a c).raw_bounds _).2)
   have h0 : 0 ≤ ∏ c, (E.a c).raw ((t, y.1), y.2 c) :=
     Finset.prod_nonneg (fun c _ => ((E.a c).raw_bounds _).1.le)
   have h0' : 0 ≤ ∏ b, T.st.density (y.1 b) :=

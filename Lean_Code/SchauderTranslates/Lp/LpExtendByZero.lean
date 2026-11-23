@@ -16,7 +16,7 @@ variable (p : ℝ≥0∞) (μ : Measure α) (s : Set α) (hs : MeasurableSet s)
 include hs in
 theorem lpExtend_memLp (f : Lp ℂ p (μ.restrict s)) :
     MemLp (s.indicator (f : α → ℂ)) p μ :=
-  (memLp_indicator_iff_restrict (μ := μ) (p := p) (f := (f : α → ℂ)) hs).mpr (Lp.memLp f)
+  (memLp_indicator_iff_restrict (μ := μ) (p := p) (f := (f : α → ℂ)) hs.nullMeasurableSet).mpr (Lp.memLp f)
 
 def lpExtendByZero : Lp ℂ p (μ.restrict s) →ₗ[ℂ] Lp ℂ p μ where
   toFun f := (lpExtend_memLp p μ s hs f).toLp _
@@ -64,7 +64,7 @@ variable [Fact (1 ≤ p)]
 theorem lpExtendByZero_norm (f : Lp ℂ p (μ.restrict s)) :
     ‖lpExtendByZero p μ s hs f‖ = ‖f‖ := by
   rw [Lp.norm_def, eLpNorm_congr_ae (lpExtendByZero_ae p μ s hs f),
-    eLpNorm_indicator_eq_eLpNorm_restrict hs, Lp.norm_def]
+    eLpNorm_indicator_eq_eLpNorm_restrict hs.nullMeasurableSet, Lp.norm_def]
 
 def lpExtendByZeroIsometry : Lp ℂ p (μ.restrict s) →ₗᵢ[ℂ] Lp ℂ p μ where
   toLinearMap := lpExtendByZero p μ s hs
