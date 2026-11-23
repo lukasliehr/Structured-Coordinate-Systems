@@ -1,8 +1,10 @@
-import Lean_Code.PositiveTranslates.Packet.Main
-import Lean_Code.PositiveTranslates.Local.Main
-import Lean_Code.PositiveTranslates.Global.Main
-import Lean_Code.PositiveTranslates.Forest.Main
-import Lean_Code.PositiveTranslates.Machine.Intervals
+module
+
+public import Lean_Code.PositiveTranslates.Packet.Main
+public import Lean_Code.PositiveTranslates.Local.Main
+public import Lean_Code.PositiveTranslates.Global.Main
+public import Lean_Code.PositiveTranslates.Forest.Main
+public import Lean_Code.PositiveTranslates.Machine.Intervals
 
 /-!
 # States of the reference construction
@@ -30,6 +32,8 @@ The finite-stage data of the reference construction for Theorem 1.4 (ii) of the 
 * `Step` : the relation between a state and its successor;
 * `initRaw` : the initial state.
 -/
+
+@[expose] public section
 
 noncomputable section
 

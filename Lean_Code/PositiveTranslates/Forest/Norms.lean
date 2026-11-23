@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Defs
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Defs
 
 /-!
 # The `ℓ^r` structure of the coordinates of a positive forest
@@ -19,6 +21,8 @@ and translate the hypothesis `lr_norm` into statements about the norm of `Z`:
 Because of these facts all `ℓ^r` computations of the paper can be carried out with the
 norm (and the triangle inequality) of `Z` itself.
 -/
+
+@[expose] public section
 
 noncomputable section
 

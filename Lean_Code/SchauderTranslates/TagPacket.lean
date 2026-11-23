@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.TagKernel
-import Lean_Code.SchauderTranslates.SelectiveMeans
+module
+
+public import Lean_Code.SchauderTranslates.TagKernel
+public import Lean_Code.SchauderTranslates.SelectiveMeans
 
 /-!
 # Well-conditioned carrier packets
@@ -10,6 +12,8 @@ independent tag blocks, so the packet norm splits into the centered tag variance
 the norm of the explicit mean `Σ_j E_j e_{λ_j}`. No conditioning of the line Gram enters
 the resulting prefix bound.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

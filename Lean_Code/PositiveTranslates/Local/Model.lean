@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.RootVector
-import Lean_Code.PositiveTranslates.Local.StepBridge
+module
+
+public import Lean_Code.PositiveTranslates.Local.RootVector
+public import Lean_Code.PositiveTranslates.Local.StepBridge
 
 /-!
 # The model basis of `Lᵖ(ℝ)`
@@ -8,6 +10,8 @@ For `1 < p < ∞` and every `B > 1` the non-negative Schauder basis of `Lᵖ(ℝ
 `Lean_Code/PositiveBiorthogonal`, normalized in `Lᵖ`, is a `LocalBasis p r Set.univ B` whose
 first vector is the indicator of the unit interval, `r 0 = intervalAtom p (0, 1)`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

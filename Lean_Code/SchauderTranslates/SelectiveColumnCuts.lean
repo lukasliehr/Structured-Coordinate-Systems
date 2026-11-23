@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveCompleteColumns
-import Lean_Code.SchauderTranslates.SelectedColumnMask
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveCompleteColumns
+public import Lean_Code.SchauderTranslates.SelectedColumnMask
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

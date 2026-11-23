@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.ProductEngines
-import Lean_Code.SchauderTranslates.ProductSetup
+module
+
+public import Lean_Code.SchauderTranslates.ProductEngines
+public import Lean_Code.SchauderTranslates.ProductSetup
 
 /-!
 # Slow vectors in the combined product law
@@ -8,6 +10,8 @@ Line functions and lifted residuals are slow in the combined law of tags and eng
 Their inner products are computed in the slow law, and those of line functions in the
 normalized line law.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

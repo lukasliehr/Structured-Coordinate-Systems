@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedFactor
-import Lean_Code.SchauderTranslates.FejerMoments
+module
+
+public import Lean_Code.SchauderTranslates.SeedFactor
+public import Lean_Code.SchauderTranslates.FejerMoments
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

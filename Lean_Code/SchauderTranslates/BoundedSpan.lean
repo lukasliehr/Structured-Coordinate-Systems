@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.BoundedIndependence
+module
+
+public import Lean_Code.SchauderTranslates.BoundedIndependence
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

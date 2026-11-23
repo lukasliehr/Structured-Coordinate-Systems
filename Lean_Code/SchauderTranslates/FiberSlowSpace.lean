@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.FiberSlowLift
-import Lean_Code.SchauderTranslates.FiberMeanProjection
-import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
+module
+
+public import Lean_Code.SchauderTranslates.FiberSlowLift
+public import Lean_Code.SchauderTranslates.FiberMeanProjection
+public import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

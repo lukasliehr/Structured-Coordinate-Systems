@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.RealComplexQuadratic
-import Lean_Code.SchauderTranslates.MatrixReindexNorm
+module
+
+public import Lean_Code.SchauderTranslates.RealComplexQuadratic
+public import Lean_Code.SchauderTranslates.MatrixReindexNorm
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

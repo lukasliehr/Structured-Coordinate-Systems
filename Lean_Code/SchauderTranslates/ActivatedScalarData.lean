@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ActivationTorus
-import Lean_Code.SchauderTranslates.ActivatedCenteredPrefix
-import Lean_Code.SchauderTranslates.ScalarInverseNorm
+module
+
+public import Lean_Code.SchauderTranslates.ActivationTorus
+public import Lean_Code.SchauderTranslates.ActivatedCenteredPrefix
+public import Lean_Code.SchauderTranslates.ScalarInverseNorm
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

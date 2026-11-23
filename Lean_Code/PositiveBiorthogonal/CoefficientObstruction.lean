@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.PairingNorms
-import Lean_Code.PositiveBiorthogonal.SupportObstruction
-import Lean_Code.PositiveBiorthogonal.BasisCriterion
+module
+
+public import Lean_Code.PositiveBiorthogonal.PairingNorms
+public import Lean_Code.PositiveBiorthogonal.SupportObstruction
+public import Lean_Code.PositiveBiorthogonal.BasisCriterion
 
 /-! Strictness of the first projection for nonnegative represented coefficients. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

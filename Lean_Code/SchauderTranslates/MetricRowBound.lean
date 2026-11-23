@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ExtendedRowSplit
-import Lean_Code.SchauderTranslates.SplitRowMetric
+module
+
+public import Lean_Code.SchauderTranslates.ExtendedRowSplit
+public import Lean_Code.SchauderTranslates.SplitRowMetric
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace

@@ -1,10 +1,12 @@
-import Lean_Code.SchauderTranslates.ProductRaw
-import Lean_Code.SchauderTranslates.ProductExtensionProof
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.SchauderTranslates.Sharp.SelectiveSupplySharp
-import Lean_Code.SchauderTranslates.Sharp.ProductModelSharp
-import Lean_Code.SchauderTranslates.Sharp.RealResidual
-import Lean_Code.SchauderTranslates.Sharp.Evenness
+module
+
+public import Lean_Code.SchauderTranslates.ProductRaw
+public import Lean_Code.SchauderTranslates.ProductExtensionProof
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.SchauderTranslates.Sharp.SelectiveSupplySharp
+public import Lean_Code.SchauderTranslates.Sharp.ProductModelSharp
+public import Lean_Code.SchauderTranslates.Sharp.RealResidual
+public import Lean_Code.SchauderTranslates.Sharp.Evenness
 
 /-!
 # The sharp finite extension on a product space (paper: Proposition 16.1, product part)
@@ -24,6 +26,8 @@ tag gain `z` (with `(d+1) z ≤ u`, so `K_V² ≤ (1+u)³`), then `α` and `N`, 
 of gain exactly `z`, the coupling `κ`, and only then the selective engines (`2ε ≤ u`,
 `K_s < 1 + u`, hence `K_sel² ≤ 1 + 16u`) and their number of copies (`n j ≈ u/20`).
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

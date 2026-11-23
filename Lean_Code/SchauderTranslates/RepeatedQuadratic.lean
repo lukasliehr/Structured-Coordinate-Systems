@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.RepeatedMatrix
-import Lean_Code.SchauderTranslates.GramGeometry
+module
+
+public import Lean_Code.SchauderTranslates.RepeatedMatrix
+public import Lean_Code.SchauderTranslates.GramGeometry
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

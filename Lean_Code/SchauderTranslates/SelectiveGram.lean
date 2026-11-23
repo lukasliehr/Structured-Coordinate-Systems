@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SelectiveIntegrals
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveIntegrals
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

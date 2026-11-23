@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.BasicLp
+module
+
+public import Lean_Code.PositiveBiorthogonal.BasicLp
 
 /-! Closure and integrability of the exact interval-step-function class. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

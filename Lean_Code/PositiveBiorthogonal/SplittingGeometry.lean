@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Averaging
+module
+
+public import Lean_Code.PositiveBiorthogonal.Averaging
 
 /-! The scalar geometric bounds and interval splits used by the deterministic schedule. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

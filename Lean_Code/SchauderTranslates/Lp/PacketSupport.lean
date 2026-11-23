@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.Placement
+module
+
+public import Lean_Code.SchauderTranslates.Lp.Placement
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

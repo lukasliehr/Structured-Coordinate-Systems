@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.LineTransferWeight
+module
+
+public import Lean_Code.SchauderTranslates.LineTransferWeight
 
 /-!
 # Finite extension on the line
@@ -10,6 +12,8 @@ Every Gram entry, source moment, the target norm and the reference
 loss converge, and the strict finite Gram conclusions persist.
 This reduces `Construction.FiniteExtensionPrinciple` to `ProductExtension`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

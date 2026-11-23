@@ -1,4 +1,6 @@
-import Lean_Code.Basis.Criterion
+module
+
+public import Lean_Code.Basis.Criterion
 
 /-!
 # Basic sequences
@@ -8,6 +10,8 @@ of its closed linear span.  We record the consequence in the form used by the gl
 splitting: continuous coordinate functionals on the closed span, biorthogonal to the
 sequence, with uniformly bounded and strongly convergent partial sums.
 -/
+
+@[expose] public section
 
 noncomputable section
 

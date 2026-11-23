@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.PlaneSpaceRowBound
-import Lean_Code.SchauderTranslates.OrthogonalRowAssembly
+module
+
+public import Lean_Code.SchauderTranslates.PlaneSpaceRowBound
+public import Lean_Code.SchauderTranslates.OrthogonalRowAssembly
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

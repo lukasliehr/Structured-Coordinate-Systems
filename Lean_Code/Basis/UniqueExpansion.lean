@@ -1,5 +1,7 @@
-import Mathlib
-import Lean_Code.Basis.Criterion
+module
+
+public import Mathlib
+public import Lean_Code.Basis.Criterion
 
 /-!
 # Banach's theorem: unique expansions give a Schauder basis
@@ -29,6 +31,8 @@ coefficient functionals of a sequence with unique expansions are automatically c
   the coefficients and biorthogonality follow from uniqueness, and
   `StructuredBases.ofCoord` packages everything as a `SchauderBasis`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

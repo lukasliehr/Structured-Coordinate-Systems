@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.TagPacket
-import Lean_Code.SchauderTranslates.BoundedSpan
+module
+
+public import Lean_Code.SchauderTranslates.TagPacket
+public import Lean_Code.SchauderTranslates.BoundedSpan
 
 /-!
 # Mean-one tags and lifted residuals
@@ -9,6 +11,8 @@ gain `z` has variance `1/z`. Attaching it to every carrier row lifts a slow resi
 `r = Σ_j c_j e_{λ_j}` to a packet vector with conditional mean `r` and squared norm
 `‖r‖² + Σ_j |c_j|²/z`. Replicas in disjoint tag blocks have inner product `‖r‖²`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.FiniteActivatedPrefix
-import Lean_Code.SchauderTranslates.CenteredMetricGram
+module
+
+public import Lean_Code.SchauderTranslates.FiniteActivatedPrefix
+public import Lean_Code.SchauderTranslates.CenteredMetricGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

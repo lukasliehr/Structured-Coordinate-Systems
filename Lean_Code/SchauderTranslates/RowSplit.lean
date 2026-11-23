@@ -1,8 +1,12 @@
-import Lean_Code.SchauderTranslates.HilbertBlocks
-import Lean_Code.SchauderTranslates.SkewDecomposition
-import Lean_Code.SchauderTranslates.SplitRowModel
-import Lean_Code.SchauderTranslates.RealComplexNorm
-import Lean_Code.SchauderTranslates.SplitRowMetric
+module
+
+public import Lean_Code.SchauderTranslates.HilbertBlocks
+public import Lean_Code.SchauderTranslates.SkewDecomposition
+public import Lean_Code.SchauderTranslates.SplitRowModel
+public import Lean_Code.SchauderTranslates.RealComplexNorm
+public import Lean_Code.SchauderTranslates.SplitRowMetric
+
+@[expose] public section
 
 noncomputable section
 open scoped InnerProductSpace InnerProduct MatrixOrder

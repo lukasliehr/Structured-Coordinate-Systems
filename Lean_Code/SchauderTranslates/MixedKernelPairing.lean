@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.BoundedRepresentatives
+module
+
+public import Lean_Code.SchauderTranslates.BoundedRepresentatives
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

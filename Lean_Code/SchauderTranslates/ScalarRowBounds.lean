@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
-import Lean_Code.SchauderTranslates.OrderedActivation
+module
+
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+public import Lean_Code.SchauderTranslates.OrderedActivation
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

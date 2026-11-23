@@ -1,8 +1,12 @@
-import Lean_Code.SchauderTranslates.CarrierCoordinatesForKernel
-import Lean_Code.SchauderTranslates.OrthonormalCarrier
-import Lean_Code.SchauderTranslates.WeightedCarrierSpan
-import Lean_Code.SchauderTranslates.CaptureInvariance
-import Lean_Code.SchauderTranslates.CoordinateSubspaces
+module
+
+public import Lean_Code.SchauderTranslates.CarrierCoordinatesForKernel
+public import Lean_Code.SchauderTranslates.OrthonormalCarrier
+public import Lean_Code.SchauderTranslates.WeightedCarrierSpan
+public import Lean_Code.SchauderTranslates.CaptureInvariance
+public import Lean_Code.SchauderTranslates.CoordinateSubspaces
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

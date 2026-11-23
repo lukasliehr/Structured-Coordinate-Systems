@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.RowSplit
-import Lean_Code.SchauderTranslates.SelectiveColumnCuts
+module
+
+public import Lean_Code.SchauderTranslates.RowSplit
+public import Lean_Code.SchauderTranslates.SelectiveColumnCuts
 
 /-!
 # Norm of a sum of two idempotents (paper: (15.13))
@@ -13,6 +15,8 @@ Coordinate masks (diagonal `0/1` matrices) conjugated by the square root of a po
 definite Gram matrix are idempotent, so the bound applies to
 `gramConjugate H (D₁ + D₂)` for coordinate masks `D₁`, `D₂`, `D₁ + D₂`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

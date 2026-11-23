@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.RearrangementOp
-import Lean_Code.SchauderTranslates.Lp.IndexedIntervalStep
+module
+
+public import Lean_Code.PositiveTranslates.Local.RearrangementOp
+public import Lean_Code.SchauderTranslates.Lp.IndexedIntervalStep
 
 /-!
 # Piecewise affine rearrangements: step functions and local bases
@@ -14,6 +16,8 @@ compactly supported step functions (`Rearrangement.op_isCompactStep`).
 `Lᵖ(⋃ targets)` with the same prefix constant. `Rearrangement.isCellIsometry_compIsometry`
 composes a cell isometry onto `Lᵖ(⋃ sources)` with the operator of the rearrangement.
 -/
+
+@[expose] public section
 
 noncomputable section
 

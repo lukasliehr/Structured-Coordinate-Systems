@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
 
 /-! A finite rank projection with a minimal number of rank-one summands is biorthogonal. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped BigOperators

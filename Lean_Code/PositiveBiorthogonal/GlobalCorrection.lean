@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.RawBasis
-import Lean_Code.PositiveBiorthogonal.SmallPerturbation
+module
+
+public import Lean_Code.PositiveBiorthogonal.RawBasis
+public import Lean_Code.PositiveBiorthogonal.SmallPerturbation
 
 /-! The operator-norm sums of the paired local corrections and their invertible perturbations. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

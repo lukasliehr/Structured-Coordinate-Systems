@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.CutoffMatrix
-import Lean_Code.SchauderTranslates.MarkedScalarGram
+module
+
+public import Lean_Code.SchauderTranslates.CutoffMatrix
+public import Lean_Code.SchauderTranslates.MarkedScalarGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

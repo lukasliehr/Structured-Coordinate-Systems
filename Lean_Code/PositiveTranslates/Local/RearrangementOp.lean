@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Local.Rearrangement
+module
+
+public import Lean_Code.PositiveTranslates.Local.Rearrangement
 
 /-!
 # Piecewise affine rearrangements: the operator on `Lᵖ(ℝ)`
@@ -15,6 +17,8 @@ exponent `p`, `R.op hpfin : Lᵖ(ℝ) →ₗ[ℂ] Lᵖ(ℝ)` is the class of the
 
 Consequently it maps `Lᵖ(⋃ sources)` isometrically onto `Lᵖ(⋃ targets)`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

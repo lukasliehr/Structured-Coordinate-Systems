@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.SelectiveReference
-import Lean_Code.SchauderTranslates.FiberCenteredIndependence
-import Lean_Code.SchauderTranslates.FiberSlowLift
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveReference
+public import Lean_Code.SchauderTranslates.FiberCenteredIndependence
+public import Lean_Code.SchauderTranslates.FiberSlowLift
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

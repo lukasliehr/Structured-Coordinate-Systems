@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.BoundedSpan
-import Lean_Code.SchauderTranslates.SeedCarrierCoordinates
-import Mathlib.Analysis.InnerProductSpace.PiL2
+module
+
+public import Lean_Code.SchauderTranslates.BoundedSpan
+public import Lean_Code.SchauderTranslates.SeedCarrierCoordinates
+public import Mathlib.Analysis.InnerProductSpace.PiL2
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

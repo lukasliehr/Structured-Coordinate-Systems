@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.RowSplit
+module
+
+public import Lean_Code.SchauderTranslates.RowSplit
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace

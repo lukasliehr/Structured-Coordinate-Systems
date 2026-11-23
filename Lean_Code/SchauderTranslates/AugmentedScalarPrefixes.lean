@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.OrderedGramPrefixes
-import Lean_Code.SchauderTranslates.FiniteRowOrder
-import Lean_Code.SchauderTranslates.MetricFinitePrefixes
+module
+
+public import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+public import Lean_Code.SchauderTranslates.FiniteRowOrder
+public import Lean_Code.SchauderTranslates.MetricFinitePrefixes
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

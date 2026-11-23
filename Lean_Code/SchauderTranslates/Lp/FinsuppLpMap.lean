@@ -1,5 +1,9 @@
-import Mathlib
-import Mathlib.Analysis.Normed.Operator.Extend
+module
+
+public import Mathlib
+public import Mathlib.Analysis.Normed.Operator.Extend
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

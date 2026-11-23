@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Analytic.Run
+module
+
+public import Lean_Code.PositiveTranslates.Analytic.Run
 
 /-!
 # Passing to a single generator: limits and bookkeeping
@@ -13,6 +15,8 @@ import Lean_Code.PositiveTranslates.Analytic.Run
   `∑_m ‖T_{λ_m} g - b_m‖ ≤ 6 κ` for the limit `g` of the classes `g_t` (paper, equation
   (12.1), with slightly different numerical budgets).
 -/
+
+@[expose] public section
 
 noncomputable section
 

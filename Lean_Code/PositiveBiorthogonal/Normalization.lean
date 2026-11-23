@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.Transport
-import Lean_Code.PositiveBiorthogonal.StepNormalization
+module
+
+public import Lean_Code.PositiveBiorthogonal.Transport
+public import Lean_Code.PositiveBiorthogonal.StepNormalization
 
 /-! Diagonal normalization preserves projections, basis constants, and coefficient spans. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

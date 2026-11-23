@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.Sharp.ScalarSupplySharp
-import Lean_Code.SchauderTranslates.Sharp.FiniteExtensionSharp
-import Lean_Code.SchauderTranslates.Sharp.LimitAssemblySharp
-import Lean_Code.SchauderTranslates.Sharp.Return
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.ScalarSupplySharp
+public import Lean_Code.SchauderTranslates.Sharp.FiniteExtensionSharp
+public import Lean_Code.SchauderTranslates.Sharp.LimitAssemblySharp
+public import Lean_Code.SchauderTranslates.Sharp.Return
 
 /-!
 # Translates in `L²(ℝ)`: assembly
@@ -10,6 +12,8 @@ From the sharp one-step extension on the line (`FiniteExtensionSharp`) to a real
 generator that extends to an entire function and whose translates form a Schauder basis of
 `L²(ℝ)`, over both scalar fields, with basis constant below `1 + ε`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

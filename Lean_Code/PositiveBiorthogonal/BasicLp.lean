@@ -1,9 +1,14 @@
-import Lean_Code.PositiveBiorthogonal.Basic
-import Mathlib.MeasureTheory.Function.LpSpace.Indicator
-import Mathlib.Algebra.Order.Floor.Ring
-import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
+module
+
+public import Lean_Code.PositiveBiorthogonal.Basic
+public import Mathlib.MeasureTheory.Function.LpSpace.Indicator
+public import Mathlib.Algebra.Order.Floor.Ring
+public import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
 /-! Local indicator, restriction, and positive-measure-set tools. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

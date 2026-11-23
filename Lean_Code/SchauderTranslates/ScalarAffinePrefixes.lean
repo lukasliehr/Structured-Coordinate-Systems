@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarAffine
-import Lean_Code.SchauderTranslates.ScalarCenteredFromAugmented
+module
+
+public import Lean_Code.SchauderTranslates.ScalarAffine
+public import Lean_Code.SchauderTranslates.ScalarCenteredFromAugmented
+
+@[expose] public section
 
 noncomputable section
 open Matrix

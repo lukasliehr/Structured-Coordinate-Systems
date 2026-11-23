@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.BatchCuts
+module
+
+public import Lean_Code.PositiveBiorthogonal.BatchCuts
 
 /-! The bound at every cut, with averaging and fresh-block operators. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.Characters
-import Lean_Code.SchauderTranslates.FiniteGram
+module
+
+public import Lean_Code.SchauderTranslates.Characters
+public import Lean_Code.SchauderTranslates.FiniteGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

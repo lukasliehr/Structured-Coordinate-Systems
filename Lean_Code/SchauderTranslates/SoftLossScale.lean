@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SoftSeedLength
-import Lean_Code.SchauderTranslates.SoftWindowAsymptotics
+module
+
+public import Lean_Code.SchauderTranslates.SoftSeedLength
+public import Lean_Code.SchauderTranslates.SoftWindowAsymptotics
+
+@[expose] public section
 
 noncomputable section
 open Filter

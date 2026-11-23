@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.Definitions
-import Mathlib.Tactic
+module
+
+public import Lean_Code.PositiveBiorthogonal.Definitions
+public import Mathlib.Tactic
 
 /-! Error parameters used by the construction in `FinalExistence.lean`. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 

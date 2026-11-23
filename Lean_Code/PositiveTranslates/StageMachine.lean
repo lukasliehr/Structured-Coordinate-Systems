@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.Lp.Packet
+module
+
+public import Lean_Code.SchauderTranslates.Lp.Packet
 
 /-!
 # Interface between the reference construction and the analytic generator (`p > 2`)
@@ -17,6 +19,8 @@ the proof has two halves.
 `StageMachine` is the interface between the two halves. An instance is constructed in
 `Lean_Code/PositiveTranslates/Machine/Main.lean`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

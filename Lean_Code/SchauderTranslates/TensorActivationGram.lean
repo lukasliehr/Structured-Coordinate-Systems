@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ProjectionRowBound
+module
+
+public import Lean_Code.SchauderTranslates.ProjectionRowBound
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

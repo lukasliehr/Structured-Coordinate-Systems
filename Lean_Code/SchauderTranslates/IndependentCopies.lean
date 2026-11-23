@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.CopyBounds
+module
+
+public import Lean_Code.SchauderTranslates.CopyBounds
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

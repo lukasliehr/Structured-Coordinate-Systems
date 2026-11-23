@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.StageState
+module
+
+public import Lean_Code.PositiveBiorthogonal.StageState
 
 /-! The least-choice stage recursion, with cumulative counts and local operators. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

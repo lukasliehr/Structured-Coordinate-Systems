@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.PacketCoefficientExtension
+module
+
+public import Lean_Code.SchauderTranslates.PacketCoefficientExtension
+
+@[expose] public section
 
 noncomputable section
 open Matrix

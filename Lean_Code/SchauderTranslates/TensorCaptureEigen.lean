@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.TensorCaptureBasics
+module
+
+public import Lean_Code.SchauderTranslates.TensorCaptureBasics
+
+@[expose] public section
 
 noncomputable section
 open Matrix

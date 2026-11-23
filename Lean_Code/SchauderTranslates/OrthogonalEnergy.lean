@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.MatrixEnergy
+module
+
+public import Lean_Code.SchauderTranslates.MatrixEnergy
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.BasicLp
-import Mathlib.MeasureTheory.PiSystem
+module
+
+public import Lean_Code.PositiveBiorthogonal.BasicLp
+public import Mathlib.MeasureTheory.PiSystem
 
 /-! Closed linear spaces are stable under increasing finite-measure indicator limits. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.SoftWindowChoice
-import Lean_Code.SchauderTranslates.SoftGeometricGrid
+module
+
+public import Lean_Code.SchauderTranslates.SoftWindowChoice
+public import Lean_Code.SchauderTranslates.SoftGeometricGrid
 
 /-!
 # Soft spectral window for an arbitrary gain lower bound
@@ -7,6 +9,8 @@ import Lean_Code.SchauderTranslates.SoftGeometricGrid
 The selection of the soft spectral window. The start threshold is an arbitrary `c₁ > 0`,
 and the gain lower bound an arbitrary `z₀ > 0` (with `c₁ = (9/10) * z₀ / (1 + z₀) / 4`).
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

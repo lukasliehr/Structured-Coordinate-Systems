@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ActivatedScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.ActivatedScalarPrefixes
+
+@[expose] public section
 
 noncomputable section
 open Matrix

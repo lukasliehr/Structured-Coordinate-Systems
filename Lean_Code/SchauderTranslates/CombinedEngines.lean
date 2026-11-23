@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.PiKernel
-import Lean_Code.SchauderTranslates.FiberMarginalCapture
-import Lean_Code.SchauderTranslates.EngineInfo
-import Lean_Code.SchauderTranslates.TagLift
+module
+
+public import Lean_Code.SchauderTranslates.PiKernel
+public import Lean_Code.SchauderTranslates.FiberMarginalCapture
+public import Lean_Code.SchauderTranslates.EngineInfo
+public import Lean_Code.SchauderTranslates.TagLift
 
 /-!
 # Atoms of conditionally independent engines
@@ -11,6 +13,8 @@ product of all fresh variables. Its slow part is the pullback of the engine's ow
 its centered part is orthogonal to the whole slow space, centered parts of different
 engines are orthogonal, and within one engine the centered Gram is the engine's own.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

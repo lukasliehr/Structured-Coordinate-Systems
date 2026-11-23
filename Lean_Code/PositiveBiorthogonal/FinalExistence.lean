@@ -1,9 +1,14 @@
-import Lean_Code.PositiveBiorthogonal.Normalization
-import Lean_Code.PositiveBiorthogonal.AuxiliaryExistence
-import Lean_Code.PositiveBiorthogonal.Existence
-import Lean_Code.PositiveBiorthogonal.DualExpansion
+module
+
+public import Lean_Code.PositiveBiorthogonal.Normalization
+public import Lean_Code.PositiveBiorthogonal.AuxiliaryExistence
+public import Lean_Code.PositiveBiorthogonal.Existence
+public import Lean_Code.PositiveBiorthogonal.DualExpansion
 
 /-! The normalized construction and the same coefficient sequence in the dual expansion. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

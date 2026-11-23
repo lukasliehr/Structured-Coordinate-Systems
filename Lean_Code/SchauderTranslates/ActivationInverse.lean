@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.RareActivation
-import Lean_Code.SchauderTranslates.InverseCompression
+module
+
+public import Lean_Code.SchauderTranslates.RareActivation
+public import Lean_Code.SchauderTranslates.InverseCompression
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

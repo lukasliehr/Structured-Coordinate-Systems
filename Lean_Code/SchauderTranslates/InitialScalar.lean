@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ScalarGram
-import Lean_Code.SchauderTranslates.PositiveMatrixNorm
-import Lean_Code.SchauderTranslates.ScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.ScalarGram
+public import Lean_Code.SchauderTranslates.PositiveMatrixNorm
+public import Lean_Code.SchauderTranslates.ScalarPrefixes
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

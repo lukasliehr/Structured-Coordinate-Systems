@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.RepeatedQuadratic
-import Lean_Code.SchauderTranslates.ScaledGramBound
+module
+
+public import Lean_Code.SchauderTranslates.RepeatedQuadratic
+public import Lean_Code.SchauderTranslates.ScaledGramBound
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Synthesis
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Synthesis
 
 /-!
 # The estimates of the positive forest
@@ -24,6 +26,8 @@ and `norm_lin_coordPart_le` (the coordinate-driven part of the coefficients has 
 schedule and the coefficient bound `|t_j| ≤ 2 D ‖x‖` of the roots (triangle inequality — no
 lower `ℓ^r` estimate for the roots is used).
 -/
+
+@[expose] public section
 
 noncomputable section
 

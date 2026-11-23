@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductPoly
+module
+
+public import Lean_Code.SchauderTranslates.ProductPoly
 
 /-!
 # Evenness of the product kernel
@@ -15,6 +17,8 @@ real, every ingredient of the product kernel is symmetric under the simultaneous
 
 Hence the raw kernel and its flattening are invariant under simultaneous inversion.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

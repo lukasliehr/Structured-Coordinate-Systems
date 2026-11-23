@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.ProductPoly
-import Lean_Code.SchauderTranslates.MatrixInverseOrder
+module
+
+public import Lean_Code.SchauderTranslates.ProductPoly
+public import Lean_Code.SchauderTranslates.MatrixInverseOrder
 
 /-!
 # Raw product Gram matrices of the finite extension
@@ -8,6 +10,8 @@ The raw product Gram and source of the ordered atoms on the flat torus are the t
 mass `(∫ w) M` times the L² Gram and source in the normalized combined law. The
 model conclusions therefore give the strict matrix conditions of `ProductExtension`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

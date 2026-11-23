@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.EndpointAuxiliary
-import Lean_Code.PositiveBiorthogonal.InteriorAuxiliary
+module
+
+public import Lean_Code.PositiveBiorthogonal.EndpointAuxiliary
+public import Lean_Code.PositiveBiorthogonal.InteriorAuxiliary
 
 /-! Existence of the auxiliary family for every finite primal exponent. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal

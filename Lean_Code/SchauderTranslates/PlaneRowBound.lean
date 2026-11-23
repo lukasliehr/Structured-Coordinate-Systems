@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.MetricRowBound
-import Lean_Code.SchauderTranslates.CoordinateSelection
+module
+
+public import Lean_Code.SchauderTranslates.MetricRowBound
+public import Lean_Code.SchauderTranslates.CoordinateSelection
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace

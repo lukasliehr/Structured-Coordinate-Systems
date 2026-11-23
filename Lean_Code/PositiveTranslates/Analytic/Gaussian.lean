@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Gaussian smoothing of compactly supported integrable functions
@@ -15,6 +17,8 @@ Main facts (paper, subsection "Entire smoothing"):
 * `norm_gaussSmooth_add_le`, `exists_gaussSmooth_tail`: the complex tail bound
   `sup_{|z| ≤ r} |H_σ(z + λ)| → 0` as `λ → +∞`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

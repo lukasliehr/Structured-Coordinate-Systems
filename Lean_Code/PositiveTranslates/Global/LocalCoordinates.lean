@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Global.LocalBasis
-import Lean_Code.PositiveTranslates.Global.BasicSequence
-import Lean_Code.PositiveTranslates.Global.CellParts
+module
+
+public import Lean_Code.PositiveTranslates.Global.LocalBasis
+public import Lean_Code.PositiveTranslates.Global.BasicSequence
+public import Lean_Code.PositiveTranslates.Global.CellParts
 
 /-!
 # Coordinate functionals of a local basis
@@ -10,6 +12,8 @@ with the cell part `F ↦ F·𝟙_A` gives functionals on the whole space.  `Loc
 collects the properties used by the global splitting: biorthogonality, dependence on the
 cell part only, the prefix bound and convergence of the expansion to the cell part.
 -/
+
+@[expose] public section
 
 noncomputable section
 

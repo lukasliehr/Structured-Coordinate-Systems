@@ -1,10 +1,15 @@
-import Lean_Code.PositiveBiorthogonal.Definitions
-import Mathlib.Analysis.Normed.Lp.PiLp
-import Mathlib.Data.Fin.Rev
-import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
-import Mathlib.Tactic
+module
+
+public import Lean_Code.PositiveBiorthogonal.Definitions
+public import Mathlib.Analysis.Normed.Lp.PiLp
+public import Mathlib.Data.Fin.Rev
+public import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
+public import Mathlib.Tactic
 
 /-! Finite coordinates always carry their stated ℓᵖ norm. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

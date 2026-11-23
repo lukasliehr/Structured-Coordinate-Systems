@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.BoundedRepresentatives
-import Lean_Code.SchauderTranslates.FiberMeanProjection
+module
+
+public import Lean_Code.SchauderTranslates.BoundedRepresentatives
+public import Lean_Code.SchauderTranslates.FiberMeanProjection
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

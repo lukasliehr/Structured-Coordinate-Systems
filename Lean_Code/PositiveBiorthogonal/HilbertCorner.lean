@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.FiniteKernel
-import Lean_Code.PositiveBiorthogonal.FiniteCuts
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteKernel
+public import Lean_Code.PositiveBiorthogonal.FiniteCuts
 
 /-! A Hilbert rectangle, with its first block reversed, inside a finite coordinate space. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

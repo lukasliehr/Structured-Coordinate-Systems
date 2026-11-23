@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.OriginalCarrierCapture
-import Lean_Code.SchauderTranslates.SoftWindowChoice
+module
+
+public import Lean_Code.SchauderTranslates.OriginalCarrierCapture
+public import Lean_Code.SchauderTranslates.SoftWindowChoice
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

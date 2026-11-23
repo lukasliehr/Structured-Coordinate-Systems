@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.Sharp.LineStepSharp
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.LineStepSharp
 
 /-!
 # The sharp finite extension on the line (paper: Proposition 16.1)
@@ -13,6 +15,8 @@ contraction factor `ϑ = 1 - c_*/2`, `c_* = u/(1+2u)`; it transfers to the line
 (`finiteExtensionStep_of_product`), and finitely many repetitions give the factor `1/2`
 (`finiteExtensionSharp_of_step`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedCaptureSpectrum
+module
+
+public import Lean_Code.SchauderTranslates.SeedCaptureSpectrum
+
+@[expose] public section
 
 noncomputable section
 open Matrix

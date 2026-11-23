@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedSpectralProjection
+module
+
+public import Lean_Code.SchauderTranslates.SeedSpectralProjection
+
+@[expose] public section
 
 noncomputable section
 open Matrix

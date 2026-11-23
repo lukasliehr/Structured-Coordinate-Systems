@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.IndicatorLimits
-import Lean_Code.PositiveBiorthogonal.Partitions
+module
+
+public import Lean_Code.PositiveBiorthogonal.IndicatorLimits
+public import Lean_Code.PositiveBiorthogonal.Partitions
 
 /-! Bounded interval indicators are dense, by the pi-system induction theorem. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

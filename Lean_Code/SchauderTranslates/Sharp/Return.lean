@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.MainReduction
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.Basis.Transport
-import Lean_Code.Basis.RealScalars
+module
+
+public import Lean_Code.SchauderTranslates.MainReduction
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.Basis.Transport
+public import Lean_Code.Basis.RealScalars
 
 /-!
 # Returning to translates (sharp `L²` construction)
@@ -29,6 +31,8 @@ inequalities bounded by `C`) and returns a Schauder basis of translates of `L²(
   translate by `-ξ` of the generator.
 * `translates_of_weightedExponentialBasisSharp`: the main statement.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter FourierTransform

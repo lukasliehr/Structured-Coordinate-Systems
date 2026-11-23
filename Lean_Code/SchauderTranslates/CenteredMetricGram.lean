@@ -1,8 +1,12 @@
-import Lean_Code.SchauderTranslates.CenteredProjection
-import Lean_Code.SchauderTranslates.MetricColumns
-import Lean_Code.SchauderTranslates.MarkedScalarGram
-import Lean_Code.SchauderTranslates.RealComplexQuadratic
-import Lean_Code.SchauderTranslates.ScaledGramBound
+module
+
+public import Lean_Code.SchauderTranslates.CenteredProjection
+public import Lean_Code.SchauderTranslates.MetricColumns
+public import Lean_Code.SchauderTranslates.MarkedScalarGram
+public import Lean_Code.SchauderTranslates.RealComplexQuadratic
+public import Lean_Code.SchauderTranslates.ScaledGramBound
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap Matrix

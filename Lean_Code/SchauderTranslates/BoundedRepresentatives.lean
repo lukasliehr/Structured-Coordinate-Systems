@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FiberMeanInner
+module
+
+public import Lean_Code.SchauderTranslates.FiberMeanInner
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

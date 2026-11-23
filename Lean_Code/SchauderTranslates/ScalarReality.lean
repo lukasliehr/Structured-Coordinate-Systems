@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ActivationWeight
-import Lean_Code.SchauderTranslates.ActivationNorms
+module
+
+public import Lean_Code.SchauderTranslates.ActivationWeight
+public import Lean_Code.SchauderTranslates.ActivationNorms
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

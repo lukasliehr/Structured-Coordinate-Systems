@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Schedule
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Schedule
 
 /-!
 # Scalar bookkeeping for the positive forest
@@ -28,6 +30,8 @@ A *coefficient family* `v : Coef N` assigns a block `v s : Fin (N s) → ℂ` to
   (`a^x_{(j,n)} = (-1/2)^n t_j / 2`) and the remainder, which is controlled by the
   coordinates (`a^y_{(j,0)} = 0`, `a^y_{(j,n+1)} = (b_{(j,n)} - a^y_{(j,n)}) / 2`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

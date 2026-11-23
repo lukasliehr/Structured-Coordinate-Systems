@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedParameters
-import Lean_Code.SchauderTranslates.GramGeometry
+module
+
+public import Lean_Code.SchauderTranslates.SeedParameters
+public import Lean_Code.SchauderTranslates.GramGeometry
+
+@[expose] public section
 
 noncomputable section
 open Matrix

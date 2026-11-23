@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.ToeplitzProjections
-import Mathlib.NumberTheory.Harmonic.Bounds
+module
+
+public import Lean_Code.PositiveBiorthogonal.ToeplitzProjections
+public import Mathlib.NumberTheory.Harmonic.Bounds
 
 /-! Column bounds and correction vectors for the interior auxiliary family. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Filter

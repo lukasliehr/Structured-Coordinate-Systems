@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.PlaneRowBound
-import Lean_Code.SchauderTranslates.OrthogonalEnergy
+module
+
+public import Lean_Code.SchauderTranslates.PlaneRowBound
+public import Lean_Code.SchauderTranslates.OrthogonalEnergy
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

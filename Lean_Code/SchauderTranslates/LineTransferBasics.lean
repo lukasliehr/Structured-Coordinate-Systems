@@ -1,6 +1,8 @@
-import Lean_Code.SchauderTranslates.ProductInterface
-import Lean_Code.SchauderTranslates.WeightedIsometry
-import Lean_Code.SchauderTranslates.LimitStagesBasic
+module
+
+public import Lean_Code.SchauderTranslates.ProductInterface
+public import Lean_Code.SchauderTranslates.WeightedIsometry
+public import Lean_Code.SchauderTranslates.LimitStagesBasic
 
 /-!
 # Basic bridges for the line transfer
@@ -10,6 +12,8 @@ for mixed trigonometric polynomials indexed by an arbitrary finite set, and the 
 relating the raw weighted quantities `normSq`, `distanceSq`, `PrefixBound`
 to Gram matrices of weighted characters.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

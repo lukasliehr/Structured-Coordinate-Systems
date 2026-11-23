@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.HilbertSynthesis
+module
+
+public import Lean_Code.SchauderTranslates.HilbertSynthesis
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

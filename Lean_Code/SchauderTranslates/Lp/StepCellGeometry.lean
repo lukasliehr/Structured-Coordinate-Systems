@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.Lp.StepCellSupport
-import Mathlib.MeasureTheory.Measure.AEDisjoint
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepCellSupport
+public import Mathlib.MeasureTheory.Measure.AEDisjoint
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

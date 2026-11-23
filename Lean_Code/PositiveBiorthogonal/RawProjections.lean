@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.Flatten
-import Lean_Code.PositiveBiorthogonal.BasisCriterion
+module
+
+public import Lean_Code.PositiveBiorthogonal.Flatten
+public import Lean_Code.PositiveBiorthogonal.BasisCriterion
 
 /-! Cumulative raw projections agree with stage averaging and satisfy the batch bound globally. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

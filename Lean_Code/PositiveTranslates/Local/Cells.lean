@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.Dyadic
-import Lean_Code.SchauderTranslates.Lp.PositiveMassPartition
+module
+
+public import Lean_Code.PositiveTranslates.Local.Dyadic
+public import Lean_Code.SchauderTranslates.Lp.PositiveMassPartition
 
 /-!
 # Cell isometries and local bases on intervals and on cells with a prescribed first vector
@@ -20,6 +22,8 @@ When the intervals `Iₖ` are listed from left to right, its restriction to `L�
 isometry `ψ ↦ e · (ψ ∘ C_e)` of the paper, `C_e(x) = ∫_{(-∞, x]} e^p`. Both isometries are
 composed with the isometry `unitIsometry` of `Lᵖ(ℝ)` onto `Lᵖ([0, 2))`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

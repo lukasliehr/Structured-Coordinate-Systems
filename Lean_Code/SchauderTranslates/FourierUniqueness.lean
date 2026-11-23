@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Characters
+module
+
+public import Lean_Code.SchauderTranslates.Characters
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

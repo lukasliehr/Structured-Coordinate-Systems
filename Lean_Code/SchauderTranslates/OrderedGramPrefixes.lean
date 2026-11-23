@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ScalarPrefixes
-import Lean_Code.SchauderTranslates.ScaledGramBound
-import Lean_Code.SchauderTranslates.ScalarGram
+module
+
+public import Lean_Code.SchauderTranslates.ScalarPrefixes
+public import Lean_Code.SchauderTranslates.ScaledGramBound
+public import Lean_Code.SchauderTranslates.ScalarGram
+
+@[expose] public section
 
 noncomputable section
 open Matrix

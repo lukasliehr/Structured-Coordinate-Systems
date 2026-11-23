@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.FiniteKernel
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteKernel
 
 /-! The finite auxiliary family, as data. Its existence is proved in `AuxiliaryExistence.lean`. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Filter

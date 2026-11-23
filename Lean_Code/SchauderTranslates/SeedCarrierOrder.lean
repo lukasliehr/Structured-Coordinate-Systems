@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedCarrierGram
+module
+
+public import Lean_Code.SchauderTranslates.SeedCarrierGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

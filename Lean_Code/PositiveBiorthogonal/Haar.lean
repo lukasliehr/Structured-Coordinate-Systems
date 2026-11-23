@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.PartitionRefinement
-import Lean_Code.PositiveBiorthogonal.StepFunctions
+module
+
+public import Lean_Code.PositiveBiorthogonal.PartitionRefinement
+public import Lean_Code.PositiveBiorthogonal.StepFunctions
 
 /-! The Haar pair attached to one strict interval split. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

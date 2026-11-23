@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.CutoffBasis
-import Lean_Code.SchauderTranslates.ActivationExhaustion
-import Lean_Code.SchauderTranslates.OperatorMatrixPositive
+module
+
+public import Lean_Code.SchauderTranslates.CutoffBasis
+public import Lean_Code.SchauderTranslates.ActivationExhaustion
+public import Lean_Code.SchauderTranslates.OperatorMatrixPositive
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

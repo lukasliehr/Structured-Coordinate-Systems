@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.FiniteRowMask
-import Lean_Code.SchauderTranslates.ScalarFourierEnergy
-import Lean_Code.SchauderTranslates.RealComplexQuadratic
-import Lean_Code.SchauderTranslates.CutoffMatrix
+module
+
+public import Lean_Code.SchauderTranslates.FiniteRowMask
+public import Lean_Code.SchauderTranslates.ScalarFourierEnergy
+public import Lean_Code.SchauderTranslates.RealComplexQuadratic
+public import Lean_Code.SchauderTranslates.CutoffMatrix
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

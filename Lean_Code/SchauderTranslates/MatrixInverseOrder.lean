@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SchurSmoothing
-import Lean_Code.SchauderTranslates.FiniteGram
+module
+
+public import Lean_Code.SchauderTranslates.SchurSmoothing
+public import Lean_Code.SchauderTranslates.FiniteGram
+
+@[expose] public section
 
 noncomputable section
 open Matrix

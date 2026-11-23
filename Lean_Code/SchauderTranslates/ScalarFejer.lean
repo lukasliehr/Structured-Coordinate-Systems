@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.FejerCorrelation
-import Lean_Code.SchauderTranslates.SchurSmoothing
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
-import Lean_Code.SchauderTranslates.FiniteGram
+module
+
+public import Lean_Code.SchauderTranslates.FejerCorrelation
+public import Lean_Code.SchauderTranslates.SchurSmoothing
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+public import Lean_Code.SchauderTranslates.FiniteGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

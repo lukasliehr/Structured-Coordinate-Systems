@@ -1,9 +1,14 @@
-import Lean_Code.PositiveBiorthogonal.PairingNorms
-import Mathlib.Analysis.InnerProductSpace.NormPow
-import Mathlib.Analysis.Calculus.ParametricIntegral
-import Mathlib.Analysis.Calculus.LocalExtr.Basic
+module
+
+public import Lean_Code.PositiveBiorthogonal.PairingNorms
+public import Mathlib.Analysis.InnerProductSpace.NormPow
+public import Mathlib.Analysis.Calculus.ParametricIntegral
+public import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
 /-! The local norm-power derivative used for arbitrary positive bases. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

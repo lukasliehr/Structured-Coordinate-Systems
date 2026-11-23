@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.ScalarInverseNorm
-import Lean_Code.SchauderTranslates.ScalarProducts
-import Lean_Code.SchauderTranslates.RepeatedQuadratic
-import Lean_Code.SchauderTranslates.ScalarFloorNumerics
+module
+
+public import Lean_Code.SchauderTranslates.ScalarInverseNorm
+public import Lean_Code.SchauderTranslates.ScalarProducts
+public import Lean_Code.SchauderTranslates.RepeatedQuadratic
+public import Lean_Code.SchauderTranslates.ScalarFloorNumerics
+
+@[expose] public section
 
 noncomputable section
 open Matrix

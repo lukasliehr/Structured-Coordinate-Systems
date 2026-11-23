@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Norms
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Norms
 
 /-!
 # Synthesis: combinations of atoms in terms of coordinates and roots
@@ -15,6 +17,8 @@ We also express the partial sums of the sequence `F.seq` through `F.synth`
 (`coefOf_indicator`), and reduce the finite prefix inequality for `F.seq` to an inequality
 between `F.synth T (cut s⋆ k v)` and `F.synth T v` (`prefix_bound_of_cut_bound`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

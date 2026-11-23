@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.LocalPositive
+module
+
+public import Lean_Code.PositiveBiorthogonal.LocalPositive
 
 /-! Essential-supremum normalization of nonzero nonnegative interval step functions. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

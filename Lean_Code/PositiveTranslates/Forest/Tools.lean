@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Defs
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Defs
 
 /-!
 # Tools for users of the positive forest
@@ -30,6 +32,8 @@ Using the sequence:
   `prefixList_zero`, `prefixList_succ` describe it as `[e0]`, extended stage by stage by
   the atoms `List.ofFn (atom s)`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,5 +1,7 @@
-import Lean_Code.Basis.Criterion
-import Lean_Code.PositiveTranslates.Forest.Blocks
+module
+
+public import Lean_Code.Basis.Criterion
+public import Lean_Code.PositiveTranslates.Forest.Blocks
 
 /-!
 # The positive forest: data and the sequence
@@ -25,6 +27,8 @@ From these data we define, following the fixed schedule `stagePair` of
 The main theorem (`PositiveForest.exists_schauderBasis` in `Forest/Main.lean`) says that
 `seq` is a Schauder basis of `Z` with basis constant at most `4 D (1 + B) + 13 B`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

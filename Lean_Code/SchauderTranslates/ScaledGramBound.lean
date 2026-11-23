@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.RealComplexQuadratic
+module
+
+public import Lean_Code.SchauderTranslates.RealComplexQuadratic
+
+@[expose] public section
 
 noncomputable section
 open Matrix

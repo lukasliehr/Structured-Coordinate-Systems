@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.BasisOperatorMatrix
+module
+
+public import Lean_Code.SchauderTranslates.BasisOperatorMatrix
+
+@[expose] public section
 
 noncomputable section
 open Matrix

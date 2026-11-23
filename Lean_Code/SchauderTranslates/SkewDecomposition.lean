@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.HilbertBlocks
+module
+
+public import Lean_Code.SchauderTranslates.HilbertBlocks
+
+@[expose] public section
 
 noncomputable section
 open Module

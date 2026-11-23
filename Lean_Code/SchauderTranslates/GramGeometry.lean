@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.HilbertBlocks
-import Lean_Code.SchauderTranslates.FiniteGram
+module
+
+public import Lean_Code.SchauderTranslates.HilbertBlocks
+public import Lean_Code.SchauderTranslates.FiniteGram
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap Matrix

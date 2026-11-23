@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.RealComplexNorm
+module
+
+public import Lean_Code.SchauderTranslates.RealComplexNorm
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap Matrix

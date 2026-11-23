@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.BatchScale
+module
+
+public import Lean_Code.PositiveBiorthogonal.BatchScale
 
 /-! The active-region indicator, with its exact finite-step and norm interpretations. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

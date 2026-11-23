@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Definitions for the weighted Fourier construction
@@ -7,6 +9,8 @@ Weights on the line, characters, the raw weighted norm, prefix bounds and the di
 character to a finite span. The finite extension principle and the existence of a weighted
 exponential basis are stated as propositions.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

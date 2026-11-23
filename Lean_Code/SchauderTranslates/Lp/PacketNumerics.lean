@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.PacketScales
+module
+
+public import Lean_Code.SchauderTranslates.Lp.PacketScales
+
+@[expose] public section
 
 noncomputable section
 

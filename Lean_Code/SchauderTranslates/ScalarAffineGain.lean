@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ScalarAffine
+module
+
+public import Lean_Code.SchauderTranslates.ScalarAffine
+
+@[expose] public section
 
 noncomputable section
 open Matrix Filter

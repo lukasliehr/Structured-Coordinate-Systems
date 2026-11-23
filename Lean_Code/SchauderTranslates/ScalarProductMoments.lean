@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ProductCharacters
+module
+
+public import Lean_Code.SchauderTranslates.ProductCharacters
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

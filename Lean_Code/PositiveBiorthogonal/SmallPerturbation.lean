@@ -1,9 +1,14 @@
-import Lean_Code.PositiveBiorthogonal.Definitions
-import Mathlib.Analysis.SpecificLimits.Normed
-import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
-import Mathlib.Tactic
+module
+
+public import Lean_Code.PositiveBiorthogonal.Definitions
+public import Mathlib.Analysis.SpecificLimits.Normed
+public import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
+public import Mathlib.Tactic
 
 /-! Explicit Neumann-series equivalences and bounds for a perturbation of the identity. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 namespace PositiveBiorthogonal

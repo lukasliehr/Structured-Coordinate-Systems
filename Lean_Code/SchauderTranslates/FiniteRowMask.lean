@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.TensorActivationGram
-import Lean_Code.SchauderTranslates.ModeSelection
+module
+
+public import Lean_Code.SchauderTranslates.TensorActivationGram
+public import Lean_Code.SchauderTranslates.ModeSelection
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

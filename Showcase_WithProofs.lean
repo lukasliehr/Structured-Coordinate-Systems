@@ -1,6 +1,10 @@
-import Lean_Code
+module
+
+public import Lean_Code
 
 /-! The definitions and statements of `Showcase.lean`, with proofs from the library `Lean_Code`. -/
+
+@[expose] public section
 
 noncomputable section
 

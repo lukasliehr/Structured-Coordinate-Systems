@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.RawProjections
-import Lean_Code.PositiveBiorthogonal.FiniteSplitting
+module
+
+public import Lean_Code.PositiveBiorthogonal.RawProjections
+public import Lean_Code.PositiveBiorthogonal.FiniteSplitting
 
 /-! Global biorthogonality from exact averaging projections and matching stage dimensions. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory

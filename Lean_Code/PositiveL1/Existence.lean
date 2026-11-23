@@ -1,5 +1,7 @@
-import Lean_Code.Basis.Criterion
-import Lean_Code.PositiveL1.Density
+module
+
+public import Lean_Code.Basis.Criterion
+public import Lean_Code.PositiveL1.Density
 
 /-!
 # A Schauder basis of `L¹(ℝ)` consisting of non-negative functions
@@ -32,6 +34,8 @@ The proof is distributed as follows.
 The statement then follows from the finite prefix criterion
 `StructuredBases.exists_schauderBasis_of_prefix_bound'`.
 -/
+
+@[expose] public section
 
 set_option autoImplicit false
 

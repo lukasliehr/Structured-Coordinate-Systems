@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SelectedColumnBounds
+module
+
+public import Lean_Code.SchauderTranslates.SelectedColumnBounds
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

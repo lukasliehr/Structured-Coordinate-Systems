@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Haar
+module
+
+public import Lean_Code.PositiveBiorthogonal.Haar
 
 /-! The sharp estimate on the Haar vector, including the p = 1 endpoint. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

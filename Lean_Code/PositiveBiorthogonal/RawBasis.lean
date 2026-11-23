@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.MeshDensity
+module
+
+public import Lean_Code.PositiveBiorthogonal.MeshDensity
 
 /-! Assembly of the raw Schauder basis from the closed biorthogonality, density and bounds. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal

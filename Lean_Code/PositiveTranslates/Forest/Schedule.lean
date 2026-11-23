@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # The schedule of the positive forest
@@ -24,6 +26,8 @@ each of the targets `0, …, J`.
   of their target (or whose successor is just being introduced) have total weight
   `∑ 2⁻ⁿ ≤ 3`. This is the only quantitative property of the schedule which is used.
 -/
+
+@[expose] public section
 
 open scoped BigOperators
 

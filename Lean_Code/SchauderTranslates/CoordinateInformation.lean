@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ProjectionInformation
-import Lean_Code.SchauderTranslates.EuclideanMatrixOperators
+module
+
+public import Lean_Code.SchauderTranslates.ProjectionInformation
+public import Lean_Code.SchauderTranslates.EuclideanMatrixOperators
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

@@ -1,4 +1,8 @@
-import Lean_Code.PositiveBiorthogonal.DisjointOperators
+module
+
+public import Lean_Code.PositiveBiorthogonal.DisjointOperators
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

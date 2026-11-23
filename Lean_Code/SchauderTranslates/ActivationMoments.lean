@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ActivationWeight
-import Lean_Code.SchauderTranslates.ScalarOrder
+module
+
+public import Lean_Code.SchauderTranslates.ActivationWeight
+public import Lean_Code.SchauderTranslates.ScalarOrder
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

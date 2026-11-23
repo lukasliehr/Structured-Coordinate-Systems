@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ScalarProducts
-import Lean_Code.SchauderTranslates.RepeatedQuadratic
-import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.ScalarProducts
+public import Lean_Code.SchauderTranslates.RepeatedQuadratic
+public import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+
+@[expose] public section
 
 noncomputable section
 open Matrix

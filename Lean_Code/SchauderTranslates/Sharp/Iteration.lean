@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.SchauderTranslates.LineTransferWeight
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.SchauderTranslates.LineTransferWeight
 
 /-!
 # Iterating a contracting extension step
@@ -17,6 +19,8 @@ of the target. The construction on the line only gives a contraction factor `θ 
 * the loss and increment budgets are split at every step, so the final prefix constant is at
   most `max K Kstar + τ` (`Iteration.step_iterate`).
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
-import Lean_Code.SchauderTranslates.CenteredMetricGram
+module
+
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+public import Lean_Code.SchauderTranslates.CenteredMetricGram
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

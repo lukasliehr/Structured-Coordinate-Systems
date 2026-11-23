@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.ActivationMoments
-import Lean_Code.SchauderTranslates.LpIndicator
-import Lean_Code.SchauderTranslates.TensorActivationGram
-import Lean_Code.SchauderTranslates.ScalarReality
+module
+
+public import Lean_Code.SchauderTranslates.ActivationMoments
+public import Lean_Code.SchauderTranslates.LpIndicator
+public import Lean_Code.SchauderTranslates.TensorActivationGram
+public import Lean_Code.SchauderTranslates.ScalarReality
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

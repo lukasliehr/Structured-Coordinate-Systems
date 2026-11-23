@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.EigenplaneRowBound
-import Lean_Code.SchauderTranslates.RowCutEndpoints
-import Lean_Code.SchauderTranslates.ProjectionPlaneSpaces
+module
+
+public import Lean_Code.SchauderTranslates.EigenplaneRowBound
+public import Lean_Code.SchauderTranslates.RowCutEndpoints
+public import Lean_Code.SchauderTranslates.ProjectionPlaneSpaces
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

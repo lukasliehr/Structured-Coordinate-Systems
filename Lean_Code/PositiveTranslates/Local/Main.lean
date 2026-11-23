@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.Cells
-import Lean_Code.PositiveTranslates.Local.NormalForm
+module
+
+public import Lean_Code.PositiveTranslates.Local.Cells
+public import Lean_Code.PositiveTranslates.Local.NormalForm
 
 /-!
 # Uniform local non-negative bases
@@ -47,6 +49,8 @@ Every `B > 1` works (`exists_localBasis`); `exists_localBasis_constant` records 
 4. `Local/Cells.lean`: `[0, 2)` to `[a, b)`; and `[0, 1)` to `⋃ₖ Iₖ` (cut into pieces of
    lengths `cₖ^p |Iₖ|`), `[1, 2)` to `[a, b)`, which sends `𝟙_[0,1)` to `e`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

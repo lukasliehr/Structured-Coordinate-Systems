@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.TorusTransfer
+module
+
+public import Lean_Code.SchauderTranslates.TorusTransfer
 
 /-!
 # The finite extension on a product space, as a statement
@@ -8,6 +10,8 @@ stated through the raw product Gram of the old characters followed by the new mi
 characters. `FiniteExtension.lean` transfers it to the
 line, giving `Construction.FiniteExtensionPrinciple`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

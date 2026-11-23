@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.WeightedIsometry
+module
+
+public import Lean_Code.SchauderTranslates.WeightedIsometry
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter FourierTransform

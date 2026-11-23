@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ActivatedScalarEstimates
-import Lean_Code.SchauderTranslates.ScalarFloor
+module
+
+public import Lean_Code.SchauderTranslates.ActivatedScalarEstimates
+public import Lean_Code.SchauderTranslates.ScalarFloor
+
+@[expose] public section
 
 noncomputable section
 open Matrix

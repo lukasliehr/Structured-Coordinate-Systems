@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.RowCutEndpoints
+module
+
+public import Lean_Code.SchauderTranslates.RowCutEndpoints
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

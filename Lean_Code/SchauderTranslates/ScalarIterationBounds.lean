@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ScalarNumerics
+module
+
+public import Lean_Code.SchauderTranslates.ScalarNumerics
+
+@[expose] public section
 
 noncomputable section
 open Filter

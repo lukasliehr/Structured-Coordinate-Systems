@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Auxiliary
+module
+
+public import Lean_Code.PositiveBiorthogonal.Auxiliary
 
 /-! The finite summing/difference family at p = 1. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Filter

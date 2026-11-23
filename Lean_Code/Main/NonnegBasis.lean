@@ -1,6 +1,8 @@
-import Lean_Code.Main.PositiveBridge
-import Lean_Code.PositiveL1.Existence
-import Lean_Code.PositiveL1.NotMonotone
+module
+
+public import Lean_Code.Main.PositiveBridge
+public import Lean_Code.PositiveL1.Existence
+public import Lean_Code.PositiveL1.NotMonotone
 
 /-!
 # Theorem 1.1: non-negative Schauder bases of `Lᵖ(ℝ)`, `1 ≤ p < ∞`
@@ -13,6 +15,8 @@ Assembly of the four ingredients:
   `1 < p < ∞` (`Lean_Code/PositiveBiorthogonal`),
 * a non-negative basis of `L¹(ℝ)` is never monotone (`Lean_Code/PositiveL1/NotMonotone.lean`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.HaarAffineMeasure
+module
+
+public import Lean_Code.SchauderTranslates.Lp.HaarAffineMeasure
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

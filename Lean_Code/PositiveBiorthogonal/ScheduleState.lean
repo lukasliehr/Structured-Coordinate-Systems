@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.RefinementTrace
+module
+
+public import Lean_Code.PositiveBiorthogonal.RefinementTrace
 
 /-! States that retain each old cell's geometric remainder while appending removed pieces. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.TensorCaptureEigen
-import Lean_Code.SchauderTranslates.SeedUpperProjection
+module
+
+public import Lean_Code.SchauderTranslates.TensorCaptureEigen
+public import Lean_Code.SchauderTranslates.SeedUpperProjection
+
+@[expose] public section
 
 noncomputable section
 open Matrix

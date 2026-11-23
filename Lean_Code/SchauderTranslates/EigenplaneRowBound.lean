@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.HilbertRowCut
-import Lean_Code.SchauderTranslates.ProjectionPlaneRotation
+module
+
+public import Lean_Code.SchauderTranslates.HilbertRowCut
+public import Lean_Code.SchauderTranslates.ProjectionPlaneRotation
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

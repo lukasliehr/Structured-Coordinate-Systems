@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.Lp.StepCellGeometry
-import Lean_Code.SchauderTranslates.Lp.DisjointNorm
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepCellGeometry
+public import Lean_Code.SchauderTranslates.Lp.DisjointNorm
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

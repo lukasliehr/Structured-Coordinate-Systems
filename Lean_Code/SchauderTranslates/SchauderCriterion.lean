@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Definitions
+module
+
+public import Lean_Code.SchauderTranslates.Definitions
+
+@[expose] public section
 
 noncomputable section
 open Filter

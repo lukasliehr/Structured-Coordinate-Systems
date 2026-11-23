@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveAugmentedGram
-import Lean_Code.SchauderTranslates.FiberSlowSpace
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveAugmentedGram
+public import Lean_Code.SchauderTranslates.FiberSlowSpace
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

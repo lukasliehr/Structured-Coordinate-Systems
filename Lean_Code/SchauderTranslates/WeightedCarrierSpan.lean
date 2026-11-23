@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.BoundedSpan
-import Lean_Code.SchauderTranslates.SelectivePacket
-import Lean_Code.SchauderTranslates.FiberSlowLift
+module
+
+public import Lean_Code.SchauderTranslates.BoundedSpan
+public import Lean_Code.SchauderTranslates.SelectivePacket
+public import Lean_Code.SchauderTranslates.FiberSlowLift
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

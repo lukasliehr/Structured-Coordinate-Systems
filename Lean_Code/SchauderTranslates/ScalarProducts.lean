@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarProductMoments
-import Lean_Code.SchauderTranslates.RepeatedMatrix
+module
+
+public import Lean_Code.SchauderTranslates.ScalarProductMoments
+public import Lean_Code.SchauderTranslates.RepeatedMatrix
+
+@[expose] public section
 
 noncomputable section
 open Matrix

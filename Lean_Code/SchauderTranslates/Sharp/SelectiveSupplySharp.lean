@@ -1,6 +1,8 @@
-import Lean_Code.SchauderTranslates.SelectiveSupply
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.SchauderTranslates.Sharp.SoftWindowSharp
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveSupply
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.SchauderTranslates.Sharp.SoftWindowSharp
 
 /-!
 # The sharp selective supply (paper: Proposition 15.1 and (15.11))
@@ -11,6 +13,8 @@ supply `ScalarSupplySharp dd`. The information formula
 scalar block carries an augmented prefix constant `K_s < 1 + dd`, a nonconstant raw
 inverse diagonal `≤ 1 + 2ε` with an arbitrarily small loss `ε < ε₀`, and is even.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

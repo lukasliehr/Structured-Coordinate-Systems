@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarFejer
-import Lean_Code.SchauderTranslates.GramPrefixStability
+module
+
+public import Lean_Code.SchauderTranslates.ScalarFejer
+public import Lean_Code.SchauderTranslates.GramPrefixStability
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

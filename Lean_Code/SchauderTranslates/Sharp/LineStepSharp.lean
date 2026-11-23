@@ -1,6 +1,8 @@
-import Lean_Code.SchauderTranslates.FiniteExtension
-import Lean_Code.SchauderTranslates.Sharp.ProductExtensionSharp
-import Lean_Code.SchauderTranslates.Sharp.Iteration
+module
+
+public import Lean_Code.SchauderTranslates.FiniteExtension
+public import Lean_Code.SchauderTranslates.Sharp.ProductExtensionSharp
+public import Lean_Code.SchauderTranslates.Sharp.Iteration
 
 /-!
 # One sharp extension step on the line (paper: Section 16.6)
@@ -11,6 +13,8 @@ by the substitution `y = A ω t`, exactly as in `FiniteExtension.lean`
 product kernel is invariant under simultaneous inversion and the phase is odd, so
 `W(t) = 𝒲(t, A ω t)` is even.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

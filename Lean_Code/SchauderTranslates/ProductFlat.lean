@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.ProductModel
-import Lean_Code.SchauderTranslates.FastTorus
+module
+
+public import Lean_Code.SchauderTranslates.ProductModel
+public import Lean_Code.SchauderTranslates.FastTorus
 
 /-!
 # The raw product kernel and the identification of the product law
@@ -10,6 +12,8 @@ old weight on the line it is the total mass `(∫ w) M` times the normalized com
 used in `ProductModel.lean`. This identifies every raw product Gram entry with the
 corresponding L² inner product.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

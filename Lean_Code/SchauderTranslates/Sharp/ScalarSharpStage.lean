@@ -1,9 +1,11 @@
-import Lean_Code.SchauderTranslates.CutoffChoice
-import Lean_Code.SchauderTranslates.ScalarProductPrefixes
-import Lean_Code.SchauderTranslates.ScalarIterationBounds
-import Lean_Code.SchauderTranslates.InverseNormFloor
-import Lean_Code.SchauderTranslates.Sharp.ScalarSharpInitial
-import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStep
+module
+
+public import Lean_Code.SchauderTranslates.CutoffChoice
+public import Lean_Code.SchauderTranslates.ScalarProductPrefixes
+public import Lean_Code.SchauderTranslates.ScalarIterationBounds
+public import Lean_Code.SchauderTranslates.InverseNormFloor
+public import Lean_Code.SchauderTranslates.Sharp.ScalarSharpInitial
+public import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStep
 
 /-!
 # The sharp scalar induction
@@ -14,6 +16,8 @@ recursion `Q_{n+1} = Q_n + (5 / t) η_n + ε_n² / 2`, and `‖B_n⁻¹‖ ≤ �
 In the structure `Stage t k` the reserve
 terms `(1/2)^k` make the choice of the next block noncircular.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Matrix Filter

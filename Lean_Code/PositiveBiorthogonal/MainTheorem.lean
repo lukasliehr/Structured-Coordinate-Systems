@@ -1,29 +1,33 @@
-import Lean_Code.PositiveBiorthogonal.FiniteInverse
-import Lean_Code.PositiveBiorthogonal.BasisCriterion
-import Lean_Code.PositiveBiorthogonal.PairingNorms
-import Lean_Code.PositiveBiorthogonal.BasicLp
-import Lean_Code.PositiveBiorthogonal.SupportObstruction
-import Lean_Code.PositiveBiorthogonal.DualExpansion
-import Lean_Code.PositiveBiorthogonal.Existence
-import Lean_Code.PositiveBiorthogonal.CoefficientObstruction
-import Lean_Code.PositiveBiorthogonal.VectorObstruction
-import Lean_Code.PositiveBiorthogonal.FinitePolynomial
-import Lean_Code.PositiveBiorthogonal.FiniteKernel
-import Lean_Code.PositiveBiorthogonal.Auxiliary
-import Lean_Code.PositiveBiorthogonal.EndpointAuxiliary
-import Lean_Code.PositiveBiorthogonal.ToeplitzProjections
-import Lean_Code.PositiveBiorthogonal.AuxiliaryExistence
-import Lean_Code.PositiveBiorthogonal.Partitions
-import Lean_Code.PositiveBiorthogonal.Averaging
-import Lean_Code.PositiveBiorthogonal.PartitionRefinement
-import Lean_Code.PositiveBiorthogonal.RefinementTrace
-import Lean_Code.PositiveBiorthogonal.Schedule
-import Lean_Code.PositiveBiorthogonal.UnitExtraction
-import Lean_Code.PositiveBiorthogonal.LocalPositive
-import Lean_Code.PositiveBiorthogonal.Flatten
-import Lean_Code.PositiveBiorthogonal.CellSpans
-import Lean_Code.PositiveBiorthogonal.IntervalDensity
-import Lean_Code.PositiveBiorthogonal.FinalExistence
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteInverse
+public import Lean_Code.PositiveBiorthogonal.BasisCriterion
+public import Lean_Code.PositiveBiorthogonal.PairingNorms
+public import Lean_Code.PositiveBiorthogonal.BasicLp
+public import Lean_Code.PositiveBiorthogonal.SupportObstruction
+public import Lean_Code.PositiveBiorthogonal.DualExpansion
+public import Lean_Code.PositiveBiorthogonal.Existence
+public import Lean_Code.PositiveBiorthogonal.CoefficientObstruction
+public import Lean_Code.PositiveBiorthogonal.VectorObstruction
+public import Lean_Code.PositiveBiorthogonal.FinitePolynomial
+public import Lean_Code.PositiveBiorthogonal.FiniteKernel
+public import Lean_Code.PositiveBiorthogonal.Auxiliary
+public import Lean_Code.PositiveBiorthogonal.EndpointAuxiliary
+public import Lean_Code.PositiveBiorthogonal.ToeplitzProjections
+public import Lean_Code.PositiveBiorthogonal.AuxiliaryExistence
+public import Lean_Code.PositiveBiorthogonal.Partitions
+public import Lean_Code.PositiveBiorthogonal.Averaging
+public import Lean_Code.PositiveBiorthogonal.PartitionRefinement
+public import Lean_Code.PositiveBiorthogonal.RefinementTrace
+public import Lean_Code.PositiveBiorthogonal.Schedule
+public import Lean_Code.PositiveBiorthogonal.UnitExtraction
+public import Lean_Code.PositiveBiorthogonal.LocalPositive
+public import Lean_Code.PositiveBiorthogonal.Flatten
+public import Lean_Code.PositiveBiorthogonal.CellSpans
+public import Lean_Code.PositiveBiorthogonal.IntervalDensity
+public import Lean_Code.PositiveBiorthogonal.FinalExistence
+
+@[expose] public section
 
 namespace PositiveBiorthogonal
 

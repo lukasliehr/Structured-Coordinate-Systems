@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ColumnPrefixMasks
+module
+
+public import Lean_Code.SchauderTranslates.ColumnPrefixMasks
+
+@[expose] public section
 
 noncomputable section
 open Matrix

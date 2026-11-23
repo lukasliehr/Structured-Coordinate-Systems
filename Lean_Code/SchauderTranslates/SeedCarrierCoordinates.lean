@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.SelectiveSource
-import Lean_Code.SchauderTranslates.CarrierSourceMatrices
-import Lean_Code.SchauderTranslates.NormalizedCapture
-import Lean_Code.SchauderTranslates.SeedCarrierOrder
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveSource
+public import Lean_Code.SchauderTranslates.CarrierSourceMatrices
+public import Lean_Code.SchauderTranslates.NormalizedCapture
+public import Lean_Code.SchauderTranslates.SeedCarrierOrder
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.TagLift
-import Lean_Code.SchauderTranslates.LineTransferBasics
+module
+
+public import Lean_Code.SchauderTranslates.TagLift
+public import Lean_Code.SchauderTranslates.LineTransferBasics
 
 /-!
 # The normalized slow law and the residual
@@ -10,6 +12,8 @@ prefix bound passes to the normalized law, and the residual of the target is an 
 finite character sum orthogonal to all old characters, whose squared norm times `∫ w`
 is exactly `distanceSq`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

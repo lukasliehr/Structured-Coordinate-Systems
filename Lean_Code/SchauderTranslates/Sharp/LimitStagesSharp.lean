@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.SchauderTranslates.LimitStagesConstruct
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.SchauderTranslates.LimitStagesConstruct
 
 /-!
 # Sharp limit stages: the recursive construction with even weights
@@ -23,6 +25,8 @@ All parameters are bundled in the structure `Setup`. Everything that does not me
 one-step constant (`LimitStagesBasic`, `PositiveProduct`, `LimitWeight`) is reused
 unchanged.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

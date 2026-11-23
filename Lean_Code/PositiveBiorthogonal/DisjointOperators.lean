@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.BasicLp
-import Lean_Code.PositiveBiorthogonal.PairingNorms
+module
+
+public import Lean_Code.PositiveBiorthogonal.BasicLp
+public import Lean_Code.PositiveBiorthogonal.PairingNorms
 
 /-! Sharp norm bounds for operators localized to disjoint measurable regions. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

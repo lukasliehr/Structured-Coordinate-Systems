@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.GlobalCorrection
+module
+
+public import Lean_Code.PositiveBiorthogonal.GlobalCorrection
 
 /-! The global correction acts locally on auxiliary coefficients and kills every Haar coefficient. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

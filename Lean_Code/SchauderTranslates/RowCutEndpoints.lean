@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.HilbertRowCut
+module
+
+public import Lean_Code.SchauderTranslates.HilbertRowCut
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

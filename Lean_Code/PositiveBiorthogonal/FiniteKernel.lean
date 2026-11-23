@@ -1,9 +1,14 @@
-import Lean_Code.PositiveBiorthogonal.FinitePolynomial
-import Mathlib.Analysis.SumIntegralComparisons
-import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
+module
+
+public import Lean_Code.PositiveBiorthogonal.FinitePolynomial
+public import Mathlib.Analysis.SumIntegralComparisons
+public import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+public import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
 /-! Finite weighted Hilbert estimates; all comparisons at zero use open intervals. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

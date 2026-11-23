@@ -1,4 +1,6 @@
-import Lean_Code.Basis.Criterion
+module
+
+public import Lean_Code.Basis.Criterion
 
 /-!
 # Transport and rescaling of Schauder bases
@@ -15,6 +17,8 @@ Generic constructions for Mathlib's `SchauderBasis 𝕜 X`.
 * `StructuredBases.rescale`: multiplying the basis vectors by nonzero scalars gives a
   Schauder basis with the same partial sum projections (`rescale_proj`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

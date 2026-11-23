@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.CutoffProductStep
-import Lean_Code.SchauderTranslates.RareParameter
+module
+
+public import Lean_Code.SchauderTranslates.CutoffProductStep
+public import Lean_Code.SchauderTranslates.RareParameter
+
+@[expose] public section
 
 noncomputable section
 open Filter

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.TorusTransfer
-import Lean_Code.SchauderTranslates.HilbertSynthesis
+module
+
+public import Lean_Code.SchauderTranslates.TorusTransfer
+public import Lean_Code.SchauderTranslates.HilbertSynthesis
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

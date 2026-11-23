@@ -1,6 +1,10 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-! Main results of "Structured coordinate systems in Lᵖ(ℝ)" by Freeman, Liehr and Taylor. -/
+
+@[expose] public section
 
 noncomputable section
 

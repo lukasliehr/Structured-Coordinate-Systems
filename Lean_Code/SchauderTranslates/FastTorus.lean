@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductInterface
+module
+
+public import Lean_Code.SchauderTranslates.ProductInterface
 
 /-!
 # The fast torus of tags and engines
@@ -14,6 +16,8 @@ import Lean_Code.SchauderTranslates.ProductInterface
 
 Helper lemmas live in the namespace `SchauderTranslates.FastTorus`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

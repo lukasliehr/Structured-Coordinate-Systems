@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Global.LocalCoordinates
+module
+
+public import Lean_Code.PositiveTranslates.Global.LocalCoordinates
 
 /-!
 # Coordinates and roots of a family of local bases
@@ -11,6 +13,8 @@ This file contains the definitions and the properties inherited directly from
 `LocalBasis` (norms, positivity, step structure, supports) together with the `ℓᵖ` identity
 for the coordinates.
 -/
+
+@[expose] public section
 
 noncomputable section
 

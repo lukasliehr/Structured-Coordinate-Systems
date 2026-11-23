@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.PositiveDerivative
-import Lean_Code.PositiveBiorthogonal.SupportObstruction
-import Lean_Code.PositiveBiorthogonal.BasisCriterion
+module
+
+public import Lean_Code.PositiveBiorthogonal.PositiveDerivative
+public import Lean_Code.PositiveBiorthogonal.SupportObstruction
+public import Lean_Code.PositiveBiorthogonal.BasisCriterion
 
 /-! The positive-vector obstruction uses only the given continuous coefficients. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

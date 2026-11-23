@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ColumnPrefixMasks
-import Lean_Code.SchauderTranslates.ScaledSynthesis
+module
+
+public import Lean_Code.SchauderTranslates.ColumnPrefixMasks
+public import Lean_Code.SchauderTranslates.ScaledSynthesis
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

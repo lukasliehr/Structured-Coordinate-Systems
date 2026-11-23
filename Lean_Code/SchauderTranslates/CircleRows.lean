@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ActivationOperator
-import Lean_Code.SchauderTranslates.ActivationSet
-import Lean_Code.SchauderTranslates.HilbertSynthesis
+module
+
+public import Lean_Code.SchauderTranslates.ActivationOperator
+public import Lean_Code.SchauderTranslates.ActivationSet
+public import Lean_Code.SchauderTranslates.HilbertSynthesis
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

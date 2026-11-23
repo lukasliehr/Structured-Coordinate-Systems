@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveKernel
-import Lean_Code.SchauderTranslates.MixedKernelPairing
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveKernel
+public import Lean_Code.SchauderTranslates.MixedKernelPairing
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

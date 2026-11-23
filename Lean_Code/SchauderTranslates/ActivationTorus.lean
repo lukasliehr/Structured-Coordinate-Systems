@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ActivationMoments
+module
+
+public import Lean_Code.SchauderTranslates.ActivationMoments
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

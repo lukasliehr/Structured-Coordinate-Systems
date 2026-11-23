@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.LimitStagesBasic
-import Lean_Code.SchauderTranslates.SchauderCriterion
-import Lean_Code.SchauderTranslates.Characters
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.LimitStagesBasic
+public import Lean_Code.SchauderTranslates.SchauderCriterion
+public import Lean_Code.SchauderTranslates.Characters
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
 
 /-!
 # Statements for the sharp `L²` construction (basis constant `< 1 + ε`)
@@ -12,6 +14,8 @@ the absolute constants are replaced by a parameter, and the
 evenness of the weights (needed for a real-valued generator) and the Gaussian majorant
 (needed for an entire generator) are recorded.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

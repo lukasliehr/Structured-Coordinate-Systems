@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedPlaneInclusion
-import Lean_Code.SchauderTranslates.SeedComplexProjection
+module
+
+public import Lean_Code.SchauderTranslates.SeedPlaneInclusion
+public import Lean_Code.SchauderTranslates.SeedComplexProjection
+
+@[expose] public section
 
 noncomputable section
 open Matrix

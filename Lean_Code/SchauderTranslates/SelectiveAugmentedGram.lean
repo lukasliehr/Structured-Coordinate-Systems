@@ -1,8 +1,12 @@
-import Lean_Code.SchauderTranslates.IntegralGramOrder
-import Lean_Code.SchauderTranslates.SelectiveGram
-import Lean_Code.SchauderTranslates.SelectiveTensorOrder
-import Lean_Code.SchauderTranslates.ScalarReality
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.IntegralGramOrder
+public import Lean_Code.SchauderTranslates.SelectiveGram
+public import Lean_Code.SchauderTranslates.SelectiveTensorOrder
+public import Lean_Code.SchauderTranslates.ScalarReality
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

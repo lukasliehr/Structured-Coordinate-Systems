@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.Lp.PacketSupport
+module
+
+public import Lean_Code.SchauderTranslates.Lp.PacketSupport
 
 /-!
 # Placement of packet parameters inside a prescribed unbounded set
@@ -20,6 +22,8 @@ Main declarations (namespace `StructuredBases.PositiveTranslates`):
 * `placementSeq hΓ R T : ℕ → ℝ`, `placement hΓ R T N : Fin N → ℝ` : the explicit choice;
 * `exists_placement` : the existence statement.
 -/
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

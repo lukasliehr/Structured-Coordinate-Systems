@@ -1,7 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Basic
+module
+
+public import Lean_Code.PositiveBiorthogonal.Basic
 
 /-! A basis criterion: a biorthogonal system with dense span and uniformly bounded initial
 projections is a Schauder basis. -/
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

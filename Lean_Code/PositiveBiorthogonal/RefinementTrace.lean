@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.HaarCrossPairings
+module
+
+public import Lean_Code.PositiveBiorthogonal.HaarCrossPairings
 
 /-! Finite refinement traces and biorthogonality of all their Haar pairs. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

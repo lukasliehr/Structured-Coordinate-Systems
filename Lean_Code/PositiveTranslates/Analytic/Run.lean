@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Analytic.GaussianLp
-import Lean_Code.PositiveTranslates.Analytic.StepDensity
+module
+
+public import Lean_Code.PositiveTranslates.Analytic.GaussianLp
+public import Lean_Code.PositiveTranslates.Analytic.StepDensity
 
 /-!
 # The analytic run driving a stage machine
@@ -19,6 +21,8 @@ Step `t` (from `S t` to `S (t+1)`), with `L = (M.births (S t)).length`:
 
 Then `G_{t+1} = G_t + a ∑ᵢ H(· + λᵢ)`.  The result is `exists_analytic_run`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

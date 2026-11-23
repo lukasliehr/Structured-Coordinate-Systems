@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.PartitionExtension
+module
+
+public import Lean_Code.PositiveBiorthogonal.PartitionExtension
 
 /-! Numerical and admissible data at a recursive stage; previous data remain accessible by index. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

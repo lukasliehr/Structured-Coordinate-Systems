@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.TorusFourierConvolution
-import Lean_Code.SchauderTranslates.FejerMultipliers
+module
+
+public import Lean_Code.SchauderTranslates.TorusFourierConvolution
+public import Lean_Code.SchauderTranslates.FejerMultipliers
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap Filter

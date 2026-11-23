@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarCaptureData
-import Lean_Code.SchauderTranslates.SeedCarrierCoordinates
+module
+
+public import Lean_Code.SchauderTranslates.ScalarCaptureData
+public import Lean_Code.SchauderTranslates.SeedCarrierCoordinates
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

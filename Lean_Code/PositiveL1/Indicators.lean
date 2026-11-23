@@ -1,9 +1,11 @@
-import Mathlib.Analysis.RCLike.Basic
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
-import Mathlib.MeasureTheory.Function.LpSpace.Indicator
-import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
-import Mathlib.MeasureTheory.PiSystem
+module
+
+public import Mathlib.Analysis.RCLike.Basic
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
+public import Mathlib.MeasureTheory.Function.LpSpace.Indicator
+public import Mathlib.MeasureTheory.Function.SimpleFuncDenseLp
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+public import Mathlib.MeasureTheory.PiSystem
 
 /-!
 # Indicator functions in `L¹` and a density criterion
@@ -20,6 +22,8 @@ The main results are closure properties of closed subspaces of `L¹`:
 * `eq_top_of_indL_Ioc_inter_mem`: a closed subspace of `L¹(ℝ)` containing the indicators of
   the traces of all intervals on the members of a countable partition of `ℝ` is everything.
 -/
+
+@[expose] public section
 
 noncomputable section
 

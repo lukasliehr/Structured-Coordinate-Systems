@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.InformationResolvent
+module
+
+public import Lean_Code.SchauderTranslates.InformationResolvent
+
+@[expose] public section
 
 noncomputable section
 open scoped ComplexOrder

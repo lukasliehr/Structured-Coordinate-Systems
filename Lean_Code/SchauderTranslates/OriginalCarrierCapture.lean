@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.CarrierKernelInformation
-import Lean_Code.SchauderTranslates.SeedCaptureBounds
+module
+
+public import Lean_Code.SchauderTranslates.CarrierKernelInformation
+public import Lean_Code.SchauderTranslates.SeedCaptureBounds
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

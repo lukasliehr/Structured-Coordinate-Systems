@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SkewDecomposition
+module
+
+public import Lean_Code.SchauderTranslates.SkewDecomposition
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace

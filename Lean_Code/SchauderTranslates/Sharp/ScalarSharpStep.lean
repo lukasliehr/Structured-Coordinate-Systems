@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.CutoffProductStep
-import Lean_Code.SchauderTranslates.ScalarRowBounds
-import Lean_Code.SchauderTranslates.ScalarCopyPrefixBounds
-import Lean_Code.SchauderTranslates.Sharp.ScalarSharpNumerics
+module
+
+public import Lean_Code.SchauderTranslates.CutoffProductStep
+public import Lean_Code.SchauderTranslates.ScalarRowBounds
+public import Lean_Code.SchauderTranslates.ScalarCopyPrefixBounds
+public import Lean_Code.SchauderTranslates.Sharp.ScalarSharpNumerics
 
 /-!
 # One activation/cutoff/product step with parametrized constants
@@ -13,6 +15,8 @@ constants (`1/646 ≤ Z ≤ 1/323`, `2 ≤ q < 3`, cost `10`) are replaced by re
 The analytic input (rare activation, the row-splitting lemma, the copies lemma) is used in
 its general form.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Matrix

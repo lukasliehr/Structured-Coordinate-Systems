@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.StepCellOrdering
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepCellOrdering
+
+@[expose] public section
 
 noncomputable section
 open scoped BigOperators

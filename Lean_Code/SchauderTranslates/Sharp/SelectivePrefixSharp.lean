@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.SelectivePrefixes
-import Lean_Code.SchauderTranslates.Sharp.ProjectionSum
+module
+
+public import Lean_Code.SchauderTranslates.SelectivePrefixes
+public import Lean_Code.SchauderTranslates.Sharp.ProjectionSum
 
 /-!
 # The sharp selective prefix estimate (paper: (15.2))
@@ -17,6 +19,8 @@ hence idempotents in the Gram metric; the identity `max 1 ‖Q‖² = 1 + ‖Q �
 triangle inequality for the skew parts give the bound. Cuts inside the auxiliary constant
 column are never needed.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

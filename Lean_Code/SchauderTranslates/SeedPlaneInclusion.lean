@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedBlock
-import Lean_Code.SchauderTranslates.SeedSpectralLimits
+module
+
+public import Lean_Code.SchauderTranslates.SeedBlock
+public import Lean_Code.SchauderTranslates.SeedSpectralLimits
+
+@[expose] public section
 
 noncomputable section
 open Matrix

@@ -1,10 +1,14 @@
-import Lean_Code.SchauderTranslates.Definitions
+module
+
+public import Lean_Code.SchauderTranslates.Definitions
 
 /-!
 # Translation on `Lᵖ(ℝ)`
 
 The complex space `Lᵖ(ℝ)` and the translation operator `g ↦ g(· - a)` on it.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

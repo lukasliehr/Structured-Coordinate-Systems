@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Local.Defs
-import Lean_Code.PositiveBiorthogonal.Statements
-import Lean_Code.SchauderTranslates.Lp.IndexedIntervalStep
+module
+
+public import Lean_Code.PositiveTranslates.Local.Defs
+public import Lean_Code.PositiveBiorthogonal.Statements
+public import Lean_Code.SchauderTranslates.Lp.IndexedIntervalStep
 
 /-!
 # From the step functions of the positive library to `IsCompactStep`
@@ -12,6 +14,8 @@ intervals `Ioc` with scalar coefficients). The translate development uses `IsCom
 real and non-negative almost everywhere the first notion implies the second; the endpoints
 form a null set.
 -/
+
+@[expose] public section
 
 noncomputable section
 

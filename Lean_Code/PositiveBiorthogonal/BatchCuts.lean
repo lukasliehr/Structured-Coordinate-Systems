@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Batch
+module
+
+public import Lean_Code.PositiveBiorthogonal.Batch
 
 /-! Exact finite sums at each of the three kinds of cuts in the ordered batch. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

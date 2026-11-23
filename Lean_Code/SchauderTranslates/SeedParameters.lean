@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedKernel
+module
+
+public import Lean_Code.SchauderTranslates.SeedKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

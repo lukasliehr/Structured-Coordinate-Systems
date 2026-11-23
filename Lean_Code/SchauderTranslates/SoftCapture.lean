@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.MatrixInverseOrder
+module
+
+public import Lean_Code.SchauderTranslates.MatrixInverseOrder
+
+@[expose] public section
 
 noncomputable section
 open Matrix

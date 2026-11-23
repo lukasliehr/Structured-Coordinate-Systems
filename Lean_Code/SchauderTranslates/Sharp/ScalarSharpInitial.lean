@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.InitialScalar
+module
+
+public import Lean_Code.SchauderTranslates.InitialScalar
 
 /-!
 # The parametrized initial scalar block
@@ -9,6 +11,8 @@ Paper (Section 14.4): the circle weight
 diagonal is `(1 - a) / ((1 - a)² - (a / 2)²)`. The block of `InitialScalar` is the case
 `a = 1 / 10`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveGram
-import Lean_Code.SchauderTranslates.FiberSlowSpace
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveGram
+public import Lean_Code.SchauderTranslates.FiberSlowSpace
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

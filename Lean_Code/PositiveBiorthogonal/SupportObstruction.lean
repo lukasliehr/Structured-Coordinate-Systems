@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.BasicLp
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+module
+
+public import Lean_Code.PositiveBiorthogonal.BasicLp
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
 /-! Positivity localizes support; a positive-measure supported space is not a line. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

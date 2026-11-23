@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.IndependentCopies
+module
+
+public import Lean_Code.SchauderTranslates.IndependentCopies
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

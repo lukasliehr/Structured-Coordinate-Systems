@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.ScalarCopyModel
-import Lean_Code.SchauderTranslates.CopyLinearMaps
-import Lean_Code.SchauderTranslates.OrderedGramPrefixes
-import Lean_Code.SchauderTranslates.CenteredMetricGram
+module
+
+public import Lean_Code.SchauderTranslates.ScalarCopyModel
+public import Lean_Code.SchauderTranslates.CopyLinearMaps
+public import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+public import Lean_Code.SchauderTranslates.CenteredMetricGram
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

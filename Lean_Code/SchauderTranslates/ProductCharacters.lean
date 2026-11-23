@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ScalarProductSpace
+module
+
+public import Lean_Code.SchauderTranslates.ScalarProductSpace
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

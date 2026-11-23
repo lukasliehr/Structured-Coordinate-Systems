@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.LineTransferBasics
+module
+
+public import Lean_Code.SchauderTranslates.LineTransferBasics
 
 /-!
 # The substituted line weight and the convergence of its finite moments
@@ -8,6 +10,8 @@ For a product kernel `W(t, y)` and a direction `ω`, the line weight at scale `A
 loss converge to their product-space values as `A → ∞`; finite Gram stability then fixes
 one scale at which all strict finite conclusions hold on the line.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

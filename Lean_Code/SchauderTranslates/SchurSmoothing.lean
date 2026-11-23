@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScaledGramBound
-import Mathlib.Analysis.Matrix.Order
+module
+
+public import Lean_Code.SchauderTranslates.ScaledGramBound
+public import Mathlib.Analysis.Matrix.Order
+
+@[expose] public section
 
 noncomputable section
 open Matrix

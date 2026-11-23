@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.FiberSlowSpace
-import Lean_Code.SchauderTranslates.BoundedRepresentatives
+module
+
+public import Lean_Code.SchauderTranslates.FiberSlowSpace
+public import Lean_Code.SchauderTranslates.BoundedRepresentatives
 
 /-!
 # Conditionally independent fiber kernels
@@ -10,6 +12,8 @@ variables identifies the means of lifted atoms, the inner products within one co
 the inner products across different copies (only the means interact). These are the
 facts behind the additivity of information.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

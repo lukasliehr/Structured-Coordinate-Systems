@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Global.CoordinateProjection
-import Lean_Code.PositiveTranslates.Global.RootPrefix
+module
+
+public import Lean_Code.PositiveTranslates.Global.CoordinateProjection
+public import Lean_Code.PositiveTranslates.Global.RootPrefix
 
 /-!
 # The global splitting into coordinates and roots
@@ -31,6 +33,8 @@ cell parts.
 
 The hypothesis `1 ≤ B` is not needed: it follows from `LocalBasis` (`GlobalSplitting.one_le`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.LimitStagesConstruct
-import Lean_Code.SchauderTranslates.RationalTotality
-import Lean_Code.SchauderTranslates.SchauderCriterion
-import Lean_Code.SchauderTranslates.MainReduction
+module
+
+public import Lean_Code.SchauderTranslates.LimitStagesConstruct
+public import Lean_Code.SchauderTranslates.RationalTotality
+public import Lean_Code.SchauderTranslates.SchauderCriterion
+public import Lean_Code.SchauderTranslates.MainReduction
 
 /-!
 # Assembly of the infinite construction
@@ -21,6 +23,8 @@ as a hypothesis, this file proves the following.
 The stage construction is in `LimitStagesConstruct`, and the positive
 infinite product is `positive_limit_weight`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

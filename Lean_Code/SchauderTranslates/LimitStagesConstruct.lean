@@ -1,6 +1,8 @@
-import Lean_Code.SchauderTranslates.LimitStagesBasic
-import Lean_Code.SchauderTranslates.LimitWeight
-import Lean_Code.SchauderTranslates.PositiveProduct
+module
+
+public import Lean_Code.SchauderTranslates.LimitStagesBasic
+public import Lean_Code.SchauderTranslates.LimitWeight
+public import Lean_Code.SchauderTranslates.PositiveProduct
 
 /-!
 # Limit stages: the recursive construction
@@ -14,6 +16,8 @@ length, so that the extension property is a statement about a common index type.
 If the scheduled target already has distance zero, the stage is skipped: the list,
 the weight and the constant are kept, and the factor is `W_n = 1`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

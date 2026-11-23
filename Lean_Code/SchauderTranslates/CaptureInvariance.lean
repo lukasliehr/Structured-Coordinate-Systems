@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FiberMarginalCapture
+module
+
+public import Lean_Code.SchauderTranslates.FiberMarginalCapture
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

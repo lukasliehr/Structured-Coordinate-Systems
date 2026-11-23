@@ -1,6 +1,8 @@
-import Lean_Code.PositiveL1.Abstract
-import Lean_Code.PositiveL1.Indicators
-import Mathlib.MeasureTheory.Integral.Bochner.Set
+module
+
+public import Lean_Code.PositiveL1.Abstract
+public import Lean_Code.PositiveL1.Indicators
+public import Mathlib.MeasureTheory.Integral.Bochner.Set
 
 /-!
 # Splitting schemes of measurable sets
@@ -10,6 +12,8 @@ splitting scheme of `Lean_Code/PositiveL1/Abstract.lean` (`SplitCells`) gives ri
 `SplitSystem` in `L¹(μ)`: the cell vectors are the normalised indicators `𝟙_{A k} / μ(A k)`
 and the cell functionals are the set integrals `f ↦ ∫_{A k} f`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

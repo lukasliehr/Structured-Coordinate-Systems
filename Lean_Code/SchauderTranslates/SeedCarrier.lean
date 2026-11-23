@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedKernelFloor
-import Lean_Code.SchauderTranslates.IntegralGramOrder
+module
+
+public import Lean_Code.SchauderTranslates.SeedKernelFloor
+public import Lean_Code.SchauderTranslates.IntegralGramOrder
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FourierUniqueness
+module
+
+public import Lean_Code.SchauderTranslates.FourierUniqueness
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

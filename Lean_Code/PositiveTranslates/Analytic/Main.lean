@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Analytic.Limit
-import Lean_Code.Basis.Perturbation
-import Lean_Code.SchauderTranslates.Lp.LpMeasurableEquiv
+module
+
+public import Lean_Code.PositiveTranslates.Analytic.Limit
+public import Lean_Code.Basis.Perturbation
+public import Lean_Code.SchauderTranslates.Lp.LpMeasurableEquiv
 
 /-!
 # A non-negative entire generator whose translates form a Schauder basis (`p > 2`)
@@ -24,6 +26,8 @@ The proof follows the paper: an analytic run (`exists_analytic_run`), the limit 
 and the small perturbation principle
 (`StructuredBases.exists_schauderBasis_of_summable_perturbation`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

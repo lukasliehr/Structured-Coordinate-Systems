@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.StepRefinement
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepRefinement
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

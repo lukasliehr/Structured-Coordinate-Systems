@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.LocalPositive
+module
+
+public import Lean_Code.PositiveBiorthogonal.LocalPositive
 
 /-! The source enumeration 0,1,-1,2,-2,..., with explicit prefix and fresh blocks. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

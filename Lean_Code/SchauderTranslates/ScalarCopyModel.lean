@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ScalarHilbertModel
-import Lean_Code.SchauderTranslates.ScalarProducts
-import Lean_Code.SchauderTranslates.IndependentCopies
+module
+
+public import Lean_Code.SchauderTranslates.ScalarHilbertModel
+public import Lean_Code.SchauderTranslates.ScalarProducts
+public import Lean_Code.SchauderTranslates.IndependentCopies
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.Translation
+module
+
+public import Lean_Code.SchauderTranslates.Lp.Translation
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

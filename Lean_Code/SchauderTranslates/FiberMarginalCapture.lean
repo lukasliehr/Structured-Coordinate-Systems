@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.SelectiveSource
-import Lean_Code.SchauderTranslates.NormalizedCapture
-import Lean_Code.SchauderTranslates.InformationResolvent
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveSource
+public import Lean_Code.SchauderTranslates.NormalizedCapture
+public import Lean_Code.SchauderTranslates.InformationResolvent
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

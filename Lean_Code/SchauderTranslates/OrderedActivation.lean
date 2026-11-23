@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.FiniteRowOrder
-import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.FiniteRowOrder
+public import Lean_Code.SchauderTranslates.OrderedGramPrefixes
+
+@[expose] public section
 
 noncomputable section
 open Matrix

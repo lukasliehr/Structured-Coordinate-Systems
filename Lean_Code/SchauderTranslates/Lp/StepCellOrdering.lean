@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.StepCellNorm
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepCellNorm
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

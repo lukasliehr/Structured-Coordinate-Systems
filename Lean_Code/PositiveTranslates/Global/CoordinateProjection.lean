@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Global.Roots
-import Lean_Code.SchauderTranslates.Lp.DisjointLpSynthesis
+module
+
+public import Lean_Code.PositiveTranslates.Global.Roots
+public import Lean_Code.SchauderTranslates.Lp.DisjointLpSynthesis
 
 /-!
 # The coordinate projection
@@ -13,6 +15,8 @@ series converges because the blocks are disjointly supported:
 It is a projection of norm at most `B` which fixes the coordinates and kills the roots; its
 range is the closed span of the coordinates and its kernel is the closed span of the roots.
 -/
+
+@[expose] public section
 
 noncomputable section
 

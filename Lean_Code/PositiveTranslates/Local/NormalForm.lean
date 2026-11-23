@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Local.Defs
-import Lean_Code.SchauderTranslates.Lp.StepCellOrdering
-import Lean_Code.SchauderTranslates.Lp.StepCellAvoidance
+module
+
+public import Lean_Code.PositiveTranslates.Local.Defs
+public import Lean_Code.SchauderTranslates.Lp.StepCellOrdering
+public import Lean_Code.SchauderTranslates.Lp.StepCellAvoidance
 
 /-!
 # Normal form of non-negative compact step functions
@@ -13,6 +15,8 @@ disjoint half-open intervals `Iₖ = [(I k).1, (I k).2)`
 (up to a null set). In particular they are disjoint from every interval `[a, b)` on which `e`
 vanishes almost everywhere.
 -/
+
+@[expose] public section
 
 noncomputable section
 

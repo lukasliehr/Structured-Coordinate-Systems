@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.CircleRowsTotal
+module
+
+public import Lean_Code.SchauderTranslates.CircleRowsTotal
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

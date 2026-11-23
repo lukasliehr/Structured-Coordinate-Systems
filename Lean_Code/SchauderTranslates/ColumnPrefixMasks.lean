@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.PacketRowPrefixes
-import Lean_Code.SchauderTranslates.SelectiveColumnCuts
+module
+
+public import Lean_Code.SchauderTranslates.PacketRowPrefixes
+public import Lean_Code.SchauderTranslates.SelectiveColumnCuts
+
+@[expose] public section
 
 noncomputable section
 open Matrix

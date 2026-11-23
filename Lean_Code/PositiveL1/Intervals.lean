@@ -1,5 +1,7 @@
-import Lean_Code.PositiveL1.Cells
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+module
+
+public import Lean_Code.PositiveL1.Cells
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 /-!
 # The interval cells of the construction
@@ -16,6 +18,8 @@ So `cell n` is the cell which is split in step `n`, and the cells alive at time 
 cells with index in `Finset.Icc n (3 * n)` (a first-in-first-out queue).  The main result is
 that the sets `cellSet z θ k` form a splitting scheme (`splitCells`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

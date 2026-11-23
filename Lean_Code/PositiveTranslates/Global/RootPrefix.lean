@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Global.Roots
+module
+
+public import Lean_Code.PositiveTranslates.Global.Roots
 
 /-!
 # The prefix inequality for the roots
@@ -8,6 +10,8 @@ combination: its part in the cell `c` is the local prefix operator of `β c` app
 part of the full combination.  Since the `p`-th powers of the norms add over the disjoint
 cells, the roots satisfy the prefix inequality with the same constant as the local bases.
 -/
+
+@[expose] public section
 
 noncomputable section
 

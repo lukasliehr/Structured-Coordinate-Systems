@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FejerDensity
+module
+
+public import Lean_Code.SchauderTranslates.FejerDensity
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.FiberMeanInner
-import Lean_Code.SchauderTranslates.InformationCentering
+module
+
+public import Lean_Code.SchauderTranslates.FiberMeanInner
+public import Lean_Code.SchauderTranslates.InformationCentering
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

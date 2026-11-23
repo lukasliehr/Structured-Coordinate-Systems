@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SelectivePacket
+module
+
+public import Lean_Code.SchauderTranslates.SelectivePacket
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

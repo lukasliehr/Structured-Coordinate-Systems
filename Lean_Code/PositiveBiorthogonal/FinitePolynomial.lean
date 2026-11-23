@@ -1,10 +1,15 @@
-import Lean_Code.PositiveBiorthogonal.FiniteInverse
-import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
-import Mathlib.Algebra.Polynomial.Div
-import Mathlib.Algebra.Polynomial.AlgebraMap
-import Mathlib.Algebra.BigOperators.NatAntidiagonal
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteInverse
+public import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
+public import Mathlib.Algebra.Polynomial.Div
+public import Mathlib.Algebra.Polynomial.AlgebraMap
+public import Mathlib.Algebra.BigOperators.NatAntidiagonal
 
 /-! Truncated convolution gives exact inverses at nilpotent shifts. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped BigOperators Polynomial ENNReal

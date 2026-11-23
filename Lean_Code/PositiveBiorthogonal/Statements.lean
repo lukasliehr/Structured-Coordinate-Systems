@@ -1,4 +1,8 @@
-import Lean_Code.PositiveBiorthogonal.MainTheorem
+module
+
+public import Lean_Code.PositiveBiorthogonal.MainTheorem
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

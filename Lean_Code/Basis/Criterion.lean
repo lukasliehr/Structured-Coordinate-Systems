@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Schauder bases: construction from coordinates and from finite prefix bounds
@@ -15,6 +17,8 @@ Everything here is stated for Mathlib's `SchauderBasis 𝕜 X`
 * `StructuredBases.nnnormProjBound_le_iff` and friends: the basis constant
   `SchauderBasis.nnnormProjBound` is the least upper bound of the norms `‖b.proj N‖`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.CircleFejerKernel
-import Mathlib.MeasureTheory.Integral.Pi
+module
+
+public import Lean_Code.SchauderTranslates.CircleFejerKernel
+public import Mathlib.MeasureTheory.Integral.Pi
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

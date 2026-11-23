@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.Definitions
-import Mathlib.Algebra.BigOperators.Fin
-import Mathlib.Tactic
+module
+
+public import Lean_Code.PositiveBiorthogonal.Definitions
+public import Mathlib.Algebra.BigOperators.Fin
+public import Mathlib.Tactic
 
 /-! The nonnegative inverse coefficients. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped BigOperators

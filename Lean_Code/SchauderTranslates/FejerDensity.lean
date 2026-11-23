@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.TorusPolynomial
-import Lean_Code.SchauderTranslates.ActivationWeight
-import Mathlib.Analysis.Convolution
+module
+
+public import Lean_Code.SchauderTranslates.TorusPolynomial
+public import Lean_Code.SchauderTranslates.ActivationWeight
+public import Mathlib.Analysis.Convolution
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

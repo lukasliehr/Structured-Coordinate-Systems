@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Forest.Synthesis
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Synthesis
 
 /-!
 # Completeness of the sequence of a positive forest
@@ -14,6 +16,8 @@ closed span is everything because `Z = range PY ⊕ ker PY` (`dense_span_seq`).
 
 We also show that no vector of the sequence vanishes (`seq_ne_zero`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

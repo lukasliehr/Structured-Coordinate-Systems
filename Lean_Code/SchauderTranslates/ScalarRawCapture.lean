@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ScalarCaptureData
+module
+
+public import Lean_Code.SchauderTranslates.ScalarCaptureData
+
+@[expose] public section
 
 noncomputable section
 open Matrix

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.TorusFejerKernel
+module
+
+public import Lean_Code.SchauderTranslates.TorusFejerKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

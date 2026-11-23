@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.CenteredSelectivePrefixes
-import Lean_Code.SchauderTranslates.PacketEnumeration
+module
+
+public import Lean_Code.SchauderTranslates.CenteredSelectivePrefixes
+public import Lean_Code.SchauderTranslates.PacketEnumeration
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

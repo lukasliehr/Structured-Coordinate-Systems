@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedCaptureSpectrum
-import Lean_Code.SchauderTranslates.SoftLossScale
+module
+
+public import Lean_Code.SchauderTranslates.SeedCaptureSpectrum
+public import Lean_Code.SchauderTranslates.SoftLossScale
+
+@[expose] public section
 
 noncomputable section
 open Matrix Filter

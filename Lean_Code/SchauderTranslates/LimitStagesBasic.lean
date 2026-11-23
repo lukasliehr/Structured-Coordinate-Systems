@@ -1,6 +1,8 @@
-import Lean_Code.SchauderTranslates.Definitions
-import Lean_Code.SchauderTranslates.Characters
-import Lean_Code.SchauderTranslates.WeightedIsometry
+module
+
+public import Lean_Code.SchauderTranslates.Definitions
+public import Lean_Code.SchauderTranslates.Characters
+public import Lean_Code.SchauderTranslates.WeightedIsometry
 
 /-!
 # Limit stages: elementary estimates for raw weighted norms
@@ -16,6 +18,8 @@ infinite stage construction:
 * convergence of raw weighted norms of bounded continuous functions under
   `L¹` convergence of densities.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

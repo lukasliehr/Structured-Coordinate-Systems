@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ActivationInverse
+module
+
+public import Lean_Code.SchauderTranslates.ActivationInverse
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

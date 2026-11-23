@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.InformationCentering
-import Lean_Code.SchauderTranslates.CenteredProjection
+module
+
+public import Lean_Code.SchauderTranslates.InformationCentering
+public import Lean_Code.SchauderTranslates.CenteredProjection
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

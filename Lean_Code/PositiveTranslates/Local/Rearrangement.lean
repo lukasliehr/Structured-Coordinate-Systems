@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.Defs
-import Lean_Code.SchauderTranslates.Lp.AffineCellMeasure
+module
+
+public import Lean_Code.PositiveTranslates.Local.Defs
+public import Lean_Code.SchauderTranslates.Lp.AffineCellMeasure
 
 /-!
 # Piecewise affine rearrangements: the pointwise formula
@@ -16,6 +18,8 @@ and the change of variables
 
 `∫ |R.fn p f|^p = ∫_{⋃ sources} |f|^p`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.BoundedRepresentatives
-import Lean_Code.SchauderTranslates.ScalarData
-import Lean_Code.SchauderTranslates.SeedMoments
+module
+
+public import Lean_Code.SchauderTranslates.BoundedRepresentatives
+public import Lean_Code.SchauderTranslates.ScalarData
+public import Lean_Code.SchauderTranslates.SeedMoments
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

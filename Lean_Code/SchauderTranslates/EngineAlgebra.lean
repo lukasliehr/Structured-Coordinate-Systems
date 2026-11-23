@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.ScalarPrefixes
 
 /-!
 # Engine algebra
@@ -22,6 +24,8 @@ families is `equiangular_bessel_of_nonneg` (and `equiangular_bessel_of_pos`); wi
 extra hypothesis it fails for `N = 0` and `α ^ 2 > 1`, where the constant
 `1 - α ^ 2 + N * α ^ 2` is negative.
 -/
+
+@[expose] public section
 
 noncomputable section
 open scoped InnerProductSpace BigOperators

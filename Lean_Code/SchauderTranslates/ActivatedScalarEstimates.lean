@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ActivatedScalarData
-import Lean_Code.SchauderTranslates.FiniteScalarReindex
-import Lean_Code.SchauderTranslates.CutoffCentered
+module
+
+public import Lean_Code.SchauderTranslates.ActivatedScalarData
+public import Lean_Code.SchauderTranslates.FiniteScalarReindex
+public import Lean_Code.SchauderTranslates.CutoffCentered
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

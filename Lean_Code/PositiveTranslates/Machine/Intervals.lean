@@ -1,4 +1,6 @@
-import Mathlib
+module
+
+public import Mathlib
 
 /-!
 # Finite unions of half-open intervals
@@ -13,6 +15,8 @@ Set-level bookkeeping for the reference construction (`Machine/Stage.lean`).
   `removable_iUnion` : half-open intervals and their finite unions are removable. The
   basic step is `Ico a b \ Ico c d = Ico a (min b c) ∪ Ico (max a (max c d)) b`.
 -/
+
+@[expose] public section
 
 open Set
 

@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.BatchBounds
+module
+
+public import Lean_Code.PositiveBiorthogonal.BatchBounds
 
 /-! The source scaling parameter and the resulting sharp uniform batch bound. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.LpSupportedSubmodule
+module
+
+public import Lean_Code.SchauderTranslates.Lp.LpSupportedSubmodule
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

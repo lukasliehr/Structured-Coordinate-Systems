@@ -1,5 +1,7 @@
-import Lean_Code.Basis.Criterion
-import Lean_Code.PositiveBiorthogonal.Statements
+module
+
+public import Lean_Code.Basis.Criterion
+public import Lean_Code.PositiveBiorthogonal.Statements
 
 /-!
 # Non-negative bases for `1 < p < ∞`, in Mathlib's language
@@ -9,6 +11,8 @@ The library `Lean_Code/PositiveBiorthogonal` uses its own structure
 `SchauderBasis`; this file converts in both directions and restates the two results
 needed for the main theorem.
 -/
+
+@[expose] public section
 
 noncomputable section
 

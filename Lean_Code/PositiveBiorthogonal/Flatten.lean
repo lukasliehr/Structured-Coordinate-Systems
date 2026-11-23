@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.StageMesh
+module
+
+public import Lean_Code.PositiveBiorthogonal.StageMesh
 
 /-! The unique batch location of each non-root index and the resulting raw sequences. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

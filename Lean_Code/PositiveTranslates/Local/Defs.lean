@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.StageMachine
-import Lean_Code.PositiveTranslates.Global.LocalBasis
-import Lean_Code.SchauderTranslates.Lp.LpSupportedSubmodule
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
+public import Lean_Code.PositiveTranslates.Global.LocalBasis
+public import Lean_Code.SchauderTranslates.Lp.LpSupportedSubmodule
 
 /-!
 # Local non-negative bases: the interface
@@ -21,6 +23,8 @@ on `Lᵖ(A)`, maps `Lᵖ(A)` onto `Lᵖ(A')`, and preserves the two structural p
 preserving compactly supported step functions; `LocalBasis.of_cellIsometry` transports local
 bases of the whole line through such maps.
 -/
+
+@[expose] public section
 
 noncomputable section
 

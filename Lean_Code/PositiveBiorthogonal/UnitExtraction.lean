@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.UnitTransfer
-import Lean_Code.PositiveBiorthogonal.Auxiliary
+module
+
+public import Lean_Code.PositiveBiorthogonal.UnitTransfer
+public import Lean_Code.PositiveBiorthogonal.Auxiliary
 
 /-! Contractive extraction and transport of every finite auxiliary partial projection. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

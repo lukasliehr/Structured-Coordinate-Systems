@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.ActivationInverse
-import Lean_Code.SchauderTranslates.CircleCutoffs
-import Lean_Code.SchauderTranslates.ActivationNorms
-import Lean_Code.SchauderTranslates.CompressedInverseNorm
+module
+
+public import Lean_Code.SchauderTranslates.ActivationInverse
+public import Lean_Code.SchauderTranslates.CircleCutoffs
+public import Lean_Code.SchauderTranslates.ActivationNorms
+public import Lean_Code.SchauderTranslates.CompressedInverseNorm
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Stages
+module
+
+public import Lean_Code.PositiveBiorthogonal.Stages
 
 /-! Each already active grid unit has geometrically decreasing cell lengths. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.ProductPoly
-import Lean_Code.SchauderTranslates.Sharp.SelectivePrefixSharp
+module
+
+public import Lean_Code.SchauderTranslates.ProductPoly
+public import Lean_Code.SchauderTranslates.Sharp.SelectivePrefixSharp
 
 /-!
 # The sharp finite extension in the normalized product law
@@ -16,6 +18,8 @@ is of size `u`.
   `(1+ρ)/(1−ρ) · max(K², (1+λ) Q_c)` and squared error `≤ (1 − c_*) ‖r‖²`.
 * The raw kernel is a mixed trigonometric polynomial under `ValidSharp`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

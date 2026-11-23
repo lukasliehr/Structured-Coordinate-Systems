@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.LocalCorrection
+module
+
+public import Lean_Code.PositiveBiorthogonal.LocalCorrection
 
 /-! The common correction size and its decay as the splitting parameter increases. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

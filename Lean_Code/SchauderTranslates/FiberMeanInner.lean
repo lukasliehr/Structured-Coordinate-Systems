@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FiberKernel
+module
+
+public import Lean_Code.SchauderTranslates.FiberKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

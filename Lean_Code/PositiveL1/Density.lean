@@ -1,4 +1,6 @@
-import Lean_Code.PositiveL1.Intervals
+module
+
+public import Lean_Code.PositiveL1.Intervals
 
 /-!
 # Density of the span of the interval cells
@@ -10,6 +12,8 @@ contain a given point shrink to this point, so that the end points of the cells 
 Consequently the sequence built from the interval cells has a dense linear span
 (`dense_span_splitSeq`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

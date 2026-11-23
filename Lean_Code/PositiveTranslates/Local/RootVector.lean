@@ -1,4 +1,6 @@
-import Lean_Code.PositiveBiorthogonal.Statements
+module
+
+public import Lean_Code.PositiveBiorthogonal.Statements
 
 /-!
 # The first vector of the constructed non-negative basis
@@ -13,6 +15,8 @@ This file exports that fact:
 * `PositiveBiorthogonal.exists_almost_monotone_positive_basis_with_root`: the statement
   `exists_almost_monotone_positive_basis` together with `B.b 0 = (gridUnit 0).indicator`.
 -/
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

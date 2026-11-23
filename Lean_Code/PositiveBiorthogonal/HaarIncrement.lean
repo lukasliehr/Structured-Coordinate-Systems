@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.HaarSupport
+module
+
+public import Lean_Code.PositiveBiorthogonal.HaarSupport
 
 /-! The exact averaging increment associated to one admissible refinement. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

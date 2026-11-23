@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Machine.Run
+module
+
+public import Lean_Code.PositiveTranslates.Machine.Run
 
 /-!
 # The reference construction as a stage machine
@@ -35,6 +37,8 @@ interface `StageMachine` of `Lean_Code/PositiveTranslates/StageMachine.lean`:
   multiples of the vectors of the forest, form a Schauder basis with all partial sum
   projections bounded by `K = 4 · 2 · (1 + 2) + 13 · 2 = 50`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

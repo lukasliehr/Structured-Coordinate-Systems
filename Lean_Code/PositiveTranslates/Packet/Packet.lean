@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Packet.Placement
-import Lean_Code.PositiveTranslates.Packet.Scales
-import Lean_Code.PositiveTranslates.Packet.Nonneg
+module
+
+public import Lean_Code.PositiveTranslates.Packet.Placement
+public import Lean_Code.PositiveTranslates.Packet.Scales
+public import Lean_Code.PositiveTranslates.Packet.Nonneg
 
 /-!
 # The positive packet
@@ -27,6 +29,8 @@ Main declarations (namespace `StructuredBases.PositiveTranslates`):
 * `positive_packet` : `PositivePacket p R v h Λ (posRemainder p v h Λ)`;
 * `exists_positive_remainders` : the existential form.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

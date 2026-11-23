@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveCapture
-import Lean_Code.SchauderTranslates.SelectivePrefixes
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveCapture
+public import Lean_Code.SchauderTranslates.SelectivePrefixes
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

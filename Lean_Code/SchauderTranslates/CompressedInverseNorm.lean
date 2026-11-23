@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.PositiveOperatorNorm
+module
+
+public import Lean_Code.SchauderTranslates.PositiveOperatorNorm
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

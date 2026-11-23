@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ScalarFloorNumerics
+module
+
+public import Lean_Code.SchauderTranslates.ScalarFloorNumerics
 
 /-!
 # Real arithmetic for the sharp scalar induction
@@ -10,6 +12,8 @@ The statements are the parametrized counterparts of `ScalarNumerics` and `Scalar
 whose absolute constants `1/323`, `1/646`,
 `2 ≤ q < 3` and `10` are replaced by `Z₀`, a relative bound, `1 + t ≤ q < 1 + 2 t` and `5 / t`.
 -/
+
+@[expose] public section
 
 noncomputable section
 namespace SchauderTranslates.Sharp.Scalar

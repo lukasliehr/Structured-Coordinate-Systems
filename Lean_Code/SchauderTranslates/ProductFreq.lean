@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductFlat
+module
+
+public import Lean_Code.SchauderTranslates.ProductFlat
 
 /-!
 # Atoms on the flat torus
@@ -8,6 +10,8 @@ old atoms carry torus frequency zero, and every engine atom carries the sum of i
 (or seed) frequency and its nonzero auxiliary frequency. The flat frequencies of the new
 atoms are nonzero and pairwise distinct.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

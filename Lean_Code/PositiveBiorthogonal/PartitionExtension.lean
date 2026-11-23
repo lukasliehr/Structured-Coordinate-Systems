@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.PartitionOrder
+module
+
+public import Lean_Code.PositiveBiorthogonal.PartitionOrder
 
 /-! Adding a disjoint block of whole grid units to an admissible partition. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

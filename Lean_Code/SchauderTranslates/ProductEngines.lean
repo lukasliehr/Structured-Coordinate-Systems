@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.CombinedEngines
-import Lean_Code.SchauderTranslates.SelectiveSupply
+module
+
+public import Lean_Code.SchauderTranslates.CombinedEngines
+public import Lean_Code.SchauderTranslates.SelectiveSupply
 
 /-!
 # Selective engines in the combined product space
@@ -11,6 +13,8 @@ own centered Gram. The selective information formula then yields the two propert
 by the replica argument: a mean-pairing bound `c ‖v‖² + j |⟪e, v⟫|²` and explicit
 coefficients realizing `j • e` at centered cost `j`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

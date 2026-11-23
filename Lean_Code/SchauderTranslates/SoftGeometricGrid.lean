@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SelectiveGrid
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveGrid
+
+@[expose] public section
 
 noncomputable section
 open Filter

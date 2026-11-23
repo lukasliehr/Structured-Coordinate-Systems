@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductSlow
+module
+
+public import Lean_Code.SchauderTranslates.ProductSlow
 
 /-!
 # Tag replicas for the product extension
@@ -8,6 +10,8 @@ scalar tag block of gain `z`, and `N` replicas of all carrier tags in disjoint b
 Each replica carries the normalized lift `e_i` of the residual. We prove the replica
 relations `‖e_i‖ = 1`, `⟪e_i, e_{i'}⟫ = α²` and `⟪e_i, g⟫ = ⟪r, g⟫/√D` for slow `g`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

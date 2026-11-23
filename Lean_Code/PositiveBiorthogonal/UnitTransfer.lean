@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.DisjointSums
-import Lean_Code.PositiveBiorthogonal.HaarSupport
-import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
+module
+
+public import Lean_Code.PositiveBiorthogonal.DisjointSums
+public import Lean_Code.PositiveBiorthogonal.HaarSupport
+public import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
 
 /-! Isometric realization of finite coordinates on distinct grid units. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

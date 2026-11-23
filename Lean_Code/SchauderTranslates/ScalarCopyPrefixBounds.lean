@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarCopyCuts
-import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+module
+
+public import Lean_Code.SchauderTranslates.ScalarCopyCuts
+public import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

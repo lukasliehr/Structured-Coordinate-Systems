@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedFullProjection
+module
+
+public import Lean_Code.SchauderTranslates.SeedFullProjection
+
+@[expose] public section
 
 noncomputable section
 open Matrix

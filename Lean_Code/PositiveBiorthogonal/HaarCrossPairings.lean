@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.HaarIncrement
+module
+
+public import Lean_Code.PositiveBiorthogonal.HaarIncrement
 
 /-! Both off-diagonal pairings for a later split inside an earlier partition refinement. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

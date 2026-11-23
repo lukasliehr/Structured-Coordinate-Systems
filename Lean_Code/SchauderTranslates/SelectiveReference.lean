@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.BoundedTensor
+module
+
+public import Lean_Code.SchauderTranslates.BoundedTensor
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

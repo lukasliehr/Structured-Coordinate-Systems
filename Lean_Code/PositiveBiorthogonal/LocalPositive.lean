@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.LocalSmall
+module
+
+public import Lean_Code.PositiveBiorthogonal.LocalSmall
 
 /-! The explicit correction formulas make every batch coefficient nonnegative. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

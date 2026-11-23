@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.ActiveIndicator
+module
+
+public import Lean_Code.PositiveBiorthogonal.ActiveIndicator
 
 /-! Explicit paired rank-one corrections on the primal and conjugate spaces. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

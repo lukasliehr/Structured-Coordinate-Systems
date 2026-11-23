@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.TorusTransfer
+module
+
+public import Lean_Code.SchauderTranslates.TorusTransfer
+
+@[expose] public section
 
 noncomputable section
 open Filter

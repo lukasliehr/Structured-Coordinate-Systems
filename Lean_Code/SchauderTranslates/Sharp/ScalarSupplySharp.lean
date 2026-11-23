@@ -1,7 +1,9 @@
-import Lean_Code.SchauderTranslates.Sharp.Statements
-import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStage
-import Lean_Code.SchauderTranslates.ScalarAffinePrefixes
-import Lean_Code.SchauderTranslates.ScalarAffineGain
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.Statements
+public import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStage
+public import Lean_Code.SchauderTranslates.ScalarAffinePrefixes
+public import Lean_Code.SchauderTranslates.ScalarAffineGain
 
 /-!
 # Sharp scalar supply and sharp prescribed gain
@@ -15,6 +17,8 @@ The centered squared constant is `Q_n < 1 + 2 t`, and the augmented squared cons
 `Q_n + (5 / t) η_n < 1 + 2 t` (the bound supplied by the copies lemma, which is also the
 next centered budget), so `K = √(1 + 2 t) < 1 + dd` serves for both families.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Matrix Filter

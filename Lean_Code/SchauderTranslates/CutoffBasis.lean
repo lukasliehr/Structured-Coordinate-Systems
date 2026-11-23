@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.CircleRowsBasis
-import Lean_Code.SchauderTranslates.CircleCutoffs
-import Lean_Code.SchauderTranslates.BasisOperatorMatrix
+module
+
+public import Lean_Code.SchauderTranslates.CircleRowsBasis
+public import Lean_Code.SchauderTranslates.CircleCutoffs
+public import Lean_Code.SchauderTranslates.BasisOperatorMatrix
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Module

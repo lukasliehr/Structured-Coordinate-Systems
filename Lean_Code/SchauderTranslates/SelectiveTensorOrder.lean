@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.TensorCaptureBasics
-import Lean_Code.SchauderTranslates.GramGeometry
+module
+
+public import Lean_Code.SchauderTranslates.TensorCaptureBasics
+public import Lean_Code.SchauderTranslates.GramGeometry
+
+@[expose] public section
 
 noncomputable section
 open Matrix

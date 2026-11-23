@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FourierCovariance
+module
+
+public import Lean_Code.SchauderTranslates.FourierCovariance
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

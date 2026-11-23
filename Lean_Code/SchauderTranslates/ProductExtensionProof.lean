@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductRaw
+module
+
+public import Lean_Code.SchauderTranslates.ProductRaw
 
 /-!
 # Arithmetic for the finite extension on a product space
@@ -6,6 +8,8 @@ import Lean_Code.SchauderTranslates.ProductRaw
 Two elementary bounds used in the proof of the product-space extension: the loss of a product
 of masses in `[0,1]`, and the margin of the prefix constant.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

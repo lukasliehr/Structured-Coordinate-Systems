@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.HaarNorms
+module
+
+public import Lean_Code.PositiveBiorthogonal.HaarNorms
 
 /-! Support and unitwise cancellation of the Haar pairs. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

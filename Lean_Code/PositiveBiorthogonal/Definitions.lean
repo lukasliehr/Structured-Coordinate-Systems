@@ -1,9 +1,12 @@
-import Mathlib.Analysis.RCLike.Basic
-import Mathlib.MeasureTheory.Integral.Bochner.Basic
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+module
 
+public import Mathlib.Analysis.RCLike.Basic
+public import Mathlib.MeasureTheory.Integral.Bochner.Basic
+public import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 /-! Definitions for the statements on non-negative bases and positive biorthogonal functionals. -/
+
+@[expose] public section
 
 noncomputable section
 

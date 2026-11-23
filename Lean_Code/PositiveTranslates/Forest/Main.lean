@@ -1,6 +1,8 @@
-import Lean_Code.PositiveTranslates.Forest.Estimates
-import Lean_Code.PositiveTranslates.Forest.Density
-import Lean_Code.PositiveTranslates.Forest.Tools
+module
+
+public import Lean_Code.PositiveTranslates.Forest.Estimates
+public import Lean_Code.PositiveTranslates.Forest.Density
+public import Lean_Code.PositiveTranslates.Forest.Tools
 
 /-!
 # The positive forest is a Schauder basis
@@ -18,6 +20,8 @@ The proof combines
   (`Forest/Density.lean`),
 * the criterion `StructuredBases.exists_schauderBasis_of_prefix_bound`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

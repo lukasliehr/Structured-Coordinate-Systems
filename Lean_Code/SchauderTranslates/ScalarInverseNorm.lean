@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.FiniteScalarGram
-import Lean_Code.SchauderTranslates.PositiveBlockNorm
-import Lean_Code.SchauderTranslates.ScaledGramBound
+module
+
+public import Lean_Code.SchauderTranslates.FiniteScalarGram
+public import Lean_Code.SchauderTranslates.PositiveBlockNorm
+public import Lean_Code.SchauderTranslates.ScaledGramBound
+
+@[expose] public section
 
 noncomputable section
 open Matrix

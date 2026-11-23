@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.PacketReferenceGram
-import Lean_Code.SchauderTranslates.SelectiveCompleteColumns
+module
+
+public import Lean_Code.SchauderTranslates.PacketReferenceGram
+public import Lean_Code.SchauderTranslates.SelectiveCompleteColumns
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

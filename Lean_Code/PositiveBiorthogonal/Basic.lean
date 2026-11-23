@@ -1,13 +1,17 @@
-import Lean_Code.PositiveBiorthogonal.Definitions
-import Mathlib.Analysis.Complex.Basic
-import Mathlib.Analysis.Normed.Operator.BanachSteinhaus
-import Mathlib.MeasureTheory.Function.LpSpace.Complete
-import Mathlib.Topology.Order.LiminfLimsup
+module
+
+public import Lean_Code.PositiveBiorthogonal.Definitions
+public import Mathlib.Analysis.Complex.Basic
+public import Mathlib.Analysis.Normed.Operator.BanachSteinhaus
+public import Mathlib.MeasureTheory.Function.LpSpace.Complete
+public import Mathlib.Topology.Order.LiminfLimsup
 
 /-!
 Basic facts about the definitions: conjugate exponents, the pairing, the partial sum
 projections and the basis constant.
 -/
+
+@[expose] public section
 
 noncomputable section
 set_option autoImplicit false

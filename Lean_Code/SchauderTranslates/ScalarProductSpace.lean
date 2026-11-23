@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ScalarData
-import Mathlib.MeasureTheory.Integral.Pi
-import Mathlib.MeasureTheory.Measure.Haar.Unique
+module
+
+public import Lean_Code.SchauderTranslates.ScalarData
+public import Mathlib.MeasureTheory.Integral.Pi
+public import Mathlib.MeasureTheory.Measure.Haar.Unique
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

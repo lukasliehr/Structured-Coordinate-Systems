@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ProjectionPair
+module
+
+public import Lean_Code.SchauderTranslates.ProjectionPair
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

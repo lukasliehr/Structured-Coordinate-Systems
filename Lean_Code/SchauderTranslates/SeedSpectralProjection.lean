@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.SeedEigenvalues
+module
+
+public import Lean_Code.SchauderTranslates.SeedEigenvalues
+
+@[expose] public section
 
 noncomputable section
 open Matrix

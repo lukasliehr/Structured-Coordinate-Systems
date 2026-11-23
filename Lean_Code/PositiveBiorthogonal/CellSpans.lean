@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.RawBiorthogonal
+module
+
+public import Lean_Code.PositiveBiorthogonal.RawBiorthogonal
 
 /-! Stage-cell membership in both finite raw spans. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory

@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductSetup
+module
+
+public import Lean_Code.SchauderTranslates.ProductSetup
 
 /-!
 # Real residual coefficients for an even weight
@@ -9,6 +11,8 @@ together with the fact that it differs from the target by an old combination. Ta
 parts of the coefficients of any such representation preserves both properties, so the
 residual has real character coefficients. No injectivity of the old frequencies is needed.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

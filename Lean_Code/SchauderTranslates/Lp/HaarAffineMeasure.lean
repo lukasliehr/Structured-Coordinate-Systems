@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.LpMeasurableEquiv
+module
+
+public import Lean_Code.SchauderTranslates.Lp.LpMeasurableEquiv
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

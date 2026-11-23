@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.ScalarGram
+module
+
+public import Lean_Code.SchauderTranslates.ScalarGram
+
+@[expose] public section
 
 noncomputable section
 open Matrix

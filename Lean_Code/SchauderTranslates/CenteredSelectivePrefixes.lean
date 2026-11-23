@@ -1,7 +1,11 @@
-import Lean_Code.SchauderTranslates.OrderedSelectivePrefixes
-import Lean_Code.SchauderTranslates.SelectiveInitialCarrier
-import Lean_Code.SchauderTranslates.PacketCoefficientExtension
-import Lean_Code.SchauderTranslates.CenteredExtensionBound
+module
+
+public import Lean_Code.SchauderTranslates.OrderedSelectivePrefixes
+public import Lean_Code.SchauderTranslates.SelectiveInitialCarrier
+public import Lean_Code.SchauderTranslates.PacketCoefficientExtension
+public import Lean_Code.SchauderTranslates.CenteredExtensionBound
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Packet.Packet
+module
+
+public import Lean_Code.PositiveTranslates.Packet.Packet
 
 /-!
 # The positive packet with parameters in a prescribed set
@@ -26,6 +28,8 @@ The scale facts (`posDeficit_tendsto`, `exists_posDeficit_le_half`,
 `posAmplitude_mul_rpow`, `posCost_tendsto`, `exists_packet_size`, `posScale_le`) are in
 `Scales.lean`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

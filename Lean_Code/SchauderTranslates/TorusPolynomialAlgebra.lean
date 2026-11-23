@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.TorusPolynomial
+module
+
+public import Lean_Code.SchauderTranslates.TorusPolynomial
+
+@[expose] public section
 
 noncomputable section
 namespace SchauderTranslates

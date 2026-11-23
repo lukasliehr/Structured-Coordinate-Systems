@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarData
-import Lean_Code.SchauderTranslates.FejerCount
+module
+
+public import Lean_Code.SchauderTranslates.ScalarData
+public import Lean_Code.SchauderTranslates.FejerCount
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.BatchOrder
-import Lean_Code.PositiveBiorthogonal.UnitExtraction
+module
+
+public import Lean_Code.PositiveBiorthogonal.BatchOrder
+public import Lean_Code.PositiveBiorthogonal.UnitExtraction
 
 /-! The exact ordered batch and the algebra behind its biorthogonality. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

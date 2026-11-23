@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.InitialScalar
-import Lean_Code.SchauderTranslates.ActivationSet
+module
+
+public import Lean_Code.SchauderTranslates.InitialScalar
+public import Lean_Code.SchauderTranslates.ActivationSet
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

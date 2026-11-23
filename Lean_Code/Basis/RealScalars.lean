@@ -1,4 +1,6 @@
-import Lean_Code.Basis.Criterion
+module
+
+public import Lean_Code.Basis.Criterion
 
 /-!
 # From complex scalars to real scalars
@@ -21,6 +23,8 @@ complex partial sums of `ι h` (`complexifyLp_sum_realCoord`).
 * `StructuredBases.exists_real_schauderBasis_of_complex_of_ae`
 * `StructuredBases.exists_real_translate_basis`
 -/
+
+@[expose] public section
 
 noncomputable section
 

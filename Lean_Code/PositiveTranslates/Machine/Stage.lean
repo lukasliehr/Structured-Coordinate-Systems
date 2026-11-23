@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.Machine.State
+module
+
+public import Lean_Code.PositiveTranslates.Machine.State
 
 /-!
 # One stage of the reference construction
@@ -21,6 +23,8 @@ combined in `exists_extension` (the geometric form of one stage: the private reg
 arbitrary pairwise disjoint closed sets outside `[-R₁, R₁]`) and applied to the positive
 packet `stage_packet`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

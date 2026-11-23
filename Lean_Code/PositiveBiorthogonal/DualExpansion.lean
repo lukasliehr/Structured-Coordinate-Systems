@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.PairingNorms
-import Lean_Code.PositiveBiorthogonal.BasisCriterion
+module
+
+public import Lean_Code.PositiveBiorthogonal.PairingNorms
+public import Lean_Code.PositiveBiorthogonal.BasisCriterion
 
 /-! The weak dual series is a consequence of any represented basis expansion. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

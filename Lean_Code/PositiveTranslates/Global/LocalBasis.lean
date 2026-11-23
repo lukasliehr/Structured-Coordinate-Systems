@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.StageMachine
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
 
 /-!
 # Local bases on a cell
@@ -8,6 +10,8 @@ basis of `Lᵖ(A)` (the classes vanishing a.e. off `A`) whose finite prefixes ar
 `B`.  It is the cellwise input of the global splitting in
 `Lean_Code/PositiveTranslates/Global/Main.lean`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.StageMachine
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
 
 /-!
 # Non-negative compact step functions are dense in the non-negative part of `Lᵖ`
@@ -11,6 +13,8 @@ Proof: approximate the real part of `g` by a continuous compactly supported func
 non-negative function), and sample the positive part at the left endpoints of a fine
 uniform partition.
 -/
+
+@[expose] public section
 
 noncomputable section
 

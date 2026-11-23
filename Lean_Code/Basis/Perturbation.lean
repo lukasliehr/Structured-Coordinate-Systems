@@ -1,5 +1,7 @@
-import Lean_Code.Basis.Criterion
-import Lean_Code.Basis.Transport
+module
+
+public import Lean_Code.Basis.Criterion
+public import Lean_Code.Basis.Transport
 
 /-!
 # Transport and small perturbations of Schauder bases
@@ -15,6 +17,8 @@ Everything here is stated for Mathlib's `SchauderBasis 𝕜 X`.
   perturbation principle. If `∑ ‖a n - b n‖ < c / (2K)`, then `a` is a Schauder basis, and
   its basis constant is at most `K (1 + ρ) / (1 - ρ)` with `ρ = 2K ∑ ‖a n - b n‖ / c`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.Auxiliary
-import Lean_Code.PositiveBiorthogonal.FiniteCuts
-import Lean_Code.PositiveBiorthogonal.HilbertCorner
+module
+
+public import Lean_Code.PositiveBiorthogonal.Auxiliary
+public import Lean_Code.PositiveBiorthogonal.FiniteCuts
+public import Lean_Code.PositiveBiorthogonal.HilbertCorner
 
 /-! The finite Toeplitz biorthogonal family and its uniform partial-projection bound. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators Polynomial ComplexOrder

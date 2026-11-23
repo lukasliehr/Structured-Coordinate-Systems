@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SoftCapture
-import Lean_Code.SchauderTranslates.ScalarRawCapture
+module
+
+public import Lean_Code.SchauderTranslates.SoftCapture
+public import Lean_Code.SchauderTranslates.ScalarRawCapture
+
+@[expose] public section
 
 noncomputable section
 open Matrix Filter

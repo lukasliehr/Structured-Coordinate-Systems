@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Lp.StepFunctions
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepFunctions
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

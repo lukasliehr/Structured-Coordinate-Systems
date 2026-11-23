@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.CircleFejerKernel
+module
+
+public import Lean_Code.SchauderTranslates.CircleFejerKernel
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

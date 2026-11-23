@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.InverseCompression
+module
+
+public import Lean_Code.SchauderTranslates.InverseCompression
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap

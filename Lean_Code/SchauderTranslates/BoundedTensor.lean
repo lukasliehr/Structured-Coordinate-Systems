@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SelectiveMeans
-import Mathlib.Analysis.Matrix.Order
+module
+
+public import Lean_Code.SchauderTranslates.SelectiveMeans
+public import Mathlib.Analysis.Matrix.Order
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

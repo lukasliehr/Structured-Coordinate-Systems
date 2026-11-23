@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SeedSpectralLimits
-import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+module
+
+public import Lean_Code.SchauderTranslates.SeedSpectralLimits
+public import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
+
+@[expose] public section
 
 noncomputable section
 open Filter

@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.StageMachine
-import Lean_Code.PositiveTranslates.Analytic.Gaussian
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
+public import Lean_Code.PositiveTranslates.Analytic.Gaussian
 
 /-!
 # Gaussian smoothing of compact step functions in `Lᵖ`
@@ -12,6 +14,8 @@ hence `‖H_σ - 𝟙_[a,b)‖_p ≤ 2 (σ √(π/p))^{1/p}`. By linearity, ever
 
 The final statement `exists_entire_smoothing` packages everything the analytic stages need.
 -/
+
+@[expose] public section
 
 noncomputable section
 

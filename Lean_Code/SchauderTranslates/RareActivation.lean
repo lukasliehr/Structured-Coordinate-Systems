@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.ActivationMoments
-import Lean_Code.SchauderTranslates.ScalarActivation
-import Lean_Code.SchauderTranslates.CircleRowsTotal
+module
+
+public import Lean_Code.SchauderTranslates.ActivationMoments
+public import Lean_Code.SchauderTranslates.ScalarActivation
+public import Lean_Code.SchauderTranslates.CircleRowsTotal
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

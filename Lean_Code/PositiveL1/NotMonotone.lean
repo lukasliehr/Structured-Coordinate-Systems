@@ -1,4 +1,6 @@
-import Lean_Code.Basis.Criterion
+module
+
+public import Lean_Code.Basis.Criterion
 
 /-!
 # A Schauder basis of `L¹(ℝ)` consisting of non-negative functions is never monotone
@@ -36,6 +38,8 @@ of `b 0`, which are fixed by all `b.proj N` with `N ≥ 1`, are needed in Steps 
 
 Steps 1–5 and the first half of Step 6 hold over an arbitrary measure space.
 -/
+
+@[expose] public section
 
 noncomputable section
 

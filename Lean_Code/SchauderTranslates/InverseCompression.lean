@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FiniteGram
+module
+
+public import Lean_Code.SchauderTranslates.FiniteGram
+
+@[expose] public section
 
 noncomputable section
 open Filter ContinuousLinearMap

@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarGram
-import Lean_Code.SchauderTranslates.MetricColumns
+module
+
+public import Lean_Code.SchauderTranslates.ScalarGram
+public import Lean_Code.SchauderTranslates.MetricColumns
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace

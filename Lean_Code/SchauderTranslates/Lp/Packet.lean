@@ -1,6 +1,10 @@
-import Lean_Code.SchauderTranslates.Lp.StepFunctions
-import Lean_Code.SchauderTranslates.Lp.PacketSupport
-import Lean_Code.SchauderTranslates.Lp.PacketNumerics
+module
+
+public import Lean_Code.SchauderTranslates.Lp.StepFunctions
+public import Lean_Code.SchauderTranslates.Lp.PacketSupport
+public import Lean_Code.SchauderTranslates.Lp.PacketNumerics
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

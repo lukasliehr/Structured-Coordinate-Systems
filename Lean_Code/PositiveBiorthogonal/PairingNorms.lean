@@ -1,11 +1,16 @@
-import Lean_Code.PositiveBiorthogonal.Basic
-import Lean_Code.PositiveBiorthogonal.BasicLp
-import Mathlib.MeasureTheory.Function.Holder
-import Mathlib.Analysis.Normed.Operator.Bilinear
-import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
-import Mathlib.MeasureTheory.Constructions.BorelSpace.Complex
+module
+
+public import Lean_Code.PositiveBiorthogonal.Basic
+public import Lean_Code.PositiveBiorthogonal.BasicLp
+public import Mathlib.MeasureTheory.Function.Holder
+public import Mathlib.Analysis.Normed.Operator.Bilinear
+public import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
+public import Mathlib.MeasureTheory.Constructions.BorelSpace.Complex
 
 /-! Bilinear norm detection, paired operator norms, and rank-one norms. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter

@@ -1,7 +1,9 @@
-import Mathlib.Analysis.RCLike.Basic
-import Mathlib.Analysis.Normed.Operator.Basic
-import Mathlib.LinearAlgebra.Span.Basic
-import Mathlib.Tactic
+module
+
+public import Mathlib.Analysis.RCLike.Basic
+public import Mathlib.Analysis.Normed.Operator.Basic
+public import Mathlib.LinearAlgebra.Span.Basic
+public import Mathlib.Tactic
 
 /-!
 # An abstract splitting scheme and its prefix bounds
@@ -23,6 +25,8 @@ functional `φ k`; the hypotheses are collected in `SplitSystem`.  The sequence
 (`SplitSystem.prefix_bound`), it consists of nonzero vectors, and it has the same linear
 span as `e`.
 -/
+
+@[expose] public section
 
 noncomputable section
 

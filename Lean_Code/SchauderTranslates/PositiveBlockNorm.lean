@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.GramGeometry
-import Lean_Code.SchauderTranslates.PositiveOperatorNorm
+module
+
+public import Lean_Code.SchauderTranslates.GramGeometry
+public import Lean_Code.SchauderTranslates.PositiveOperatorNorm
+
+@[expose] public section
 
 noncomputable section
 open Matrix ContinuousLinearMap

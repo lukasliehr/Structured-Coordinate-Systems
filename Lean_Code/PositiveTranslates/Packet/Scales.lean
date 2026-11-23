@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.StageMachine
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
 
 /-!
 # The scales of the positive packet
@@ -19,6 +21,8 @@ Main statements:
 * `posAmplitude_mul_rpow` : `a N^{1/r} = 2 d N^{2/r-1}` (the cost of the edit);
 * `posCost_tendsto`, `exists_packet_size` : the cost tends to `0`, uniformly for bounded `V`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open Filter

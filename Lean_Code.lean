@@ -1,6 +1,8 @@
-import Lean_Code.Basis.UniqueExpansion
-import Lean_Code.Main.NonnegBasis
-import Lean_Code.Main.Translates
+module
+
+public import Lean_Code.Basis.UniqueExpansion
+public import Lean_Code.Main.NonnegBasis
+public import Lean_Code.Main.Translates
 
 /-!
 # Structured coordinate systems in `Lᵖ(ℝ)`: the proof library

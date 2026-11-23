@@ -1,8 +1,13 @@
-import Lean_Code.PositiveBiorthogonal.CellSpans
-import Lean_Code.PositiveBiorthogonal.IntervalDensity
-import Mathlib.MeasureTheory.Integral.Indicator
+module
+
+public import Lean_Code.PositiveBiorthogonal.CellSpans
+public import Lean_Code.PositiveBiorthogonal.IntervalDensity
+public import Mathlib.MeasureTheory.Integral.Indicator
 
 /-! Shrinking cells approximate interval indicators; the argument uses no infinity-norm density. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

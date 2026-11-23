@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.SoftLossScale
-import Lean_Code.SchauderTranslates.SoftCaptureBounds
+module
+
+public import Lean_Code.SchauderTranslates.SoftLossScale
+public import Lean_Code.SchauderTranslates.SoftCaptureBounds
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

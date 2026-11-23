@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.ScheduleState
-import Lean_Code.PositiveBiorthogonal.HaarNorms
+module
+
+public import Lean_Code.PositiveBiorthogonal.ScheduleState
+public import Lean_Code.PositiveBiorthogonal.HaarNorms
 
 /-! The prescribed schedule: L consecutive geometric splits of each original cell. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

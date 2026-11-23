@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarFejerLimits
-import Lean_Code.SchauderTranslates.TorusPolynomialAlgebra
+module
+
+public import Lean_Code.SchauderTranslates.ScalarFejerLimits
+public import Lean_Code.SchauderTranslates.TorusPolynomialAlgebra
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix Filter

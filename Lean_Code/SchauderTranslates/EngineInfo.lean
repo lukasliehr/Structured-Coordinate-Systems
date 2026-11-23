@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.InformationResolvent
-import Lean_Code.SchauderTranslates.TagKernel
+module
+
+public import Lean_Code.SchauderTranslates.InformationResolvent
+public import Lean_Code.SchauderTranslates.TagKernel
 
 /-!
 # Quadratic form of the information operator
@@ -10,6 +12,8 @@ Cauchy–Schwarz bounds every mean pairing by `⟪J x, x⟫` times the centered 
 eigenvector of `J` is realized exactly by explicit coefficients. These are the only
 properties of a selective engine used by the replica argument.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.FiniteRowMask
+module
+
+public import Lean_Code.SchauderTranslates.FiniteRowMask
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace Matrix

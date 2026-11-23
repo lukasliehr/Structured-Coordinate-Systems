@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
+module
+
+public import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
 
 /-! Explicit positions for the two entries of each pair, followed by residual entries. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open scoped BigOperators

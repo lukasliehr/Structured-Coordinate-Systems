@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.LpIndicator
+module
+
+public import Lean_Code.SchauderTranslates.LpIndicator
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory ContinuousLinearMap

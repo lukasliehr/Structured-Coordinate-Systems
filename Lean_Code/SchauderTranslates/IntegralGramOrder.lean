@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.IntegralGram
+module
+
+public import Lean_Code.SchauderTranslates.IntegralGram
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix

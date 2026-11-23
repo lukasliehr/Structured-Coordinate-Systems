@@ -1,4 +1,6 @@
-import Lean_Code.PositiveTranslates.StageMachine
+module
+
+public import Lean_Code.PositiveTranslates.StageMachine
 
 /-!
 # Closure properties of non-negativity
@@ -8,6 +10,8 @@ non-negative almost everywhere. It holds for interval indicators and is preserve
 non-negative real multiples and translations, hence by the packet operations `packetEdit`
 and `packetNoise`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory

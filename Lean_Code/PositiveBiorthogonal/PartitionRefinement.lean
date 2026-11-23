@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.SplittingGeometry
-import Mathlib.Data.Fin.Tuple.Basic
+module
+
+public import Lean_Code.PositiveBiorthogonal.SplittingGeometry
+public import Mathlib.Data.Fin.Tuple.Basic
 
 /-! One admissible refinement: retain the remainder at the old index and append the removed cell. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

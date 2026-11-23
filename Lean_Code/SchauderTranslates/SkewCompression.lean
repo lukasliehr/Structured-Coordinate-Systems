@@ -1,4 +1,8 @@
-import Lean_Code.SchauderTranslates.Arrowhead
+module
+
+public import Lean_Code.SchauderTranslates.Arrowhead
+
+@[expose] public section
 
 noncomputable section
 open ContinuousLinearMap InnerProductSpace

@@ -1,7 +1,12 @@
-import Lean_Code.PositiveBiorthogonal.GridEnumeration
-import Mathlib.Data.Fin.Tuple.Sort
+module
+
+public import Lean_Code.PositiveBiorthogonal.GridEnumeration
+public import Mathlib.Data.Fin.Tuple.Sort
 
 /-! Reindexing and sorting an admissible partition preserve its averaging operator. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open Set

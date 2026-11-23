@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ScalarData
-import Lean_Code.SchauderTranslates.PositiveMatrixNorm
+module
+
+public import Lean_Code.SchauderTranslates.ScalarData
+public import Lean_Code.SchauderTranslates.PositiveMatrixNorm
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap

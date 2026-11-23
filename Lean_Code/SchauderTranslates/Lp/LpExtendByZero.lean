@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.Lp.DisjointNorm
-import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
+module
+
+public import Lean_Code.SchauderTranslates.Lp.DisjointNorm
+public import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

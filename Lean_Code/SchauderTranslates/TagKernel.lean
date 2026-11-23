@@ -1,8 +1,10 @@
-import Lean_Code.SchauderTranslates.PiKernel
-import Lean_Code.SchauderTranslates.ScalarData
-import Lean_Code.SchauderTranslates.ScalarPrefixes
-import Lean_Code.SchauderTranslates.Characters
-import Lean_Code.SchauderTranslates.ScalarGram
+module
+
+public import Lean_Code.SchauderTranslates.PiKernel
+public import Lean_Code.SchauderTranslates.ScalarData
+public import Lean_Code.SchauderTranslates.ScalarPrefixes
+public import Lean_Code.SchauderTranslates.Characters
+public import Lean_Code.SchauderTranslates.ScalarGram
 
 /-!
 # Scalar tag kernels
@@ -12,6 +14,8 @@ depend on the slow variable. This file records the normalized tag moments, their
 to the centered Gram and gain of the scalar block, and the Gram form of Cauchy–Schwarz
 used for the mean functional.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

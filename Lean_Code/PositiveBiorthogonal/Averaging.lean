@@ -1,6 +1,11 @@
-import Lean_Code.PositiveBiorthogonal.Partitions
+module
+
+public import Lean_Code.PositiveBiorthogonal.Partitions
 
 /-! Contractive averaging projections on interval cells and admissible partitions. -/
+
+@[expose] public section
+
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

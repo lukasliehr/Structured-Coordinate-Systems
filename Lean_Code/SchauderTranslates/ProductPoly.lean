@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.ProductFreq
+module
+
+public import Lean_Code.SchauderTranslates.ProductFreq
 
 /-!
 # The raw kernel is a mixed trigonometric polynomial with constant mass
@@ -9,6 +11,8 @@ residual is a finite sum of line characters times tag characters. Hence the raw 
 a finite mixed character sum after flattening. Its integral over the fresh variables is
 the constant `M`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter Matrix

@@ -1,7 +1,9 @@
-import Lean_Code.Main.TranslatesL2
-import Lean_Code.Basis.RealScalars
-import Lean_Code.PositiveTranslates.Analytic.Main
-import Lean_Code.PositiveTranslates.Machine.Main
+module
+
+public import Lean_Code.Main.TranslatesL2
+public import Lean_Code.Basis.RealScalars
+public import Lean_Code.PositiveTranslates.Analytic.Main
+public import Lean_Code.PositiveTranslates.Machine.Main
 
 /-!
 # Translates in `Lᵖ(ℝ)`, `2 ≤ p < ∞`: assembly
@@ -15,6 +17,8 @@ import Lean_Code.PositiveTranslates.Machine.Main
   generator extending to an entire function, over both scalar fields (`p = 2` from the
   weighted Fourier construction, `p > 2` from the previous item with `S = ℝ`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

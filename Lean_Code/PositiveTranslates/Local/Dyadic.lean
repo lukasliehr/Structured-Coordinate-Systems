@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Local.RearrangementStep
-import Lean_Code.PositiveTranslates.Local.Model
+module
+
+public import Lean_Code.PositiveTranslates.Local.RearrangementStep
+public import Lean_Code.PositiveTranslates.Local.Model
 
 /-!
 # The model basis of `Lᵖ([0, 2))`
@@ -13,6 +15,8 @@ compactly supported step functions and fixes `𝟙_[0,1)` (`unitIsometry`,
 `Lᵖ(ℝ)` gives a local basis of `[0, 2)` with first vector `𝟙_[0,1)`
 (`exists_unit_model_basis`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

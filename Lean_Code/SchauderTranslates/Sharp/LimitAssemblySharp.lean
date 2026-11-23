@@ -1,5 +1,7 @@
-import Lean_Code.SchauderTranslates.Sharp.LimitStagesSharp
-import Lean_Code.SchauderTranslates.LimitAssembly
+module
+
+public import Lean_Code.SchauderTranslates.Sharp.LimitStagesSharp
+public import Lean_Code.SchauderTranslates.LimitAssembly
 
 /-!
 # Assembly of the sharp infinite construction
@@ -29,6 +31,8 @@ if the sharp finite extension holds for every `Kstar > 1`, then for every `ε > 
 Following the paper we use `K_* = 1 + ε/10` and prefix budgets with `∑ τ_n = ε/4`, so that
 `C = K_∞ = 1 + ε/10 + ε/4 < 1 + ε`.
 -/
+
+@[expose] public section
 
 noncomputable section
 open MeasureTheory Filter

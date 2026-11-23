@@ -1,5 +1,7 @@
-import Lean_Code.PositiveTranslates.Machine.Stage
-import Lean_Code.Basis.Transport
+module
+
+public import Lean_Code.PositiveTranslates.Machine.Stage
+public import Lean_Code.Basis.Transport
 
 /-!
 # Runs of the reference construction
@@ -19,6 +21,8 @@ scales of the packets (`GoodRun.births_eq`). Hence the birth vectors of a good r
 Schauder basis of `Lᵖ(ℝ)` all of whose partial sum projections have norm at most
 `4 · 2 · (1 + 2) + 13 · 2 = 50` (`GoodRun.exists_basis`).
 -/
+
+@[expose] public section
 
 noncomputable section
 

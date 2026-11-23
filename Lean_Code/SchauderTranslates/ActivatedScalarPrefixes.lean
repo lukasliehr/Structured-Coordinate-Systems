@@ -1,5 +1,9 @@
-import Lean_Code.SchauderTranslates.ActivatedScalarEstimates
-import Lean_Code.SchauderTranslates.GramReindex
+module
+
+public import Lean_Code.SchauderTranslates.ActivatedScalarEstimates
+public import Lean_Code.SchauderTranslates.GramReindex
+
+@[expose] public section
 
 noncomputable section
 open Matrix

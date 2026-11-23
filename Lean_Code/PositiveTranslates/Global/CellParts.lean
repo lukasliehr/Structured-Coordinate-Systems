@@ -1,4 +1,6 @@
-import Lean_Code.SchauderTranslates.Lp.LpRestriction
+module
+
+public import Lean_Code.SchauderTranslates.Lp.LpRestriction
 
 /-!
 # Cell parts of an `Lᵖ` class
@@ -8,6 +10,8 @@ For a sequence of pairwise disjoint measurable cells `A c` the cell parts
 `p`-th powers of the norms of the parts add up, and if the cells cover the space up to a
 null set, every `F` is the unconditional sum of its parts.
 -/
+
+@[expose] public section
 
 noncomputable section
 
