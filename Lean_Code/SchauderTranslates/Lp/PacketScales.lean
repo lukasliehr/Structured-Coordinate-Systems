@@ -74,7 +74,7 @@ theorem packet_cost_tendsto {p V : ℝ} (hp : 2 < p) (hV : 0 < V) :
   change Tendsto (fun N => packetScale p V N * (N : ℝ) ^ (2 / p - 1)) atTop (𝓝 0)
   simpa only [mul_zero] using (packet_scale_tendsto hp hV).mul hpow
 
-/-- Blueprint `lp:scales`. Choose the integer packet size before its support
+/-- The scales of a packet. The integer packet size is chosen before its support
 placement. This lemma retains the exact denominator and the strict p > 2 input. -/
 theorem packet_scales {p V : ℝ} (hp : 2 < p) (hV : 0 < V)
     {ε : ℝ} (hε : 0 < ε) :

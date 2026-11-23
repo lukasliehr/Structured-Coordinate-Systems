@@ -1,5 +1,6 @@
 import Lean_Code.SchauderTranslates.ScalarPrefixes
 import Lean_Code.SchauderTranslates.ScaledGramBound
+import Lean_Code.SchauderTranslates.ScalarGram
 
 noncomputable section
 open Matrix

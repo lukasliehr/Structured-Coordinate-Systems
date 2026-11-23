@@ -7,7 +7,7 @@ open MeasureTheory Filter Set
 open scoped ENNReal Topology BigOperators ComplexOrder
 namespace PositiveBiorthogonal
 
-/-- A nondegenerate bounded half-open interval, using the public statement's Ioc convention. -/
+/-- A nondegenerate bounded half-open interval `(left, right]`. -/
 structure IntervalCell where
   left : ℝ
   right : ℝ
@@ -69,8 +69,8 @@ theorem pairing_indicator (D : IntervalCell) (f : L 𝕜 p) :
 
 theorem integrableOn [Fact (1 ≤ p)] (D : IntervalCell) (f : L 𝕜 p) :
     IntegrableOn f D.carrier volume := by
-  obtain ⟨q, hpq⟩ := StatementAudit.conjugate_exists (Fact.out : 1 ≤ p)
-  let := StatementAudit.conjugate_instance hpq
+  obtain ⟨q, hpq⟩ := PositiveBiorthogonal.Basic.conjugate_exists (Fact.out : 1 ≤ p)
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   have hi := (Lp.memLp f).integrable_mul (Lp.memLp (D.indicator : L 𝕜 q))
   apply (integrable_indicator_iff D.measurable).mp
   apply hi.congr

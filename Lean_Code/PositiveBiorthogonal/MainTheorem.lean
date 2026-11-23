@@ -37,5 +37,3 @@ theorem isGLB_one_of_approach {S : Set ℝ} (hlower : ∀ k ∈ S, 1 ≤ k)
   linarith
 
 end PositiveBiorthogonal
-
-/-! Closed construction and obstruction branches are assembled in the public Showcase. -/

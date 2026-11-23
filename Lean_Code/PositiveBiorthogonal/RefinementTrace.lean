@@ -52,7 +52,7 @@ theorem split_separated_of_refines (P : ActivePartition) (j : Fin P.R) (S : Inte
 
 end ActivePartition
 
-/-- A finite trace records actual admissible refinements, rather than assuming Haar identities. -/
+/-- A finite trace records admissible refinements. -/
 structure RefinementTrace (N : ℕ) where
   state : Fin (N + 1) → ActivePartition
   split : Fin N → IntervalSplit

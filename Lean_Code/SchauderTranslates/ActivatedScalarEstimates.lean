@@ -12,7 +12,7 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ} {ν : Type*} [Fintype ν] [DecidableEq ν]
 
-/-- The actual activated torus data and the algebraic marked Gram agree, including their mass. -/
+/-- The activated torus data and the algebraic marked Gram agree, including their mass. -/
 theorem activationData_finiteGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (freq : ν → ℤ) (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
@@ -25,7 +25,7 @@ theorem activationData_finiteGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     rw [s.activationData_rawGram]
     rfl
 
-/-- Finite activation gain is unchanged when the actual characters are flattened and relabeled. -/
+/-- Finite activation gain is unchanged when the characters are flattened and relabeled. -/
 theorem activationData_gain (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (freq : ν → ℤ) (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
@@ -35,7 +35,7 @@ theorem activationData_gain (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
   change (s.activationData p freq hfreq a₀ hzero e).finiteGram.gain = _
   rw [activationData_finiteGram s hb hfloor hp0 hp1, FiniteScalarGram.reindex_gain]
 
-/-- The centered matrix used for prefix bounds is the actual centered matrix of the torus block. -/
+/-- The centered matrix used for prefix bounds is the centered matrix of the torus block. -/
 theorem activationData_centeredGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (freq : ν → ℤ) (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
@@ -87,7 +87,7 @@ theorem cutoffData_finiteGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     rw [s.finiteActivatedGram_window]
     rfl
 
-/-- The gain convergence theorem now applies to the actual scalar torus cutoff. -/
+/-- The gain convergence theorem applies to the scalar torus cutoff. -/
 theorem cutoffData_gain (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (N : ℕ) {m : ℕ} (e : Fin m ≃ CutoffNonconstant n N) :

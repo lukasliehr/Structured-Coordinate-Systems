@@ -8,7 +8,7 @@ Finitely many fiber kernels over the same slow space, each with its own copy of 
 fresh variables, combine into one product kernel. Fubini over the product of fresh
 variables identifies the means of lifted atoms, the inner products within one copy, and
 the inner products across different copies (only the means interact). These are the
-facts behind the additivity of information in blueprint `tag:engines`.
+facts behind the additivity of information.
 -/
 
 noncomputable section

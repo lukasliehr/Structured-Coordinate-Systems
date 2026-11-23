@@ -6,13 +6,12 @@ import Lean_Code.SchauderTranslates.Sharp.ScalarSharpNumerics
 /-!
 # One activation/cutoff/product step with parametrized constants
 
-These are the counterparts of `scalar_floor_step`, `ScalarData.cutoff_product_step`,
-`ScalarData.scalar_rows_bound`, `ScalarData.orderedCutoffData_prefix_step` and
-`ScalarData.product_augmented_prefix` in which the absolute constants of the first
-formalization (`1/646 ≤ Z ≤ 1/323`, `2 ≤ q < 3`, cost `10`) are replaced by the relative
-hypotheses of the sharp induction (paper: `h2:ss:scalar-induction`). The analytic input
-(rare activation, the row-splitting lemma, the copies lemma) is used in its existing
-general form.
+One step of the sharp induction (paper: Section 14.4): the floor step, the cutoff and
+product step, the row bound and the prefix bounds of the ordered cutoff and of independent
+copies. Compared with `scalar_floor_step` and `ScalarData.cutoff_product_step`, the absolute
+constants (`1/646 ≤ Z ≤ 1/323`, `2 ≤ q < 3`, cost `10`) are replaced by relative hypotheses.
+The analytic input (rare activation, the row-splitting lemma, the copies lemma) is used in
+its general form.
 -/
 
 noncomputable section

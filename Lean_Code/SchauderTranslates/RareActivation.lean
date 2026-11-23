@@ -12,7 +12,7 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ}
 
-/-- The actual product-weight Gram coefficient equals the coefficient of the full operator. -/
+/-- The product-weight Gram coefficient equals the coefficient of the full operator. -/
 theorem activatedGram_fourier_entry (s : ScalarData d n) (p : ℝ)
     (i j : Unit ⊕ Fin n) (k l : ℤ) :
     inner ℂ (circleRow (EuclideanSpace.single i 1) k)
@@ -34,7 +34,7 @@ theorem activatedGram_unique (s : ScalarData d n) (p : ℝ)
 
 end ScalarData
 
-/-- Rare activation with its actual Fourier Gram, two-sided inverse, strict positivity,
+/-- Rare activation with its Fourier Gram, two-sided inverse, strict positivity,
 upper energy bound, real Fourier entries, and exact unnormalized mass. -/
 theorem rare_activation_gram {d n : ℕ} (s : ScalarData d n) (he : s.IsEven)
     (hfloor : s.HasPositiveFloor) {p : ℝ} (hp0 : 0 < p) (hp1 : p < 1) :

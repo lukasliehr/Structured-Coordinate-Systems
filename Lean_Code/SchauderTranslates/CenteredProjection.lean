@@ -1,4 +1,3 @@
-import Lean_Code.SchauderTranslates.FiniteHilbert
 import Lean_Code.SchauderTranslates.GramGeometry
 
 noncomputable section
@@ -10,7 +9,7 @@ set_option backward.isDefEq.respectTransparency.types false
 namespace SchauderTranslates
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
-/-- Quotienting an invariant subspace bounds the norm of the actual orthogonal representatives. -/
+/-- Quotienting an invariant subspace bounds the norm of the orthogonal representatives. -/
 theorem centeredProjection_norm_le (P : H →L[ℂ] H) (F : Submodule ℂ H) [F.HasOrthogonalProjection]
     (hF : ∀ x ∈ F, P x ∈ F) (z : H) :
     ‖Fᗮ.starProjection (P z)‖ ≤ ‖P‖ * ‖Fᗮ.starProjection z‖ := by

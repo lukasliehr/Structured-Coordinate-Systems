@@ -5,7 +5,7 @@ import Lean_Code.SchauderTranslates.Lp.LpMeasurableEquiv
 /-!
 # A non-negative entire generator whose translates form a Schauder basis (`p > 2`)
 
-The analytic half of the paper's Theorem `thm:translate-properties`(iii).
+The analytic half of the proof of Theorem 1.4 (ii) of the paper.
 
 * `exists_nonneg_entire_translate_basis_of_machine`: given a stage machine `M` over a
   parameter set `Γ ∋ 0` (the reference construction), there are a non-negative function

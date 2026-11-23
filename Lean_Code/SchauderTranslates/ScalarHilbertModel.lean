@@ -29,7 +29,7 @@ theorem meanRiesz_norm_sq (s : ScalarData d n) : ‖s.meanRiesz‖ ^ 2 = s.gain 
 theorem meanFunctional_norm_sq (s : ScalarData d n) : ‖s.meanFunctional‖ ^ 2 = s.gain := by
   rw [meanFunctional, innerSL_apply_norm, s.meanRiesz_norm_sq]
 
-/-- Evaluation on a centered primal column returns the actual (conjugated-column) mean. -/
+/-- Evaluation on a centered primal column returns the (conjugated-column) mean. -/
 theorem meanFunctional_column (s : ScalarData d n) (i : Fin n) :
     s.meanFunctional (metricColumn s.centeredGram i) = star (s.mean i) := by
   change inner ℂ (gramRootInv s.centeredGram (WithLp.toLp 2 s.mean))

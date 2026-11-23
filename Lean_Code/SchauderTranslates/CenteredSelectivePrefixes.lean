@@ -41,7 +41,7 @@ theorem extended_packet_synthesis_bound (t : ℕ) (b : Fin r → ℂ)
   exact h
 
 /-- Every centered column-major prefix of the unchanged original atom list,
-using its explicit conditional means in the actual weighted L² space. -/
+using its explicit conditional means in the weighted L² space. -/
 theorem centered_packet_synthesis_bound
     (he : a.e.toL2 ρ ∈ atomSpan (fun i => (φ i).toL2 ρ))
     (t : ℕ) (c : Fin n × (Fin r ⊕ Fin L) → ℂ) :

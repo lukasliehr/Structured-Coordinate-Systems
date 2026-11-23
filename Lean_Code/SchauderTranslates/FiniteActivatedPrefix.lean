@@ -21,7 +21,7 @@ variable {ν : Type*} [Fintype ν] [DecidableEq ν]
 namespace ScalarData
 variable {d n : ℕ}
 
-/-- The actual product-weight Fourier Gram for any finite frequency set. -/
+/-- The product-weight Fourier Gram for any finite frequency set. -/
 def finiteActivatedGram (s : ScalarData d n) (p : ℝ) (freq : ν → ℤ) :
     Matrix ((Unit ⊕ Fin n) × ν) ((Unit ⊕ Fin n) × ν) ℂ :=
   fun a b => s.activatedMoment p a.1 b.1 (freq a.2) (freq b.2)
@@ -37,7 +37,7 @@ theorem finiteActivatedGram_tensor (s : ScalarData d n) (hs : s.IsEven) (p : ℝ
   · exact s.activatedMoment_real_tensor hs p a.1 b.1 (freq a.2) (freq b.2)
   · exact s.activatedMoment_real hs p a.1 b.1 (freq a.2) (freq b.2)
 
-/-- Every actual finite weighted Fourier row cut has the desired quadratic bound for complex coefficients. -/
+/-- Every finite weighted Fourier row cut has the desired quadratic bound for complex coefficients. -/
 theorem finiteActivatedGram_prefix (s : ScalarData d n) (hs : s.IsEven) (p : ℝ)
     (freq : ν → ℤ) (hfreq : Function.Injective freq)
     (old : Finset (Unit ⊕ Fin n)) (j : Unit ⊕ Fin n) (hj : j ∉ old) (cut : Finset ν)
@@ -57,7 +57,7 @@ theorem finiteActivatedGram_prefix (s : ScalarData d n) (hs : s.IsEven) (p : ℝ
   rw [rowMaskMatrix_complex, ← s.finiteActivatedGram_tensor hs p freq] at hc
   exact hc
 
-/-- Any finite frequency set embeds in a symmetric window, so its actual Gram is positive definite. -/
+/-- Any finite frequency set embeds in a symmetric window, so its Gram is positive definite. -/
 theorem finiteActivatedGram_posDef (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) (p : ℝ) (freq : ν → ℤ) (hfreq : Function.Injective freq) :
     (s.finiteActivatedGram p freq).PosDef := by
@@ -80,7 +80,7 @@ theorem finiteActivatedGram_posDef (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
   rw [hg]
   exact (s.cutoffGram_posDef hb hfloor p N).submatrix he
 
-/-- This is the actual finite weighted prefix operator norm, with the Hilbert coefficient metric. -/
+/-- This is the finite weighted prefix operator norm, with the Hilbert coefficient metric. -/
 theorem finiteActivatedGram_prefix_norm (s : ScalarData d n) (hs : s.IsEven)
     {b : ℝ} (hb : 0 < b) (hfloor : ∀ x, b ≤ s.density x) (p : ℝ)
     (freq : ν → ℤ) (hfreq : Function.Injective freq)

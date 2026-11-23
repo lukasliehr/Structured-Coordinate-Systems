@@ -77,8 +77,7 @@ theorem compactStepLp_nonzero_refinement (p : ℝ≥0∞) (c : (ℝ × ℝ) →�
   by_cases h : compactStepValue c ab.1 = 0 <;> simp [h]
 
 /-- Every compact real step function has a finite disjoint representation
-on positive-length intervals with nonzero real values. This is obtained
-from the existing algebraic step predicate, not assumed as a new input. -/
+on positive-length intervals with nonzero real values. -/
 theorem IsCompactStep.disjoint_representation {p : ℝ≥0∞} {f : LebesgueLp p}
     (hf : IsCompactStep p f) :
     ∃ (s : Finset (ℝ × ℝ)) (d : ℝ × ℝ → ℝ),

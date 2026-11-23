@@ -71,7 +71,7 @@ theorem packet_centered_posDef (φ : ι → BoundedMeasurableComplex S)
 
 end SelectiveKernelData
 
-/-- Blueprint `select:means`: the actual selective kernel, every retained original
+/-- The selective kernel: every retained original
 carrier and seed mean, their range, and strict centered positivity. Columns are indexed
 first, followed by the unchanged carrier/seed rows. `expectation` is the integral of
 the character against the scalar density, not its conjugate Gram-column moment. -/

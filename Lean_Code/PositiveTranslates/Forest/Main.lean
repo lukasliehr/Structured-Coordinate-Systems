@@ -1,7 +1,6 @@
 import Lean_Code.PositiveTranslates.Forest.Estimates
 import Lean_Code.PositiveTranslates.Forest.Density
 import Lean_Code.PositiveTranslates.Forest.Tools
-import Lean_Code.PositiveTranslates.Forest.Model
 
 /-!
 # The positive forest is a Schauder basis
@@ -86,24 +85,3 @@ theorem nnnormProjBound_basis_le [CompleteSpace Z] (F : PositiveForest Z r) (hr 
   (nnnormProjBound_le_iff _).mpr (F.norm_basis_proj_le hr)
 
 end StructuredBases.PositiveTranslates.PositiveForest
-
-/-! ### Sanity check -/
-
-namespace StructuredBases.PositiveTranslates.ForestModel
-
-open scoped ENNReal
-
-/-- The hypotheses of the main theorem are satisfiable: for the model forest in `ℓ^p × ℓ^p`
-(`Forest/Model.lean`, `B = D = 1`) the main theorem gives a Schauder basis with basis
-constant at most `4 · 1 · (1 + 1) + 13 · 1 = 21`. -/
-theorem exists_basis {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : p ≠ ∞) :
-    ∃ b : SchauderBasis ℂ (Space p), ⇑b = (forest hp).seq ∧ ∀ M, ‖b.proj M‖ ≤ 21 := by
-  have hr : 1 ≤ p.toReal := by
-    have h := ENNReal.toReal_mono hp (Fact.out : 1 ≤ p)
-    simpa using h
-  obtain ⟨b, hb, hM⟩ := (forest hp).exists_schauderBasis hr
-  refine ⟨b, hb, fun M => (hM M).trans ?_⟩
-  change 4 * (1 : ℝ) * (1 + 1) + 13 * 1 ≤ 21
-  norm_num
-
-end StructuredBases.PositiveTranslates.ForestModel

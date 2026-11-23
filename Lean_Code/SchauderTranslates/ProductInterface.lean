@@ -1,11 +1,11 @@
 import Lean_Code.SchauderTranslates.TorusTransfer
 
 /-!
-# The product-space finite extension interface
+# The finite extension on a product space, as a statement
 
-`ProductExtension` is the finite extension on `ℝ × 𝕋^D` (blueprint `extend:product`),
+`ProductExtension` is the finite extension on `ℝ × 𝕋^D`,
 stated through the raw product Gram of the old characters followed by the new mixed
-characters. It is a proposition to PROVE; `FiniteExtension.lean` transfers it to the
+characters. `FiniteExtension.lean` transfers it to the
 line, giving `Construction.FiniteExtensionPrinciple`.
 -/
 
@@ -44,7 +44,7 @@ def productSource (w : Weight) {D n : ℕ} (W : ℝ → UnitAddTorus (Fin D) →
 def cutMatrix {n : ℕ} (j : ℕ) : Matrix (Fin n) (Fin n) ℂ :=
   Matrix.diagonal fun i => if i.val < j then 1 else 0
 
-/-- Blueprint `extend:product`, in the raw (unnormalized) product measure
+/-- The finite extension on a product space, in the raw (unnormalized) product measure
 `w(t) dt ⊗ W(t,y) dy`. The old characters come first with zero torus frequency;
 every new character has a nonzero torus frequency. The kernel has constant conditional
 mass `M`. Strict Gram conditions are stated so that they survive the line transfer. -/

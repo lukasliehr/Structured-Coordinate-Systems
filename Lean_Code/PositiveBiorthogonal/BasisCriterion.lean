@@ -1,6 +1,7 @@
-import Lean_Code.PositiveBiorthogonal.Interpretation
+import Lean_Code.PositiveBiorthogonal.Basic
 
-/-! `lem:basis-criterion`: dense biorthogonal systems and genuine basis constants. -/
+/-! A basis criterion: a biorthogonal system with dense span and uniformly bounded initial
+projections is a Schauder basis. -/
 
 noncomputable section
 set_option autoImplicit false
@@ -77,14 +78,14 @@ def basisOfDenseSpan (v : ℕ → L 𝕜 p) (c : ℕ → L 𝕜 p →L[𝕜] �
 
 theorem one_le_firstProjection (B : SchauderBasis 𝕜 p) : 1 ≤ ‖P B 1‖ := by
   have hfix : P B 1 (B.b 0) = B.b 0 := by
-    simp [StatementAudit.P_one, B.biorthogonal]
+    simp [PositiveBiorthogonal.Basic.P_one, B.biorthogonal]
   have hnorm := (P B 1).le_opNorm (B.b 0)
   rw [hfix] at hnorm
-  have hpos := norm_pos_iff.mpr (StatementAudit.basis_vector_ne_zero B 0)
+  have hpos := norm_pos_iff.mpr (PositiveBiorthogonal.Basic.basis_vector_ne_zero B 0)
   nlinarith
 
 theorem projection_le_K (B : SchauderBasis 𝕜 p) (N : ℕ) : ‖P B N‖ ≤ K B :=
-  le_ciSup (StatementAudit.projection_norms_bounded B) N
+  le_ciSup (PositiveBiorthogonal.Basic.projection_norms_bounded B) N
 
 theorem K_le_of_projection_bound (B : SchauderBasis 𝕜 p) (C : ℝ)
     (hC : ∀ N, ‖P B N‖ ≤ C) : K B ≤ C :=

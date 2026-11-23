@@ -71,7 +71,7 @@ theorem augmented_ordered_prefix_bound (t : ℕ) :
       nlinarith [norm_nonneg (gramConjugate (a.augmentedRawGram ρ (packetRows φ)) 1)]
     exact hn.trans ((by norm_num : (1 : ℝ) ≤ 2).trans (selectivePrefixConstant_ge_two K))
 
-/-- Prefix control for actual normalized weighted vectors, with the common mass
+/-- Prefix control for normalized weighted vectors, with the common mass
 factor canceled through the proved positive Gram rescaling lemma. -/
 theorem augmented_ordered_synthesis_bound (t : ℕ)
     (c : (Unit ⊕ Fin n) × (Fin r ⊕ Fin L) → ℂ) :

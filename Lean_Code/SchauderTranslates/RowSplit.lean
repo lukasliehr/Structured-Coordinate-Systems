@@ -133,39 +133,4 @@ theorem real_row_split (P : H →L[ℝ] H) (x y : H)
   linarith
 
 end Real
-section Matrix
-variable {ι κ : Type*} [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
-
-/-- The paper's selected-Gram quantity `F(t)`, using the Euclidean operator norm. -/
-def splitRowQuantity (B : Matrix ι ι ℝ) (e : κ → ι) (j : ι) (t : ℝ) : ℝ :=
-  ‖(gramRoot (metricSplitGram B e j t)).comp
-    (((Matrix.toEuclideanCLM (𝕜 := ℝ) (n := κ ⊕ Unit)) (metricSplitGram B⁻¹ e j t)).comp
-      (gramRoot (metricSplitGram B e j t)))‖
-
-theorem splitRowQuantity_eq_norm {B : Matrix ι ι ℝ} (hB : B.PosSemidef)
-    (e : κ → ι) (j : ι) {t : ℝ} (ht : 0 ≤ t) (ht1 : t ≤ 1) :
-    splitRowQuantity B e j t = ‖metricSplitRow B e j t‖ ^ 2 :=
-  (metricSplitRow_norm_sq hB e j ht ht1).symm
-
-/-- Real row splitting in the precise selected-Gram form used in the construction. -/
-theorem real_matrix_row_split {B : Matrix ι ι ℝ} (hB : B.PosDef) (hBI : B ≤ 1)
-    (e : κ → ι) (he : Function.Injective e) (j : ι) (hj : ∀ i, e i ≠ j)
-    {t : ℝ} (ht : 0 ≤ t) (ht1 : t ≤ 1) :
-    splitRowQuantity B e j t ≤
-      max (splitRowQuantity B e j 0) (splitRowQuantity B e j 1) +
-        t * (1 - t) * (1 - B j j) * (B⁻¹ j j - 1) := by
-  have hxy : inner ℝ (metricColumn B j) (metricDual B j) = 1 := by
-    rw [real_inner_comm]
-    simpa using metricDual_inner_column hB j j
-  have h := real_row_split (metricPrefix B e) (metricColumn B j) (metricDual B j)
-    (metricPrefix_idempotent hB e he) (metricPrefix_column_zero hB e j hj)
-    (metricDual_prefix_zero hB e j hj) hxy (metricColumn_norm_sq_le_one hB.posSemidef hBI j)
-    ht ht1
-  rw [splitRowQuantity_eq_norm hB.posSemidef e j ht ht1,
-    splitRowQuantity_eq_norm hB.posSemidef e j (t := 0) le_rfl zero_le_one,
-    splitRowQuantity_eq_norm hB.posSemidef e j (t := 1) zero_le_one le_rfl]
-  simpa only [metricSplitRow, metricColumn_norm_sq hB.posSemidef,
-    metricDual_norm_sq hB.posSemidef, zero_mul, mul_zero, sub_self, Real.sqrt_zero] using h
-
-end Matrix
 end SchauderTranslates

@@ -37,7 +37,7 @@ theorem translate_basis_L2_of_finiteExtension
     ⟨b', hb', nnnormProjBound_lt_of_le b' hbC' hC⟩⟩
 
 open SchauderTranslates.Sharp in
-/-- **Translates in `L²(ℝ)`.** For every `ε > 0` there are a nonzero real-valued function
+/-- **Theorem 1.4 (i).** For every `ε > 0` there are a nonzero real-valued function
 `f ∈ L²(ℝ)` extending to an entire function and distinct real numbers `λₙ` such that the
 translates `f(· - λₙ)` form a Schauder basis of `L²(ℝ)` over `ℂ` and over `ℝ`, with basis
 constant below `1 + ε` in both cases. -/

@@ -1,14 +1,13 @@
 import Lean_Code.SchauderTranslates.ScalarFloorNumerics
-import Lean_Code.SchauderTranslates.ScalarRowNumerics
 
 /-!
 # Real arithmetic for the sharp scalar induction
 
 The paper fixes `0 < d ≤ 1`, puts `t = d / 4`, `a₀ = t / 100`, and runs the scalar induction
 with the initial circle weight `1 - a₀ + a₀ cos (2 π x)`. This file collects the parameters
-and every purely numerical inequality of that induction (paper: `h2:ss:scalar-induction`).
-The statements are the parametrized counterparts of `ScalarNumerics`, `ScalarFloorNumerics`,
-`ScalarRowNumerics` and `ScalarStageBudget`, whose absolute constants `1/323`, `1/646`,
+and every purely numerical inequality of that induction (paper: Section 14.4).
+The statements are the parametrized counterparts of `ScalarNumerics` and `ScalarFloorNumerics`,
+whose absolute constants `1/323`, `1/646`,
 `2 ≤ q < 3` and `10` are replaced by `Z₀`, a relative bound, `1 + t ≤ q < 1 + 2 t` and `5 / t`.
 -/
 
@@ -97,13 +96,13 @@ theorem sharp_copy_cost_nonneg {t : ℝ} (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) :
     0 ≤ (5 / t) * sharpZ t :=
   mul_nonneg (by positivity) (sharpZ_pos ht0 ht1).le
 
-/-- Paper `h2:eq:qbound`: the whole centered budget stays strictly below `1 + 2 t`. -/
+/-- The whole centered budget stays strictly below `1 + 2 t`. -/
 theorem sharpBudget_lt {t : ℝ} (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) : sharpBudget t < 1 + 2 * t := by
   have h := sharp_copy_cost_le ht0 ht1
   unfold sharpBudget sharpA
   linarith
 
-/-- The activation count has the two-sided bound of the paper (`h2:eq:Lp`), assuming only
+/-- The activation count has the two-sided bound of the paper, assuming only
 that the squared deficit is at most `16 / 3` times the gain. -/
 theorem copies_activation_bounds_sharp {ε Z p z : ℝ}
     (he : 0 < ε) (hemax : ε ≤ 1 / 10)

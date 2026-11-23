@@ -40,7 +40,7 @@ theorem seedPlaneInclusion_gram (i₀ : ι) {L : ℕ} (hL : 0 < L) :
 def seedComplexPlane (κ : ℝ) (L : ℕ) : Matrix (Fin 2) (Fin 2) ℂ :=
   (seedPlane (1 - κ ^ 2) (seedCoupling κ L)).map Complex.ofReal
 
-/-- The actual seed matrix preserves the displayed two-dimensional plane. -/
+/-- The seed matrix preserves the displayed two-dimensional plane. -/
 theorem seedBlock_plane (i₀ : ι) {L : ℕ} (hL : 0 < L) (κ : ℝ) :
     seedBlock i₀ L κ * seedPlaneInclusion i₀ L =
       seedPlaneInclusion i₀ L * seedComplexPlane κ L := by

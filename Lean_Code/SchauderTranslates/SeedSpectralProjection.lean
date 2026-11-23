@@ -55,7 +55,7 @@ theorem seedPlane_spectral_decomposition {a s : ℝ} (ha0 : 0 < a) (ha1 : a < 1)
     simp [seedPlane, seedLowerProjection, Matrix.sub_apply, Matrix.add_apply, Matrix.smul_apply, ht] <;>
     field_simp <;> ring
 
-/-- The displayed coefficient is the squared norm of the actual lower spectral projection of the first unit vector. -/
+/-- The displayed coefficient is the squared norm of the lower spectral projection of the first unit vector. -/
 theorem seedSpectralMass_projection_norm {a s : ℝ} (ha0 : 0 < a) (ha1 : a < 1) (hs : 0 < s) :
     ‖(seedLowerProjection a s).toEuclideanLin (EuclideanSpace.single 0 (1 : ℝ))‖ ^ 2 =
       seedSpectralMass a s := by

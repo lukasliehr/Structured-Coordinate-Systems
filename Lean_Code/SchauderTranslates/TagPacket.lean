@@ -2,7 +2,7 @@ import Lean_Code.SchauderTranslates.TagKernel
 import Lean_Code.SchauderTranslates.SelectiveMeans
 
 /-!
-# Well-conditioned carrier packets (blueprint `tag:packet`)
+# Well-conditioned carrier packets
 
 The carrier of one replica consists of the products `e_{λ_j}(t) ψ_k(y_{b(j)})` of a line
 character with a tag character in its own tag block. Different carrier rows use
@@ -262,7 +262,7 @@ theorem orderedCarrier_sum (blk : Fin J → Fin M) (lam : Fin J → ℝ) (c : Fi
   rw [← finProdFinEquiv.sum_comp]
   simp [orderedCarrier]
 
-/-- Blueprint `tag:packet`: every ordered prefix of the actual carrier list. -/
+/-- The prefix bound for every ordered prefix of the carrier list. -/
 theorem tag_packet_prefix (blk : Fin J → Fin M) (hblk : Function.Injective blk)
     (lam : Fin J → ℝ) {q : ℝ} (hq0 : 0 ≤ q) (hq : s.CenteredPrefixSqBound q) :
     FinitePrefixSqBound (fun i => (orderedCarrier s blk lam i).toL2 (tagLaw s ρ M))

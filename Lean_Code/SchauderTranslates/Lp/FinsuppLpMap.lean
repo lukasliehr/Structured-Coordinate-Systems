@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Lp.PrivateCellCoordinates
+import Mathlib
 import Mathlib.Analysis.Normed.Operator.Extend
 
 noncomputable section
@@ -9,7 +9,7 @@ namespace SchauderTranslates.LpConstruction
 
 variable {ι : Type*} [DecidableEq ι] (p : ℝ≥0∞) [Fact (1 ≤ p)]
 
-/-- Finite coefficients viewed in their actual ℓᵖ norm. No norm on the
+/-- Finite coefficients viewed in their ℓᵖ norm. No norm on the
 Finsupp domain is used to estimate synthesis. -/
 def finsuppLp : (ι →₀ ℂ) →ₗ[ℂ] lp (fun _ : ι => ℂ) p where
   toFun c := ⟨⇑c, (memℓp_zero_iff.mpr c.hasFiniteSupport).of_exponent_ge zero_le⟩

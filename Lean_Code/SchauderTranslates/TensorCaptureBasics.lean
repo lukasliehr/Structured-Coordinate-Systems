@@ -44,7 +44,7 @@ theorem tensorGram_posDef {G : Matrix ι ι ℂ} {B : Matrix κ κ ℂ}
   rw [he]
   exact h
 
-/-- The actual raw source matrix in orthonormal row coordinates. -/
+/-- The raw source matrix in orthonormal row coordinates. -/
 def tensorSource (b : ι → ℂ) (B : Matrix κ κ ℂ) : Matrix (ι × κ) κ ℂ :=
   fun p j => b p.1 * (1 - B) p.2 j
 

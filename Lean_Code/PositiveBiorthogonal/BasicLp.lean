@@ -1,4 +1,4 @@
-import Lean_Code.PositiveBiorthogonal.Interpretation
+import Lean_Code.PositiveBiorthogonal.Basic
 import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas

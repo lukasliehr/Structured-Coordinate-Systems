@@ -11,7 +11,7 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ}
 
-/-- Every actual finite cutoff gain is bounded by the full activation gain. -/
+/-- Every finite cutoff gain is bounded by the full activation gain. -/
 theorem cutoffGain_le_limit (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) (N : ℕ) :
     s.cutoffGain hb hfloor p N ≤ s.activationLimitGain p := by

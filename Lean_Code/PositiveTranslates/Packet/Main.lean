@@ -20,7 +20,7 @@ into the statements used by an inductive construction:
   `e` with all the properties, for a given size `N`;
 * `exists_positive_packet_small` : for every `ε > 0` all sufficiently large sizes `N` have
   deficit at most `1/2` and carry such a packet with `‖V - v‖ ≤ ε` (the non-negative
-  variant of Lemma `tr:lem:packet` of the paper).
+  variant of Lemma 8.2 of the paper).
 
 The scale facts (`posDeficit_tendsto`, `exists_posDeficit_le_half`,
 `posAmplitude_mul_rpow`, `posCost_tendsto`, `exists_packet_size`, `posScale_le`) are in
@@ -70,7 +70,7 @@ theorem exists_positive_packet (hp : 2 < p) (hpfin : p ≠ ∞) {Γ : Set ℝ}
     positive_packet_placement hp hpfin hΓ T hR hvstep hhstep hvnn hhnn hv hh hv0 hhnorm
       hN hdef⟩
 
-/-- **Non-negative variant of Lemma `tr:lem:packet`.** With the data of
+/-- **Non-negative variant of Lemma 8.2 of the paper.** With the data of
 `exists_positive_packet` and `ε > 0`, every sufficiently large size `N` has deficit at
 most `1/2`, and there are parameters in `Γ` above `T` and remainders `e` forming a
 positive packet whose edit costs at most `ε`: `‖V - v‖ ≤ ε`. -/

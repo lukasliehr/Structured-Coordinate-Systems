@@ -13,7 +13,7 @@ variable {ν : Measure Y} [IsProbabilityMeasure ν] (K : FiberKernel S Y ν)
 variable (ρ : Measure S) [IsFiniteMeasure ρ]
 
 /-- Multiplying a slow bounded function by a fixed bounded packet factor preserves
-all linear relations, using the actual marginal of the weighted measure. -/
+all linear relations, using the marginal of the weighted measure. -/
 theorem multiply_slow_relation (f : ι → BoundedMeasurableComplex S)
     (g : BoundedMeasurableComplex S) (q : BoundedMeasurableComplex (S × Y))
     (c : ι → ℂ) (h : ∑ i, c i • (f i).toL2 ρ = g.toL2 ρ) :
@@ -49,7 +49,7 @@ variable {S ι κ : Type*} [MeasurableSpace S] [Fintype ι] [Fintype κ]
 variable {L d n : ℕ} (a : SelectiveKernelData S L d n)
 variable (ρ : Measure S) [IsProbabilityMeasure ρ]
 
-/-- A change of coordinates in the slow carrier preserves the span of the actual
+/-- A change of coordinates in the slow carrier preserves the span of the
 weighted packet, column by column; all seed atoms remain in the packet. -/
 theorem packet_span_mono (φ : ι → BoundedMeasurableComplex S)
     (ψ : κ → BoundedMeasurableComplex S)

@@ -7,19 +7,19 @@ import Lean_Code.SchauderTranslates.MainReduction
 # Assembly of the infinite construction
 
 Assuming the finite extension principle `Construction.FiniteExtensionPrinciple`
-(blueprint `extend:line`) as a hypothesis, this file completes the blueprint nodes
+as a hypothesis, this file proves the following.
 
-* `limit:errors`: the stage errors of every rational target become arbitrarily small,
+* The stage errors of every rational target become arbitrarily small,
   so every rational character lies in the closed span of the installed characters in
-  `L²(w_∞)`;
-* `limit:enumerate`: the nested list lengths are unbounded, and reading the lists gives
-  an injective frequency sequence whose characters have dense span;
-* `limit:prefix`: every finite prefix inequality passes to the limit weight with the
-  uniform constant `49/4 < 13`;
-* `basis:weighted`: `Construction.WeightedExponentialBasisExists`.
+  `L²(w_∞)`.
+* The nested list lengths are unbounded, and reading the lists gives
+  an injective frequency sequence whose characters have dense span.
+* Every finite prefix inequality passes to the limit weight with the
+  uniform constant `49/4 < 13`.
+* `Construction.WeightedExponentialBasisExists` holds.
 
-The stage construction (`limit:stages`) is in `LimitStagesConstruct`, and the positive
-infinite product (`limit:positive`) is `positive_limit_weight`.
+The stage construction is in `LimitStagesConstruct`, and the positive
+infinite product is `positive_limit_weight`.
 -/
 
 noncomputable section
@@ -32,7 +32,7 @@ open SchauderTranslates.Construction
 section Limit
 variable (hfe : FiniteExtensionPrinciple) (s : ℕ → ℚ)
 
-/-! ### The limiting weight (`limit:positive` applied to the stages) -/
+/-! ### The limiting weight -/
 
 theorem limit_facts :
     Integrable (limitWeight gaussWeight.density (factor hfe s)) volume ∧
@@ -84,7 +84,7 @@ theorem normSq_tendsto_limit {f : ℝ → ℂ} (hf : Continuous f) {B : ℝ} (hB
   tendsto_integral_sq_mul (fun m => (stages hfe s m).w.integrable) (limitW hfe s).integrable
     (limitW_L1 hfe s) hf hB
 
-/-! ### `limit:errors` -/
+/-! ### Stage errors -/
 
 /-- Every rational character lies in the closure of any submodule of `L²(w_∞)` containing
 all installed characters. -/
@@ -122,7 +122,7 @@ theorem rational_mem_closure (hs : FairSchedule s)
         (continuous_residual _ c _) (norm_residual_le _ c _)) hc
     exact (pow_lt_pow_iff_left₀ (norm_nonneg _) hε.le two_ne_zero).mp hsq
 
-/-! ### `limit:enumerate` -/
+/-! ### Enumeration of the installed frequencies -/
 
 /-- The nested list lengths are unbounded. -/
 theorem stages_unbounded (hs : FairSchedule s) (B : ℕ) : ∃ n, B < (stages hfe s n).d := by
@@ -213,7 +213,7 @@ theorem atoms_dense (hs : FairSchedule s) :
   rw [Submodule.dense_iff_topologicalClosure_eq_top, eq_top_iff, ← htot]
   exact Submodule.topologicalClosure_minimal _ hR P.isClosed_topologicalClosure
 
-/-! ### `limit:prefix` -/
+/-! ### Prefix bounds in the limit -/
 
 /-- A prefix cut of a finite character sum, written over `Finset.range`. -/
 theorem prefix_fun_eq_range (M k : ℕ) (a : ℕ → ℂ) (ξ : ℕ → ℝ) :
@@ -294,7 +294,7 @@ theorem limit_prefix_range (hs : FairSchedule s) (k M : ℕ) (a : ℕ → ℂ) :
   rw [hP] at hlim
   exact hlim
 
-/-- `limit:prefix` in the language of the contracts: every finite initial list of the
+/-- Every finite initial list of the
 installed frequencies has prefix constant `49/4 < 13` in `L²(w_∞)`. -/
 theorem limit_prefixBound (hs : FairSchedule s) (M : ℕ) :
     PrefixBound (limitW hfe s) (fun i : Fin M => muInf hfe s hs i) (49 / 4) := by
@@ -380,7 +380,7 @@ theorem mem_installedSpan (n i : ℕ) (hi : i < (stages hfe s n).d) :
     weightedCharacter (limitW hfe s) ((stages hfe s n).seq i) ∈ installedSpan hfe s :=
   Submodule.subset_span ⟨n, i, hi, rfl⟩
 
-/-- Blueprint `limit:errors`, conditional on `hfe`: for every rational target the stage
+/-- Conditional on `hfe`: for every rational target the stage
 errors decrease to zero, and the rational character lies in the closed span of the
 installed characters in `L²(w_∞)`. -/
 theorem visited_target_errors (hs : FairSchedule s) (q : ℚ) :
@@ -396,7 +396,7 @@ theorem visited_target_errors (hs : FairSchedule s) (q : ℚ) :
   rw [Real.dist_eq, sub_zero, abs_of_nonneg (stageError_nonneg hfe s n q)]
   exact lt_of_le_of_lt (stageError_antitone hfe s q hn) hN
 
-/-- Blueprint `limit:enumerate`, conditional on `hfe`: the list lengths are unbounded, the
+/-- Conditional on `hfe`: the list lengths are unbounded, the
 installed entries define one injective sequence, and its characters have dense span. -/
 theorem enumerate_installed_atoms (hs : FairSchedule s) :
     (∀ B : ℕ, ∃ n, B < (stages hfe s n).d) ∧
@@ -408,7 +408,7 @@ theorem enumerate_installed_atoms (hs : FairSchedule s) :
   ⟨stages_unbounded hfe s hs, fun _ _ hi => stages_seq_eq_muInf hfe s hs hi,
     muInf_injective hfe s hs, atoms_dense hfe s hs⟩
 
-/-- Blueprint `limit:prefix`, conditional on `hfe`: every finite initial segment of the
+/-- Conditional on `hfe`: every finite initial segment of the
 installed list is independent in `L²(w_∞)` and has prefix constant `49/4 < 13`. -/
 theorem limit_prefix_bounds (hs : FairSchedule s) (M : ℕ) :
     LinearIndependent ℂ (fun i : Fin M => weightedCharacter (limitW hfe s) (muInf hfe s hs i)) ∧
@@ -424,9 +424,7 @@ end SchauderTranslates.LimitAssembly
 namespace SchauderTranslates
 open Construction LimitAssembly
 
-/-- Blueprint `basis:weighted`, conditional on the finite extension principle
-(blueprint `extend:line`), which is a hypothesis here and not an assumption of the
-library. -/
+/-- The weighted exponential basis, conditional on the finite extension principle. -/
 theorem weighted_basis_of_finite_extension (hfe : Construction.FiniteExtensionPrinciple) :
     Construction.WeightedExponentialBasisExists := by
   obtain ⟨s, hs, -⟩ := fair_schedule
@@ -435,11 +433,5 @@ theorem weighted_basis_of_finite_extension (hfe : Construction.FiniteExtensionPr
   exact schauder_of_independent_dense_span (atoms hfe s hs)
     (characters_linearIndependent (limitW hfe s) (muInf hfe s hs) (muInf_injective hfe s hs))
     (atoms_dense hfe s hs) (by norm_num) (atoms_prefix hfe s hs)
-
-/-- The translate basis, conditional on the finite extension principle. -/
-theorem translates_of_finite_extension (hfe : Construction.FiniteExtensionPrinciple) :
-    ∃ (g : LebesgueL2) (Λ : ℕ → ℝ), g ≠ 0 ∧ Function.Injective Λ ∧
-      Construction.OrderedSchauderBasis (fun n => translateL2 (Λ n) g) :=
-  translates_of_weighted_exponential_basis (weighted_basis_of_finite_extension hfe)
 
 end SchauderTranslates

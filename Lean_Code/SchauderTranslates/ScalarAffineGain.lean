@@ -40,7 +40,7 @@ theorem affineGain_continuousOn (s : ScalarData d n) : ContinuousOn s.affineGain
   exact ((show ContinuousAt (fun t : ℝ => 1 - t + t * s.mass) θ by fun_prop).mul he |>.sub
     continuousAt_const).continuousWithinAt
 
-/-- Every gain between zero and the block's gain is attained by an actual affine density. -/
+/-- Every gain between zero and the block's gain is attained by an affine density. -/
 theorem exists_affine_gain (s : ScalarData d n) {z : ℝ} (hz : 0 < z) (hs : z ≤ s.gain) :
     ∃ θ : ℝ, ∃ h0 : 0 ≤ θ, ∃ h1 : θ ≤ 1,
       0 < θ ∧ (s.affine θ h0 h1).gain = z := by

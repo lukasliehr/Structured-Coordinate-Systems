@@ -2,7 +2,7 @@ import Lean_Code.SchauderTranslates.TagPacket
 import Lean_Code.SchauderTranslates.BoundedSpan
 
 /-!
-# Mean-one tags and lifted residuals (blueprint `tag:lift`, `tag:replicas`)
+# Mean-one tags and lifted residuals
 
 The minimum-variance polynomial of mean one in the nonconstant span of a scalar block of
 gain `z` has variance `1/z`. Attaching it to every carrier row lifts a slow residual
@@ -18,8 +18,6 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 open Construction
-
-
 
 namespace ScalarData
 variable {dt nt : ℕ} (s : ScalarData dt nt)
@@ -98,7 +96,7 @@ theorem liftPacketCoeff_row (c : Fin J → ℂ) (j : Fin J) :
 def lineSynthesis (lam : Fin J → ℝ) (c : Fin J → ℂ) : Lp ℂ 2 ρ :=
   ∑ j, c j • (lineCharacter (lam j)).toL2 ρ
 
-/-- Blueprint `tag:lift`: squared norm of the lifted residual. -/
+/-- Squared norm of the lifted residual. -/
 theorem liftVector_norm_sq (hz : 0 < s.gain) (blk : Fin J → Fin M) (hblk : Function.Injective blk)
     (lam : Fin J → ℝ) (c : Fin J → ℂ) :
     ‖(liftVector s blk lam c).toL2 (tagLaw s ρ M)‖ ^ 2 =

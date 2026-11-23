@@ -13,7 +13,7 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ}
 
-/-- The inverse of the actual compression to a finite symmetric Fourier window. -/
+/-- The inverse of the compression to a finite symmetric Fourier window. -/
 def cutoffInverse (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) (p : ℝ) (N : ℕ) :
     circleCutoffSpace (Unit ⊕ Fin n) N ≃L[ℂ] circleCutoffSpace (Unit ⊕ Fin n) N :=

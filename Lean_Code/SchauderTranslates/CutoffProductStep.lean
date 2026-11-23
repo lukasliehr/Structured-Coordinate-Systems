@@ -26,7 +26,7 @@ theorem cutoffData_mass_deficit (s : ScalarData d n) {ε p : ℝ} (hm : s.mass =
 
 /-- The concrete product of a finite cutoff inherits the complete rare-step numerical bounds.
 The two cutoff gain hypotheses are precisely the finite-approximation target and upper bound;
-the remaining conclusions concern the actual next torus block. -/
+the remaining conclusions concern the next torus block. -/
 theorem cutoff_product_step (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {ε p : ℝ} (hm : s.mass = 1 - ε)
     (he : 0 < ε) (hemax : ε ≤ 1 / 10) (hZ : 1 / 646 ≤ s.gain)

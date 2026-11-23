@@ -2,9 +2,9 @@ import Lean_Code.SchauderTranslates.SelectivePrefixes
 import Lean_Code.SchauderTranslates.Sharp.ProjectionSum
 
 /-!
-# The sharp selective prefix estimate (paper: `h2:eq:selective-bound`)
+# The sharp selective prefix estimate (paper: (15.2))
 
-Every centered prefix of the selective packet, in the actual column-major character order,
+Every centered prefix of the selective packet, in the column-major character order,
 has squared norm at most
 `1 + (√(K_s² − 1) + √(C · max(K_V, 1)² − 1))²`,
 where `K_s ≥ 1` is the augmented prefix constant of the auxiliary scalar block, `C ≥ 1`
@@ -176,7 +176,7 @@ theorem augmented_ordered_prefix_sq_le (t : ℕ) (ht : r + L ≤ t) :
     exact (gramConjugate_one_sq_le hH (le_refl (1 : ℝ))).trans
       (one_le_selectivePrefixSqSharp _ _)
 
-/-- Prefix control for the actual normalized weighted vectors. -/
+/-- Prefix control for the normalized weighted vectors. -/
 theorem augmented_ordered_synthesis_sq_le (t : ℕ) (ht : r + L ≤ t)
     (c : (Unit ⊕ Fin n) × (Fin r ⊕ Fin L) → ℂ) :
     ‖finiteSynthesis (a.kernel.atoms ρ (a.augmentedRowColumn (SelectiveKernelData.packetRows φ)))
@@ -255,7 +255,7 @@ theorem centered_packet_synthesis_sq_le
 
 end Ordered
 
-/-- Paper `h2:eq:selective-bound` (sharp version of blueprint `select:prefix`): every ordered
+/-- Paper, (15.2): every ordered
 centered prefix of the selective packet has squared norm at most
 `1 + (√(K_s² − 1) + √(C · max(K, 1)² − 1))²`. -/
 theorem selective_centered_prefix_sharp {S : Type*} [MeasurableSpace S] {L d n r : ℕ}

@@ -5,7 +5,7 @@ import Lean_Code.PositiveTranslates.Forest.Blocks
 # The positive forest: data and the sequence
 
 `PositiveForest Z r` packages the abstract Banach space data of the "positive forest"
-(paper, proof of `thm:translate-properties`(iii)):
+(paper, proof of Theorem 1.4 (ii)):
 
 * a bounded projection `PY` on a complex Banach space `Z`, with range `Y` and kernel `X`;
 * a unit vector `e0` and, for every stage `s`, vectors `coord s i` (`i : Fin (N s)`) in `Y`
@@ -58,10 +58,7 @@ How to verify the fields in the application:
   `root_prefix_of_schauderBasis` (file `Forest/Tools.lean`). Together with `norm_root` they
   imply `1 ≤ D` (`PositiveForest.one_le_D`).
 * The norm of `e0` is not a field: `‖e0‖ = 1` follows from `lr_norm`
-  (`PositiveForest.norm_e0`), as does `‖coord s i‖ = 1` (`PositiveForest.norm_coord`).
-
-The hypotheses are consistent: `Forest/Model.lean` constructs a positive forest in
-`ℓ^p × ℓ^p`. -/
+  (`PositiveForest.norm_e0`), as does `‖coord s i‖ = 1` (`PositiveForest.norm_coord`). -/
 structure PositiveForest (Z : Type*) [NormedAddCommGroup Z] [NormedSpace ℂ Z] (r : ℝ) where
   /-- The bounded projection onto the closed span `Y` of `e0` and the coordinates. -/
   PY : Z →L[ℂ] Z

@@ -137,9 +137,9 @@ theorem packetNoise_norm_power {N : ℕ} (p : ℝ≥0∞) [Fact (1 ≤ p)]
     norm_translate, norm_real_smul_rpow, abs_of_nonneg ha, hsum]
   ring
 
-/-- Blueprint `lp:packet`. The displayed coupling exponent is `-1/q`,
+/-- The packet lemma. The coupling exponent is `-1/q`,
 written as `-(P - 1)/P` for the finite real exponent `P = p.toReal`.
-All norms here are the norms of the actual Lebesgue Lᵖ classes. -/
+All norms are norms of Lebesgue Lᵖ classes. -/
 theorem exact_packet {p : ℝ≥0∞} [Fact (1 ≤ p)] (hp : 2 < p) (hpfin : p ≠ ∞)
     {R : ℝ} (hR : 0 ≤ R) (v h : LebesgueLp p)
     (hvstep : IsCompactStep p v) (hhstep : IsCompactStep p h) (hv0 : v ≠ 0)

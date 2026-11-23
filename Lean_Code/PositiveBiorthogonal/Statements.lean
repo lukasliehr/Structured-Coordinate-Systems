@@ -44,7 +44,7 @@ theorem exists_almost_monotone_basis_with_positive_biorthogonal
         (∀ n, Γ.b n = γ n) ∧
         (∀ n (g : L 𝕜 q), Γ.coeff n g = ⟨B.b n, g⟩) ∧
         PositiveBasis Γ ∧ K Γ = K B) := by
-  let := StatementAudit.conjugate_instance hpq
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   exact almost_monotone_existence hp.ne ε hε
 
 /-- For 1 ≤ p < ∞, a basis with positive biorthogonal functionals cannot
@@ -55,7 +55,7 @@ theorem first_projection_not_contractive_of_positive_biorthogonal
     (hp : p < ∞) (hpq : 1 / p + 1 / q = 1)
     (B : SchauderBasis 𝕜 p) (hB : HasPositiveBiorthogonal q B) :
     1 < ‖P B 1‖ := by
-  let := StatementAudit.conjugate_instance hpq
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   obtain ⟨γ, hγ, hpos⟩ := hB
   exact coefficient_first_projection_strict hp.ne B γ hγ hpos
 
@@ -71,9 +71,9 @@ theorem sharp_infimum_positive_biorthogonal
   constructor
   · apply isGLB_one_of_approach
     · rintro k ⟨B, _, rfl⟩
-      exact StatementAudit.K_ge_one B
+      exact PositiveBiorthogonal.Basic.K_ge_one B
     · intro ε hε
-      let := StatementAudit.conjugate_instance hpq
+      let := PositiveBiorthogonal.Basic.conjugate_instance hpq
       let : Fact (1 ≤ q) := ⟨ENNReal.HolderConjugate.one_le q p⟩
       obtain ⟨B, γ, _, hpos, _, hrep, _, _, hK, _, _⟩ :=
         exists_almost_monotone_basis_with_positive_biorthogonal 𝕜 p q hp hpq ε hε
@@ -92,8 +92,8 @@ theorem exists_almost_monotone_positive_basis
     (ε : ℝ) (hε : 0 < ε) :
     ∃ B : SchauderBasis 𝕜 p,
       PositiveBasis B ∧ (∀ n, CompactlySupportedStep (B.b n)) ∧ K B < 1 + ε := by
-  obtain ⟨q, hpq⟩ := StatementAudit.conjugate_exists hp₁.le
-  let := StatementAudit.conjugate_instance hpq
+  obtain ⟨q, hpq⟩ := PositiveBiorthogonal.Basic.conjugate_exists hp₁.le
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   let : Fact (1 ≤ q) := ⟨ENNReal.HolderConjugate.one_le q p⟩
   have hq : q < ∞ := (ENNReal.HolderConjugate.lt_top_iff_one_lt q p).mpr hp₁
   have hq₁ : 1 < q := (ENNReal.HolderConjugate.lt_top_iff_one_lt p q).mp hp
@@ -126,7 +126,7 @@ theorem sharp_infimum_positive_bases
   constructor
   · apply isGLB_one_of_approach
     · rintro k ⟨B, _, rfl⟩
-      exact StatementAudit.K_ge_one B
+      exact PositiveBiorthogonal.Basic.K_ge_one B
     · intro ε hε
       obtain ⟨B, hB, _, hK⟩ := exists_almost_monotone_positive_basis 𝕜 p hp₁ hp ε hε
       exact ⟨K B, ⟨B, hB, rfl⟩, hK⟩

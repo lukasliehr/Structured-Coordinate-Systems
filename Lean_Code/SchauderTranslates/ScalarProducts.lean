@@ -72,7 +72,7 @@ theorem product_inverse_nonconstant_le (s : ScalarData d n) (L : ℕ)
 
 end ScalarData
 
-/-- The independent scalar product is an actual scalar torus block. Its normalized centered
+/-- The independent scalar product is a scalar torus block. Its normalized centered
 Gram is a direct sum, its gain is additive, and raw inverse diagonals have the stated mass
 normalization. The formulas also cover the empty product. -/
 theorem scalar_product_data {d n : ℕ} (s : ScalarData d n) (L : ℕ) :

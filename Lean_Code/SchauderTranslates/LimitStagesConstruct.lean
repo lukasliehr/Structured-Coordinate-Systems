@@ -3,10 +3,10 @@ import Lean_Code.SchauderTranslates.LimitWeight
 import Lean_Code.SchauderTranslates.PositiveProduct
 
 /-!
-# Limit stages: the recursive construction (blueprint `limit:stages`)
+# Limit stages: the recursive construction
 
 Assuming the finite extension principle `Construction.FiniteExtensionPrinciple`
-(blueprint `extend:line`) as a hypothesis, we construct by recursion the nested
+as a hypothesis, we construct by recursion the nested
 finite lists, weights `w_n = w₀ ∏_{k<n} W_k` and prefix constants of the infinite
 construction. A stage stores its list as a sequence `ℕ → ℝ` together with its
 length, so that the extension property is a statement about a common index type.
@@ -301,7 +301,7 @@ theorem stageError_small (hs : FairSchedule s) (q : ℚ) {ε : ℝ} (hε : 0 < �
   obtain ⟨n, hn⟩ := hk k
   exact ⟨n, lt_of_le_of_lt hn hk'⟩
 
-/-- Blueprint `limit:stages`, conditional on the finite extension principle `hfe`.
+/-- The stages, conditional on the finite extension principle `hfe`.
 Starting from the Gaussian probability density and the constant character, the lists are
 nested, `w_n = w₀ ∏_{k<n} W_k` with `0 < W_k ≤ 1`, every list is injective with prefix
 constant `K_n < 13`, `∫ w₀ (1 - W_n) < δ_n`, the squared distance of the scheduled target

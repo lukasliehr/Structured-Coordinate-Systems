@@ -1,7 +1,7 @@
 import Lean_Code.PositiveBiorthogonal.Definitions
 import Mathlib.Tactic
 
-/-! Error parameters (`lem:parameters`) used by the construction in FinalExistence.lean. -/
+/-! Error parameters used by the construction in `FinalExistence.lean`. -/
 noncomputable section
 set_option autoImplicit false
 

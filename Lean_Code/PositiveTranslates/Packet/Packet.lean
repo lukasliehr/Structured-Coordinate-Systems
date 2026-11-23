@@ -5,8 +5,8 @@ import Lean_Code.PositiveTranslates.Packet.Nonneg
 /-!
 # The positive packet
 
-Paper, proof of `thm:translate-properties`(iii) (lines 3364–3377), the non-negative variant
-of Lemma `tr:lem:packet`. For non-negative `v, h` supported in `I = [-R, R]`, with
+Paper, proof of Theorem 1.4 (ii): the non-negative variant
+of Lemma 8.2. For non-negative `v, h` supported in `I = [-R, R]`, with
 `‖h‖ = 1`, and separated positive parameters `Λ 0, …, Λ (N-1)` put
 
 `d = posScale p.toReal ‖v‖ N`,  `a = posAmplitude p.toReal d N = 2 d N^{-1/q}`,
@@ -211,8 +211,8 @@ theorem referenceFunction_sub (v h : LebesgueLp p) (Λ : Fin N → ℝ) :
       packetEdit p Λ (posAmplitude p.toReal (posScale p.toReal ‖v‖ N) N) h := by
   rw [referenceFunction_eq, add_sub_cancel_left]
 
-/-- **The positive packet** (paper, lines 3364–3377; non-negative variant of Lemma
-`tr:lem:packet`). Let `2 < p < ∞` and let `v, h` be non-negative compactly supported step
+/-- **The positive packet** (paper, proof of Theorem 1.4 (ii); non-negative variant of
+Lemma 8.2). Let `2 < p < ∞` and let `v, h` be non-negative compactly supported step
 functions supported in `[-R, R]` with `v ≠ 0`, `‖h‖ = 1`. Let `N ≥ 1` with
 `posDeficit p.toReal N < 1` and let `Λ : Fin N → ℝ` be positive and separated. Then the
 explicit remainders `posRemainder p v h Λ` satisfy all the conclusions collected in

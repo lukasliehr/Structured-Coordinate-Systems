@@ -53,7 +53,7 @@ namespace FiberKernel
 variable {S Y : Type*} [MeasurableSpace S] [MeasurableSpace Y]
 variable {ν : Measure Y} [IsProbabilityMeasure ν] (K : FiberKernel S Y ν)
 
-/-- The actual probability-weighted joint law. -/
+/-- The probability-weighted joint law. -/
 def measure (ρ : Measure S) : Measure (S × Y) :=
   (ρ.prod ν).withDensity (fun p => ENNReal.ofReal (K.density p))
 

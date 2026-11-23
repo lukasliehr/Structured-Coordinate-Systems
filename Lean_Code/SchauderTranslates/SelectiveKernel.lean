@@ -9,7 +9,7 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 
-/-- The actual selective kernel data. The slow representative is arbitrary;
+/-- The selective kernel data. The slow representative is arbitrary;
 it need not be one of the original carrier functions. -/
 structure SelectiveKernelData (S : Type*) [MeasurableSpace S] (L d n : ℕ) where
   scalar : ScalarData d n
@@ -24,7 +24,7 @@ namespace SelectiveKernelData
 variable {S : Type*} [MeasurableSpace S] {L d n : ℕ}
 variable (a : SelectiveKernelData S L d n)
 
-/-- Instantiate the selective kernel from the checked seed parameter and a permitted
+/-- Instantiate the selective kernel from the seed parameter and a permitted
 mass, using the representative's certified uniform bound. -/
 def fromSeedParameter (ρ : Measure S) [IsProbabilityMeasure ρ] (s : ScalarData d n)
     (e : BoundedMeasurableComplex S) (hunit : (∫ x, ‖e x‖ ^ 2 ∂ρ) = 1)

@@ -12,7 +12,7 @@ variable {ι κ H : Type*} [Fintype ι] [Fintype κ]
 variable [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
 /-- Restriction and quotient for an initial carrier block, stated directly in
-terms of the actual centered vectors. The initial coefficients are freely
+terms of the centered vectors. The initial coefficients are freely
 chosen; no orthonormality or condition-number hypothesis is imposed. -/
 theorem centered_extension_bound (u : ι → H) (v m : κ → H)
     (hm : ∀ i, m i ∈ atomSpan u)

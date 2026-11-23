@@ -11,7 +11,7 @@ namespace SchauderTranslates
 
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
-/-- Coercivity supplies a genuine bounded inverse, also over the complex scalars. -/
+/-- Coercivity supplies a bounded inverse, also over the complex scalars. -/
 theorem coercive_bijective (B : H →L[ℂ] H) {b : ℝ} (hb : 0 < b)
     (hB : ∀ x, b * ‖x‖ ^ 2 ≤ (inner ℂ (B x) x).re) : Function.Bijective B := by
   let : InnerProductSpace ℝ H := InnerProductSpace.complexToReal

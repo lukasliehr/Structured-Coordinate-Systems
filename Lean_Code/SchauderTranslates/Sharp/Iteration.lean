@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.SchauderTranslates.LineTransferWeight
 
 /-!

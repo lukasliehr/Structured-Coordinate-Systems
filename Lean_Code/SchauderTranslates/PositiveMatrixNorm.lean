@@ -13,7 +13,7 @@ theorem matrixHilbert_nonneg {B : Matrix ι ι ℂ} (hB : B.PosSemidef) :
   apply (ContinuousLinearMap.nonneg_iff_isPositive _).mpr
   exact Matrix.isPositive_toEuclideanLin_iff.mpr hB
 
-/-- A positive-matrix order bound controls the actual Euclidean operator norm. -/
+/-- A positive-matrix order bound controls the Euclidean operator norm. -/
 theorem positive_matrix_norm_le {B : Matrix ι ι ℂ} (hB : B.PosSemidef)
     {r : ℝ} (hr : 0 ≤ r) (hupper : ((r : ℂ) • (1 : Matrix ι ι ℂ) - B).PosSemidef) :
     ‖(Matrix.toEuclideanCLM (𝕜 := ℂ) (n := ι)) B‖ ≤ r := by

@@ -1,11 +1,11 @@
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.SchauderTranslates.LimitStagesConstruct
 
 /-!
 # Sharp limit stages: the recursive construction with even weights
 
-This is the sharp counterpart of `LimitStagesConstruct` (paper: Section "Assembling the
-basis", subsection "The stages and the positive limiting weight").
+This is the sharp counterpart of `LimitStagesConstruct` (paper: Section 17,
+"The stages and the positive limiting weight").
 
 Assuming the sharp finite extension `Sharp.FiniteExtensionSharp Kstar` as a hypothesis, we
 construct by recursion the nested finite lists, the even weights `w_n = w₀ ∏_{k<n} W_k`
@@ -157,7 +157,7 @@ def initStage : Stage where
 /-- The parameters of the sharp infinite construction: the one-step constant `Kstar`
 together with the sharp finite extension for it, the positive prefix budgets `τ n` with
 total `τsum`, and a fair schedule `s` of rational targets. The loss budgets are the fixed
-`lossBudget n` of the first formalization (total `1/8 < 1/2`). -/
+`lossBudget n` (total `1/8 < 1/2`). -/
 structure Setup where
   /-- The one-step constant `K_*`. -/
   Kstar : ℝ

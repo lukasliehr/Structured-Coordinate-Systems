@@ -2,10 +2,10 @@ import Lean_Code.SchauderTranslates.CombinedEngines
 import Lean_Code.SchauderTranslates.SelectiveSupply
 
 /-!
-# Selective engines in the combined product space (blueprint `tag:engines`)
+# Selective engines in the combined product space
 
 Finitely many selective engines over one slow law are combined by the product fiber
-kernel. In the actual combined weighted L² space each engine contributes its ordered
+kernel. In the combined weighted L² space each engine contributes its ordered
 packet; its slow part is the lifted marginal mean and its centered part has the engine's
 own centered Gram. The selective information formula then yields the two properties used
 by the replica argument: a mean-pairing bound `c ‖v‖² + j |⟪e, v⟫|²` and explicit
@@ -54,7 +54,7 @@ def slowPart (c : Fin mE) (p : Fin (ne * (r + L))) : Lp ℂ 2 (law ρ a) :=
 def fastPart (c : Fin mE) (p : Fin (ne * (r + L))) : Lp ℂ 2 (law ρ a) :=
   FiberKernel.engineCentered (kernels a) ρ c (packetAtom a φ c p)
 
-/-- The actual combined atom. -/
+/-- The combined atom. -/
 def atom (c : Fin mE) (p : Fin (ne * (r + L))) : Lp ℂ 2 (law ρ a) :=
   FiberKernel.engineAtom (kernels a) ρ c (packetAtom a φ c p)
 
@@ -127,7 +127,7 @@ theorem fastPart_sum_norm (c : Fin mE) (b : Fin (ne * (r + L)) → ℂ) :
   rw [← (packetEquiv ne r L).sum_comp]
   simp [SelectiveKernelData.orderedCenteredPacket]
 
-/-- The selective information formula, as delivered by `selective_blocks`. -/
+/-- The selective information formula, as delivered by `Sharp.selective_blocks_sharp`. -/
 def HasSelectiveInformation (c : Fin mE) (cE jE : ℝ) : Prop :=
   informationOperator ((a c).kernel.marginalMeans ρ ((a c).packet (φ c)))
       (Matrix.gram ℂ ((a c).kernel.centered ρ ((a c).packet (φ c)))) =

@@ -37,17 +37,4 @@ theorem haarAffine_preimage_interval (a l : ℝ) (hl : 0 < l) :
   · rintro ⟨hx0, hx1⟩
     constructor <;> nlinarith
 
-theorem haarAffine_map_haarMeasure (a l : ℝ) (hl : 0 < l) :
-    Measure.map (haarAffine a l hl) haarMeasure =
-      ENNReal.ofReal l⁻¹ • haarIntervalMeasure a l := by
-  rw [haarMeasure, ← haarAffine_preimage_interval a l hl,
-    ← (haarAffine a l hl).restrict_map volume (Set.Ico a (a + l)),
-    haarAffine_map_volume, Measure.restrict_smul]
-  rfl
-
-theorem haarAffine_measurePreserving (a l : ℝ) (hl : 0 < l) :
-    MeasurePreserving (haarAffine a l hl) haarMeasure
-      (ENNReal.ofReal l⁻¹ • haarIntervalMeasure a l) :=
-  ⟨(haarAffine a l hl).measurable, haarAffine_map_haarMeasure a l hl⟩
-
 end SchauderTranslates.LpConstruction

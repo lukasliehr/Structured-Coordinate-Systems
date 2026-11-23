@@ -1,12 +1,13 @@
 import Lean_Code.SchauderTranslates.ProductInterface
 import Lean_Code.SchauderTranslates.WeightedIsometry
+import Lean_Code.SchauderTranslates.LimitStagesBasic
 
 /-!
-# Basic bridges for the line transfer (`extend:line`)
+# Basic bridges for the line transfer
 
 Character algebra, the linear phase substitution `y = A ω t`, a finite-moment transfer
 for mixed trigonometric polynomials indexed by an arbitrary finite set, and the identities
-relating the raw weighted quantities `normSq`, `distanceSq`, `PrefixBound` of the contracts
+relating the raw weighted quantities `normSq`, `distanceSq`, `PrefixBound`
 to Gram matrices of weighted characters.
 -/
 

@@ -14,7 +14,7 @@ one constant `B` such that
   `e = ∑ₖ cₖ 𝟙_{Iₖ}`, where the `Iₖ` are finitely many pairwise disjoint intervals, the `cₖ` are
   positive, `‖e‖ = 1`, and the "room" interval `[a, b)` is disjoint from the `Iₖ`.
 
-This is the step-function form of Lemma `tr:lem:positive-complement` of the paper (there the
+This is the step-function form of Lemma 12.4 of the paper (there the
 basis vectors are smooth; here they are step functions and no approximation is needed).
 Every `B > 1` works (`exists_localBasis`); `exists_localBasis_constant` records `B = 2`.
 

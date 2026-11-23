@@ -23,7 +23,7 @@ theorem activationFrequency_pair_injective (s : ScalarData d n) (freq : ν → �
   exact Prod.ext (s.augmentedFrequency_injective (congrArg Prod.fst he))
     (hfreq (congrArg Prod.snd he))
 
-/-- A finite activated character list as genuine scalar data. The equivalence `e` specifies
+/-- A finite activated character list as scalar data. The equivalence `e` specifies
 its order; later prefix estimates use an order compatible with whole-row/partial-row masks. -/
 def activationData (s : ScalarData d n) (p : ℝ) (freq : ν → ℤ)
     (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
@@ -77,7 +77,7 @@ theorem activationData_augmentedFrequency (s : ScalarData d n) (p : ℝ)
   | inl u => cases u; simp [augmentedFrequency, activationIndexEquiv, hzero]
   | inr a => rfl
 
-/-- The entire augmented Gram is exactly a reindexing of the actual finite activation Gram. -/
+/-- The entire augmented Gram is exactly a reindexing of the finite activation Gram. -/
 theorem activationData_rawGram (s : ScalarData d n) (p : ℝ)
     (freq : ν → ℤ) (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
     {m : ℕ} (e : Fin m ≃ {q : (Unit ⊕ Fin n) × ν // q ≠ (Sum.inl (), a₀)}) :

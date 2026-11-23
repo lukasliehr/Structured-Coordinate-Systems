@@ -1,13 +1,12 @@
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStage
-import Lean_Code.SchauderTranslates.ScalarSmoothing
 import Lean_Code.SchauderTranslates.ScalarAffinePrefixes
 import Lean_Code.SchauderTranslates.ScalarAffineGain
 
 /-!
 # Sharp scalar supply and sharp prescribed gain
 
-Paper: Proposition `h2:lem:scalar` and Corollary `h2:cor:tune` of `combined_v3.tex`.
+Paper: Proposition 14.1.
 For every `0 < dd ≤ 1` the scalar blocks have centered and augmented prefix constants
 `< 1 + dd` and retained gain at least `c_d = Z₀ / 2`, where `t = dd / 4`, `a₀ = t / 100`
 and `Z₀ = a₀² / (4 - 8 a₀ + 3 a₀²)`.
@@ -117,7 +116,7 @@ def ScalarTuneSharpWith (dd cd : ℝ) : Prop :=
       0 ≤ K ∧ K < 1 + dd ∧ s.CenteredPrefixSqBound (K ^ 2) ∧ s.AugmentedPrefixSqBound (K ^ 2)
 
 /-- Sharp scalar supply with the explicit gain `scalarSharpGain dd = Z₀ / 2`
-(paper: Proposition `h2:lem:scalar`). -/
+(paper: Proposition 14.1). -/
 theorem scalarSupplySharpWith {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) :
     ScalarSupplySharpWith dd (scalarSharpGain dd) := by
   intro δ hδ
@@ -135,7 +134,7 @@ theorem scalarSupplySharpWith {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) :
     exact haug
 
 /-- Sharp prescribed gain below the same explicit constant `scalarSharpGain dd`
-(paper: Corollary `h2:cor:tune`). The affine path preserves the ordered augmented bound;
+(paper: Proposition 14.1, the choice `Z = z`). The affine path preserves the ordered augmented bound;
 orthogonal removal of the initial constant gives the same centered bound. -/
 theorem scalarTuneSharpWith {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) :
     ScalarTuneSharpWith dd (scalarSharpGain dd) := by
@@ -165,11 +164,11 @@ theorem scalarTuneSharpWith {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) :
     rw [s.affine_mass, hmass]
     ring
 
-/-- Sharp scalar supply (paper: Proposition `h2:lem:scalar`). -/
+/-- Sharp scalar supply (paper: Proposition 14.1). -/
 theorem scalarSupplySharp {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) : ScalarSupplySharp dd :=
   ⟨scalarSharpGain dd, scalarSharpGain_pos hd0 hd1, scalarSupplySharpWith hd0 hd1⟩
 
-/-- Sharp prescribed gain (paper: Corollary `h2:cor:tune`). -/
+/-- Sharp prescribed gain (paper: Proposition 14.1, the choice `Z = z`). -/
 theorem scalarTuneSharp {dd : ℝ} (hd0 : 0 < dd) (hd1 : dd ≤ 1) : ScalarTuneSharp dd :=
   ⟨scalarSharpGain dd, scalarSharpGain_pos hd0 hd1, scalarTuneSharpWith hd0 hd1⟩
 

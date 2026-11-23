@@ -58,7 +58,7 @@ theorem softGrid_end_bounds {X R : ℝ} (hX : 0 < X) (hR : 1 < R) :
     apply Real.exp_le_exp.mpr
     linarith
 
-/-- The precise logarithmic margin from the blueprint implies the finite-grid drop margin. -/
+/-- The logarithmic margin implies the finite-grid drop margin. -/
 theorem softGrid_gap {X R : ℝ} (hX : 0 < X) (hR : 1 < R)
     (hmargin : Real.log 4 + (17 / 16 : ℝ) * Real.log R < (5 / 32 : ℝ) * X) :
     R ^ ((softGridCount X R : ℝ) / 16) <

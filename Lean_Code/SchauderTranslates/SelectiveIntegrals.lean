@@ -20,7 +20,7 @@ def seedOnProduct : BoundedMeasurableComplex (S × UnitAddTorus (Fin L)) where
       abs_of_pos (seedKernel_bounds L a.mass_pos a.mass_le (a.coupling_bound p.1) p.2).1]
     exact (seedKernel_bounds L a.mass_pos a.mass_le (a.coupling_bound p.1) p.2).2
 
-/-- Integrate a general separated row/column against the actual normalized joint law.
+/-- Integrate a general separated row/column against the normalized joint law.
 There is exactly one normalization factor. -/
 theorem integral_rowColumn (r : BoundedMeasurableComplex (S × UnitAddTorus (Fin L)))
     (q : BoundedMeasurableComplex (UnitAddTorus (Fin d))) :

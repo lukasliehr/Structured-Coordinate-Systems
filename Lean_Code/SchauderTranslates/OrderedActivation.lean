@@ -11,8 +11,8 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ} {ν : Type*} [Fintype ν] [DecidableEq ν]
 
-/-- A row-ordered activated list satisfies the actual ordered-synthesis bound whenever each
-row's checked metric bound is below the same budget. Zero and full prefixes are included. -/
+/-- A row-ordered activated list satisfies the ordered-synthesis bound whenever each
+row's metric bound is below the same budget. Zero and full prefixes are included. -/
 theorem activationData_ordered_centered_prefix (s : ScalarData d n) (hs : s.IsEven)
     {b : ℝ} (hb : 0 < b) (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (freq : ν → ℤ) (hfreq : Function.Injective freq) (a₀ : ν) (hzero : freq a₀ = 0)
@@ -51,7 +51,7 @@ theorem orderedCutoffEquiv_monotone (n N : ℕ) :
     Monotone (fun i => scalarRowEquiv n (orderedCutoffEquiv n N i).1.1) :=
   Classical.choose_spec (exists_activation_row_order n (cutoffConstantIndex n N).2)
 
-/-- The actual ordered finite block used by scalar induction. -/
+/-- The ordered finite block used by scalar induction. -/
 def orderedCutoffData (s : ScalarData d n) (p : ℝ) (N : ℕ) :
     ScalarData (d + 1) (Fintype.card (CutoffNonconstant n N)) :=
   s.cutoffData p N (orderedCutoffEquiv n N)

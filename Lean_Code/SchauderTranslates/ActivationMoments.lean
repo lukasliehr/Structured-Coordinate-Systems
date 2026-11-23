@@ -39,7 +39,7 @@ instance activationMeasure_negInvariant (d : ℕ) :
 namespace ScalarData
 variable {d n : ℕ}
 
-/-- The actual product-weight Fourier Gram coefficient, with the constant old row included. -/
+/-- The product-weight Fourier Gram coefficient, with the constant old row included. -/
 def activatedMoment (s : ScalarData d n) (p : ℝ)
     (i j : Unit ⊕ Fin n) (k l : ℤ) : ℂ :=
   ∫ z, (activatedDensity s.toTorusWeight p z : ℂ) *

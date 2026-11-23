@@ -95,4 +95,15 @@ theorem lpRestriction_extendByZero (f : Lp ℂ p (μ.restrict s)) :
   rw [hR, hE]
   exact Set.indicator_of_mem hxs _
 
+/-- The restriction to `s` of a class supported in a set disjoint from `s` vanishes. -/
+theorem lpRestriction_eq_zero_of_supported {α : Type*} [MeasurableSpace α]
+    (p : ℝ≥0∞) [Fact (1 ≤ p)] (μ : Measure α) {A s : Set α}
+    (hs : MeasurableSet s) (F : Lp ℂ p μ) (hF : SupportedOn F A) (hdis : Disjoint A s) :
+    lpRestriction p μ s F = 0 := by
+  apply Lp.ext
+  filter_upwards [lpRestriction_ae p μ s F, ae_restrict_of_ae (s := s) hF,
+    ae_restrict_mem hs, Lp.coeFn_zero ℂ p (μ.restrict s)] with x hx hF hsx hz
+  rw [hx, hz]
+  exact hF (fun hAx => Set.disjoint_left.mp hdis hAx hsx)
+
 end SchauderTranslates.LpConstruction

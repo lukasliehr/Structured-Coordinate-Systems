@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Contracts
+import Lean_Code.SchauderTranslates.Definitions
 import Lean_Code.SchauderTranslates.Characters
 import Lean_Code.SchauderTranslates.WeightedIsometry
 
@@ -6,8 +6,7 @@ import Lean_Code.SchauderTranslates.WeightedIsometry
 # Limit stages: elementary estimates for raw weighted norms
 
 Basic facts about `normSq`, `distanceSq` and finite character sums used by the
-infinite stage construction (blueprint nodes `limit:stages`, `limit:errors`,
-`limit:prefix`):
+infinite stage construction:
 
 * the Gaussian reference probability density;
 * nonnegativity, infimum characterisations and monotonicity of `distanceSq`

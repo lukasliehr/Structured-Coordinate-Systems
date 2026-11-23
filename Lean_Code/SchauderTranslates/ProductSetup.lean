@@ -2,7 +2,7 @@ import Lean_Code.SchauderTranslates.TagLift
 import Lean_Code.SchauderTranslates.LineTransferBasics
 
 /-!
-# The normalized slow law and the residual (setup of `extend:product`)
+# The normalized slow law and the residual
 
 The old weight is normalized to a probability on the whole line. Raw squared norms of
 bounded representatives are its squared L² norms times the total mass `∫ w`. The old

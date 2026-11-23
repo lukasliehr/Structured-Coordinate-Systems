@@ -63,7 +63,7 @@ theorem fejerDensity_mass (w : TorusWeight d) (N : ℕ) :
     (torusFejerKernel_integrable d N), torusFejerKernel_integral]
   simp [mass]
 
-/-- A genuine torus weight obtained by smoothing a weight with a positive pointwise floor. -/
+/-- A torus weight obtained by smoothing a weight with a positive pointwise floor. -/
 def fejer (w : TorusWeight d) {b : ℝ} (hb : 0 < b) (hfloor : ∀ x, b ≤ w.density x)
     (N : ℕ) : TorusWeight d where
   density := w.fejerDensity N

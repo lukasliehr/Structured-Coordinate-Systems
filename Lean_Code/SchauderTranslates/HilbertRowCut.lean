@@ -50,7 +50,7 @@ theorem familyRowCut_plane (e : κ → ι) (j : ι) (F : K →L[ℝ] K)
     module
   · simp [hij]
 
-/-- The actual Hilbert row cut satisfies the paper's estimate on every active/inactive plane. -/
+/-- The Hilbert row cut satisfies the paper's estimate on every active/inactive plane. -/
 theorem familyRowCut_plane_bound {B : Matrix ι ι ℝ} (hB : B.PosDef) (hBI : B ≤ 1)
     (e : κ → ι) (he : Function.Injective e) (j : ι) (hj : ∀ i, e i ≠ j)
     (F Q : K →L[ℝ] K) (v w : K) (hv : ‖v‖ = 1) (hw : ‖w‖ = 1)

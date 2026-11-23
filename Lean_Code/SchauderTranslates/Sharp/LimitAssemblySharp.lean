@@ -4,8 +4,8 @@ import Lean_Code.SchauderTranslates.LimitAssembly
 /-!
 # Assembly of the sharp infinite construction
 
-This is the sharp counterpart of `LimitAssembly` (paper: Section "Assembling the basis",
-Theorem `h2:thm:weighted`). Assuming the sharp finite extension
+This is the sharp counterpart of `LimitAssembly` (paper: Section 17 and
+Theorem 13.1). Assuming the sharp finite extension
 `Sharp.FiniteExtensionSharp Kstar` as a hypothesis (stored in `Assembly.Setup`), the
 stages of `LimitStagesSharp` are passed to the limit:
 
@@ -325,7 +325,7 @@ theorem limit_prefix_range (k M : ℕ) (a : ℕ → ℂ) :
   exact hlim
 
 /-- Every finite initial list of the installed frequencies has prefix constant `K_∞` in
-`L²(w_∞)`, in the language of the contracts. -/
+`L²(w_∞)`. -/
 theorem limit_prefixBound (M : ℕ) :
     PrefixBound (limitW P) (fun i : Fin M => muInf P i) P.Kinf := by
   intro k c
@@ -491,8 +491,8 @@ theorem weightedExponentialBasisSharp_of_step {Kstar : ℝ} (hK : 1 ≤ Kstar)
       s := s
       fair := hs }
 
-/-- **Sharp weighted exponential basis** (paper: Theorem `h2:thm:weighted`, conditional on
-the one-step extension Proposition `h2:prop:extension`). If the sharp finite extension
+/-- **Sharp weighted exponential basis** (paper: Theorem 13.1, conditional on
+the one-step extension Proposition 16.1). If the sharp finite extension
 holds for every one-step constant `Kstar > 1`, then for every `ε > 0` there is a constant
 `C < 1 + ε` and an even weight dominated by the Gaussian with an injective frequency
 sequence whose characters have dense span and prefix constant `C`.

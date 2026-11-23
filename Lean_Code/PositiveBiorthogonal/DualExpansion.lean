@@ -26,14 +26,14 @@ theorem pairing_projection (B : SchauderBasis 𝕜 p)
       ∑ n ∈ Finset.range N, pairing (B.b n) g * pairing f (γ n) := by
   rw [← representedFunctional_apply g (P B N f)]
   unfold Represents at hγ
-  simp [StatementAudit.P_apply, map_sum, map_smul, hγ, mul_comm]
+  simp [PositiveBiorthogonal.Basic.P_apply, map_sum, map_smul, hγ, mul_comm]
 
 theorem dual_projection_paired (B : SchauderBasis 𝕜 p)
     (γ : ℕ → L 𝕜 q) (hγ : Represents B γ) (N : ℕ) (f : L 𝕜 p) (g : L 𝕜 q) :
     pairing f (dualProjection B γ N g) = pairing (P B N f) g := by
   have hpq : 1 / p + 1 / q = 1 := by
     simpa only [one_div] using ENNReal.HolderConjugate.inv_add_inv_eq_one p q
-  rw [dualProjection_apply, StatementAudit.dual_test_identity hpq,
+  rw [dualProjection_apply, PositiveBiorthogonal.Basic.dual_test_identity hpq,
     pairing_projection B γ hγ]
 
 theorem dual_weak (B : SchauderBasis 𝕜 p)
@@ -41,7 +41,7 @@ theorem dual_weak (B : SchauderBasis 𝕜 p)
     Tendsto (fun N => ∑ n ∈ Finset.range N, pairing (B.b n) g * pairing f (γ n))
       atTop (𝓝 (pairing f g)) := by
   have h := (pairing_continuous_left g).tendsto f |>.comp
-    (StatementAudit.partial_projections_converge B f)
+    (PositiveBiorthogonal.Basic.partial_projections_converge B f)
   simpa only [Function.comp_def, pairing_projection B γ hγ] using h
 
 theorem dualProjection_norm (B : SchauderBasis 𝕜 p)
@@ -50,7 +50,7 @@ theorem dualProjection_norm (B : SchauderBasis 𝕜 p)
   exact (paired_operator_norm_eq (P B N) (dualProjection B γ N)
     (fun f g => (dual_projection_paired B γ hγ N f g).symm)).symm
 
-/-- The construction's coefficient-density obligation is sufficient to produce
+/-- Density of the span of the coefficient functions is sufficient to produce
 the dual norm basis, with exactly the original coefficient sequence. -/
 def dualBasisOfDense (B : SchauderBasis 𝕜 p)
     (γ : ℕ → L 𝕜 q) (hγ : Represents B γ)

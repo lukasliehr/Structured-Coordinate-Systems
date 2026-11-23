@@ -16,7 +16,7 @@ theorem integralGram_const (v : ι → S → ℂ) (c : ℝ) :
   simp only [integralGram, Matrix.smul_apply, smul_eq_mul, Complex.ofReal_one, one_mul, mul_assoc,
     integral_const_mul]
 
-/-- Subtracting two bounded measurable densities subtracts their actual Grams. -/
+/-- Subtracting two bounded measurable densities subtracts their Grams. -/
 theorem integralGram_sub {w u : S → ℝ} (hw : Measurable w) (hu : Measurable u) {C D : ℝ}
     (hC : ∀ x, |w x| ≤ C) (hD : ∀ x, |u x| ≤ D) {v : ι → S → ℂ}
     (hv : ∀ i, Measurable (v i)) (hb : ∀ i, ∃ B : ℝ, ∀ x, ‖v i x‖ ≤ B) :
@@ -27,7 +27,7 @@ theorem integralGram_sub {w u : S → ℝ} (hw : Measurable w) (hu : Measurable 
     (integralGram_integrand μ hu hD hv hb i j)
 
 /-- A weight with a positive pointwise floor turns an orthonormal reference list into
-an actual positive definite contraction Gram, retaining the explicit matrix floor. -/
+a positive definite contraction Gram, retaining the explicit matrix floor. -/
 theorem integralGram_positive_contraction [Fintype ι] [DecidableEq ι]
     {w : S → ℝ} (hw : Measurable w) {β : ℝ} (hβ : 0 < β)
     (hfloor : ∀ x, β ≤ w x) (hupper : ∀ x, w x ≤ 1)

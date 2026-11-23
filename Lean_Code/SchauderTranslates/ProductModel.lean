@@ -2,10 +2,10 @@ import Lean_Code.SchauderTranslates.ProductTags
 import Lean_Code.SchauderTranslates.EngineAlgebra
 
 /-!
-# The finite extension in the normalized product law (blueprint `tag:angle`, `extend:product`)
+# The finite extension in the normalized product law
 
 Given the tag stage and selective engines attached to the replica lifts, the ordered list
-"old characters, then all engine packets" in the actual combined weighted L² space is
+"old characters, then all engine packets" in the combined weighted L² space is
 independent, has the asserted prefix bound, and approximates the target with squared
 error at most `(2/5) ‖r‖²`.
 -/

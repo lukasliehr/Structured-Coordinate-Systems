@@ -2,7 +2,7 @@ import Lean_Code.SchauderTranslates.RowSplit
 import Lean_Code.SchauderTranslates.SelectiveColumnCuts
 
 /-!
-# Norm of a sum of two idempotents (paper: `h2:eq:selective-prefix`)
+# Norm of a sum of two idempotents (paper: (15.13))
 
 For every idempotent `Q` on a finite-dimensional Hilbert space,
 `max 1 ‖Q‖² = 1 + ‖Q − Q†‖²` (`projection_max_norm_skew`). If `P`, `R` and `P + R` are
@@ -38,7 +38,7 @@ theorem idempotent_skew_norm_le (P : E →L[𝕜] E) (hP : ∀ x, P (P x) = P x)
     {A : ℝ} (hA : 1 ≤ A) (hPA : ‖P‖ ^ 2 ≤ A) : ‖P - P†‖ ≤ Real.sqrt (A - 1) :=
   Real.le_sqrt_of_sq_le (idempotent_skew_norm_sq_le P hP hA hPA)
 
-/-- Paper `h2:eq:selective-prefix`: the norm of a sum of two idempotents whose sum is
+/-- Paper, (15.13): the norm of a sum of two idempotents whose sum is
 idempotent. -/
 theorem idempotent_sum_norm_sq_le (P R : E →L[𝕜] E) (hP : ∀ x, P (P x) = P x)
     (hR : ∀ x, R (R x) = R x) (hPR : ∀ x, (P + R) ((P + R) x) = (P + R) x)

@@ -30,7 +30,7 @@ theorem measurePreserving_fst : MeasurePreserving Prod.fst (K.measure ρ) ρ := 
   simp_rw [he]
   exact lintegral_indicator_one hA
 
-/-- The full slow L² space embeds isometrically into the actual weighted joint law. -/
+/-- The full slow L² space embeds isometrically into the weighted joint law. -/
 def slowLift : Lp ℂ 2 ρ →ₗᵢ[ℂ] Lp ℂ 2 (K.measure ρ) :=
   Lp.compMeasurePreservingₗᵢ ℂ Prod.fst (K.measurePreserving_fst ρ)
 

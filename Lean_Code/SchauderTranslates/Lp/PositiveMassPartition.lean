@@ -5,7 +5,7 @@ open scoped BigOperators
 
 namespace SchauderTranslates.LpConstruction
 
-/-- Positive masses of total one determine a genuine finite partition of
+/-- Positive masses of total one determine a finite partition of
 the half-open unit interval. -/
 structure PositiveMassPartition (N : ℕ) where
   mass : Fin N → ℝ

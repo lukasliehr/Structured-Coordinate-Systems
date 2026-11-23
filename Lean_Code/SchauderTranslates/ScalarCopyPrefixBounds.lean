@@ -1,6 +1,5 @@
 import Lean_Code.SchauderTranslates.ScalarCopyCuts
 import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
-import Lean_Code.SchauderTranslates.ScalarRowNumerics
 
 noncomputable section
 open Matrix ContinuousLinearMap InnerProductSpace
@@ -54,7 +53,7 @@ theorem copyCutLinear_model (s : ScalarData d n) (L : ℕ) (k : Fin L) (r : ℕ)
     simp only [copyPrefixMask, Sum.elim_inr, Equiv.symm_apply_apply]
     split_ifs <;> simp
 
-/-- The independent-copy estimate applies to the actual normalized product Gram. -/
+/-- The independent-copy estimate applies to the normalized product Gram. -/
 theorem product_augmented_copy_cut (s : ScalarData d n) (L : ℕ) (k : Fin L) (r : ℕ)
     {q : ℝ} (hq : 1 + L * s.gain < q) (hp : s.CenteredPrefixSqBound q) :
     ‖gramConjugate (s.product L).rawGram (Matrix.diagonal (copyPrefixMask L n k r))‖ ^ 2 ≤
@@ -97,49 +96,6 @@ theorem product_augmented_copy_cut (s : ScalarData d n) (L : ℕ) (k : Fin L) (r
   have hm : ((s.product L).mass : ℂ) ≠ 0 := by
     exact_mod_cast (s.product L).toTorusWeight.mass_pos.ne'
   simpa only [B, smul_smul, mul_inv_cancel₀ hm, one_smul] using hb
-
-/-- All augmented prefixes of independent scalar copies have the small *individual* gain cost. -/
-theorem product_augmented_prefix (s : ScalarData d n) (L : ℕ) {q : ℝ}
-    (hq : 2 ≤ q) (hq3 : q < 3) (hZ : (L : ℝ) * s.gain ≤ 1 / 323)
-    (hp : s.CenteredPrefixSqBound q) :
-    (s.product L).AugmentedPrefixSqBound (q + 10 * s.gain) := by
-  have hC : 1 ≤ q + 10 * s.gain := by linarith [s.gain_nonneg]
-  apply ((s.product L).augmentedPrefixSqBound_iff_gram (zero_le_one.trans hC)).mpr
-  intro K
-  by_cases hK0 : K = 0
-  · subst K
-    have hzero : scalarRowPrefixMatrix (L * n) 0 = 0 := by simp [scalarRowPrefixMatrix]
-    rw [hzero]
-    simpa [gramConjugate] using zero_le_one.trans hC
-  by_cases hKfull : L * n + 1 ≤ K
-  · have hall : scalarRowPrefixMatrix (L * n) K = 1 := by
-      have hi (i : Unit ⊕ Fin (L * n)) : (scalarRowEquiv (L * n) i).val < K :=
-        lt_of_lt_of_le (scalarRowEquiv (L * n) i).isLt hKfull
-      simp [scalarRowPrefixMatrix, hi]
-    rw [hall]
-    exact gramConjugate_one_sq_le (s.product L).rawGram_posDef hC
-  have hjlt : K - 1 < L * n := by omega
-  let j : Fin (L * n) := ⟨K - 1, hjlt⟩
-  obtain ⟨⟨k, b⟩, hkb⟩ := finProdFinEquiv.surjective j
-  have hmask : scalarRowPrefixMatrix (L * n) K = Matrix.diagonal (copyPrefixMask L n k b.val) := by
-    apply congrArg Matrix.diagonal
-    funext i
-    rcases i with (u | i)
-    · cases u
-      simp [copyPrefixMask, show 0 < K by omega]
-    · obtain ⟨⟨t, a⟩, rfl⟩ := finProdFinEquiv.surjective i
-      have he : (finProdFinEquiv (t, a)).val + 1 < K ↔
-          finProdFinEquiv (t, a) < finProdFinEquiv (k, b) := by
-        rw [hkb]
-        change _ ↔ (finProdFinEquiv (t, a)).val < K - 1
-        omega
-      change (if (finProdFinEquiv (t, a)).val + 1 < K then (1 : ℂ) else 0) = _
-      simp only [he]
-      simp only [finProdFinEquiv_lt_iff]
-      simp only [copyPrefixMask, Sum.elim_inr, Equiv.symm_apply_apply, Fin.lt_def]
-  rw [hmask]
-  exact (s.product_augmented_copy_cut L k b.val (by linarith) hp).trans
-    (scalar_copy_prefix_cost hq hq3 hZ s.gain_nonneg)
 
 end ScalarData
 end SchauderTranslates

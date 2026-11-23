@@ -236,7 +236,7 @@ theorem rawGram_fromBlocks (s : ScalarData d n) :
     rfl
   · rfl
 
-/-- Subtract the actual expectation of each character. `moment` is its conjugate Gram column. -/
+/-- Subtract the expectation of each character. `moment` is its conjugate Gram column. -/
 def centeredVector (s : ScalarData d n) (i : Fin n) :
     Lp ℂ 2 (torusMeasure d) :=
   s.vector (s.frequencies i) - ((s.mass : ℂ)⁻¹ * star (s.moment i)) • s.vector 0

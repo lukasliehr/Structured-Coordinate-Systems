@@ -11,7 +11,7 @@ namespace ScalarData
 variable {d n : ℕ}
 
 /-- Capture by the nonconstant uncentered characters is the mass times `Z/(1+Z)`.
-The proof solves the finite normal equations and reads the actual constant inverse entry. -/
+The proof solves the finite normal equations and reads the constant inverse entry. -/
 theorem raw_capture_gain (s : ScalarData d n) :
     gramCapture s.nonconstantGram s.moment = s.mass * s.gain / (1 + s.gain) := by
   let c := s.nonconstantGram⁻¹ *ᵥ s.moment

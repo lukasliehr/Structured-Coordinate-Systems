@@ -4,7 +4,7 @@ import Lean_Code.PositiveTranslates.StageMachine
 # The scales of the positive packet
 
 Elementary facts about the three numbers of `StageMachine.lean` (paper, proof of
-`thm:translate-properties`(iii), lines 3364–3377):
+Theorem 1.4 (ii)):
 
 * `posDeficit r N = 2^r (N-1) N^{-(r-1)}`,
 * `posScale r V N = V / (1 - posDeficit r N)^{1/r}`   (the scale `d`),

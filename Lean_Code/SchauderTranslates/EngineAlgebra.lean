@@ -3,8 +3,7 @@ import Lean_Code.SchauderTranslates.ScalarPrefixes
 /-!
 # Engine algebra
 
-Abstract Hilbert-space core of `tag:engines`, `tag:angle` and the distance part of
-`extend:product`.
+Abstract Hilbert-space estimates for the finite extension on a product space.
 
 The old vectors `x` lie in a slow space `Sl`. An engine atom is `T c p + R c p` with
 `T c p ∈ Sl` and `R c p ⟂ Sl`, and the fast parts of different engines are orthogonal.
@@ -257,7 +256,7 @@ theorem old_engine_two_sided (Sl : Submodule ℂ H) {d m q : ℕ} {x : Fin d →
 
 end EngineAlgebra
 
--- `hKc` belongs to the agreed interface but is not needed: every engine cut is a prefix
+-- `hKc` is not needed: every engine cut is a prefix
 -- cut of that engine, so `hRpre` applies to full engines as well.
 set_option linter.unusedVariables false in
 /-- Prefix bound for the concatenation. `T c p` is the slow part and `R c p` the part
@@ -491,7 +490,7 @@ theorem equiangular_bessel_of_pos {N : ℕ} (e : Fin N → H) {α : ℝ} (he1 : 
   have h1 : (1 : ℝ) ≤ N := by exact_mod_cast hN
   nlinarith [sq_nonneg α]
 
--- `hF`, `hj` and `hRR` belong to the agreed interface but are not needed: the bound is
+-- `hF`, `hj` and `hRR` are not needed: the bound is
 -- homogeneous in `F`, `hq1` already forces `0 < n * j`, and the conclusion only involves
 -- the fast energies engine by engine.
 set_option linter.unusedVariables false in

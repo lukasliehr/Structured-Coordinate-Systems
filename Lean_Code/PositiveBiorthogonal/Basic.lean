@@ -5,10 +5,8 @@ import Mathlib.MeasureTheory.Function.LpSpace.Complete
 import Mathlib.Topology.Order.LiminfLimsup
 
 /-!
-Semantic checks ported from audit/StatementChecks.lean to the shared definitions.
-The historical admitted reference is never imported.
-These lemmas check interpretation; they do not prove any of the six main results.
-No theorem with an admitted proof is used in the lemmas below.
+Basic facts about the definitions: conjugate exponents, the pairing, the partial sum
+projections and the basis constant.
 -/
 
 noncomputable section
@@ -17,7 +15,7 @@ open MeasureTheory Filter
 open scoped BigOperators ENNReal Topology ComplexOrder
 open PositiveBiorthogonal
 
-namespace StatementAudit
+namespace PositiveBiorthogonal.Basic
 
 theorem conjugate_instance {p q : ℝ≥0∞} (hpq : 1 / p + 1 / q = 1) :
     ENNReal.HolderConjugate p q := by
@@ -198,5 +196,4 @@ theorem dual_basis_supplies_same_norm_series {𝕜 : Type*} [RCLike 𝕜]
       atTop (𝓝 g) := by
   simpa only [hvec, hcoeff] using Γ.expansion g
 
-end StatementAudit
-
+end PositiveBiorthogonal.Basic

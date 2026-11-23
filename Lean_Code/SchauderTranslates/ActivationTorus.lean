@@ -52,7 +52,7 @@ theorem activationFrequency_character {d : ℕ} (k : Fin d → ℤ) (l : ℤ)
 namespace TorusWeight
 variable {d : ℕ}
 
-/-- Rare activation as an actual scalar torus weight, suitable for the next induction stage. -/
+/-- Rare activation as a scalar torus weight, suitable for the next induction stage. -/
 def activation (w : TorusWeight d) (p : ℝ) : TorusWeight (d + 1) where
   density x := activatedDensity w p (activationTorusEquiv d x)
   measurable := (activatedDensity_measurable w p).comp (activationTorusEquiv d).measurable
@@ -82,7 +82,7 @@ theorem activationWeight_even (s : ScalarData d n) (hs : s.IsEven) (p : ℝ)
   simp only [activationTorusEquiv_apply]
   exact activatedDensity_even s hs p ((fun j => x j.succ), x 0)
 
-/-- The actual L² Gram of the flat activated weight equals the checked Fubini moment. -/
+/-- The L² Gram of the flat activated weight equals the Fubini moment. -/
 theorem activationWeight_inner (s : ScalarData d n) (p : ℝ)
     (i j : Unit ⊕ Fin n) (k l : ℤ) :
     inner ℂ ((s.toTorusWeight.activation p).vector (activationFrequency (s.augmentedFrequency i) k))

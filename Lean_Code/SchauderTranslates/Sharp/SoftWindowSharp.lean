@@ -1,13 +1,10 @@
 import Lean_Code.SchauderTranslates.SoftWindowChoice
+import Lean_Code.SchauderTranslates.SoftGeometricGrid
 
 /-!
 # Soft spectral window for an arbitrary gain lower bound
 
-Parameterized copies of the chain
-`eventually_soft_window_margins → soft_window_on_grid → soft_window_log_choice →
-soft_spectral_window_of_bounds → soft_spectral_window`.
-The first formalization hard-codes the start threshold `1 / 4000`, which comes from the gain
-lower bound `1 / 646` of the scalar blocks. Here the start threshold is an arbitrary `c₁ > 0`,
+The selection of the soft spectral window. The start threshold is an arbitrary `c₁ > 0`,
 and the gain lower bound an arbitrary `z₀ > 0` (with `c₁ = (9/10) * z₀ / (1 + z₀) / 4`).
 -/
 
@@ -35,8 +32,7 @@ theorem eventually_soft_window_margins_sharp {R : ℝ → ℝ} {C c₁ : ℝ} (h
     he.eventually (gt_mem_nhds hc₁)] with X hX he
   exact ⟨hX.1, hX.2.1, he, hX.2.2.2.1, hX.2.2.2.2.1, hX.2.2.2.2.2⟩
 
-/-- The finite selection argument of `soft_window_on_grid`, with the start threshold `1 / 4000`
-replaced by an arbitrary `c₁ > 0`. -/
+/-- The finite selection argument on the grid, with an arbitrary start threshold `c₁ > 0`. -/
 theorem soft_window_on_grid_sharp {X R c₁ : ℝ} (hX : 0 < X) (hR : 1 < R) (hc₁ : 0 < c₁)
     (hA : Real.exp (-X / 4) < c₁)
     (hhalf : R * Real.exp (-X / 2) < 1 / 2)
@@ -187,7 +183,7 @@ theorem softCapture_sq_lower_sharp {d n : ℕ} (s : ScalarData d n) {ε z₀ : �
     simpa only [ScalarData.softCapture, softCapture_zero] using hzero
   exact (div_le_div_of_nonneg_right hz' (by norm_num)).trans hlow
 
-/-- All soft-capture estimates used for selection, for an actual scalar block whose gain is
+/-- All soft-capture estimates used for selection, for a scalar block whose gain is
 bounded below by `z₀ > 0`; the start threshold is `c₁ = (9/10) * z₀ / (1 + z₀) / 4`. -/
 theorem soft_capture_bounds_sharp {d n : ℕ} (s : ScalarData d n) {ε z₀ : ℝ}
     (hε0 : 0 < ε) (hε1 : ε ≤ 1 / 10) (hm : s.mass = 1 - ε) (hz₀ : 0 < z₀) (hz : z₀ ≤ s.gain)

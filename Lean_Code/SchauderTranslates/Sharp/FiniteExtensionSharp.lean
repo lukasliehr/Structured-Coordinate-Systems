@@ -1,9 +1,9 @@
 import Lean_Code.SchauderTranslates.Sharp.LineStepSharp
 
 /-!
-# The sharp finite extension on the line (paper: Proposition `h2:prop:extension`)
+# The sharp finite extension on the line (paper: Proposition 16.1)
 
-From the sharp scalar contracts `ScalarSupplySharp` and `ScalarTuneSharp` (hypotheses of
+From the sharp scalar statements `ScalarSupplySharp` and `ScalarTuneSharp` (hypotheses of
 this file) the finite extension principle holds with the absolute constant `12` replaced by
 any `Kstar > 1`, for even weights and with an even new factor.
 
@@ -19,7 +19,7 @@ noncomputable section
 namespace SchauderTranslates.Sharp
 open SchauderTranslates Construction
 
-/-- Paper Proposition `h2:prop:extension`: the sharp finite extension principle, from the
+/-- Proposition 16.1 of the paper: the sharp finite extension principle, from the
 sharp scalar supply. -/
 theorem finiteExtensionSharp
     (hS : ∀ dd : ℝ, 0 < dd → dd ≤ 1 → ScalarSupplySharp dd ∧ ScalarTuneSharp dd)

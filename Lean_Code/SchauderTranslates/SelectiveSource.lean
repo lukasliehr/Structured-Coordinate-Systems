@@ -51,7 +51,7 @@ theorem seed_source_pairing (j : Fin L) (k : Fin n) (h : Lp ℂ 2 ρ) :
   simp only [map_div₀, map_mul, map_neg, Complex.star_def, Complex.conj_ofReal, Complex.conj_conj]
 
 /-- Complete source column for the unchanged original carrier/seed rows. This is the
-adjoint of actual atom synthesis applied to an arbitrary lifted slow L² vector. -/
+adjoint of atom synthesis applied to an arbitrary lifted slow L² vector. -/
 theorem packet_source_adjoint (φ : ι → BoundedMeasurableComplex S) (h : Lp ℂ 2 ρ) :
     ((hilbertSynthesis (a.kernel.atoms ρ (a.packet φ)))†) (a.kernel.slowLift ρ h) =
       WithLp.toLp 2 (fun i : Fin n × (ι ⊕ Fin L) => a.scalar.moment i.1 / (a.mass : ℂ) *

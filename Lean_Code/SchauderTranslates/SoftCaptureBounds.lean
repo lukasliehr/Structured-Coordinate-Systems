@@ -1,6 +1,5 @@
 import Lean_Code.SchauderTranslates.SoftCapture
 import Lean_Code.SchauderTranslates.ScalarRawCapture
-import Lean_Code.SchauderTranslates.ScalarSupply
 
 noncomputable section
 open Matrix Filter
@@ -50,7 +49,7 @@ theorem softCapture_sqrt_upper (s : ScalarData d n) {ε : ℝ} (hε0 : 0 < ε) (
 
 end ScalarData
 
-/-- All soft-capture estimates for an actual scalar-supply block, with explicit numerical
+/-- All soft-capture estimates for a scalar-supply block, with explicit numerical
 thresholds. In particular `c₀ = 1/1000` works for every deficit at most `1/10`. -/
 theorem soft_capture_bounds {d n : ℕ} (s : ScalarData d n) {ε : ℝ}
     (hε0 : 0 < ε) (hε1 : ε ≤ 1 / 10) (hm : s.mass = 1 - ε)

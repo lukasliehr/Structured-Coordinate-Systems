@@ -75,7 +75,7 @@ theorem familyCoordinateProjection_apply (φ : ι → H) (i₀ : ι) (h : H) :
     hilbertSynthesis_apply, hilbertSynthesis_adjoint_apply, Matrix.ofLp_toEuclideanCLM,
     Matrix.mulVec, dotProduct, Matrix.diagonal_apply, mul_ite, ite_mul]
 
-/-- Information coefficients on an orthonormal carrier, recovered from the actual
+/-- Information coefficients on an orthonormal carrier, recovered from the
 capture equation on the whole ambient Hilbert space. -/
 theorem coordinate_information_from_capture {τ : Type*} [Fintype τ] [DecidableEq τ]
     (v : τ → H) {C : Matrix τ τ ℂ} (hC : C.PosDef)

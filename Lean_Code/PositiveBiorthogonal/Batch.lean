@@ -1,7 +1,7 @@
 import Lean_Code.PositiveBiorthogonal.BatchAlgebra
 import Lean_Code.PositiveBiorthogonal.Schedule
 
-/-! A batch obtained from an actual refinement trace and a disjoint fresh block. -/
+/-! A batch obtained from a refinement trace and a disjoint fresh block. -/
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory Filter Set

@@ -1,5 +1,6 @@
 import Lean_Code.SchauderTranslates.SelectiveSource
 import Lean_Code.SchauderTranslates.NormalizedCapture
+import Lean_Code.SchauderTranslates.InformationResolvent
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap
@@ -34,8 +35,8 @@ theorem marginal_source (f : ι → BoundedMeasurableComplex (S × Y)) :
   simp only [ContinuousLinearMap.comp_apply, hilbertSynthesis_adjoint_apply, WithLp.ofLp_toLp]
   exact K.atom_slowLift_inner ρ (f i) h
 
-/-- The actual slow compression of the atom-span projection equals the capture
-operator formed from explicit marginal means and the actual centered Gram. -/
+/-- The slow compression of the atom-span projection equals the capture
+operator formed from explicit marginal means and the centered Gram. -/
 theorem marginal_capture_projection (f : ι → BoundedMeasurableComplex (S × Y))
     (hC : (Matrix.gram ℂ (K.centered ρ f)).PosDef) :
     (((K.slowLift ρ).toContinuousLinearMap)†).comp

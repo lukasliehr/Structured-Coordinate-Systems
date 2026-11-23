@@ -1,16 +1,16 @@
 import Lean_Code.SchauderTranslates.MainReduction
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.Basis.Transport
 import Lean_Code.Basis.RealScalars
 
 /-!
 # Returning to translates (sharp `L²` construction)
 
-This file consumes the contract `SchauderTranslates.Sharp.WeightedExponentialBasisSharp C`
+This file starts from `SchauderTranslates.Sharp.WeightedExponentialBasisSharp C`
 (an even weight `w` below the Gaussian `exp (-π t²)` and an injective frequency sequence
 `μ` whose weighted characters form a Schauder basis of `L²(w)` with all finite prefix
 inequalities bounded by `C`) and returns a Schauder basis of translates of `L²(ℝ)`
-(paper: "Returning to translates", proof of the translate theorems for `p = 2`).
+(paper: Section 17, "Returning to translates").
 
 * `Return.fourierInv_toLp_ae`: on `L¹ ∩ L²` the unitary `L²` inverse Fourier transform
   agrees a.e. with the inverse Fourier integral. It is proved by testing against Schwartz

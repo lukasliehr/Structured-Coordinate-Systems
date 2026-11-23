@@ -11,7 +11,7 @@ namespace SchauderTranslates
 namespace ScalarData
 variable {d n : ℕ} {ν : Type*} [Fintype ν] [DecidableEq ν]
 
-/-- The checked row-mask estimate holds for the actual finite scalar torus block, with its
+/-- The row-mask estimate holds for the finite scalar torus block, with its
 chosen nonconstant enumeration. This exposes the precise mask that an ordered prefix must match. -/
 theorem activationData_centered_prefix (s : ScalarData d n) (hs : s.IsEven)
     {b : ℝ} (hb : 0 < b) (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)

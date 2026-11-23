@@ -28,7 +28,7 @@ theorem cutoffGram_entry (s : ScalarData d n) (p : ℝ) (N : ℕ)
   simp only [circleCutoffBasis_coe]
   exact s.activatedGram_fourier_entry p a.1 c.1 a.2.1 c.2.1
 
-/-- The finite raw Gram is positive definite for the actual retained Fourier family. -/
+/-- The finite raw Gram is positive definite for the retained Fourier family. -/
 theorem cutoffGram_posDef (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) (p : ℝ) (N : ℕ) : (s.cutoffGram p N).PosDef := by
   apply basisOperatorMatrix_posDef _ _ hb
@@ -66,7 +66,7 @@ theorem cutoffGram_inverse (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (compressedOperator_coercive (s.activatedGram p)
       (fun y => (s.activatedGram_bounds hb.le hfloor p y).1) _)).apply_symm_apply x
 
-/-- The inverse bound is now a statement about the actual finite Fourier Gram entries. -/
+/-- The inverse bound, as a statement about the finite Fourier Gram entries. -/
 theorem cutoffGram_inverse_diagonal_le (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1)
     (N : ℕ) (a : (Unit ⊕ Fin n) × CircleWindow N) :

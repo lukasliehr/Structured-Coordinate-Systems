@@ -8,16 +8,15 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 
-/-- The actual centered packet, in the paper's auxiliary-column-major order. -/
+/-- The centered packet, in the paper's auxiliary-column-major order. -/
 def SelectiveKernelData.orderedCenteredPacket {S : Type*} [MeasurableSpace S]
     {L d n r : ℕ} (a : SelectiveKernelData S L d n) (ρ : Measure S) [IsProbabilityMeasure ρ]
     (φ : Fin r → BoundedMeasurableComplex S) :
     Fin (n * (r + L)) → Lp ℂ 2 (a.kernel.measure ρ) :=
   fun i => a.kernel.centered ρ (a.packet φ) ((packetEquiv n r L).symm i)
 
-/-- Blueprint `select:prefix`: every ordered centered prefix has norm at most
-`2 + sqrt 2 * max K 1`, in the original carrier coordinates. The scalar
-hypotheses are exactly the numerical consequences of `scalar_blocks`. -/
+/-- Every ordered centered prefix has norm at most
+`2 + sqrt 2 * max K 1`, in the original carrier coordinates. -/
 theorem selective_centered_prefix {S : Type*} [MeasurableSpace S] {L d n r : ℕ}
     (a : SelectiveKernelData S L d n) (ρ : Measure S) [IsProbabilityMeasure ρ]
     (φ : Fin r → BoundedMeasurableComplex S)

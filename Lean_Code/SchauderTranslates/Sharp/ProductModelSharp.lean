@@ -4,8 +4,7 @@ import Lean_Code.SchauderTranslates.Sharp.SelectivePrefixSharp
 /-!
 # The sharp finite extension in the normalized product law
 
-Sharp counterpart of `ProductModel.lean` (paper: `h2:eq:tagcapture`, `h2:eq:new-constant`,
-`h2:eq:angle-comparison`, `h2:eq:product-error`). The tag stage `TagSetup.Valid` is reused
+Sharp counterpart of `ProductModel.lean` (paper: (16.4) and (16.6)). The tag stage `TagSetup.Valid` is reused
 unchanged. The engine stage has a new validity predicate `ValidSharp`, since the old
 `EngineSetup.Valid` fixes the per-replica strength `n j ∈ [1/10, 11/100]`, whereas here it
 is of size `u`.
@@ -30,7 +29,7 @@ open SchauderTranslates Construction ProductEngines
 section Witness
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
-/-- The replica witness with sharp bookkeeping (paper `h2:eq:tagcapture`): if the engines
+/-- The replica witness with sharp bookkeeping (paper, (16.4)): if the engines
 of each replica realize `j • e_i` at centered cost `j`, a common real multiple of the
 witnesses captures the fraction `u / (1 + 2u)` of `r` as soon as `u ≤ n j · N α²` and
 `1 ≤ N α²`. -/

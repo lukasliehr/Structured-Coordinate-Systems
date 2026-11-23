@@ -93,13 +93,13 @@ theorem exists_almost_monotone_positive_basis_with_root
     ∃ B : SchauderBasis 𝕜 p,
       B.b 0 = (gridUnit 0).indicator ∧ PositiveBasis B ∧
       (∀ n, CompactlySupportedStep (B.b n)) ∧ K B < 1 + ε := by
-  obtain ⟨q, hpq⟩ := StatementAudit.conjugate_exists hp₁.le
-  let := StatementAudit.conjugate_instance hpq
+  obtain ⟨q, hpq⟩ := PositiveBiorthogonal.Basic.conjugate_exists hp₁.le
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   let : Fact (1 ≤ q) := ⟨ENNReal.HolderConjugate.one_le q p⟩
   have hq : q < ∞ := (ENNReal.HolderConjugate.lt_top_iff_one_lt q p).mpr hp₁
   have hq₁ : 1 < q := (ENNReal.HolderConjugate.lt_top_iff_one_lt p q).mp hp
   have hqp : 1 / q + 1 / p = 1 := by simpa only [add_comm] using hpq
-  let := StatementAudit.conjugate_instance hqp
+  let := PositiveBiorthogonal.Basic.conjugate_instance hqp
   exact almost_monotone_dual_basis_with_root (𝕜 := 𝕜) (p := q) (q := p) hq.ne hq₁ ε hε
 
 end PositiveBiorthogonal

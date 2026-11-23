@@ -15,7 +15,7 @@ variable {d n : ℕ}
 abbrev CutoffNonconstant (n N : ℕ) :=
   {q : (Unit ⊕ Fin n) × CircleWindow N // q ≠ cutoffConstantIndex n N}
 
-/-- The actual finite Fourier Gram, with its constant first and its true product mass. -/
+/-- The finite Fourier Gram, with its constant first and its true product mass. -/
 def cutoffScalarGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) (N : ℕ) :
     FiniteScalarGram (CutoffNonconstant n N) :=
@@ -47,7 +47,7 @@ theorem cutoffScalarGram_gain (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
   rw [markedScalarGram_gain, s.cutoffGram_constant_inverse hb hfloor]
   rfl
 
-/-- Increasing convergence of the actual centered gains for the concrete finite windows. -/
+/-- Increasing convergence of the centered gains for the concrete finite windows. -/
 theorem cutoffScalarGram_gain_tendsto (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :
     Monotone (fun N => (s.cutoffScalarGram hb hfloor hp0 hp1 N).gain) ∧
@@ -65,7 +65,7 @@ theorem exists_cutoffScalarGram_gain_gt (s : ScalarData d n) {b : ℝ} (hb : 0 <
 
 end ScalarData
 
-/-- Rare activation cutoff: centered inverse diagonals, actual gain convergence and finite
+/-- Rare activation cutoff: centered inverse diagonals, gain convergence and finite
 attainment, the exact gain formula, and the augmented Euclidean inverse norm bound. -/
 theorem rare_activation_cutoff {d n : ℕ} (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hfloor : ∀ x, b ≤ s.density x) {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) :

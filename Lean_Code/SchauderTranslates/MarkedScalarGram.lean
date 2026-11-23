@@ -33,7 +33,7 @@ omit [Fintype κ] in
 @[simp] theorem splitConstantEquiv_inr (q₀ : κ) (q : {q : κ // q ≠ q₀}) :
     splitConstantEquiv q₀ (Sum.inr q) = q.1 := rfl
 
-/-- A positive Gram becomes scalar Gram data once its actual constant entry and mass are identified. -/
+/-- A positive Gram becomes scalar Gram data once its constant entry and mass are identified. -/
 def markedScalarGram (B : Matrix κ κ ℂ) (hB : B.PosDef) (q₀ : κ)
     (m : ℝ) (hm : 0 < m) (hmass : B q₀ q₀ = (m : ℂ)) :
     FiniteScalarGram {q : κ // q ≠ q₀} where

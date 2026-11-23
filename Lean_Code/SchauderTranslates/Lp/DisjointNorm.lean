@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Lp.Contracts
+import Lean_Code.SchauderTranslates.Lp.Translation
 
 noncomputable section
 open MeasureTheory

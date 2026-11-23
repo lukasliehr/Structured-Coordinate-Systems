@@ -1,5 +1,5 @@
 import Lean_Code.SchauderTranslates.FiberMeanInner
-import Lean_Code.SchauderTranslates.Information
+import Lean_Code.SchauderTranslates.InformationCentering
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap
@@ -13,7 +13,7 @@ variable {S Y : Type*} [MeasurableSpace S] [MeasurableSpace Y]
 variable {ν : Measure Y} [IsProbabilityMeasure ν] (K : FiberKernel S Y ν)
 variable (ρ : Measure S) [IsFiniteMeasure ρ]
 
-/-- The closed slow space inside the actual weighted joint L² space. -/
+/-- The closed slow space inside the weighted joint L² space. -/
 def slowSpace : Submodule ℂ (Lp ℂ 2 (K.measure ρ)) :=
   (Submodule.span ℂ (Set.range (fun h : BoundedMeasurableComplex S =>
     (h.pullbackFst Y).toL2 (K.measure ρ)))).topologicalClosure
@@ -66,24 +66,5 @@ theorem centered_eq_centeredAtoms (f : ι → BoundedMeasurableComplex (S × Y))
   simp only [centered, means, atoms, centeredAtoms, Submodule.starProjection_orthogonal_val, K.mean_eq_starProjection]
 
 end FiberKernel
-
-/-- Blueprint `info:identity`, with explicit fiber-integral means and the actual weighted
-atom-span projection. The identity is stated on the ambient Hilbert space by extending
-slow operators by zero on the orthogonal complement. -/
-theorem information_capture_identity {S Y ι : Type*} [MeasurableSpace S] [MeasurableSpace Y]
-    [Fintype ι] [DecidableEq ι] {ν : Measure Y} [IsProbabilityMeasure ν]
-    (K : FiberKernel S Y ν) (ρ : Measure S) [IsFiniteMeasure ρ]
-    (f : ι → BoundedMeasurableComplex (S × Y)) (hC : (Matrix.gram ℂ (K.centered ρ f)).PosDef) :
-    Matrix.gram ℂ (K.atoms ρ f) = Matrix.gram ℂ (K.centered ρ f) + Matrix.gram ℂ (K.means ρ f) ∧
-      IsUnit (1 + informationOperator (K.means ρ f) (Matrix.gram ℂ (K.centered ρ f))) ∧
-      (K.slowSpace ρ).starProjection.comp ((atomSpan (K.atoms ρ f)).starProjection.comp (K.slowSpace ρ).starProjection) =
-        captureOperator (K.means ρ f) (Matrix.gram ℂ (K.centered ρ f)) ∧
-      captureOperator (K.means ρ f) (Matrix.gram ℂ (K.centered ρ f)) =
-        informationOperator (K.means ρ f) (Matrix.gram ℂ (K.centered ρ f)) *
-          Ring.inverse (1 + informationOperator (K.means ρ f) (Matrix.gram ℂ (K.centered ρ f))) := by
-  rw [K.centered_eq_centeredAtoms] at hC ⊢
-  rw [K.means_eq_atomMeans]
-  have h := information_capture_resolvent (atomMeans (K.slowSpace ρ) (K.atoms ρ f)) hC
-  exact ⟨centered_gram_sum _ _, h.1, slow_capture_projection _ _ hC, h.2⟩
 
 end SchauderTranslates

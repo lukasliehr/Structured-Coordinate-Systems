@@ -25,7 +25,7 @@ theorem gramProjection_eq_starProjection (u : ι → H) (hu : LinearIndependent 
     obtain ⟨c, rfl⟩ := (Submodule.mem_span_range_iff_exists_fun ℂ).mp hw
     exact inner_eq_zero_symm.mpr (gramProjection_orthogonal u hu f c)
 
-/-- The finite normal-equation formula is the actual orthogonal projection, as a bounded operator. -/
+/-- The finite normal-equation formula is the orthogonal projection, as a bounded operator. -/
 theorem atomSpan_projection_formula (u : ι → H) (hu : LinearIndependent ℂ u) :
     (atomSpan u).starProjection =
       (hilbertSynthesis u).comp (((Matrix.toEuclideanCLM (𝕜 := ℂ) (n := ι)) (Matrix.gram ℂ u)⁻¹).comp ((hilbertSynthesis u)†)) := by

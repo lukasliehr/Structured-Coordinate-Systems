@@ -172,7 +172,7 @@ theorem integral_torusPolynomial {d : ℕ} (K : Finset (Fin d → ℤ))
   rw [integral_const_mul, integral_torus_character]
   split_ifs <;> simp
 
-/-- The actual torus-to-line averaging identity, allowing integrable coefficient functions. -/
+/-- The torus-to-line averaging identity, allowing integrable coefficient functions. -/
 theorem finite_moment_transfer {d : ℕ} (K : Finset (Fin d → ℤ))
     (f : (Fin d → ℤ) → ℝ → ℂ) (hf : ∀ k ∈ K, Integrable (f k))
     (ω : Fin d → ℝ) (hω : ∀ k ∈ K, k ≠ 0 → frequencyDot k ω ≠ 0) :

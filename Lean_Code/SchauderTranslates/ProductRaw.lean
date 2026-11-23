@@ -5,7 +5,7 @@ import Lean_Code.SchauderTranslates.MatrixInverseOrder
 # Raw product Gram matrices of the finite extension
 
 The raw product Gram and source of the ordered atoms on the flat torus are the total
-mass `(∫ w) M` times the actual L² Gram and source in the normalized combined law. The
+mass `(∫ w) M` times the L² Gram and source in the normalized combined law. The
 model conclusions therefore give the strict matrix conditions of `ProductExtension`.
 -/
 
@@ -39,7 +39,7 @@ theorem atomFn_measurable_pt (a : Fin (T.d + T.N * E.n * E.q)) (t : ℝ) :
   (E.atomFn a).measurable.comp
     ((measurable_const.prodMk measurable_fst).prodMk measurable_snd)
 
-/-- The raw product Gram is total mass times the actual Gram. -/
+/-- The raw product Gram is total mass times the Gram. -/
 theorem productGram_eq :
     productGram T.w E.Wflat E.Λ E.κ =
       (((∫ s, T.w.density s) * E.M : ℝ) : ℂ) • Matrix.gram ℂ E.u := by
@@ -63,7 +63,7 @@ theorem productGram_eq :
   rw [← atomFn_flat a t x, ← atomFn_flat b t x]
   rfl
 
-/-- The raw product source is total mass times the actual source moments. -/
+/-- The raw product source is total mass times the source moments. -/
 theorem productSource_eq :
     productSource T.w E.Wflat E.Λ E.κ T.ξ =
       (((∫ s, T.w.density s) * E.M : ℝ) : ℂ) • sourceMoments E.u E.tgt := by

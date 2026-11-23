@@ -42,7 +42,7 @@ theorem augmented_partial_column_bound
     (a.augmentedRawGram_inverse_column ρ r hr k (positive_inverse_diagonal_le a.scalar.rawGram_posDef k hdiag)) hD
 
 /-- Complete preceding columns plus a cut inside the next one have the required
-additive bound in the actual raw tensor metric. -/
+additive bound in the raw tensor metric. -/
 theorem augmented_column_cut_bound
     (r : ι → BoundedMeasurableComplex (S × UnitAddTorus (Fin L)))
     (hr : LinearIndependent ℂ (fun i => (r i).toL2 (ρ.prod (torusMeasure L))))

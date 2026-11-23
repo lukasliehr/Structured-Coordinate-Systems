@@ -6,14 +6,14 @@ import Lean_Code.PositiveTranslates.Machine.Main
 /-!
 # Translates in `Lᵖ(ℝ)`, `2 ≤ p < ∞`: assembly
 
-* `translate_basis_nonneg_main`: for `p > 2` and an unbounded set `S`, a non-negative
-  generator extending to an entire function whose translates by distinct parameters in `S`
-  form a Schauder basis of `Lᵖ(ℝ)` over both scalar fields. It combines the analytic half
-  (`Lean_Code/PositiveTranslates/Analytic`) with the reference construction
+* `translate_basis_nonneg_main` (Theorem 1.4 (ii)): for `p > 2` and an unbounded set `S`, a
+  non-negative generator extending to an entire function whose translates by distinct
+  parameters in `S` form a Schauder basis of `Lᵖ(ℝ)` over both scalar fields. It combines the
+  analytic half (`Lean_Code/PositiveTranslates/Analytic`) with the reference construction
   (`Lean_Code/PositiveTranslates/Machine`), which are linked by the interface `StageMachine`.
-* `translate_basis_entire_main`: for `2 ≤ p < ∞`, a nonzero real-valued generator
-  extending to an entire function, over both scalar fields (`p = 2` from the weighted
-  Fourier construction, `p > 2` from the previous item with `S = ℝ`).
+* `translate_basis_entire_main` (Theorem 1.3): for `2 ≤ p < ∞`, a nonzero real-valued
+  generator extending to an entire function, over both scalar fields (`p = 2` from the
+  weighted Fourier construction, `p > 2` from the previous item with `S = ℝ`).
 -/
 
 noncomputable section
@@ -77,7 +77,7 @@ theorem machinesExist (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : 2 < p) (hp' : p �
     MachinesExist p :=
   fun Γ h0 hΓ => nonempty_stageMachine p hp hp' Γ h0 hΓ
 
-/-- **Theorem 1.4 (iii).** For `2 < p < ∞` and an unbounded set `S ⊆ ℝ` there are distinct
+/-- **Theorem 1.4 (ii).** For `2 < p < ∞` and an unbounded set `S ⊆ ℝ` there are distinct
 parameters `λₙ ∈ S` and a non-negative function `f ∈ Lᵖ(ℝ)` extending to an entire function
 whose translates `f(· - λₙ)` form a Schauder basis of `Lᵖ(ℝ)`, over `ℂ` and over `ℝ`. -/
 theorem translate_basis_nonneg_main (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : 2 < p) (hp' : p ≠ ∞)
@@ -91,7 +91,7 @@ theorem translate_basis_nonneg_main (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : 2 < 
         ∀ n, (b n : ℝ → ℝ) =ᵐ[volume] fun x => f (x - lam n)) :=
   translate_basis_nonneg_of_machines p hp hp' (machinesExist p hp hp') S hS
 
-/-- **Theorems 1.3 and 1.4 (i).** For `2 ≤ p < ∞` there are a nonzero real-valued function
+/-- **Theorem 1.3.** For `2 ≤ p < ∞` there are a nonzero real-valued function
 `f ∈ Lᵖ(ℝ)` extending to an entire function and real numbers `λₙ` whose translates
 `f(· - λₙ)` form a Schauder basis of `Lᵖ(ℝ)`, over `ℂ` and over `ℝ`. -/
 theorem translate_basis_entire_main (p : ℝ≥0∞) [Fact (1 ≤ p)] (hp : 2 ≤ p) (hp' : p ≠ ∞) :

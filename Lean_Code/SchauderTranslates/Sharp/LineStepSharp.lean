@@ -3,7 +3,7 @@ import Lean_Code.SchauderTranslates.Sharp.ProductExtensionSharp
 import Lean_Code.SchauderTranslates.Sharp.Iteration
 
 /-!
-# One sharp extension step on the line (paper: `h2:ss:transfer`)
+# One sharp extension step on the line (paper: Section 16.6)
 
 The sharp product-space extension `ProductExtensionSharp Kstar θ` is transferred to the line
 by the substitution `y = A ω t`, exactly as in `FiniteExtension.lean`
@@ -35,7 +35,7 @@ theorem lineKernel_even {D : ℕ} (W : ℝ → UnitAddTorus (Fin D) → ℝ)
   unfold lineKernel
   rw [phase_neg, hW]
 
-/-- Paper `h2:prop:extension` with the factor `θ`: the sharp product-space extension
+/-- Proposition 16.1 of the paper with the factor `θ`: the sharp product-space extension
 transfers to the line, and the new factor of the weight is even. -/
 theorem finiteExtensionStep_of_product {Kstar θ : ℝ} (h : ProductExtensionSharp Kstar θ) :
     FiniteExtensionStep Kstar θ := by

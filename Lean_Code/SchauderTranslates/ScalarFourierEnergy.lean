@@ -68,7 +68,7 @@ theorem activatedMoment_scalar_inner (s : ScalarData d n) (p : ℝ)
   · simp [hy, hu, hv, RCLike.inner_apply, mul_comm, mul_left_comm]
   · simp [hy, hu, hv, RCLike.inner_apply, mul_comm, mul_left_comm]
 
-/-- The real part of the actual finite Fourier Gram is exactly the real tensor activation Gram. -/
+/-- The real part of the finite Fourier Gram is exactly the real tensor activation Gram. -/
 theorem activatedMoment_real_tensor (s : ScalarData d n) (hs : s.IsEven) (p : ℝ)
     (i j : Unit ⊕ Fin n) (k l : ℤ) :
     (s.activatedMoment p i j k l).re =

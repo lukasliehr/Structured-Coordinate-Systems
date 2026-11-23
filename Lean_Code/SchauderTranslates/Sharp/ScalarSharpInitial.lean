@@ -3,7 +3,7 @@ import Lean_Code.SchauderTranslates.InitialScalar
 /-!
 # The parametrized initial scalar block
 
-Paper (`h2:ss:scalar-induction`, eq. `h2:eq:scalar-initial`): the circle weight
+Paper (Section 14.4): the circle weight
 `w₀(x) = 1 - a + a cos (2 π x)` with the single character `e^{2 π i x}`. Its augmented Gram is
 `[[1 - a, a / 2], [a / 2, 1 - a]]`, so `ε₀ = a`, `Z₀ = a² / (4 - 8 a + 3 a²)` and the inverse
 diagonal is `(1 - a) / ((1 - a)² - (a / 2)²)`. The block of `InitialScalar` is the case
@@ -162,7 +162,7 @@ theorem sharpInitial_inverse_diagonal (i : Unit ⊕ Fin 1) :
   rw [sharpInitial_inverse]
   simp [initialGram]
 
-/-- Paper `h2:eq:scalar-initial`: `Z₀ = a² / (4 - 8 a + 3 a²)`. -/
+/-- The initial gain: `Z₀ = a² / (4 - 8 a + 3 a²)`. -/
 theorem sharpInitial_gain :
     (sharpInitial a ha0 ha1).gain = a ^ 2 / (4 - 8 * a + 3 * a ^ 2) := by
   have h := (sharpInitial a ha0 ha1).rawGram_inverse_constant_gain

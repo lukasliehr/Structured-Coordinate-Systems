@@ -11,7 +11,7 @@ import Lean_Code.PositiveTranslates.Analytic.Run
   `MachineRun.err t g = ∑_{m < L_t} ‖T_{λ_m} g - b_m‖`.
 * `MachineRun.summable_translate_error`: the estimate
   `∑_m ‖T_{λ_m} g - b_m‖ ≤ 6 κ` for the limit `g` of the classes `g_t` (paper, equation
-  `tr:eq:total-error`, with slightly different numerical budgets).
+  (12.1), with slightly different numerical budgets).
 -/
 
 noncomputable section

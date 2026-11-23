@@ -138,7 +138,7 @@ theorem projection_eigen_one (V : Submodule ℝ E) [V.HasOrthogonalProjection]
   rw [hn, sub_self] at hr
   exact (sub_eq_zero.mp (norm_eq_zero.mp (sq_eq_zero_iff.mp hr))).symm
 
-/-- Unit companion on a genuine two-dimensional plane. -/
+/-- Unit companion on a two-dimensional plane. -/
 def projectionCompanion (Q : E →L[ℝ] E) (t : ℝ) (v : E) : E :=
   (Real.sqrt (t * (1 - t)))⁻¹ • projectionResidual Q t v
 
@@ -176,7 +176,7 @@ theorem projectionCompanion_rescale (V : Submodule ℝ E) [V.HasOrthogonalProjec
     simp [hc, hr]
   · simp [projectionCompanion, smul_smul, hc]
 
-/-- The two columns of the projection on a genuine eigenplane. -/
+/-- The two columns of the projection on an eigenplane. -/
 theorem projectionCompanion_actions (V : Submodule ℝ E) [V.HasOrthogonalProjection]
     (Q : E →L[ℝ] E) (hQ : ∀ x, Q (Q x) = Q x)
     (hS : ∀ x y, inner ℝ (Q x) y = inner ℝ x (Q y))

@@ -1,16 +1,16 @@
 import Lean_Code.SchauderTranslates.ProductRaw
 import Lean_Code.SchauderTranslates.ProductExtensionProof
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.SchauderTranslates.Sharp.SelectiveSupplySharp
 import Lean_Code.SchauderTranslates.Sharp.ProductModelSharp
 import Lean_Code.SchauderTranslates.Sharp.RealResidual
 import Lean_Code.SchauderTranslates.Sharp.Evenness
 
 /-!
-# The sharp finite extension on a product space (paper: `h2:prop:extension`, product part)
+# The sharp finite extension on a product space (paper: Proposition 16.1, product part)
 
-Sharp counterpart of `ProductExtensionProof.lean`. For `0 < u ≤ 1/100` and the sharp
-scalar contracts with excess `u`: for an even weight `w`, an ordered list of characters with
+For `0 < u ≤ 1/100` and the sharp
+scalar statements with excess `u`: for an even weight `w`, an ordered list of characters with
 prefix constant `K` and a target at positive distance, there are a product kernel `W` on
 `ℝ × 𝕋^D` (a finite mixed trigonometric polynomial with `0 < W ≤ 1`, constant conditional
 mass `M > 1 - δ`, invariant under simultaneous inversion `(t, y) ↦ (-t, -y)`) and new
@@ -94,7 +94,7 @@ theorem selectivePrefixSqSharp_le {u A B : ℝ} (hu0 : 0 < u) (hu1 : u ≤ 1 / 1
   unfold selectivePrefixSqSharp
   nlinarith [sq_nonneg (Real.sqrt (A - 1) - Real.sqrt (B - 1))]
 
-/-- Paper `h2:eq:new-constant`: `(1 + 3u)(1 + 16u) ≤ 1 + 20u < K_*²`. -/
+/-- The new prefix constant: `(1 + 3u)(1 + 16u) ≤ 1 + 20u < K_*²`. -/
 theorem new_constant_le {u K lam Qc : ℝ} (hu0 : 0 < u) (hu1 : u ≤ 1 / 100) (hK : 1 ≤ K)
     (hlam : lam ≤ 3 * u) (hQc1 : 1 ≤ Qc) (hQc : Qc ≤ 1 + 16 * u) :
     max (K ^ 2) ((1 + lam) * Qc) ≤ max K (1 + 10 * u) ^ 2 := by
@@ -111,7 +111,7 @@ theorem new_constant_le {u K lam Qc : ℝ} (hu0 : 0 < u) (hu1 : u ≤ 1 / 100) (
 
 /-! ### The extension -/
 
-/-- Paper `h2:prop:extension`, product-space part, with the factor
+/-- Proposition 16.1 of the paper, product-space part, with the factor
 `ϑ = 1 - c_*/2`, `c_* = u/(1+2u)`. -/
 theorem product_space_extension_sharp {u : ℝ} (hu0 : 0 < u) (hu1 : u ≤ 1 / 100)
     (hSup : ScalarSupplySharp u) (hTune : ScalarTuneSharp u) :

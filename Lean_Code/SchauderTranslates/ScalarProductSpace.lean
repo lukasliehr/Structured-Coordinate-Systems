@@ -25,7 +25,7 @@ def torusCopiesEquiv (L d : ℕ) :
     change Measurable (fun (x : Fin L → UnitAddTorus (Fin d)) (k : Fin (L*d)) => x (finProdFinEquiv.symm k).1 (finProdFinEquiv.symm k).2)
     fun_prop
 
-/-- Flattening preserves the actual product Haar probability measure. -/
+/-- Flattening preserves the product Haar probability measure. -/
 theorem torusCopiesEquiv_measurePreserving (L d : ℕ) :
     MeasurePreserving (torusCopiesEquiv L d) (torusMeasure (L * d))
       (Measure.pi (fun _ : Fin L => torusMeasure d)) := by

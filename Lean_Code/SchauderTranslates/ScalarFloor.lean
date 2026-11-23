@@ -54,7 +54,7 @@ theorem product_centeredInverse_quadratic_le (s : ScalarData d n) (L : ℕ)
     (mul_le_mul_of_nonneg_right
       (mul_le_mul_of_nonneg_left hcut s.toTorusWeight.mass_pos.le) (sq_nonneg _))
 
-/-- Augmented inverse estimate for the actual independent product of the finite cutoff block. -/
+/-- Augmented inverse estimate for the independent product of the finite cutoff block. -/
 theorem product_rawInverse_norm_le (s : ScalarData d n) (L : ℕ)
     {h : ℝ} (hcut : ‖(Matrix.toEuclideanCLM (𝕜 := ℂ)) s.rawGram⁻¹‖ ≤ h) :
     ‖(Matrix.toEuclideanCLM (𝕜 := ℂ)) (s.product L).rawGram⁻¹‖ ≤
@@ -68,7 +68,7 @@ end ScalarData
 
 /-- Spectral-floor propagation for one activation/cutoff/product step.
 `cut` is the finite scalar cutoff. The cutoff lemma supplies `hcut`; the numerical rare-step
-lemma supplies the product gain and deficit bounds. The product itself is the actual torus
+lemma supplies the product gain and deficit bounds. The product itself is the torus
 block `cut.product L`, not an arbitrary positive matrix. -/
 theorem scalar_floor_step {d n : ℕ} (cut : ScalarData d n) (L : ℕ)
     {ε ε' h : ℝ} (he : 0 < ε) (hemax : ε ≤ 1 / 10)

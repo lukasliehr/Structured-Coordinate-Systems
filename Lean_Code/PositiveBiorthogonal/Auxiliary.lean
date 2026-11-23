@@ -1,6 +1,6 @@
 import Lean_Code.PositiveBiorthogonal.FiniteKernel
 
-/-! The exact finite auxiliary-family data. Existence is a separate proof obligation. -/
+/-! The finite auxiliary family, as data. Its existence is proved in `AuxiliaryExistence.lean`. -/
 noncomputable section
 set_option autoImplicit false
 open Filter
@@ -8,9 +8,8 @@ open scoped ENNReal Topology BigOperators ComplexOrder
 
 namespace PositiveBiorthogonal
 
-/-- Source `def:auxiliary`, with every finite space carrying its stated exponent.
-The zero-dimensional member is allowed and is excluded from the finite requirements.
-No existence of this structure is assumed. -/
+/-- The auxiliary family, with every finite space carrying its stated exponent.
+The zero-dimensional member is allowed and is excluded from the finite requirements. -/
 structure AuxiliaryFamily (𝕜 : Type*) [RCLike 𝕜] (p q : ℝ≥0∞)
     [Fact (1 ≤ p)] [Fact (1 ≤ q)] (δ : ℝ) where
   M : ℝ

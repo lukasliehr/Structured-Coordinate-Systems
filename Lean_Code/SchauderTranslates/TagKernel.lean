@@ -2,6 +2,7 @@ import Lean_Code.SchauderTranslates.PiKernel
 import Lean_Code.SchauderTranslates.ScalarData
 import Lean_Code.SchauderTranslates.ScalarPrefixes
 import Lean_Code.SchauderTranslates.Characters
+import Lean_Code.SchauderTranslates.ScalarGram
 
 /-!
 # Scalar tag kernels
@@ -9,7 +10,7 @@ import Lean_Code.SchauderTranslates.Characters
 A scalar block used as a tag: its normalized density is a fiber kernel that does not
 depend on the slow variable. This file records the normalized tag moments, their relation
 to the centered Gram and gain of the scalar block, and the Gram form of Cauchy–Schwarz
-used for the mean functional (blueprint `tag:packet`, `tag:lift`).
+used for the mean functional.
 -/
 
 noncomputable section

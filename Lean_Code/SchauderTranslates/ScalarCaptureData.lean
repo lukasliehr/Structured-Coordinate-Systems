@@ -30,7 +30,7 @@ theorem nonconstantGram_floor (s : ScalarData d n) {σ : ℝ}
     Matrix.one_apply, Complex.real_smul]
 
 /-- The moment-column energy is bounded by the mass deficit. This is the finite Haar
-Bessel bound, obtained from the already checked positive contraction Gram. -/
+Bessel bound, obtained from the positive contraction Gram. -/
 theorem moment_norm_sq_le_deficit (s : ScalarData d n) :
     ‖(WithLp.toLp 2 s.moment : EuclideanSpace ℂ (Fin n))‖ ^ 2 ≤ 1 - s.mass := by
   have hp := (Matrix.le_iff.mp s.rawGram_le_one).add

@@ -8,11 +8,11 @@ import Lean_Code.SchauderTranslates.Sharp.ScalarSharpStep
 /-!
 # The sharp scalar induction
 
-Paper (`h2:ss:scalar-induction`): with `t = d / 4`, `a₀ = t / 100`, the stages keep
+Paper (Section 14.4): with `t = d / 4`, `a₀ = t / 100`, the stages keep
 `3 Z₀ / 4 ≤ Z_n ≤ Z₀`, `(B_n⁻¹)_kk - 1 ≤ 2 ε_n` for `k ≠ 0`, `1 + t ≤ Q_n < 1 + 2 t`, the
 recursion `Q_{n+1} = Q_n + (5 / t) η_n + ε_n² / 2`, and `‖B_n⁻¹‖ ≤ ε_n⁻²`.
-The structure `Stage t k` is the parametrized counterpart of `ScalarStage k`; the reserve
-terms `(1/2)^k` make the choice of the next block noncircular exactly as there.
+In the structure `Stage t k` the reserve
+terms `(1/2)^k` make the choice of the next block noncircular.
 -/
 
 noncomputable section
@@ -71,7 +71,7 @@ theorem sharpInductionInitial_inverse_diagonal (i : Fin 1) :
 
 end Initial
 
-/-- Paper `h2:eq:scalar-initial`: `(B₀⁻¹)₁₁ - 1 ≤ 2 a₀`. -/
+/-- The initial inverse diagonal: `(B₀⁻¹)₁₁ - 1 ≤ 2 a₀`. -/
 theorem sharpInductionInitial_inverse_excess {a : ℝ} (ha0 : 0 ≤ a) (ha1 : a ≤ 1 / 4)
     (i : Fin 1) :
     ((sharpInductionInitial a ha0 (ha1.trans_lt (by norm_num))).rawGram⁻¹
@@ -237,7 +237,7 @@ def initial (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) : Stage t 0 where
     norm_num
     linarith
 
-/-- One full choice step: actual finite torus data, the ordered-prefix budget, and all
+/-- One full choice step: finite torus data, the ordered-prefix budget, and all
 inverse/positivity estimates are constructed together. -/
 theorem exists_next (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) (s : Stage t k) :
     ∃ u : Stage t (k + 1), s.ε / 12 ≤ u.ε ∧ u.ε ≤ s.ε - 3 * s.ε ^ 2 / 4 ∧
@@ -344,7 +344,7 @@ def sequence (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) : (k : ℕ) → Stage t k
   | 0 => initial ht0 ht1
   | k + 1 => (sequence ht0 ht1 k).next ht0 ht1
 
-/-- Paper `h2:eq:epsrec`: the mass losses decrease to zero. -/
+/-- Paper, (14.12): the mass losses decrease to zero. -/
 theorem sequence_deficit_tendsto (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) :
     Antitone (fun k => (sequence ht0 ht1 k).ε) ∧
       Tendsto (fun k => (sequence ht0 ht1 k).ε) atTop (𝓝 0) := by
@@ -358,7 +358,7 @@ end Stage
 /-- Even measurable scalar blocks with vanishing deficit, retained gain `≥ 3 Z₀ / 4`, centered
 squared prefix bound `< 1 + 2 t`, augmented squared prefix bound `1 + 2 t`, and the raw
 inverse/spectral estimates required by smoothing and selection (paper: the measurable part
-of Proposition `h2:lem:scalar`). -/
+of Proposition 14.1). -/
 theorem measurable_scalar_blocks_sharp {t : ℝ} (ht0 : 0 < t) (ht1 : t ≤ 1 / 4) :
     ∃ (d n : ℕ → ℕ) (s : (j : ℕ) → ScalarData (d j) (n j)) (ε q : ℕ → ℝ),
       Antitone ε ∧ Tendsto ε atTop (𝓝 0) ∧

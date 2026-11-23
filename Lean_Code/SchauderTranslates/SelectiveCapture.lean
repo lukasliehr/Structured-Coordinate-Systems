@@ -23,10 +23,10 @@ theorem selective_capture_margin_eventually :
 variable {S ι : Type*} [MeasurableSpace S] [Fintype ι] [DecidableEq ι]
 variable {ρ : Measure S} [IsProbabilityMeasure ρ]
 
-/-- Blueprint `select:capture`: the exact normalized capture and information on
+/-- The normalized capture and information on
 full slow L², using the original independent bounded carrier. The strict
 information denominators and the spectral-average bounds are consequences of
-the checked late window, not additional construction assumptions. -/
+the late window. -/
 theorem selective_capture {κ : ℝ} (hκ0 : 0 < κ) (hκ1 : κ < 1) :
     ∀ᶠ ε in 𝓝[>] (0 : ℝ), ∀ (d n : ℕ)
       (a : SelectiveKernelData S (softLossLength ε) d n)

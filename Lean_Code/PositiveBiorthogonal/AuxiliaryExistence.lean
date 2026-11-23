@@ -20,7 +20,7 @@ theorem auxiliary_exists (hpfin : p ≠ ∞) (δ : ℝ) (hδ : 0 < δ) :
     obtain ⟨A, _⟩ := aux_interior (𝕜 := 𝕜) (q := q) hp1 hpfin δ hδ
     exact ⟨A⟩
 
-/-- A chosen family is obtained only after its existence has been proved. -/
+/-- A chosen auxiliary family. -/
 def auxiliaryFamily (hpfin : p ≠ ∞) (δ : ℝ) (hδ : 0 < δ) : AuxiliaryFamily 𝕜 p q δ :=
   (auxiliary_exists hpfin δ hδ).some
 

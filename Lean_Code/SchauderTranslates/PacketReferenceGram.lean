@@ -22,7 +22,7 @@ theorem packetRows_reference_cross {L : ℕ} (φ : ι → BoundedMeasurableCompl
   dsimp only [conjugate] at h
   rw [h, seedPhase_integral, mul_zero]
 
-/-- The original carrier Gram and the identity seed Gram form a genuine
+/-- The original carrier Gram and the identity seed Gram form an
 orthogonal direct sum under the reference product law. -/
 theorem packetRows_reference_gram (L : ℕ) (φ : ι → BoundedMeasurableComplex S) :
     referenceRowGram ρ (packetRows (L := L) φ) =

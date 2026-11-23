@@ -1,14 +1,14 @@
 import Lean_Code.SchauderTranslates.SelectiveSupply
-import Lean_Code.SchauderTranslates.Sharp.Contracts
+import Lean_Code.SchauderTranslates.Sharp.Statements
 import Lean_Code.SchauderTranslates.Sharp.SoftWindowSharp
 
 /-!
-# The sharp selective supply (paper: Proposition `h2:lem:selective`, limits `h2:eq:selective-J`)
+# The sharp selective supply (paper: Proposition 15.1 and (15.11))
 
-The quantified selective supply of blueprint `select:supply`, built from the sharp scalar
-supply `ScalarSupplySharp dd` instead of `scalar_blocks`. The information formula
-`J = c P_{V ∩ e⊥} + j P_e` with `0 < j < η`, `0 ≤ c < η j`, `1 - M < η j` is unchanged; the
-scalar block now carries an augmented prefix constant `K_s < 1 + dd`, a nonconstant raw
+The quantified selective supply, built from the sharp scalar
+supply `ScalarSupplySharp dd`. The information formula
+`J = c P_{V ∩ e⊥} + j P_e` with `0 < j < η`, `0 ≤ c < η j`, `1 - M < η j` holds, and the
+scalar block carries an augmented prefix constant `K_s < 1 + dd`, a nonconstant raw
 inverse diagonal `≤ 1 + 2ε` with an arbitrarily small loss `ε < ε₀`, and is even.
 -/
 
@@ -23,7 +23,7 @@ open SchauderTranslates
 
 variable {S ι : Type*} [MeasurableSpace S] [Fintype ι] [DecidableEq ι]
 
-/-- Sharp version of blueprint `select:supply`. -/
+/-- The sharp selective supply (paper: Proposition 15.1). -/
 theorem selective_blocks_sharp {dd : ℝ} (hS : ScalarSupplySharp dd)
     (ρ : Measure S) [IsProbabilityMeasure ρ]
     {κ η ε₀ : ℝ} (hκ0 : 0 < κ) (hκ1 : κ < 1) (hη : 0 < η) (hε₀ : 0 < ε₀) :

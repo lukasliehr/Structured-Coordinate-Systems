@@ -244,7 +244,7 @@ theorem initialScalar_centered_prefix_iff (q : ℝ) :
   single_prefixSqBound_iff initialScalar.centeredVector
     (initialScalar.centeredVectors_linearIndependent.ne_zero 0) q
 
-/-- All numerical and prefix invariants of the actual initial scalar block. -/
+/-- All numerical and prefix invariants of the initial scalar block. -/
 theorem initial_scalar_block :
     1 - initialScalar.mass = 1 / 10 ∧ initialScalar.gain = 1 / 323 ∧
       (∀ i : Fin 1, (initialScalar.rawGram⁻¹ (Sum.inr i) (Sum.inr i)).re - 1 = 37 / 323 ∧

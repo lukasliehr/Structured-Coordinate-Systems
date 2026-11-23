@@ -1,7 +1,7 @@
 import Lean_Code.SchauderTranslates.ProductSlow
 
 /-!
-# Tag replicas for the product extension (blueprint `tag:lift`, `tag:replicas`)
+# Tag replicas for the product extension
 
 The tag data of the finite extension: the residual coefficients of the target, one
 scalar tag block of gain `z`, and `N` replicas of all carrier tags in disjoint blocks.

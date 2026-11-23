@@ -10,7 +10,6 @@ For finitely many fiber kernels over one slow space, every engine atom is lifted
 product of all fresh variables. Its slow part is the pullback of the engine's own mean,
 its centered part is orthogonal to the whole slow space, centered parts of different
 engines are orthogonal, and within one engine the centered Gram is the engine's own.
-This is the Hilbert-space content of blueprint `tag:engines`.
 -/
 
 noncomputable section

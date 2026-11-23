@@ -2,14 +2,14 @@ import Lean_Code.PositiveBiorthogonal.Definitions
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic
 
-/-! The nonnegative inverse coefficients of `lem:inverse-coefficients`. -/
+/-! The nonnegative inverse coefficients. -/
 noncomputable section
 set_option autoImplicit false
 open scoped BigOperators
 
 namespace PositiveBiorthogonal
 
-/-- The zero coefficient is unused and set to zero; positive coefficients follow the TEX recurrence. -/
+/-- The zero coefficient is unused and set to zero. The other coefficients are defined by recurrence. -/
 def inverseCoefficient (a : ℕ → ℝ) : ℕ → ℝ
   | 0 => 0
   | n + 1 => a (n + 1) -

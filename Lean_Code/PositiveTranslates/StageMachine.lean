@@ -3,7 +3,7 @@ import Lean_Code.SchauderTranslates.Lp.Packet
 /-!
 # Interface between the reference construction and the analytic generator (`p > 2`)
 
-For the non-negative entire generator of the paper (Theorem `thm:translate-properties`(iii))
+For the non-negative entire generator of the paper (Theorem 1.4 (ii))
 the proof has two halves.
 
 * The *reference construction* produces, stage by stage, exact translates
@@ -14,8 +14,8 @@ the proof has two halves.
   function `G_{t-1}`, updates `G_t = G_{t-1} + a_t ∑ᵢ T_{-λ_{t,i}} (h_t * Gaussian)`, and
   passes to the limit.
 
-`StageMachine` is the contract between the two halves. It is a structure to CONSTRUCT
-(file `…/PositiveTranslates/Machine*.lean`), never an assumption of the library.
+`StageMachine` is the interface between the two halves. An instance is constructed in
+`Lean_Code/PositiveTranslates/Machine/Main.lean`.
 -/
 
 noncomputable section
@@ -40,7 +40,7 @@ structure Admissible (v : LebesgueLp p) : Prop where
   upper : ‖v‖ ≤ 2
 
 /-- `2^p (N-1) N^{-(p-1)}`, the deficit in the positive packet (paper, proof of
-`thm:translate-properties`(iii)). -/
+Theorem 1.4 (ii)). -/
 def posDeficit (r : ℝ) (N : ℕ) : ℝ := 2 ^ r * ((N : ℝ) - 1) * (N : ℝ) ^ (-(r - 1))
 
 /-- The scale `d` with `d^p = ‖v‖^p / (1 - 2^p (N-1) N^{-(p-1)})`. -/
@@ -68,7 +68,7 @@ structure StageMachine (p : ℝ≥0∞) [Fact (1 ≤ p)] (Γ : Set ℝ) where
   /-- Smallest admissible packet size at the next stage. -/
   minSize : State → ℕ
   /-- The parameters chosen at the next stage, for packet size `N`, input `v`, and a
-  lower bound `Λ₀` requested by the caller. -/
+  prescribed lower bound `Λ₀`. -/
   params : State → (N : ℕ) → LebesgueLp p → ℝ → Fin N → ℝ
   /-- The next state. -/
   next : State → ℕ → LebesgueLp p → ℝ → State

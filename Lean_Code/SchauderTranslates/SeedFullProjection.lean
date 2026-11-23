@@ -1,6 +1,5 @@
 import Lean_Code.SchauderTranslates.SeedPlaneInclusion
 import Lean_Code.SchauderTranslates.SeedComplexProjection
-import Lean_Code.SchauderTranslates.MatrixColumnIsometry
 
 noncomputable section
 open Matrix
@@ -57,27 +56,5 @@ theorem seedPlaneInclusion_first (i₀ : ι) (L : ℕ) :
   cases i with
   | inl i => simp [Matrix.toEuclideanLin_apply, seedPlaneInclusion, EuclideanSpace.single]
   | inr j => simp [Matrix.toEuclideanLin_apply, seedPlaneInclusion, EuclideanSpace.single]
-
-/-- Spectral mass computed in the full Euclidean coefficient space of the actual Gram. -/
-theorem seedFullLowerProjection_mass (i₀ : ι) {κ : ℝ} (hκ0 : 0 < κ) (hκ1 : κ < 1)
-    {L : ℕ} (hL : 0 < L) :
-    ‖(seedFullLowerProjection i₀ κ L).toEuclideanLin (EuclideanSpace.single (Sum.inl i₀) (1 : ℂ))‖ ^ 2 =
-      seedOmega κ L := by
-  let U := seedPlaneInclusion i₀ L
-  let P := seedComplexLowerProjection (1 - κ ^ 2) (seedCoupling κ L)
-  have hU : Uᴴ * U = 1 := seedPlaneInclusion_gram i₀ hL
-  have hmul : seedFullLowerProjection i₀ κ L * U = U * P := by
-    change U * P * Uᴴ * U = U * P
-    rw [Matrix.mul_assoc, hU, Matrix.mul_one]
-  have hv (x : EuclideanSpace ℂ (Fin 2)) :
-      (seedFullLowerProjection i₀ κ L).toEuclideanLin (U.toEuclideanLin x) =
-        U.toEuclideanLin (P.toEuclideanLin x) := by
-    simp only [Matrix.toEuclideanLin_apply, WithLp.ofLp_toLp]
-    rw [Matrix.mulVec_mulVec, hmul, ← Matrix.mulVec_mulVec]
-  rw [← seedPlaneInclusion_first i₀ L]
-  change ‖(seedFullLowerProjection i₀ κ L).toEuclideanLin (U.toEuclideanLin _)‖ ^ 2 = _
-  rw [hv, matrix_orthonormal_columns_norm hU]
-  exact seedComplexLowerProjection_mass (seed_a_bounds hκ0 hκ1).1
-    (seed_a_bounds hκ0 hκ1).2 (seedCoupling_pos hκ0 hL)
 
 end SchauderTranslates

@@ -1,4 +1,5 @@
-import Lean_Code.SchauderTranslates.SeedCarrierCapture
+import Lean_Code.SchauderTranslates.ScalarCaptureData
+import Lean_Code.SchauderTranslates.SeedCarrierCoordinates
 
 noncomputable section
 open MeasureTheory Matrix ContinuousLinearMap
@@ -61,8 +62,7 @@ theorem kernel_source :
   rw [heL2]
   ring
 
-/-- Actual capture for an existing kernel, so no equality between dependent L²
-spaces or between bundled choices of bounded representatives is assumed. -/
+/-- The capture projection of a selective kernel. -/
 theorem kernel_capture_projection (hL : 0 < L) (hκ0 : 0 < a.κ) (hκ1 : a.κ < 1) :
     let F := (a.kernel.slowLift ρ).toContinuousLinearMap
     let T := hilbertSynthesis (𝕜 := ℂ) (fun i => (c.representative i).toL2 ρ)

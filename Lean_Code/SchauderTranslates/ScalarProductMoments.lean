@@ -92,7 +92,7 @@ theorem product_mean (s : ScalarData d n) (L : ℕ) (i : Fin L) (a : Fin n) :
   rw [← normalizedMoment_mean, product_frequency]
   exact s.toTorusWeight.product_normalizedMoment_left i (s.frequencies a)
 
-/-- The actual centered Gram, including all cross-copy zero entries. -/
+/-- The centered Gram, including all cross-copy zero entries. -/
 theorem product_centeredGram_entry (s : ScalarData d n) (L : ℕ)
     (i j : Fin L) (a b : Fin n) :
     (s.product L).centeredGram (finProdFinEquiv (i, a)) (finProdFinEquiv (j, b)) =

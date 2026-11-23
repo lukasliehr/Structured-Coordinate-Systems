@@ -10,7 +10,7 @@ set_option backward.isDefEq.respectTransparency.types false
 namespace SchauderTranslates
 variable {ι κ : Type*} [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
 
-/-- Coordinate relabeling intertwines the corresponding genuine Hilbert matrix operators. -/
+/-- Coordinate relabeling intertwines the corresponding Hilbert matrix operators. -/
 theorem euclidean_reindex_matrix (e : ι ≃ κ) (B : Matrix κ κ ℂ) (x : EuclideanSpace ℂ ι) :
     LinearIsometryEquiv.piLpCongrLeft 2 ℂ ℂ e
         ((Matrix.toEuclideanCLM (𝕜 := ℂ)) (B.submatrix e e) x) =

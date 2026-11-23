@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Contracts
+import Lean_Code.SchauderTranslates.Definitions
 
 noncomputable section
 open MeasureTheory Filter

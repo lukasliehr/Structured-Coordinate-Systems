@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Lp.StepCellWeight
+import Lean_Code.SchauderTranslates.Lp.StepCellNorm
 
 noncomputable section
 open MeasureTheory

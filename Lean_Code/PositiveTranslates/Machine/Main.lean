@@ -4,8 +4,8 @@ import Lean_Code.PositiveTranslates.Machine.Run
 # The reference construction as a stage machine
 
 This is the top file of `Lean_Code/PositiveTranslates/Machine/`. It constructs the
-*reference construction* of the paper's Theorem `thm:translate-properties`(iii) (sections
-"Constructing the functions on the line" and the proof of (iii)) as an instance of the
+*reference construction* of Theorem 1.4 (ii) of the paper (Section 11 and the proof of (ii)
+in Section 12.1) as an instance of the
 interface `StageMachine` of `Lean_Code/PositiveTranslates/StageMachine.lean`:
 
 * `Machine.stageMachine hΓ hp hp' : StageMachine p Γ` for `2 < p < ∞` and every set
@@ -87,7 +87,7 @@ theorem nextState_step (hp : 2 < p) (hp' : p ≠ ∞) (S : GoodState p) {N : ℕ
   exact (Classical.choose_spec (exists_step hΓ hp hp' S.2 ((one_le_minSize hp hp').trans hN)
     (posDeficit_le_of_minSize_le hp hp' hN) hv Λ₀)).2
 
-/-- **The reference construction** of the paper's Theorem `thm:translate-properties`(iii)
+/-- **The reference construction** of Theorem 1.4 (ii) of the paper
 as a stage machine, for `2 < p < ∞` and a parameter set `Γ` that is unbounded above. The
 basis constant of every run is at most `50`. -/
 def stageMachine (hp : 2 < p) (hp' : p ≠ ∞) : StageMachine p Γ where
@@ -138,7 +138,7 @@ end Machine
 set_option linter.unusedVariables false in
 /-- **The reference construction exists.** For `2 < p < ∞` and every set `Γ ⊆ ℝ` that
 contains `0` and is unbounded above there is a stage machine with parameters in `Γ`: the
-reference construction of the paper's Theorem `thm:translate-properties`(iii). (The
+reference construction of Theorem 1.4 (ii) of the paper. (The
 hypothesis `0 ∈ Γ` is not used by the construction: the parameter `0` of the initial vector
 `𝟙_[0,1)` is part of the interface, and all later parameters `Machine.stageParams` are
 positive elements of `Γ`.) -/

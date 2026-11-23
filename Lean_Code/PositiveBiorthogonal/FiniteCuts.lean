@@ -1,6 +1,6 @@
 import Lean_Code.PositiveBiorthogonal.FiniteCoordinates
 
-/-! Contractive coordinate cuts and coordinate inclusions for the genuine finite ℓᵖ spaces. -/
+/-! Contractive coordinate cuts and coordinate inclusions for the finite ℓᵖ spaces. -/
 noncomputable section
 set_option autoImplicit false
 open scoped ENNReal BigOperators

@@ -7,8 +7,8 @@ import Lean_Code.PositiveTranslates.Machine.Intervals
 /-!
 # States of the reference construction
 
-The finite-stage data of the reference construction for the paper's Theorem
-`thm:translate-properties`(iii) (namespace `StructuredBases.PositiveTranslates.Machine`).
+The finite-stage data of the reference construction for Theorem 1.4 (ii) of the paper
+(namespace `StructuredBases.PositiveTranslates.Machine`).
 
 * `Cell p` : a region `A ⊆ ℝ` together with a sequence `β` of `Lᵖ` classes (its local
   basis);

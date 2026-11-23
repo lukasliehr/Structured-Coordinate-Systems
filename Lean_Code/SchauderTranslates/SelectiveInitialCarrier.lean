@@ -12,7 +12,7 @@ variable {S ι : Type*} [MeasurableSpace S] [Fintype ι] [DecidableEq ι]
 variable {L d n : ℕ} (a : SelectiveKernelData S L d n)
 variable (ρ : Measure S) [IsProbabilityMeasure ρ]
 
-/-- The original carrier embedded isometrically in the actual weighted space. -/
+/-- The original carrier embedded isometrically in the weighted space. -/
 def initialCarrier (φ : ι → BoundedMeasurableComplex S) (i : ι) : Lp ℂ 2 (a.kernel.measure ρ) :=
   a.kernel.slowLift ρ ((φ i).toL2 ρ)
 
@@ -34,7 +34,7 @@ theorem initialCarrier_span_le_slow (φ : ι → BoundedMeasurableComplex S) :
   exact a.initialCarrier_mem_slow ρ φ i
 
 /-- The retained carrier entries of the auxiliary constant column are exactly
-the slow carrier, as actual weighted L² vectors. -/
+the slow carrier, as weighted L² vectors. -/
 theorem augmented_constant_carrier (φ : ι → BoundedMeasurableComplex S) (i : ι) :
     a.kernel.atoms ρ (a.augmentedRowColumn (packetRows φ)) (Sum.inl (), Sum.inl i) =
       a.initialCarrier ρ φ i := by

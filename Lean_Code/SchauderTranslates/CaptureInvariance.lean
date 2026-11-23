@@ -46,7 +46,7 @@ variable [Fintype ι] [Fintype κ] [DecidableEq ι] [DecidableEq κ]
 variable {ν : Measure Y} [IsProbabilityMeasure ν] (K : FiberKernel S Y ν)
 variable (ρ : Measure S) [IsFiniteMeasure ρ]
 
-/-- Changing the finite row presentation while preserving the actual weighted atom
+/-- Changing the finite row presentation while preserving the weighted atom
 span does not change information on the full marginal L² space. -/
 theorem marginal_information_invariant
     (f : ι → BoundedMeasurableComplex (S × Y)) (g : κ → BoundedMeasurableComplex (S × Y))

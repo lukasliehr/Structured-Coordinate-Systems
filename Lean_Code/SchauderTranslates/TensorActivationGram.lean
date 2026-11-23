@@ -48,7 +48,7 @@ theorem matrixEnergy_rowSynthesis (B : Matrix ι ι ℝ) (u : ν → K)
   intro b _
   ring
 
-/-- The two-projection energy equals the actual finite tensor coefficient quadratic form. -/
+/-- The two-projection energy equals the finite tensor coefficient quadratic form. -/
 theorem activationEnergy_rowSynthesis (B : Matrix ι ι ℝ) (Q : K →L[ℝ] K)
     (u : ν → K) (c : EuclideanSpace ℝ (ι × ν)) :
     activationEnergy B Q (rowSynthesis u c) = coefficientQuadratic (tensorActivationGram B Q u) c := by

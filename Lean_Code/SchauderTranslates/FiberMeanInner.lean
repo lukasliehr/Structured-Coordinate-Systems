@@ -65,7 +65,7 @@ theorem slow_atom_inner (h : BoundedMeasurableComplex S) (f : BoundedMeasurableC
   rw [BoundedMeasurableComplex.inner_toL2, BoundedMeasurableComplex.inner_toL2]
   exact K.mean_pairing ρ h f
 
-/-- The centered atom is orthogonal to every bounded slow function in the actual weighted L² law. -/
+/-- The centered atom is orthogonal to every bounded slow function in the weighted L² law. -/
 theorem centered_slow_inner (h : BoundedMeasurableComplex S) (f : BoundedMeasurableComplex (S × Y)) :
     inner ℂ ((h.pullbackFst Y).toL2 (K.measure ρ))
       (f.toL2 (K.measure ρ) - ((K.meanRepresentative f).pullbackFst Y).toL2 (K.measure ρ)) = 0 := by

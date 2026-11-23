@@ -1,14 +1,14 @@
 import Lean_Code.SchauderTranslates.LineTransferWeight
 
 /-!
-# Finite extension on the line (`extend:line`)
+# Finite extension on the line
 
-The product-space extension `ProductExtension` (blueprint `extend:product`) is transferred
+The product-space extension `ProductExtension` is transferred
 to the line by substituting the torus variables `y = A ω t`. The direction `ω` avoids all
-finitely many relevant frequency hyperplanes and all collisions of the new frequencies
-(`transfer:avoid`); every Gram entry, source moment, the target norm and the reference
-loss converge (`transfer:moments`); and the strict finite Gram conclusions persist
-(`transfer:stable`). This proves `Construction.FiniteExtensionPrinciple`.
+finitely many relevant frequency hyperplanes and all collisions of the new frequencies.
+Every Gram entry, source moment, the target norm and the reference
+loss converge, and the strict finite Gram conclusions persist.
+This reduces `Construction.FiniteExtensionPrinciple` to `ProductExtension`.
 -/
 
 noncomputable section
@@ -45,7 +45,7 @@ theorem line_extension_core (w w₀ : Weight) (hw₀ : (∫ t, w₀.density t) =
         (fun a => Λ a + A * frequencyDot (κ a) ω) L := by
   classical
   obtain ⟨s, c, hc⟩ := id hWpoly
-  -- Checkpoint 2: freeze all finitely many torus frequencies and all frequency pairs.
+  -- Freeze all finitely many torus frequencies and all frequency pairs.
   let κo : Option (Fin n) → (Fin D → ℤ) := fun o => o.elim 0 κ
   let Kset : Finset (Fin D → ℤ) :=
     (s ×ˢ (Finset.univ : Finset (Option (Fin n) × Option (Fin n)))).image
@@ -63,7 +63,7 @@ theorem line_extension_core (w w₀ : Weight) (hw₀ : (∫ t, w₀.density t) =
     intro p hp
     have h := hωK _ (hmemK p hp none none)
     simpa [κo] using h
-  -- Checkpoint 3: transfer all moments and apply finite Gram stability.
+  -- Transfer all moments and apply finite Gram stability.
   have hGt := tendsto_line_gram (w := w) (hWpoly := hWpoly) (hWpos := hWpos) Λ κ hc hωG
   have hvt := tendsto_line_source (w := w) (hWpoly := hWpoly) (hWpos := hWpos) Λ κ ξ hc hωS
   have hst := tendsto_line_norm (w := w) (hWpoly := hWpoly) (hWpos := hWpos) M hWmass hc hωM ξ
@@ -117,11 +117,11 @@ theorem append_pairs_injective {d r D : ℕ} (μ : Fin d → ℝ) (lam : Fin r �
 end LineTransfer
 
 open LineTransfer in
-/-- Blueprint `extend:line`: the product-space extension transfers to the line. -/
+/-- The product-space extension transfers to the line. -/
 theorem finite_extension_of_product (h : ProductExtension) :
     Construction.FiniteExtensionPrinciple := by
   intro w w₀ hw₀ d μ K ξ δ τ hμ hK hpb hdist hδ hτ
-  -- Checkpoint 1: invoke the product extension with the same data.
+  -- Invoke the product extension with the same data.
   obtain ⟨D, r, W, M, lam, k, hWpoly, hWpos, hWmass, hM, hk0, hkinj, hBpos, hBpref, hBcap⟩ :=
     h w d μ K ξ δ τ hμ hK hpb hdist hδ hτ
   obtain ⟨ω, A, hinj, hloss, hdistA, hpref⟩ := line_extension_core w w₀ hw₀ W M

@@ -3,10 +3,10 @@ import Lean_Code.SchauderTranslates.Lp.PacketSupport
 /-!
 # Placement of packet parameters inside a prescribed unbounded set
 
-Paper, Lemma `tr:lem:placement`. Let `Γ ⊆ ℝ` be unbounded above. We choose successively
+Paper, Lemma 8.1. Let `Γ ⊆ ℝ` be unbounded above. We choose successively
 `γ₀, γ₁, … ∈ Γ` with
 
-`γ_j > 4 ∑_{i<j} γ_i + 4R`, `γ_j > T`, `γ_j > 0`   (paper, eq. `tr:eq:placement`),
+`γ_j > 4 ∑_{i<j} γ_i + 4R`, `γ_j > T`, `γ_j > 0`   (compare equation (8.1) of the paper),
 
 and show that the first `N` of them are strictly increasing and satisfy the separation
 property `SeparatedModeIntervals R Λ` consumed by the packet files of
@@ -29,8 +29,8 @@ open SchauderTranslates SchauderTranslates.LpConstruction
 
 /-! ### The growth condition and the separation it implies -/
 
-/-- The growth condition of the paper, eq. `tr:eq:placement`:
-`Λ j > 4 ∑_{i<j} Λ i + 4R` for every `j`. -/
+/-- The growth condition `Λ j > 4 ∑_{i<j} Λ i + 4R` for every `j`
+(compare equation (8.1) of the paper). -/
 def Lacunary {N : ℕ} (R : ℝ) (Λ : Fin N → ℝ) : Prop :=
   ∀ j : Fin N, 4 * ∑ i ∈ Finset.Iio j, Λ i + 4 * R < Λ j
 
@@ -111,7 +111,7 @@ theorem two_mul_lt_abs_frequencyDot {N : ℕ} {R : ℝ} {Λ : Fin N → ℝ} (hR
     rwa [hsplit, add_sub_cancel_right, ← hsplit] at h
   linarith
 
-/-- Paper, Lemma `tr:lem:placement` (disjointness part): lacunary positive parameters
+/-- Paper, Lemma 8.1 (disjointness part): lacunary positive parameters
 satisfy the separation hypothesis of the packet lemmas. -/
 theorem separated_of_lacunary {N : ℕ} {R : ℝ} {Λ : Fin N → ℝ} (hR : 0 ≤ R)
     (hpos : ∀ i, 0 < Λ i) (hlac : Lacunary R Λ) : SeparatedModeIntervals R Λ := by
@@ -235,7 +235,7 @@ theorem placement_separated {Γ : Set ℝ} (hΓ : ∀ x : ℝ, ∃ γ ∈ Γ, x 
     (hR : 0 ≤ R) (T : ℝ) (N : ℕ) : SeparatedModeIntervals R (placement hΓ R T N) :=
   separated_of_lacunary hR (placement_pos hΓ R T N) (placement_lacunary hΓ R T N)
 
-/-- **Placement inside a prescribed set** (paper, Lemma `tr:lem:placement`).
+/-- **Placement inside a prescribed set** (paper, Lemma 8.1).
 If `Γ` is unbounded above then for every radius `R ≥ 0`, every `N` and every threshold `T`
 there are `Λ 0 < ⋯ < Λ (N-1)` in `Γ`, all larger than `T` and positive, such that the
 intervals `[c - R, c + R]` with centers `c ∈ {0} ∪ {±Λ i} ∪ {Λ i - Λ j : i ≠ j}` are

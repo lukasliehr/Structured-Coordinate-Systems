@@ -1,4 +1,5 @@
 import Lean_Code.SchauderTranslates.Lp.FinsuppLpMap
+import Lean_Code.SchauderTranslates.Lp.DisjointNorm
 
 noncomputable section
 open MeasureTheory Filter
@@ -40,7 +41,7 @@ theorem disjoint_finite_synthesis_norm (c : ι →₀ ℂ) :
       rw [hx, smul_zero]
 
 /-- Synthesis of arbitrary ℓᵖ coefficients in disjoint unit coordinates,
-obtained from finite coefficients by density in the actual ℓᵖ norm. -/
+obtained from finite coefficients by density in the ℓᵖ norm. -/
 def disjointLpSynthesis : lp (fun _ : ι => ℂ) p →L[ℂ] LebesgueLp p :=
   (Finsupp.linearCombination ℂ e).extendOfNorm (finsuppLp p)
 

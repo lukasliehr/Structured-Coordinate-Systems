@@ -31,7 +31,7 @@ theorem SchauderBasis.rescale_projection (B : SchauderBasis 𝕜 p) (c : ℕ →
     (hc : ∀ n, c n ≠ 0) (n : ℕ) : P (B.rescale c hc) n = P B n := by
   apply ContinuousLinearMap.ext
   intro f
-  simp only [StatementAudit.P_apply, rescale, smul_apply, smul_eq_mul,
+  simp only [PositiveBiorthogonal.Basic.P_apply, rescale, smul_apply, smul_eq_mul,
     inverse_rescale_term _ _ (hc _)]
 
 theorem SchauderBasis.rescale_K (B : SchauderBasis 𝕜 p) (c : ℕ → 𝕜) (hc : ∀ n, c n ≠ 0) :

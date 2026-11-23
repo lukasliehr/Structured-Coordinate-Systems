@@ -23,7 +23,7 @@ theorem sum_toL2_ae (f : ι → BoundedMeasurableComplex A) (μ : Measure A) [Is
   rw [hx]
   exact Finset.sum_congr rfl (fun i his => hi i his)
 
-/-- Changing to a measure with fewer null sets preserves independence of the actual
+/-- Changing to a measure with fewer null sets preserves independence of the
 bounded representatives; no quantitative density floor is needed. -/
 theorem linearIndependent_measureChange (f : ι → BoundedMeasurableComplex A)
     (μ ν : Measure A) [IsFiniteMeasure μ] [IsFiniteMeasure ν]

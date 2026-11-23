@@ -9,7 +9,7 @@ set_option backward.isDefEq.respectTransparency.types false
 namespace SchauderTranslates
 variable {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
 
-/-- A positive symmetric quadratic bound controls the genuine Hilbert operator norm. -/
+/-- A positive symmetric quadratic bound controls the Hilbert operator norm. -/
 theorem positive_operator_norm_le (T : H →L[ℂ] H) {r : ℝ} (hr : 0 ≤ r)
     (hs : ∀ x y, inner ℂ (T x) y = inner ℂ x (T y))
     (hn : ∀ x, 0 ≤ (inner ℂ (T x) x).re)

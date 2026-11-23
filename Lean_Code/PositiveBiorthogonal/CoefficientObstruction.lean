@@ -95,7 +95,7 @@ theorem coefficient_first_projection_strict [Fact (1 ≤ p)] [ENNReal.HolderConj
     have hae : ∀ᵐ x : ℝ, ¬ 0 < RCLike.re (B.b 0 x) := by
       rw [ae_iff]
       simpa only [not_not] using le_antisymm hz bot_le
-    apply StatementAudit.basis_vector_ne_zero B 0
+    apply PositiveBiorthogonal.Basic.basis_vector_ne_zero B 0
     apply Lp.ext
     filter_upwards [hbpos, hae, Lp.coeFn_zero 𝕜 p (volume : Measure ℝ)] with x hx he hzero
     rw [hzero, Pi.zero_apply]

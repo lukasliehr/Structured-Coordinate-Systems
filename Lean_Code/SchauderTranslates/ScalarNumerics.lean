@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Contracts
+import Lean_Code.SchauderTranslates.Definitions
 
 noncomputable section
 open scoped BigOperators
@@ -152,7 +152,7 @@ theorem scalar_inverse_excess_step {ε ε' p C y : ℝ}
   nlinarith
 
 /-- All scalar rare-step inequalities, with the inverse-diagonal estimate supplied
-by the separate Gram-matrix calculation. No analytic or matrix conclusion is assumed here. -/
+by the separate Gram-matrix calculation. -/
 theorem scalar_step_numerics {ε Z p z : ℝ}
     (he : 0 < ε) (hemax : ε ≤ 1 / 10)
     (hZ : 1 / 646 ≤ Z) (hp : 0 < p) (hpmax : p ≤ 1 / 100)

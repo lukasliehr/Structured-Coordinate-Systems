@@ -23,7 +23,7 @@ theorem SchauderBasis.transport_projection (B : SchauderBasis 𝕜 p)
     P (B.transport e) n = e.symm.toContinuousLinearMap.comp ((P B n).comp e.toContinuousLinearMap) := by
   apply ContinuousLinearMap.ext
   intro f
-  simp [StatementAudit.P_apply, transport, map_sum, map_smul]
+  simp [PositiveBiorthogonal.Basic.P_apply, transport, map_sum, map_smul]
 
 theorem dense_span_equiv_image (v : ℕ → L 𝕜 p) (e : L 𝕜 p ≃L[𝕜] L 𝕜 p)
     (hv : Dense (Submodule.span 𝕜 (Set.range v) : Set (L 𝕜 p))) :

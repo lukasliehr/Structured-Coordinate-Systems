@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Lp.LpMeasureScaling
+import Mathlib
 
 noncomputable section
 open MeasureTheory
@@ -22,7 +22,7 @@ theorem lpMeasurePreserving_surjective {α β : Type*} [MeasurableSpace α] [Mea
   simpa only [hid] using Lp.compMeasurePreserving_id_apply g
 
 /-- Pullback by the inverse of a measure-preserving measurable equivalence
-is an onto complex linear isometry of the actual Lᵖ spaces. -/
+is an onto complex linear isometry of the Lᵖ spaces. -/
 def lpMeasurePreservingEquiv {α β : Type*} [MeasurableSpace α] [MeasurableSpace β]
     (p : ℝ≥0∞) [Fact (1 ≤ p)] (μ : Measure α) (ν : Measure β)
     (e : α ≃ᵐ β) (he : MeasurePreserving e μ ν) :

@@ -1,5 +1,4 @@
 import Lean_Code.SchauderTranslates.AugmentedScalarPrefixes
-import Lean_Code.SchauderTranslates.ScalarRowNumerics
 import Lean_Code.SchauderTranslates.OrderedActivation
 
 noncomputable section
@@ -66,34 +65,6 @@ theorem constant_row_bound_eq (s : ScalarData d n) (hs : s.IsEven) :
   rw [max_eq_right (by positivity)]
   field_simp
   <;> ring
-
-/-- Both kinds of rows fit in the next centered-prefix budget. -/
-theorem scalar_rows_bound (s : ScalarData d n) (hs : s.IsEven)
-    {ε q : ℝ} (hε : 0 ≤ ε) (hε1 : ε ≤ 1 / 10) (hm : s.mass = 1 - ε)
-    (hZ : s.gain ≤ 1 / 323) (hq : 2 ≤ q) (hp : s.AugmentedPrefixSqBound q)
-    (hdiag : ∀ j : Fin n, (s.rawGram⁻¹ (Sum.inr j) (Sum.inr j)).re - 1 ≤ 2 * ε)
-    (j : Unit ⊕ Fin n) :
-    metricRowBound s.realRawGram
-      (fun i : precedingScalarRows n j => (i : Unit ⊕ Fin n)) j ≤ q + ε ^ 2 / 2 := by
-  rcases j with (u | j)
-  · cases u
-    rw [s.constant_row_bound_eq hs, hm]
-    have hc := scalar_constant_row_lt_two hε hε1 s.gain_nonneg hZ
-    have he : 1 + s.gain - (1 - ε) = s.gain + ε := by ring
-    rw [sub_sub_cancel, he]
-    nlinarith [sq_nonneg ε]
-  · exact s.nonconstant_row_bound hs hε hm (by linarith) hp j (hdiag j)
-
-/-- The ordered cutoff now has the precise prefix increment needed by scalar induction. -/
-theorem orderedCutoffData_prefix_step (s : ScalarData d n) (hs : s.IsEven)
-    {b : ℝ} (hb : 0 < b) (hfloor : ∀ x, b ≤ s.density x)
-    {p : ℝ} (hp0 : 0 ≤ p) (hp1 : p ≤ 1) (N : ℕ)
-    {ε q : ℝ} (hε : 0 ≤ ε) (hε1 : ε ≤ 1 / 10) (hm : s.mass = 1 - ε)
-    (hZ : s.gain ≤ 1 / 323) (hq : 2 ≤ q) (hp : s.AugmentedPrefixSqBound q)
-    (hdiag : ∀ j : Fin n, (s.rawGram⁻¹ (Sum.inr j) (Sum.inr j)).re - 1 ≤ 2 * ε) :
-    (s.orderedCutoffData p N).CenteredPrefixSqBound (q + ε ^ 2 / 2) :=
-  s.orderedCutoffData_centered_prefix hs hb hfloor hp0 hp1 N (by nlinarith [sq_nonneg ε])
-    (s.scalar_rows_bound hs hε hε1 hm hZ hq hp hdiag)
 
 end ScalarData
 end SchauderTranslates

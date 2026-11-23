@@ -1,4 +1,4 @@
-import Lean_Code.SchauderTranslates.Lp.WholeCellFunctional
+import Lean_Code.SchauderTranslates.Lp.LpRestriction
 
 /-!
 # Cell parts of an `Lᵖ` class

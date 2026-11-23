@@ -49,7 +49,7 @@ theorem gramDifference_block_diagonal {ι κ : Type*} [Fintype ι] [Fintype κ]
 namespace SelectiveKernelData
 variable {S : Type*} [MeasurableSpace S] (ρ : Measure S) [IsProbabilityMeasure ρ]
 
-/-- The actual reference row prefix has constant `max K 1`: the original
+/-- The reference row prefix has constant `max K 1`: the original
 carrier contributes `K` and the orthonormal seed tail contributes one. -/
 theorem packetRows_prefix_bound {r L : ℕ} (φ : Fin r → BoundedMeasurableComplex S)
     (hφ : LinearIndependent ℂ (fun i => (φ i).toL2 ρ)) {K : ℝ} (hK : 0 ≤ K)

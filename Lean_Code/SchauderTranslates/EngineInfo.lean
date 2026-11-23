@@ -8,7 +8,7 @@ For atoms with slow means `T` and positive definite centered Gram `C`, the infor
 operator `J = T C⁻¹ T*` has quadratic form `a* C⁻¹ a` with `a = (⟪T_p, x⟫)_p`. Hence
 Cauchy–Schwarz bounds every mean pairing by `⟪J x, x⟫` times the centered norm, and an
 eigenvector of `J` is realized exactly by explicit coefficients. These are the only
-properties of a selective engine used by the replica argument (`tag:engines`).
+properties of a selective engine used by the replica argument.
 -/
 
 noncomputable section

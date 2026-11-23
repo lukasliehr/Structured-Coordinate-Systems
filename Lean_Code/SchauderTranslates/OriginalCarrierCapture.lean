@@ -11,7 +11,7 @@ namespace SchauderTranslates
 variable {S ι : Type*} [MeasurableSpace S] [Fintype ι] [DecidableEq ι]
 variable {ρ : Measure S} [IsProbabilityMeasure ρ]
 
-/-- The exact geometric result in the original carrier and actual weighted law.
+/-- The exact geometric result in the original carrier and weighted law.
 The projection formulas simultaneously state the two eigenvalues and vanishing
 on the orthogonal complement of the whole carrier. -/
 structure SelectiveCaptureData {L d n : ℕ} (a : SelectiveKernelData S L d n)

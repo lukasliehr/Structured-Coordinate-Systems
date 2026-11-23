@@ -28,7 +28,7 @@ theorem rows_reference (L : ℕ) :
     simp [weight]
   simpa only [gram, hw] using h
 
-/-- Strict positivity, contraction, and an explicit spectral floor of the actual raw seed Gram. -/
+/-- Strict positivity, contraction, and an explicit spectral floor of the raw seed Gram. -/
 theorem gram_positive_contraction (L : ℕ) {m κ : ℝ} (hm : 0 < m)
     (hm1 : m ≤ (1 / 2 : ℝ) ^ L) (hκ : ∀ x, ‖(κ : ℂ) * c.e x‖ ≤ 1 / 4) :
     (c.gram L m κ).PosDef ∧ (1 - c.gram L m κ).PosSemidef ∧

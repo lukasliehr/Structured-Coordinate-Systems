@@ -12,8 +12,8 @@ variable {ι κ H E : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι] [Decidab
   [NormedAddCommGroup H] [InnerProductSpace ℂ H] [CompleteSpace H]
   [NormedAddCommGroup E] [InnerProductSpace ℂ E] [CompleteSpace E]
 
-/-- Compressing the actual atom-span projection is the inverse Gram sandwich of its
-actual source adjoint. This statement does not assume the compression is finite dimensional. -/
+/-- Compressing the atom-span projection is the inverse Gram sandwich of its
+source adjoint. This statement does not assume the compression is finite dimensional. -/
 theorem compressed_projection_source (u : ι → H) (hu : LinearIndependent ℂ u) (L : E →L[ℂ] H) :
     (L†).comp ((atomSpan u).starProjection.comp L) =
       ((((hilbertSynthesis u)†).comp L)†).comp
@@ -29,7 +29,7 @@ theorem matrix_inverse_normalized {A : Matrix ι ι ℂ} (hA : A.PosDef) (M : �
   rw [Matrix.inv_smul A _ ((Matrix.isUnit_iff_isUnit_det _).mp hA.isUnit), invOf_eq_inv, inv_inv]
 
 /-- Raw source and Gram both acquire `1/M`; the resulting capture acquires exactly
-one such factor. Every map is between the actual Hilbert spaces. -/
+one such factor. Every map is between the Hilbert spaces. -/
 theorem normalized_capture_sandwich (u : ι → H) (hu : LinearIndependent ℂ u) (L : E →L[ℂ] H)
     (T : EuclideanSpace ℂ κ →L[ℂ] E) (R : Matrix ι κ ℂ) {A : Matrix ι ι ℂ}
     (hA : A.PosDef) (M : ℝ) (hM : 0 < M)

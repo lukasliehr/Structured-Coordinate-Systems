@@ -42,7 +42,7 @@ theorem rawGram_moment (s : ScalarData d n) (i j : Unit ⊕ Fin n) :
       (s.augmentedFrequency i - s.augmentedFrequency j) :=
   s.toTorusWeight.vector_inner_moment _ _
 
-/-- The actual smoothed raw Gram is the Schur product with a correlation matrix. -/
+/-- The smoothed raw Gram is the Schur product with a correlation matrix. -/
 theorem fejer_rawGram (s : ScalarData d n) {b : ℝ} (hb : 0 < b)
     (hf : ∀ x, b ≤ s.density x) (N : ℕ) :
     (s.fejer hb hf N).rawGram = s.rawGram ⊙ fejerCorrelation s.augmentedFrequency N := by

@@ -1,4 +1,4 @@
-import Lean_Code.PositiveBiorthogonal.Interpretation
+import Lean_Code.PositiveBiorthogonal.Basic
 import Lean_Code.PositiveBiorthogonal.BasicLp
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.Analysis.Normed.Operator.Bilinear

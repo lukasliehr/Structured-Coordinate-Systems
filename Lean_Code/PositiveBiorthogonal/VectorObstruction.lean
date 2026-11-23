@@ -15,13 +15,13 @@ theorem positive_basis_disjoint_first_support (hp1 : 1 < p) (hpfin : p ≠ ∞)
     (B : SchauderBasis 𝕜 p) (hB : PositiveBasis B) (hcontract : ‖P B 1‖ ≤ 1)
     (n : ℕ) (hn : n ≠ 0) :
     ∀ᵐ x : ℝ, 0 < RCLike.re (B.b 0 x) → B.b n x = 0 := by
-  obtain ⟨q, hpq⟩ := StatementAudit.conjugate_exists hp1.le
-  let := StatementAudit.conjugate_instance hpq
+  obtain ⟨q, hpq⟩ := PositiveBiorthogonal.Basic.conjugate_exists hp1.le
+  let := PositiveBiorthogonal.Basic.conjugate_instance hpq
   have hqfin : q ≠ ∞ := ((ENNReal.HolderConjugate.lt_top_iff_one_lt q p).mpr hp1).ne
   have hr : 1 < p.toReal := (ENNReal.HolderConjugate.toReal_of_ne_top hpfin hqfin).lt
   have hnorm (t : ℝ) : ‖B.b 0‖ ≤ ‖B.b 0 - (t : 𝕜) • B.b n‖ := by
     have hfix : P B 1 (B.b 0 - (t : 𝕜) • B.b n) = B.b 0 := by
-      simp [StatementAudit.P_one, map_sub, B.biorthogonal, hn]
+      simp [PositiveBiorthogonal.Basic.P_one, map_sub, B.biorthogonal, hn]
     calc
       ‖B.b 0‖ = ‖P B 1 (B.b 0 - (t : 𝕜) • B.b n)‖ := congrArg norm hfix.symm
       _ ≤ ‖P B 1‖ * ‖B.b 0 - (t : 𝕜) • B.b n‖ := (P B 1).le_opNorm _
@@ -54,7 +54,7 @@ theorem positive_first_projection_strict (hp1 : 1 < p) (hpfin : p ≠ ∞)
   let E := {x : ℝ | 0 < RCLike.re (B.b 0 x)}
   have hE : MeasurableSet E := positive_support_measurable (B.b 0)
   have hEpos : 0 < volume E :=
-    positive_support_measure_pos (B.b 0) (hB 0) (StatementAudit.basis_vector_ne_zero B 0)
+    positive_support_measure_pos (B.b 0) (hB 0) (PositiveBiorthogonal.Basic.basis_vector_ne_zero B 0)
   let R : L 𝕜 p →L[𝕜] L 𝕜 p := restriction E hE
   have hR0 : R (B.b 0) = B.b 0 :=
     cut_eq_self E hE (B.b 0) (positive_supported_on_positive_support (B.b 0) (hB 0))

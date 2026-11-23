@@ -201,7 +201,7 @@ theorem disjoint_center_intervals {R c d : ℝ} (h : 2 * R < |c - d|) :
   have hbound : |c - d| ≤ 2 * R := abs_le.mpr ⟨by linarith [hx.2, hy.1], by linarith [hx.1, hy.2]⟩
   exact (not_lt_of_ge hbound) h
 
-/-- Blueprint `lp:placement`. The coefficient-vector centers represent zero,
+/-- Placement of the parameters. The coefficient-vector centers represent zero,
 ±Λᵢ and every Λᵢ − Λⱼ. Separation is proved before placing supports. -/
 theorem support_placement {R : ℝ} (hR : 0 ≤ R) (N : ℕ) (old : Finset ℝ) :
     ∃ Λ : Fin N → ℝ, (∀ i, 0 < Λ i) ∧ (∀ i, Λ i ∉ old) ∧

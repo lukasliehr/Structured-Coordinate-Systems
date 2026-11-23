@@ -9,7 +9,7 @@ set_option backward.isDefEq.respectTransparency.types false
 
 namespace SchauderTranslates
 
-/-- The product Fejer kernel on the actual finite probability torus. -/
+/-- The product Fejer kernel on the finite probability torus. -/
 def torusFejerKernel (d N : ℕ) (x : UnitAddTorus (Fin d)) : ℝ :=
   ∏ i, circleFejerKernel N (x i)
 

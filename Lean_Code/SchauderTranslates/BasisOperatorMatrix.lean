@@ -10,7 +10,7 @@ namespace SchauderTranslates
 variable {ι H : Type*} [Fintype ι] [DecidableEq ι]
     [NormedAddCommGroup H] [InnerProductSpace ℂ H]
 
-/-- Matrix entries of an operator in an actual orthonormal basis. -/
+/-- Matrix entries of an operator in an orthonormal basis. -/
 def basisOperatorMatrix (b : OrthonormalBasis ι ℂ H) (T : H →L[ℂ] H) : Matrix ι ι ℂ :=
   fun i j => inner ℂ (b i) (T (b j))
 

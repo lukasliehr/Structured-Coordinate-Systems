@@ -9,7 +9,7 @@ set_option backward.isDefEq.respectTransparency.types false
 namespace SchauderTranslates
 variable {S ι : Type*} [MeasurableSpace S] (μ : Measure S) [IsFiniteMeasure μ]
 
-/-- A finite weighted Gram, written as integrals of actual representatives. -/
+/-- A finite weighted Gram, written as integrals of representatives. -/
 def integralGram (w : S → ℝ) (v : ι → S → ℂ) : Matrix ι ι ℂ :=
   fun i j => ∫ x, (w x : ℂ) * star (v i x) * v j x ∂μ
 

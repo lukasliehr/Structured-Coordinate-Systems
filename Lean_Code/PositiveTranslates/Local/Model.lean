@@ -31,7 +31,7 @@ theorem Local.P_linearCombination (Δ : PositiveBiorthogonal.SchauderBasis ℂ p
   | add f g hf hg =>
     simp only [map_add, hf, hg, Finsupp.add_apply, add_smul, Finset.sum_add_distrib]
   | single m x =>
-    rw [Finsupp.linearCombination_single, map_smul, StatementAudit.P_apply]
+    rw [Finsupp.linearCombination_single, map_smul, PositiveBiorthogonal.Basic.P_apply]
     simp only [Δ.biorthogonal, Finsupp.single_apply]
     rw [Finset.smul_sum]
     apply Finset.sum_congr rfl
@@ -46,7 +46,7 @@ theorem localBasis_of_positiveBasis (Γ : PositiveBiorthogonal.SchauderBasis ℂ
     (hstep : ∀ n, PositiveBiorthogonal.CompactlySupportedStep (Γ.b n))
     {B : ℝ} (hK : PositiveBiorthogonal.K Γ ≤ B) :
     LocalBasis p (fun n => ((‖Γ.b n‖⁻¹ : ℝ) : ℂ) • Γ.b n) Set.univ B := by
-  have hne : ∀ n, Γ.b n ≠ 0 := StatementAudit.basis_vector_ne_zero Γ
+  have hne : ∀ n, Γ.b n ≠ 0 := PositiveBiorthogonal.Basic.basis_vector_ne_zero Γ
   have hnp : ∀ n, 0 < ‖Γ.b n‖ := fun n => norm_pos_iff.mpr (hne n)
   have ha : ∀ n, ((‖Γ.b n‖⁻¹ : ℝ) : ℂ) ≠ 0 :=
     fun n => Complex.ofReal_ne_zero.mpr (inv_ne_zero (hnp n).ne')

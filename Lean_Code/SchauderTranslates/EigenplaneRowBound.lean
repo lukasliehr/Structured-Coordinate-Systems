@@ -11,7 +11,7 @@ namespace SchauderTranslates
 variable {ι κ η K : Type*} [Fintype ι] [DecidableEq ι] [Fintype κ] [DecidableEq κ]
     [Fintype η] [NormedAddCommGroup K] [InnerProductSpace ℝ K]
 
-/-- The abstract coefficient estimate applies to the actual eigenplanes of two projections. -/
+/-- The abstract coefficient estimate applies to the eigenplanes of two projections. -/
 theorem projection_eigenplane_row_bound {B : Matrix ι ι ℝ} (hB : B.PosDef) (hBI : B ≤ 1)
     (old : κ → ι) (hold : Function.Injective old) (j : ι) (hj : ∀ k, old k ≠ j)
     (V : Submodule ℝ K) [V.HasOrthogonalProjection] (Q : K →L[ℝ] K)

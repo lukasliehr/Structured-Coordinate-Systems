@@ -21,7 +21,7 @@ theorem tensorGram_eigen (G : Matrix ι ι ℂ) {B : Matrix κ κ ℂ} {β : ℝ
     Complex.real_smul, Complex.ofReal_sub, Complex.ofReal_one]
   ring
 
-/-- The inverse action is derived from two actual positive definite matrices. -/
+/-- The inverse action is derived from two positive definite matrices. -/
 theorem tensorGram_inverse_eigen {G : Matrix ι ι ℂ} {B : Matrix κ κ ℂ}
     (hG : G.PosDef) (hA : (tensorGram G B).PosDef) {β : ℝ} (hβ0 : 0 ≤ β) (hβ1 : β ≤ 1)
     {x : κ → ℂ} (hx : B *ᵥ x = (β : ℂ) • x) (y : ι → ℂ) :

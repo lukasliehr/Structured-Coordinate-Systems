@@ -3,7 +3,7 @@ import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
 
-/-! Exact statement definitions from the immutable root Showcase.lean. -/
+/-! Definitions for the statements on non-negative bases and positive biorthogonal functionals. -/
 
 noncomputable section
 
